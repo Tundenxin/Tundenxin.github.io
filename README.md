@@ -1,9 +1,6 @@
-[README.md](https://github.com/user-attachments/files/32427550/README.md)
-# Tundenxin — Genshin Mobile Free
+# Tundenxin — Genshin Mobile Free (Skirk / Void Realm Theme)
 
-Website tĩnh gồm:
-- `index.html`: trang chủ, 4 tool và nút tải.
+Website tĩnh phong cách Vực Sâu & nhân vật Skirk (Genshin Impact):
+- `index.html`: trang chủ, 6 tool/công cụ hỗ trợ và nút tải.
 - `guide.html`: trang hướng dẫn, chọn tool rồi mới hiển thị video YouTube.
-- `style.css`: giao diện đen + vàng kim.
-
-Đã ẩn toàn bộ URL tải/video khỏi các card ở trang chủ.
+- `style.css`: giao diện Cosmic Void (đen thạch anh, tím lavender, lam cyan, bạch kim và mắt đỏ).
