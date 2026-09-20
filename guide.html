@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta name="theme-color" content="#050713">
   <title>Hướng dẫn — Tundenxin (Void Realm)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/jpeg" href="genshin-icon.jpg">
+  <link rel="icon" type="image/png" href="genshin-icon.png">
 </head>
 <body class="guide-page">
   <div class="skirk-bg-fixed" aria-hidden="true"></div>
@@ -40,7 +43,7 @@
 
     <div class="guide-grid">
       <button class="guide-card" data-title="Kuro — Hướng dẫn tính năng" data-video="https://www.youtube.com/embed/UC3BvsKfpBY">
-        <img src="genshin-icon.jpg" alt="Genshin Impact Kuro" class="tool-app-icon">
+        <img src="genshin-icon.png" alt="Genshin Impact Kuro" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
           <strong>Kuro</strong>
@@ -50,7 +53,7 @@
       </button>
 
       <button class="guide-card" data-title="DMSHBY — Hướng dẫn cài đặt" data-video="https://www.youtube.com/embed/D0v4Izh_cfY">
-        <img src="genshin-icon.jpg" alt="Genshin Impact DMSHBY" class="tool-app-icon">
+        <img src="genshin-icon.png" alt="Genshin Impact DMSHBY" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
           <strong>DMSHBY</strong>
@@ -60,7 +63,7 @@
       </button>
 
       <button class="guide-card" data-title="Yukino — Hướng dẫn cài đặt" data-video="https://www.youtube.com/embed/Q_vPnxsaLcE">
-        <img src="genshin-icon.jpg" alt="Genshin Impact Yukino" class="tool-app-icon">
+        <img src="genshin-icon.png" alt="Genshin Impact Yukino" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
           <strong>Yukino</strong>
@@ -70,7 +73,7 @@
       </button>
 
       <button class="guide-card locked" disabled>
-        <img src="genshin-icon.jpg" alt="Genshin Impact Eleutheria" class="tool-app-icon">
+        <img src="genshin-icon.png" alt="Genshin Impact Eleutheria" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
           <strong>Eleutheria</strong>
@@ -99,8 +102,14 @@
     <b>Tundenxin</b>
     <span>•</span>
     <span>Hướng dẫn</span>
+    <span>•</span>
+    <button type="button" class="footer-notice-btn" id="openNoticeBtn">⚠ Cảnh báo Ban Wave</button>
+    <span>•</span>
+    <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
+  <script src="notice.js" defer></script>
+  <script src="snow.js" defer></script>
   <script>
     const panel = document.getElementById('videoPanel');
     const frame = document.getElementById('videoFrame');
