@@ -46,12 +46,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 76px;
-  padding: 0 clamp(16px, 4vw, 60px);
+  min-height: 80px;
+  padding: 10px clamp(16px, 4vw, 60px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   background: rgba(8, 7, 5, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -113,7 +113,7 @@ body {
 .main-nav a {
   color: #d7cfbd;
   text-decoration: none;
-  padding: 9px 16px;
+  padding: 8px 16px;
   border: 1px solid transparent;
   border-radius: 12px;
   font-weight: 600;
@@ -130,31 +130,34 @@ body {
   box-shadow: 0 0 22px rgba(207, 157, 45, 0.16);
 }
 
+/* KHỐI SOCIALS: CỐ ĐỊNH XẾP DỌC TELEGRAM TRÊN - DISCORD DƯỚI */
 .socials {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 6px;
   flex-shrink: 0;
 }
 
 .social {
-  padding: 9px 15px;
-  border-radius: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
   text-decoration: none;
   color: #fff5d1;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   border: 1px solid var(--line);
   background: #15120d;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  justify-content: center;
+  min-height: 28px;
 }
 
 .discord:hover,
 .telegram:hover {
   border-color: #f2c75b;
-  box-shadow: 0 0 20px rgba(240, 190, 67, 0.18);
+  box-shadow: 0 0 15px rgba(240, 190, 67, 0.2);
   transform: translateY(-1px);
 }
 
@@ -341,7 +344,7 @@ body {
   white-space: nowrap;
 }
 
-/* CỐ ĐỊNH 3 CỘT TRÊN PC */
+/* PC: CỐ ĐỊNH 3 CỘT */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -625,7 +628,7 @@ footer {
 }
 
 /* ==========================================================================
-   TỐI ƯU CẤU HÌNH DỌC RỘNG CHO ĐIỆN THOẠI (RESPONSIVE)
+   TỐI ƯU CẤU HÌNH CHO MOBILE & TABLET (RESPONSIVE)
    ========================================================================== */
 
 /* Tablet & Màn hình trung bình */
@@ -635,21 +638,44 @@ footer {
   }
 }
 
-/* ĐIỆN THOẠI MOBILE: TỰ ĐỘNG THÀNH 1 Ô DỌC RỘNG */
+/* ĐIỆN THOẠI MOBILE */
 @media (max-width: 640px) {
   .nav {
-    height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
     padding: 12px 16px;
-    flex-wrap: wrap;
-    gap: 12px 16px;
   }
 
+  .brand {
+    grid-column: 1;
+  }
+
+  /* NÚT SOCIAL NẰM GÓC PHẢI TRÊN MOBILE (TELEGRAM TRÊN, DISCORD DƯỚI) */
+  .socials {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+
+  .social {
+    padding: 3px 8px;
+    font-size: 11px;
+    min-height: 24px;
+    width: 95px;
+  }
+
+  /* THANH NAV DƯỚI BRAND VÀ SOCIALS */
   .main-nav {
-    order: 3;
+    grid-column: 1 / -1;
     width: 100%;
     justify-content: flex-start;
     overflow-x: auto;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
+    margin-top: 4px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -659,23 +685,13 @@ footer {
   }
 
   .main-nav a {
-    padding: 8px 14px;
-    font-size: 13.5px;
+    padding: 6px 12px;
+    font-size: 13px;
     flex-shrink: 0;
   }
 
-  .socials {
-    margin-left: auto;
-  }
-
-  .social {
-    padding: 6px 10px;
-    font-size: 12px;
-    min-height: 36px;
-  }
-
   .hero {
-    padding: 35px 16px;
+    padding: 30px 16px;
   }
 
   .section-head {
@@ -709,11 +725,11 @@ footer {
 /* Điện thoại màn hình nhỏ */
 @media (max-width: 480px) {
   .brand strong {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .cta, .download {
