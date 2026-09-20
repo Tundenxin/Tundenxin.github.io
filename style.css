@@ -104,6 +104,13 @@ body {
   box-shadow: inset 0 0 10px #b88622;
 }
 
+/* KHỐI BÊN PHẢI PC: CHỨA SOCIALS VÀ NAV */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .main-nav {
   display: flex;
   gap: 8px;
@@ -130,28 +137,28 @@ body {
   box-shadow: 0 0 22px rgba(207, 157, 45, 0.16);
 }
 
-/* KHỐI SOCIALS: CỐ ĐỊNH XẾP DỌC TELEGRAM TRÊN - DISCORD DƯỚI */
+/* KHỐI SOCIALS TÊN PC: NẰM NGANG CẠNH MENU NAV */
 .socials {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
   flex-shrink: 0;
 }
 
 .social {
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 8px;
   text-decoration: none;
   color: #fff5d1;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   border: 1px solid var(--line);
   background: #15120d;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 28px;
 }
 
 .discord:hover,
@@ -344,7 +351,7 @@ body {
   white-space: nowrap;
 }
 
-/* PC: CỐ ĐỊNH 3 CỘT */
+/* PC: 3 CỘT */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -628,17 +635,16 @@ footer {
 }
 
 /* ==========================================================================
-   TỐI ƯU CẤU HÌNH CHO MOBILE & TABLET (RESPONSIVE)
+   RESPONSIVE DÀNH CHO MOBILE & TABLET
    ========================================================================== */
 
-/* Tablet & Màn hình trung bình */
 @media (max-width: 992px) {
   .tool-grid, .guide-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ĐIỆN THOẠI MOBILE */
+/* CHẾ ĐỘ ĐIỆN THOẠI */
 @media (max-width: 640px) {
   .nav {
     display: grid;
@@ -652,10 +658,15 @@ footer {
     grid-column: 1;
   }
 
-  /* NÚT SOCIAL NẰM GÓC PHẢI TRÊN MOBILE (TELEGRAM TRÊN, DISCORD DƯỚI) */
-  .socials {
+  .nav-right {
     grid-column: 2;
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  /* TRÊN ĐIỆN THOẠI: XẾP DỌC TELEGRAM TRÊN - DISCORD DƯỚI */
+  .socials {
     flex-direction: column;
     gap: 4px;
     align-items: flex-end;
@@ -668,7 +679,6 @@ footer {
     width: 95px;
   }
 
-  /* THANH NAV DƯỚI BRAND VÀ SOCIALS */
   .main-nav {
     grid-column: 1 / -1;
     width: 100%;
@@ -700,7 +710,6 @@ footer {
     gap: 6px;
   }
 
-  /* 1 Cột dọc rộng trên điện thoại */
   .tool-grid, .guide-grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -722,7 +731,6 @@ footer {
   }
 }
 
-/* Điện thoại màn hình nhỏ */
 @media (max-width: 480px) {
   .brand strong {
     font-size: 18px;
