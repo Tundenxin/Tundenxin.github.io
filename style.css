@@ -3,3 +3,302 @@
 .hero-characters{display:block;width:100%;height:100%;object-fit:cover;object-position:70% center;opacity:.92;filter:saturate(.92) contrast(1.02);-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.72) 16%,#000 30%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.72) 16%,#000 30%,#000 100%)}
 .hero-figures:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#090806 0%,rgba(9,8,6,.5) 14%,transparent 38%,rgba(25,16,5,.08) 100%);pointer-events:none}
 @media(max-width:1050px){.tool-grid,.guide-grid{grid-template-columns:repeat(2,1fr)}.main-nav{order:3}.nav{height:auto;min-height:82px;flex-wrap:wrap;padding:15px 20px}.brand{min-width:auto}.socials{margin-left:auto}.hero-figures{opacity:.9;width:58%;right:-5%}}@media(max-width:700px){.main-nav{width:100%;order:3}.socials{display:none}.hero{min-height:650px;padding:45px 20px}.hero-figures{display:none}.hero h1{font-size:48px}.section-head{display:block}.count{margin-top:10px}.tool-grid,.guide-grid{grid-template-columns:1fr}.tools,.guide-wrap{padding-left:20px;padding-right:20px}.brand strong{font-size:22px}}
+
+
+/* Fix cho section tools và thẻ tool-card */
+.tools {
+  padding: 60px clamp(22px, 8vw, 130px);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.section-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 42px);
+  margin: 8px 0 0;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tool-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(25, 20, 13, 0.85), rgba(13, 10, 6, 0.95));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tool-card:hover {
+  border-color: rgba(230, 187, 83, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(215, 168, 61, 0.15);
+}
+
+.tool-card.coming {
+  opacity: 0.7;
+}
+
+.letter {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 110px;
+  font-weight: 700;
+  color: rgba(215, 168, 61, 0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.tool-copy small {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.tool-copy h3 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tool-copy p {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.status-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.updated {
+  background: rgba(46, 125, 50, 0.25);
+  color: #81c784;
+  border: 1px solid rgba(129, 199, 132, 0.3);
+}
+
+.status-badge.maintenance {
+  background: rgba(211, 47, 47, 0.25);
+  color: #ef5350;
+  border: 1px solid rgba(239, 83, 80, 0.3);
+}
+
+.download {
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 14px;
+}
+
+.download.disabled {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Trang Guide CSS */
+.guide-wrap {
+  padding: 60px clamp(22px, 8vw, 130px);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.guide-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.guide-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  margin: 10px 0;
+  color: var(--gold2);
+}
+
+.guide-title p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.guide-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(25, 20, 13, 0.85), rgba(13, 10, 6, 0.95));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.guide-card:hover:not(.locked) {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, rgba(35, 28, 18, 0.9), rgba(20, 15, 9, 0.98));
+}
+
+.guide-card.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.guide-card span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.guide-card small {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.guide-card strong {
+  font-size: 18px;
+  color: var(--cream);
+  margin: 2px 0;
+}
+
+.guide-card em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.guide-card b {
+  font-size: 20px;
+  color: var(--gold);
+}
+
+.video-panel {
+  margin-top: 40px;
+  background: rgba(15, 12, 8, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.video-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.video-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin: 5px 0 0;
+  color: var(--gold2);
+}
+
+#closeVideo {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--cream);
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: .2s;
+}
+
+#closeVideo:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--gold);
+}
+
+.video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #050403;
+}
+
+footer .primogem.small {
+  width: 20px;
+  height: 20px;
+}
+
+footer .primogem.small span {
+  width: 9px;
+  height: 9px;
+}
