@@ -104,17 +104,20 @@ body {
   box-shadow: inset 0 0 10px #b88622;
 }
 
-/* KHỐI BÊN PHẢI PC: CHỨA SOCIALS VÀ NAV */
-.nav-right {
+/* CONTAINER GIỮ NGUYÊN GIAO DIỆN PC CŨ */
+.nav-container {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  flex: 1;
+  margin-left: 20px;
 }
 
 .main-nav {
   display: flex;
   gap: 8px;
   align-items: center;
+  margin: 0 auto; /* Đưa menu ra giữa màn hình PC */
 }
 
 .main-nav a {
@@ -137,10 +140,8 @@ body {
   box-shadow: 0 0 22px rgba(207, 157, 45, 0.16);
 }
 
-/* KHỐI SOCIALS TÊN PC: NẰM NGANG CẠNH MENU NAV */
 .socials {
   display: flex;
-  flex-direction: row;
   gap: 8px;
   align-items: center;
   flex-shrink: 0;
@@ -325,7 +326,7 @@ body {
   box-shadow: 0 10px 25px rgba(211, 157, 42, 0.35);
 }
 
-/* Danh sách Tool (Tool Grid) */
+/* Tool Grid */
 .tools {
   position: relative;
   padding: 60px clamp(16px, 6vw, 100px);
@@ -351,7 +352,6 @@ body {
   white-space: nowrap;
 }
 
-/* PC: 3 CỘT */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -644,60 +644,54 @@ footer {
   }
 }
 
-/* CHẾ ĐỘ ĐIỆN THOẠI */
-@media (max-width: 640px) {
+/* CHẾ ĐỘ ĐIỆN THOẠI: ĐƯA TẤT CẢ NÚT VÀO VÙNG KHOANH ĐỎ BÊN PHẢI LOGO */
+@media (max-width: 768px) {
   .nav {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
+    justify-content: space-between;
+    padding: 10px 14px;
   }
 
-  .brand {
-    grid-column: 1;
+  .brand strong {
+    font-size: 18px;
   }
 
-  .nav-right {
-    grid-column: 2;
+  .brand small {
+    font-size: 9px;
+  }
+
+  .nav-container {
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 6px;
+    flex: initial;
   }
 
-  /* TRÊN ĐIỆN THOẠI: XẾP DỌC TELEGRAM TRÊN - DISCORD DƯỚI */
   .socials {
-    flex-direction: column;
-    gap: 4px;
-    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
   }
 
   .social {
-    padding: 3px 8px;
+    padding: 4px 10px;
     font-size: 11px;
-    min-height: 24px;
-    width: 95px;
+    border-radius: 6px;
   }
 
   .main-nav {
-    grid-column: 1 / -1;
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    margin-top: 4px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .main-nav::-webkit-scrollbar {
-    display: none;
+    display: flex;
+    gap: 4px;
+    margin: 0;
   }
 
   .main-nav a {
-    padding: 6px 12px;
-    font-size: 13px;
-    flex-shrink: 0;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 
   .hero {
@@ -733,11 +727,11 @@ footer {
 
 @media (max-width: 480px) {
   .brand strong {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .hero h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .cta, .download {
