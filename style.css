@@ -1,41 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Space+Grotesk:wght@600;700&display=swap');
 
 /* =========================================================
-   THEME SKIRK — GENSHIN IMPACT (ABYSSAL COSMIC VOID)
-   - Background: Skirk Wallpaper + Void Overlay
-   - Palette: Deep Cosmic Black, Lavender, Cyan, Silver, Dull Red Eye
-   - Multi-device Responsive: Desktop, Laptop, Tablet, Mobile
+   THEME SKIRK — LIQUID GLASS (THỦY TINH LỎNG TRONG SUỐT)
+   - Background: Skirk Singularity & Shattered Mirror Wallpaper
+   - Liquid Glass: Ultra-translucent, Specular Rim Highlights,
+     Inner Glow, Deep Backdrop Blur, Multi-device Responsive
    ========================================================= */
 :root {
   /* Nền không gian Vực Sâu */
-  --bg-deep: #050713;
-  --bg-void: #090c21;
-  --panel: rgba(13, 17, 40, 0.88);
-  --panel-hover: rgba(20, 27, 60, 0.95);
+  --bg-deep: #050716;
+  --bg-void: #090c24;
+
+  /* Hệ màu Liquid Glass trong suốt */
+  --glass-bg: rgba(10, 16, 42, 0.42);
+  --glass-bg-hover: rgba(18, 28, 68, 0.56);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-border-top: rgba(255, 255, 255, 0.38);
+  --glass-shadow: 0 14px 40px rgba(2, 4, 18, 0.42);
+  --glass-inset: inset 0 1.5px 2px rgba(255, 255, 255, 0.25);
+  --glass-blur: blur(20px) saturate(180%);
 
   /* Tông màu đặc trưng của Skirk */
   --skirk-violet: #a855f7;
   --skirk-lavender: #c084fc;
-  --skirk-violet-glow: rgba(168, 85, 247, 0.35);
+  --skirk-violet-glow: rgba(168, 85, 247, 0.4);
   --skirk-cyan: #22d3ee;
   --skirk-cyan-bright: #38bdf8;
-  --skirk-cyan-glow: rgba(34, 211, 238, 0.35);
+  --skirk-cyan-glow: rgba(34, 211, 238, 0.4);
 
-  /* Mái tóc trắng bạch kim & chữ */
-  --skirk-silver: #f8fafc;
-  --skirk-silver-soft: #e2e8f0;
-  --skirk-muted: #94a3b8;
-  --skirk-subtle: #64748b;
+  /* Bạch kim & chữ */
+  --skirk-silver: #ffffff;
+  --skirk-silver-soft: #f1f5f9;
+  --skirk-muted: #cbd5e1;
+  --skirk-subtle: #94a3b8;
 
   /* Mắt đỏ & cảnh báo Vực Sâu */
   --skirk-crimson: #f43f5e;
   --skirk-crimson-bright: #fb7185;
-  --skirk-crimson-glow: rgba(244, 63, 94, 0.35);
+  --skirk-crimson-glow: rgba(244, 63, 94, 0.4);
 
   /* Đường viền & hiệu ứng ánh sáng */
-  --line: rgba(168, 85, 247, 0.22);
-  --line-cyan: rgba(34, 211, 238, 0.35);
-  --line-hover: rgba(192, 132, 252, 0.65);
+  --line: rgba(255, 255, 255, 0.15);
+  --line-cyan: rgba(34, 211, 238, 0.4);
+  --line-hover: rgba(34, 211, 238, 0.65);
 }
 
 * {
@@ -45,11 +52,12 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--bg-deep);
 }
 
 body {
   margin: 0;
-  background-color: var(--bg-deep);
+  background: transparent;
   color: var(--skirk-silver-soft);
   font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
@@ -59,42 +67,42 @@ body {
 }
 
 /* =========================================================
-   ẢNH NỀN SKIRK CỐ ĐỊNH & LỚP PHỦ TỐI ƯU ĐA THIẾT BỊ
+   ẢNH NỀN SKIRK CỐ ĐỊNH & HIỆU ỨNG VIGNETTE THỦY TINH
    ========================================================= */
 .skirk-bg-fixed {
   position: fixed;
   inset: 0;
-  z-index: -3;
+  z-index: -2;
   background-image: url('skirk-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 72% center;
+  background-position: 75% center;
   pointer-events: none;
-  transform: translateZ(0);
 }
 
+/* Lớp phủ siêu trong suốt để thấy rõ hoàn toàn ảnh nền */
 .skirk-bg-overlay {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   background: 
-    radial-gradient(ellipse at 75% 35%, transparent 0%, rgba(5, 7, 19, 0.22) 50%, rgba(5, 7, 19, 0.65) 100%),
-    linear-gradient(180deg, rgba(5, 7, 19, 0.15) 0%, rgba(5, 7, 19, 0.2) 30%, rgba(5, 7, 19, 0.55) 75%, rgba(5, 7, 19, 0.85) 100%);
+    radial-gradient(ellipse at 75% 35%, transparent 0%, rgba(5, 7, 24, 0.04) 60%, rgba(4, 6, 20, 0.15) 100%),
+    linear-gradient(180deg, rgba(5, 7, 20, 0.02) 0%, rgba(5, 7, 20, 0.05) 50%, rgba(4, 6, 20, 0.15) 100%);
   pointer-events: none;
 }
 
-/* Hiệu ứng hạt bụi sao tinh thể Vực Sâu */
+/* Hiệu ứng bụi sao tinh thể Vực Sâu */
 .gold-dust {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.28;
   background-image: 
     radial-gradient(circle, rgba(192, 132, 252, 0.75) 0 1px, transparent 1.5px),
     radial-gradient(circle, rgba(56, 189, 248, 0.7) 0 1px, transparent 1.5px);
   background-size: 80px 80px, 130px 130px;
   background-position: 0 0, 40px 65px;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
   z-index: -1;
   animation: cosmicDrift 60s linear infinite;
 }
@@ -105,7 +113,7 @@ body {
 }
 
 /* =========================================================
-   HEADER & THANH ĐIỀU HƯỚNG (NAV)
+   HEADER — THANH ĐIỀU HƯỚNG LIQUID GLASS
    ========================================================= */
 .nav {
   position: sticky;
@@ -117,11 +125,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: rgba(6, 9, 23, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 8px 32px rgba(3, 4, 10, 0.65), 0 1px 0 rgba(168, 85, 247, 0.15);
+  background: rgba(6, 10, 30, 0.28);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 30px rgba(2, 4, 18, 0.25), inset 0 -1px 0 rgba(168, 85, 247, 0.25);
 }
 
 .brand {
@@ -140,9 +148,10 @@ body {
   font-size: 23px;
   letter-spacing: 0.4px;
   line-height: 1.2;
-  background: linear-gradient(120deg, #ffffff 10%, #e0e7ff 45%, #c084fc 100%);
+  background: linear-gradient(120deg, #ffffff 15%, #e0e7ff 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
 }
 
 .brand small {
@@ -152,36 +161,38 @@ body {
   letter-spacing: 1.2px;
   font-weight: 600;
   text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
 }
 
-/* Biểu tượng Nguyên Thạch / Ngôi Sao Vực Sâu Skirk */
+/* Biểu tượng Nguyên Thạch / Ngôi Sao Vực Sâu Thủy Tinh */
 .primogem {
   width: 36px;
   height: 36px;
   display: inline-grid;
   place-items: center;
   transform: rotate(45deg);
-  border: 1px solid rgba(192, 132, 252, 0.85);
-  background: linear-gradient(135deg, #f8fafc 0%, #38bdf8 30%, #a855f7 70%, #4c1d95 100%);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.55), inset 0 0 8px rgba(56, 189, 248, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(56, 189, 248, 0.7) 35%, rgba(168, 85, 247, 0.8) 75%, rgba(76, 29, 149, 0.9) 100%);
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.55), inset 0 1px 2px #ffffff;
   flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
 
 .primogem:hover {
-  transform: rotate(225deg) scale(1.05);
-  box-shadow: 0 0 26px rgba(34, 211, 238, 0.8), inset 0 0 12px rgba(192, 132, 252, 0.8);
+  transform: rotate(225deg) scale(1.08);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.85), inset 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
 .primogem span {
   width: 15px;
   height: 15px;
-  border: 1px solid #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   background: linear-gradient(135deg, #ffffff, #c084fc);
   box-shadow: inset 0 0 8px #7c3aed;
 }
 
-/* Menu chính */
+/* Menu chính — Liquid Glass Pills */
 .main-nav {
   display: flex;
   gap: 8px;
@@ -191,23 +202,27 @@ body {
 }
 
 .main-nav a {
-  color: var(--skirk-silver-muted);
+  color: var(--skirk-muted);
   text-decoration: none;
   padding: 8px 18px;
-  border: 1px solid transparent;
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
   font-weight: 600;
   font-size: 14px;
   transition: all 0.25s ease;
   white-space: nowrap;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18);
 }
 
 .main-nav a:hover,
 .main-nav a.active {
   color: #ffffff;
-  border-color: rgba(168, 85, 247, 0.6);
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.22), rgba(34, 211, 238, 0.08));
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25), inset 0 0 10px rgba(34, 211, 238, 0.1);
+  border-color: rgba(34, 211, 238, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.28), rgba(34, 211, 238, 0.18));
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
 /* Cụm Socials */
@@ -223,13 +238,17 @@ body {
 
 .social {
   padding: 5px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   color: var(--skirk-silver);
   font-weight: 600;
   font-size: 12px;
-  border: 1px solid var(--line);
-  background: rgba(13, 17, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(10, 16, 40, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
@@ -240,29 +259,29 @@ body {
 .social.telegram:hover {
   border-color: var(--skirk-cyan);
   color: #fff;
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.35);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.35);
   transform: translateY(-1.5px);
 }
 
 .social.discord:hover {
   border-color: var(--skirk-lavender);
   color: #fff;
-  box-shadow: 0 0 16px rgba(192, 132, 252, 0.35);
+  box-shadow: 0 0 18px rgba(192, 132, 252, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.35);
   transform: translateY(-1.5px);
 }
 
 /* =========================================================
-   HERO BANNER — HÒA QUYỆN VỚI HÌNH NỀN SKIRK
+   HERO BANNER — KHUNG KÍNH LỎNG LIQUID GLASS
    ========================================================= */
 .hero {
   position: relative;
-  min-height: 520px;
+  min-height: 540px;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
   padding: 80px clamp(16px, 6vw, 100px);
-  background: linear-gradient(90deg, rgba(5, 7, 19, 0.6) 0%, rgba(5, 7, 19, 0.25) 45%, transparent 75%);
+  background: transparent;
 }
 
 .hero-art {
@@ -272,7 +291,6 @@ body {
   z-index: 1;
 }
 
-/* Ẩn các khối vẽ che khuất hình Skirk */
 .sun, .mountain {
   display: none;
 }
@@ -288,17 +306,21 @@ body {
   text-shadow: 0 0 12px rgba(192, 132, 252, 0.8);
 }
 
+/* Khung kính lỏng trong suốt Hero Content */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 630px;
-  background: rgba(6, 9, 23, 0.4);
-  padding: 24px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  background: rgba(7, 12, 34, 0.15);
+  backdrop-filter: blur(5px) saturate(130%);
+  -webkit-backdrop-filter: blur(5px) saturate(130%);
+  padding: 30px;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.3),
+    0 15px 40px rgba(2, 4, 18, 0.25);
 }
 
 .eyebrow, .kicker {
@@ -307,7 +329,7 @@ body {
   font-size: 12px;
   font-weight: 700;
   display: inline-block;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
 }
 
 .hero h1 {
@@ -316,33 +338,39 @@ body {
   line-height: 1.08;
   margin: 14px 0 22px;
   color: #ffffff;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 0, 0, 0.9);
 }
 
 .hero h1 span, h2 span {
-  background: linear-gradient(135deg, #f8fafc 0%, #c084fc 45%, #22d3ee 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #c084fc 45%, #22d3ee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-/* Khối Cảnh Báo An Toàn — Mắt đỏ Skirk */
+/* Khối Cảnh Báo An Toàn — Mắt đỏ Skirk Thủy Tinh */
 .notice {
   display: flex;
   gap: 14px;
   max-width: 580px;
   padding: 16px 18px;
-  border: 1px solid rgba(244, 63, 94, 0.45);
-  border-radius: 14px;
-  background: rgba(15, 10, 24, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.1), inset 0 0 24px rgba(244, 63, 94, 0.05);
-  transition: border-color 0.3s ease;
+  border: 1px solid rgba(244, 63, 94, 0.5);
+  border-top: 1px solid rgba(255, 130, 160, 0.65);
+  border-radius: 16px;
+  background: rgba(26, 10, 28, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.25),
+    0 8px 25px rgba(244, 63, 94, 0.15);
+  transition: all 0.3s ease;
 }
 
 .notice:hover {
   border-color: rgba(244, 63, 94, 0.75);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.35),
+    0 10px 30px rgba(244, 63, 94, 0.25);
 }
 
 .notice > b {
@@ -356,7 +384,7 @@ body {
   color: #ffffff;
   font-size: 15px;
   font-weight: 800;
-  box-shadow: 0 0 14px rgba(244, 63, 94, 0.6);
+  box-shadow: 0 0 14px rgba(244, 63, 94, 0.7), inset 0 1px 2px #fff;
 }
 
 .notice strong {
@@ -366,9 +394,10 @@ body {
 
 .notice p {
   margin: 4px 0 0;
-  color: var(--skirk-silver-muted);
+  color: #ffffff;
   font-size: 12.8px;
   line-height: 1.55;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
 }
 
 .notice em {
@@ -377,19 +406,24 @@ body {
   font-weight: 600;
 }
 
-/* Nút bấm CTA & Tải Về phong cách Cosmic */
+/* Nút bấm CTA & Tải Về — Viên Pha Lê Thủy Tinh (Liquid Gem) */
 .cta, .download {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1px solid rgba(192, 132, 252, 0.6);
-  background: linear-gradient(135deg, #f8fafc 0%, #c084fc 40%, #22d3ee 85%, #0284c7 100%);
-  color: #060919;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-top: 1.5px solid #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(192, 132, 252, 0.9) 35%, rgba(34, 211, 238, 0.9) 80%, rgba(2, 132, 199, 0.95) 100%);
+  color: #050818;
   text-decoration: none;
   font-weight: 800;
-  border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(168, 85, 247, 0.35), 0 0 15px rgba(34, 211, 238, 0.25);
+  border-radius: 14px;
+  box-shadow: 
+    inset 0 1.5px 2px #ffffff,
+    0 8px 25px rgba(34, 211, 238, 0.4),
+    0 0 18px rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(10px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   min-height: 48px;
   cursor: pointer;
@@ -405,12 +439,14 @@ body {
 .cta:hover, .download:not(.disabled):hover {
   transform: translateY(-2.5px);
   filter: brightness(1.1);
-  border-color: #ffffff;
-  box-shadow: 0 10px 32px rgba(168, 85, 247, 0.55), 0 0 25px rgba(34, 211, 238, 0.45);
+  box-shadow: 
+    inset 0 2px 3px #ffffff,
+    0 12px 35px rgba(34, 211, 238, 0.6),
+    0 0 25px rgba(168, 85, 247, 0.5);
 }
 
 /* =========================================================
-   TOOL GRID — BỘ SƯU TẬP CÔNG CỤ
+   TOOL GRID — THẺ BÀI LIQUID GLASS TRONG SUỐT
    ========================================================= */
 .tools {
   position: relative;
@@ -437,10 +473,14 @@ body {
   font-size: 13.5px;
   font-weight: 600;
   white-space: nowrap;
-  background: rgba(34, 211, 238, 0.1);
-  padding: 6px 14px;
+  background: rgba(10, 16, 42, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 7px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(34, 211, 238, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .tool-grid {
@@ -449,6 +489,7 @@ body {
   gap: 24px;
 }
 
+/* Thẻ Tool Liquid Glass Siêu Trong Suốt */
 .tool-card {
   position: relative;
   display: flex;
@@ -457,25 +498,28 @@ body {
   width: 100%;
   min-height: 260px;
   padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(155deg, rgba(16, 21, 52, 0.92) 0%, rgba(8, 11, 28, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(12, 18, 48, 0.16) 0%, rgba(6, 10, 30, 0.08) 100%);
   box-shadow: 
-    0 8px 30px rgba(0, 0, 0, 0.55),
-    inset 0 0 25px rgba(168, 85, 247, 0.05);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.22),
+    0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px) saturate(130%);
+  -webkit-backdrop-filter: blur(4px) saturate(130%);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tool-card:hover {
-  border-color: var(--line-hover);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  background: linear-gradient(145deg, rgba(16, 24, 60, 0.26) 0%, rgba(8, 14, 38, 0.14) 100%);
+  border-color: rgba(34, 211, 238, 0.65);
+  border-top-color: #ffffff;
   box-shadow: 
-    0 16px 38px rgba(0, 0, 0, 0.65),
-    0 0 30px rgba(168, 85, 247, 0.25),
-    inset 0 0 25px rgba(34, 211, 238, 0.08);
+    inset 0 1.5px 3px rgba(255, 255, 255, 0.4),
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(34, 211, 238, 0.35);
 }
 
 .tool-card:after {
@@ -484,13 +528,28 @@ body {
   right: -8px;
   top: -24px;
   font-size: 120px;
-  color: rgba(168, 85, 247, 0.045);
+  color: rgba(255, 255, 255, 0.04);
   pointer-events: none;
   transition: color 0.3s ease;
 }
 
 .tool-card:hover:after {
-  color: rgba(34, 211, 238, 0.08);
+  color: rgba(34, 211, 238, 0.1);
+}
+
+/* Icon App Genshin & Khối Chữ Cái */
+.tool-app-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.35), 0 6px 14px rgba(0, 0, 0, 0.45), inset 0 1px 1px #fff;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+  display: block;
+  background: #0d1127;
 }
 
 .letter {
@@ -498,40 +557,23 @@ body {
   height: 60px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
-  border: 1px solid rgba(192, 132, 252, 0.65);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1.5px solid #ffffff;
   color: #ffffff;
-  background: linear-gradient(145deg, #3b1464 0%, #0c2044 100%);
+  background: linear-gradient(145deg, rgba(59, 20, 100, 0.7) 0%, rgba(12, 32, 68, 0.7) 100%);
   font-family: 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 700;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.28), inset 0 0 10px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4);
   transition: transform 0.25s ease;
 }
 
-.tool-card:hover .letter {
-  transform: scale(1.06);
-  border-color: var(--skirk-cyan);
-}
-
-.tool-app-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
-  object-fit: cover;
-  border: 1px solid rgba(192, 132, 252, 0.65);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.35), 0 4px 12px rgba(0, 0, 0, 0.45);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
-  flex-shrink: 0;
-  display: block;
-  background: #0d1127;
-}
-
 .tool-card:hover .tool-app-icon,
-.guide-card:not(.locked):hover .tool-app-icon {
-  transform: scale(1.06);
+.tool-card:hover .letter {
+  transform: scale(1.08);
   border-color: var(--skirk-cyan);
-  box-shadow: 0 0 25px rgba(34, 211, 238, 0.55), 0 6px 16px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.6), 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .tool-copy {
@@ -544,6 +586,7 @@ body {
   letter-spacing: 1.6px;
   font-weight: 700;
   text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
 }
 
 .tool-copy h3 {
@@ -555,6 +598,7 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 16px rgba(0, 0, 0, 0.9);
 }
 
 .status-badge {
@@ -567,43 +611,44 @@ body {
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.2px;
+  backdrop-filter: blur(10px);
 }
 
-/* Badge Đã Update: Màu Cyan / Xanh ngọc Vực Sâu */
 .status-badge.updated {
   color: #67e8f9;
-  background: rgba(34, 211, 238, 0.12);
-  border: 1px solid rgba(34, 211, 238, 0.45);
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.2);
+  background: rgba(34, 211, 238, 0.16);
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
 }
 
-/* Badge Bảo Trì / Sắp Có: Màu Đỏ hồng ngọc Skirk */
 .status-badge.maintenance {
   color: #fb7185;
-  background: rgba(244, 63, 94, 0.14);
-  border: 1px solid rgba(244, 63, 94, 0.5);
-  box-shadow: 0 0 12px rgba(244, 63, 94, 0.2);
+  background: rgba(244, 63, 94, 0.16);
+  border: 1px solid rgba(244, 63, 94, 0.55);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
 }
 
 .tool-copy p {
   margin: 0;
-  color: var(--skirk-silver-muted);
+  color: #f1f5f9;
   font-size: 13.5px;
   line-height: 1.5;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+  font-weight: 500;
 }
 
 .download {
   width: 100%;
   padding: 12px;
   margin-top: 22px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 14px;
   letter-spacing: 0.4px;
 }
 
 .disabled {
-  border-color: rgba(148, 163, 184, 0.15);
-  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.5);
   color: #64748b;
   box-shadow: none;
   cursor: not-allowed;
@@ -612,7 +657,7 @@ body {
 }
 
 /* =========================================================
-   TRANG HƯỚNG DẪN (GUIDE PAGE)
+   TRANG HƯỚNG DẪN — LIQUID GLASS
    ========================================================= */
 .guide-wrap {
   padding: 60px clamp(16px, 6vw, 100px);
@@ -622,12 +667,25 @@ body {
   text-align: center;
   max-width: 720px;
   margin: 0 auto 40px;
+  background: rgba(8, 14, 38, 0.16);
+  backdrop-filter: blur(5px) saturate(130%);
+  -webkit-backdrop-filter: blur(5px) saturate(130%);
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.22), 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.guide-title h1 {
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95);
 }
 
 .guide-title p {
-  color: var(--skirk-silver-muted);
+  color: #ffffff;
   margin-top: 10px;
   font-size: 15px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.95);
 }
 
 .guide-grid {
@@ -643,23 +701,29 @@ body {
   cursor: pointer;
   color: var(--skirk-silver);
   padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(155deg, rgba(16, 21, 52, 0.92) 0%, rgba(8, 11, 28, 0.96) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(12, 18, 48, 0.16) 0%, rgba(6, 10, 30, 0.08) 100%);
   display: grid;
   grid-template-columns: 60px 1fr 24px;
   gap: 16px;
   align-items: center;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px) saturate(130%);
+  -webkit-backdrop-filter: blur(4px) saturate(130%);
 }
 
 .guide-card:not(.locked):hover {
-  transform: translateY(-3.5px);
+  transform: translateY(-4px);
+  background: linear-gradient(145deg, rgba(16, 24, 60, 0.26) 0%, rgba(8, 14, 38, 0.14) 100%);
   border-color: var(--skirk-cyan);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65), 0 0 25px rgba(34, 211, 238, 0.25);
+  border-top-color: #ffffff;
+  box-shadow: 
+    inset 0 1.5px 2.5px rgba(255, 255, 255, 0.4),
+    0 16px 38px rgba(0, 0, 0, 0.4),
+    0 0 28px rgba(34, 211, 238, 0.35);
 }
 
 .guide-card .letter,
@@ -685,12 +749,14 @@ body {
   margin: 3px 0;
   line-height: 1.2;
   color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
 }
 
 .guide-card em {
   font-style: normal;
-  color: var(--skirk-silver-muted);
+  color: #e2e8f0;
   font-size: 12.5px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
 }
 
 .guide-card > b {
@@ -706,21 +772,25 @@ body {
 }
 
 .locked {
-  opacity: 0.5;
+  opacity: 0.45;
   cursor: not-allowed;
-  border-color: rgba(148, 163, 184, 0.15);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Khung Video YouTube */
+/* Khung Video YouTube Liquid Glass */
 .video-panel {
   margin-top: 40px;
   padding: 24px;
-  border: 1px solid rgba(168, 85, 247, 0.45);
-  border-radius: 20px;
-  background: rgba(9, 12, 28, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(168, 85, 247, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  background: rgba(8, 12, 32, 0.2);
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.25),
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(168, 85, 247, 0.2);
 }
 
 .video-head {
@@ -739,8 +809,8 @@ body {
 }
 
 .video-head button {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -751,10 +821,11 @@ body {
   place-items: center;
   transition: all 0.2s ease;
   flex-shrink: 0;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .video-head button:hover {
-  background: rgba(244, 63, 94, 0.2);
+  background: rgba(244, 63, 94, 0.3);
   border-color: var(--skirk-crimson);
   color: #fff;
   transform: rotate(90deg);
@@ -762,12 +833,12 @@ body {
 
 .video-frame {
   aspect-ratio: 16 / 9;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   background: #000;
   width: 100%;
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.85);
 }
 
 .video-frame iframe {
@@ -777,20 +848,23 @@ body {
 }
 
 /* =========================================================
-   FOOTER
+   FOOTER LIQUID GLASS
    ========================================================= */
 footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 28px clamp(16px, 6vw, 100px);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: var(--skirk-muted);
+  color: #ffffff;
   font-size: 13px;
   text-align: center;
-  background: rgba(5, 7, 19, 0.88);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+  background: rgba(5, 7, 22, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 footer b {
@@ -808,13 +882,197 @@ footer b {
 }
 
 /* =========================================================
+   TRANG CÔNG CỤ HỖ TRỢ — LIQUID GLASS
+   ========================================================= */
+.utilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  max-width: 960px;
+  margin: 0 auto 36px;
+}
+
+.utility-card {
+  min-height: 280px;
+}
+
+.utility-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  color: #67e8f9;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+  letter-spacing: 0.2px;
+}
+
+/* Khung lời khuyên / Mẹo hỗ trợ */
+.utility-tips-panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+  background: rgba(8, 14, 38, 0.18);
+  backdrop-filter: blur(5px) saturate(130%);
+  -webkit-backdrop-filter: blur(5px) saturate(130%);
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.22), 0 12px 35px rgba(2, 4, 18, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.tip-icon {
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.tip-content {
+  flex: 1;
+  min-width: 260px;
+}
+
+.tip-content h3 {
+  margin: 0 0 6px;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+}
+
+.tip-content p {
+  margin: 6px 0;
+  font-size: 13.5px;
+  color: #f1f5f9;
+  line-height: 1.55;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+}
+
+.tip-content strong {
+  color: var(--skirk-cyan-bright);
+}
+
+.tip-action-btn {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgba(34, 211, 238, 0.15);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.tip-action-btn:hover {
+  background: rgba(34, 211, 238, 0.3);
+  border-color: var(--skirk-cyan-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+}
+
+/* Banner chuyển tab Công Cụ trên Trang Chủ */
+.tools-cta-banner {
+  margin-top: 36px;
+  padding: 22px 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(135deg, rgba(16, 24, 64, 0.22) 0%, rgba(8, 12, 36, 0.14) 100%);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.banner-text .badge-mini {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--skirk-cyan-bright);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.banner-text strong {
+  display: block;
+  font-size: 17px;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+}
+
+.banner-text p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #e2e8f0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+}
+
+.banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3) 0%, rgba(34, 211, 238, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.25);
+}
+
+.banner-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.5);
+}
+
+/* =========================================================
    TÙY CHỈNH GIAO DIỆN ĐA THIẾT BỊ (RESPONSIVE SYSTEM)
    ========================================================= */
 
 /* 1. MÀN HÌNH LAPTOP & TABLET NGANG (993px - 1200px) */
 @media (max-width: 1200px) {
   .skirk-bg-fixed {
-    background-position: 68% center;
+    background-position: 72% center;
   }
   .tool-grid, .guide-grid {
     gap: 20px;
@@ -824,7 +1082,7 @@ footer b {
 /* 2. TABLET ĐỨNG & LAPTOP NHỎ (769px - 992px) */
 @media (max-width: 992px) {
   .skirk-bg-fixed {
-    background-position: 60% center;
+    background-position: 65% center;
   }
   .tool-grid, .guide-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -832,21 +1090,22 @@ footer b {
   }
   .hero {
     padding: 60px clamp(16px, 4vw, 40px);
-    background: linear-gradient(90deg, rgba(5, 7, 19, 0.7) 0%, rgba(5, 7, 19, 0.35) 55%, transparent 100%);
   }
 }
 
 /* 3. ĐIỆN THOẠI & TABLET NHỎ (<= 768px) */
 @media (max-width: 768px) {
-  /* Định vị ảnh nền Skirk: Căn chỉnh vào mặt và thân trên của Skirk */
+  /* Ảnh nền đứng Skirk trời sao mặt nước chuyên biệt cho điện thoại */
   .skirk-bg-fixed {
-    background-position: 36% 15%;
+    background-image: url('skirk-mobile-bg.jpg');
+    background-position: center top;
+    background-size: cover;
   }
 
   .skirk-bg-overlay {
     background: 
-      radial-gradient(ellipse at 40% 18%, transparent 0%, rgba(5, 7, 19, 0.3) 60%, rgba(5, 7, 19, 0.75) 100%),
-      linear-gradient(180deg, rgba(5, 7, 19, 0.15) 0%, rgba(5, 7, 19, 0.3) 40%, rgba(5, 7, 19, 0.75) 90%);
+      radial-gradient(ellipse at 50% 30%, transparent 0%, rgba(5, 7, 24, 0.04) 60%, rgba(4, 6, 20, 0.18) 100%),
+      linear-gradient(180deg, rgba(5, 7, 20, 0.02) 0%, rgba(5, 7, 20, 0.06) 50%, rgba(4, 6, 20, 0.16) 100%);
   }
 
   /* Header 2 hàng tối ưu cho Mobile */
@@ -875,39 +1134,53 @@ footer b {
     padding: 5px 10px;
     font-size: 11px;
     border-radius: 8px;
+    background: rgba(10, 16, 40, 0.28);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
-  /* Menu chuyển xuống hàng 2, căn giữa toàn màn hình */
+  /* Menu chuyển xuống hàng 2, căn giữa và trượt mượt trên Mobile */
   .main-nav {
     width: 100%;
     order: 3;
     margin-top: 4px;
     gap: 6px;
-    justify-content: center;
-    background: rgba(13, 17, 38, 0.5);
+    justify-content: flex-start;
+    background: rgba(10, 16, 42, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 4px;
-    border-radius: 12px;
-    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .main-nav a {
-    flex: 1;
+    flex: 1 0 auto;
     text-align: center;
     padding: 7px 10px;
-    font-size: 13px;
-    border-radius: 8px;
+    font-size: 12.5px;
+    border-radius: 10px;
   }
 
   /* Hero Banner trên điện thoại */
   .hero { 
-    padding: 45px 16px; 
+    padding: 35px 14px; 
     min-height: auto;
-    background: transparent;
   }
 
   .hero-content {
-    padding: 18px 16px;
-    background: rgba(6, 9, 23, 0.55);
+    padding: 20px 16px;
+    border-radius: 20px;
+    background: rgba(7, 12, 34, 0.18);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .stars { display: none; }
@@ -920,10 +1193,10 @@ footer b {
 
   /* Lưới công cụ 1 cột toàn màn hình */
   .tools {
-    padding: 45px 16px;
+    padding: 40px 14px;
   }
 
-  .tool-grid, .guide-grid {
+  .tool-grid, .guide-grid, .utilities-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
@@ -931,6 +1204,10 @@ footer b {
   .tool-card {
     min-height: auto;
     padding: 20px 18px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(12, 18, 48, 0.18) 0%, rgba(6, 10, 30, 0.1) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .cta, .download { 
@@ -938,32 +1215,68 @@ footer b {
     min-height: 48px;
   }
 
-  /* Trang hướng dẫn trên mobile */
-  .guide-wrap {
-    padding: 40px 16px;
-  }
-
-  .guide-card {
-    grid-template-columns: 52px 1fr 20px;
-    padding: 16px;
-  }
-
   .guide-card .letter,
   .guide-card .tool-app-icon {
     width: 52px;
     height: 52px;
     font-size: 26px;
+    border-radius: 14px;
   }
 
   .tool-app-icon {
     width: 52px;
     height: 52px;
-    border-radius: 12px;
+    border-radius: 14px;
+  }
+
+  /* Trang hướng dẫn trên mobile */
+  .guide-wrap {
+    padding: 35px 14px;
+  }
+
+  .guide-card {
+    grid-template-columns: 52px 1fr 20px;
+    padding: 16px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(12, 18, 48, 0.18) 0%, rgba(6, 10, 30, 0.1) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .video-panel { 
     padding: 16px; 
     margin-top: 25px;
+    border-radius: 20px;
+    background: rgba(8, 12, 32, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  /* Banner & Tips Panel trên mobile */
+  .utility-tips-panel {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .tip-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .tip-content h3 {
+    font-size: 18px;
+  }
+
+  .tip-action-btn, .banner-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .tools-cta-banner {
+    padding: 18px 16px;
+    margin-top: 24px;
   }
 }
 
