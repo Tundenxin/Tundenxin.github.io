@@ -1,0 +1,22 @@
+{
+  "name": "tundenxin-website",
+  "version": "1.0.0",
+  "description": "Tundenxin — Website chia sẻ Tool Genshin Mobile với hệ thống xác minh thành viên Telegram / Discord",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/test-verification.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "genshin-impact",
+    "telegram-bot",
+    "discord-oauth",
+    "verification",
+    "gatekeeper"
+  ],
+  "author": "Tundenxin",
+  "license": "MIT"
+}
