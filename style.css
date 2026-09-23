@@ -649,6 +649,65 @@ body {
   font-weight: 500;
 }
 
+/* Khối chú thích điều kiện thiết bị (Root / Chưa Root) */
+.tool-note-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(8, 14, 38, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 3px solid var(--skirk-cyan);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.08);
+}
+
+.tool-note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tool-note-item p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #cbd5e1;
+  font-weight: 400;
+  text-shadow: none;
+}
+
+.tool-note-item strong {
+  color: #ffffff;
+}
+
+.tool-note-item a {
+  color: var(--skirk-cyan-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.tool-note-item a:hover {
+  color: #ffffff;
+}
+
+.note-bullet {
+  font-size: 12px;
+  flex-shrink: 0;
+  line-height: 1.45;
+}
+
+.note-bullet.unrooted {
+  color: #f59e0b;
+}
+
+.note-bullet.rooted {
+  color: #10b981;
+}
+
 .download {
   width: 100%;
   padding: 12px;
