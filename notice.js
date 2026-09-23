@@ -18,21 +18,21 @@
         
         <div class="tx-notice-badge">
           <span class="tx-notice-pulse"></span>
-          <span class="tx-notice-badge-text">✦ CẢNH BÁO QUAN TRỌNG ✦</span>
+          <span class="tx-notice-badge-text">✦ THÔNG BÁO BẢO TRÌ ✦</span>
         </div>
 
-        <h2 id="txNoticeTitle" class="tx-notice-title">Lưu ý khi sử dụng Tool</h2>
+        <h2 id="txNoticeTitle" class="tx-notice-title">Bảo trì toàn bộ Tool Genshin</h2>
 
         <div class="tx-notice-warning-box">
-          <div class="tx-notice-warn-icon">⚠</div>
+          <div class="tx-notice-warn-icon">🛠</div>
           <div class="tx-notice-warn-text">
-            <strong>Dùng tool luôn có rủi ro!</strong>
-            <p>Lưu ý khi sử dụng vào những đợt <strong>Ban Wave</strong> của game để tránh rủi ro khóa tài khoản.</p>
+            <strong>Toàn bộ Tool đang tạm ngừng hoạt động!</strong>
+            <p>Nhằm đảm bảo an toàn tối đa cho người chơi trong các đợt <strong>Ban Wave</strong> và tiến hành cập nhật phiên bản mới, toàn bộ tool hiện đang trong trạng thái <strong>Bảo trì</strong>.</p>
           </div>
         </div>
 
         <p class="tx-notice-desc">
-          Để biết rõ chi tiết, cập nhật tình hình an toàn mới nhất và được hỗ trợ, hãy tham gia nhóm của chúng tôi:
+          Để theo dõi tiến độ cập nhật và nhận thông báo ngay khi tool mở lại, hãy tham gia nhóm của chúng tôi:
         </p>
 
         <div class="tx-notice-socials">

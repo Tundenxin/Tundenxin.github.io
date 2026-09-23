@@ -656,6 +656,7 @@ body {
   border-radius: 14px;
   font-size: 14px;
   letter-spacing: 0.4px;
+  font-family: inherit;
 }
 
 .disabled {
@@ -666,6 +667,15 @@ body {
   cursor: not-allowed;
   filter: none !important;
   transform: none !important;
+  font-family: inherit;
+}
+
+.download.disabled.maintenance,
+.download.maintenance {
+  border-color: rgba(244, 63, 94, 0.45);
+  background: rgba(244, 63, 94, 0.12);
+  color: #fca5a5;
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.2);
 }
 
 /* =========================================================
