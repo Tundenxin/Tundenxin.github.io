@@ -42,41 +42,41 @@
     </div>
 
     <div class="guide-grid">
-      <button class="guide-card" data-title="Kuro.apk — Hướng dẫn tính năng" data-video="https://www.youtube.com/embed/UC3BvsKfpBY">
-        <img src="genshin-icon.png" alt="Genshin Impact Kuro.apk" class="tool-app-icon">
+      <button class="guide-card" data-title="Hướng dẫn setting và các tính năng của Tool Kuro" data-video="https://www.youtube.com/embed/UC3BvsKfpBY">
+        <img src="genshin-icon.png" alt="Genshin Impact Kuro" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
-          <strong>Kuro.apk</strong>
-          <em>Hướng dẫn tính năng</em>
+          <strong>Kuro</strong>
+          <em>Hướng dẫn setting và các tính năng của Tool Kuro</em>
         </span>
         <b>▶</b>
       </button>
 
-      <button class="guide-card" data-title="DMSHBY.sh — Hướng dẫn cài đặt" data-video="https://www.youtube.com/embed/D0v4Izh_cfY">
-        <img src="genshin-icon.png" alt="Genshin Impact DMSHBY.sh" class="tool-app-icon">
+      <button class="guide-card" data-title="Hướng dẫn cài đặt Tool DMSHBY chi tiết" data-video="https://www.youtube.com/embed/D0v4Izh_cfY">
+        <img src="genshin-icon.png" alt="Genshin Impact DMSHBY" class="tool-app-icon">
         <span>
-          <small>GENSHIN IMPACT</small>
-          <strong>DMSHBY.sh</strong>
-          <em>Hướng dẫn cài đặt • Yêu cầu Root / VPhone</em>
+          <small>GENSHIN IMPACT • VISION 7.1</small>
+          <strong>DMSHBY</strong>
+          <em>Hướng dẫn cài đặt Tool DMSHBY chi tiết</em>
         </span>
         <b>▶</b>
       </button>
 
-      <button class="guide-card" data-title="Yukino.apk — Hướng dẫn cài đặt" data-video="https://www.youtube.com/embed/Q_vPnxsaLcE">
-        <img src="genshin-icon.png" alt="Genshin Impact Yukino.apk" class="tool-app-icon">
+      <button class="guide-card" data-title="Hướng dẫn cài đặt Tool Yukino" data-video="https://www.youtube.com/embed/Q_vPnxsaLcE">
+        <img src="genshin-icon.png" alt="Genshin Impact Yukino" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
-          <strong>Yukino.apk</strong>
-          <em>Hướng dẫn cài đặt</em>
+          <strong>Yukino</strong>
+          <em>Hướng dẫn cài đặt Tool Yukino</em>
         </span>
         <b>▶</b>
       </button>
 
       <button class="guide-card locked" disabled>
-        <img src="genshin-icon.png" alt="Genshin Impact Eleutheria.apk" class="tool-app-icon">
+        <img src="genshin-icon.png" alt="Genshin Impact Eleutheria" class="tool-app-icon">
         <span>
           <small>GENSHIN IMPACT</small>
-          <strong>Eleutheria.apk</strong>
+          <strong>Eleutheria</strong>
           <em>Sắp có hướng dẫn</em>
         </span>
         <b>◷</b>
@@ -125,6 +125,19 @@
       frame.src = '';
       panel.hidden = true;
     });
+
+    // Tự động mở video tương ứng khi chuyển từ trang chủ qua URL (ví dụ: guide.html?tool=dmshby)
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetQuery = (urlParams.get('tool') || window.location.hash.replace('#', '')).toLowerCase();
+    if (targetQuery) {
+      const matchCard = Array.from(document.querySelectorAll('.guide-card:not(.locked)')).find(card =>
+        card.dataset.title.toLowerCase().includes(targetQuery) ||
+        card.querySelector('strong')?.textContent.toLowerCase().includes(targetQuery)
+      );
+      if (matchCard) {
+        setTimeout(() => matchCard.click(), 250);
+      }
+    }
   </script>
 </body>
 </html>
