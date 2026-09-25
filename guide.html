@@ -72,12 +72,12 @@
         <b>▶</b>
       </button>
 
-      <button class="guide-card locked" disabled>
+      <button class="guide-card no-video-card" data-no-video="true" data-title="Tool Eleutheria 7.1 v1.5" title="Tool Eleutheria hiện chưa có video hướng dẫn (Sắp cập nhật)">
         <img src="genshin-icon.png" alt="Genshin Impact Eleutheria" class="tool-app-icon">
         <span>
-          <small>GENSHIN IMPACT</small>
+          <small>GENSHIN IMPACT • 7.1 v1.5</small>
           <strong>Eleutheria</strong>
-          <em>Sắp có hướng dẫn</em>
+          <em>Chưa có video hướng dẫn (Sắp cập nhật)</em>
         </span>
         <b>◷</b>
       </button>
@@ -93,6 +93,26 @@
       </div>
       <div class="video-frame">
         <iframe id="videoFrame" title="Video hướng dẫn" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="video-panel no-video-panel" id="noVideoPanel" hidden>
+      <div class="video-head">
+        <div>
+          <span class="kicker">✦ THÔNG BÁO HƯỚNG DẪN</span>
+          <h2 id="noVideoTitle">Tool Eleutheria (7.1 v1.5)</h2>
+        </div>
+        <button id="closeNoVideo" aria-label="Đóng">×</button>
+      </div>
+      <div class="no-video-body">
+        <div class="no-video-icon">🎬</div>
+        <h3>Tool Eleutheria hiện <span>chưa có video hướng dẫn</span></h3>
+        <p class="no-video-sub">Video hướng dẫn cài đặt và sử dụng tính năng chi tiết đang được chuẩn bị và sẽ cập nhật sớm nhất. Bạn có thể tải ngay file APK hoặc tham gia nhóm hỗ trợ để được giải đáp:</p>
+        <div class="no-video-actions">
+          <a class="download" href="https://www.mediafire.com/file/250z7x3y0iovjs0/GI_Eleutheria_7.1_v1.5.apk/file" target="_blank" rel="noopener">⇩ &nbsp; TẢI ELEUTHERIA 7.1 v1.5 (MEDIAFIRE) →</a>
+          <a class="social telegram" href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener">➤ Nhóm Telegram ↗</a>
+          <a class="social discord" href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener">◉ Discord ↗</a>
+        </div>
       </div>
     </section>
   </main>
@@ -111,13 +131,29 @@
     const panel = document.getElementById('videoPanel');
     const frame = document.getElementById('videoFrame');
     const title = document.getElementById('videoTitle');
+    const noVideoPanel = document.getElementById('noVideoPanel');
+    const closeNoVideo = document.getElementById('closeNoVideo');
 
-    document.querySelectorAll('.guide-card:not(.locked)').forEach(card => {
+    // Thẻ có video YouTube
+    document.querySelectorAll('.guide-card:not([data-no-video]):not(.locked)').forEach(card => {
       card.addEventListener('click', () => {
+        if (noVideoPanel) noVideoPanel.hidden = true;
         title.textContent = card.dataset.title;
         frame.src = card.dataset.video + '?autoplay=1';
         panel.hidden = false;
         panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    // Thẻ chưa có video hướng dẫn (Eleutheria)
+    document.querySelectorAll('.guide-card[data-no-video="true"]').forEach(card => {
+      card.addEventListener('click', () => {
+        frame.src = '';
+        panel.hidden = true;
+        if (noVideoPanel) {
+          noVideoPanel.hidden = false;
+          noVideoPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       });
     });
 
@@ -126,13 +162,20 @@
       panel.hidden = true;
     });
 
-    // Tự động mở video tương ứng khi chuyển từ trang chủ qua URL (ví dụ: guide.html?tool=dmshby)
+    if (closeNoVideo) {
+      closeNoVideo.addEventListener('click', () => {
+        noVideoPanel.hidden = true;
+      });
+    }
+
+    // Tự động mở tương ứng khi chuyển từ trang chủ qua URL (ví dụ: guide.html?tool=eleutheria)
     const urlParams = new URLSearchParams(window.location.search);
     const targetQuery = (urlParams.get('tool') || window.location.hash.replace('#', '')).toLowerCase();
     if (targetQuery) {
-      const matchCard = Array.from(document.querySelectorAll('.guide-card:not(.locked)')).find(card =>
-        card.dataset.title.toLowerCase().includes(targetQuery) ||
-        card.querySelector('strong')?.textContent.toLowerCase().includes(targetQuery)
+      const allCards = Array.from(document.querySelectorAll('.guide-card:not(.locked)'));
+      const matchCard = allCards.find(card =>
+        (card.dataset.title && card.dataset.title.toLowerCase().includes(targetQuery)) ||
+        (card.querySelector('strong') && card.querySelector('strong').textContent.toLowerCase().includes(targetQuery))
       );
       if (matchCard) {
         setTimeout(() => matchCard.click(), 250);

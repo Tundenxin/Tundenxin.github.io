@@ -1000,6 +1000,76 @@ body {
 }
 
 /* =========================================================
+   TOOL CHƯA CÓ VIDEO HƯỚNG DẪN (ELEUTHERIA)
+   ========================================================= */
+.guide-card.no-video-card em {
+  color: #fbbf24;
+}
+
+.no-video-panel .video-head h2 {
+  color: #fde68a;
+}
+
+.no-video-body {
+  padding: 38px 24px;
+  text-align: center;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(16, 24, 60, 0.45) 0%, rgba(8, 14, 38, 0.3) 100%);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.no-video-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.6));
+}
+
+.no-video-body h3 {
+  margin: 0 0 10px;
+  font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.no-video-body h3 span {
+  color: #f59e0b;
+}
+
+.no-video-sub {
+  font-size: 14px;
+  color: #cbd5e1;
+  max-width: 580px;
+  margin: 0 auto 24px;
+  line-height: 1.65;
+}
+
+.no-video-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.no-video-actions .download {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-color: rgba(251, 191, 36, 0.7);
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+}
+
+.no-video-actions .download:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+  border-color: #fef3c7;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
+}
+
+/* =========================================================
    FOOTER LIQUID GLASS
    ========================================================= */
 footer {
