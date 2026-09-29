@@ -51,17 +51,35 @@
     </div>
   </header>
 
-  <!-- Main Content (Để trống) -->
+  <!-- Main Content -->
   <main class="files-wrap">
     <div class="files-title">
       <span class="eyebrow">✦ TUNDENXIN FILE REPOSITORY • VOID REALM ✦</span>
       <h1>Tài liệu & <span>Chia sẻ Files</span></h1>
-      <p>Khu vực lưu trữ và chia sẻ tệp tin.</p>
+      <p>Tổng hợp các tệp tin cấu hình, TP Map, script và tài liệu chia sẻ từ Tundenxin.</p>
     </div>
 
-    <!-- Danh sách tệp để trống -->
+    <!-- Danh sách tệp -->
     <div class="file-grid" id="fileGrid">
-      <!-- Để trống: Thêm các thẻ file của bạn vào đây khi cần -->
+      <article class="file-card" data-category="cfg">
+        <div class="file-card-top">
+          <div class="file-type-icon cfg" aria-hidden="true">🗺️</div>
+          <div class="file-info">
+            <div class="file-meta-tags">
+              <span class="file-badge cfg">TP SHIKA PC</span>
+              <span class="file-date">✦ Vision 1.0 - 7.0</span>
+            </div>
+            <h3 class="file-name">Files TP Shika PC — Custom-tp Shika all Map vision 1.0-7.0</h3>
+            <p class="file-desc">Có all map chỉ nhặt rương đánh quái không giải đố + la hoàn khoảng 75-80 roll.<br><strong style="color: var(--skirk-cyan-bright);">(Đây là Files TP Shika được Tundenxin Custom)</strong></p>
+          </div>
+        </div>
+        <div class="file-actions">
+          <a class="file-download-btn" href="https://mega.nz/file/63p2lb5Z#7lX_gs2jZnec13RKNWIBmaR-eohnYVuSrydHa8d2_Og" target="_blank" rel="noopener">
+            <span>⇩ &nbsp; TẢI XUỐNG NGAY →</span>
+          </a>
+          <button type="button" class="file-copy-link-btn" id="copyShikaBtn" title="Sao chép link tải">📋 Sao chép link</button>
+        </div>
+      </article>
     </div>
   </main>
 
@@ -136,5 +154,28 @@
 
   <script src="snow.js" defer></script>
   <script src="nav.js" defer></script>
+  <script>
+    const copyBtn = document.getElementById('copyShikaBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const link = 'https://mega.nz/file/63p2lb5Z#7lX_gs2jZnec13RKNWIBmaR-eohnYVuSrydHa8d2_Og';
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(link).then(() => {
+            const oldText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '✓ Đã chép link!';
+            copyBtn.style.color = '#38bdf8';
+            setTimeout(() => {
+              copyBtn.innerHTML = oldText;
+              copyBtn.style.color = '';
+            }, 2000);
+          }).catch(() => {
+            prompt('Sao chép liên kết:', link);
+          });
+        } else {
+          prompt('Sao chép liên kết:', link);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
