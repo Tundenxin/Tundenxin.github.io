@@ -22,6 +22,13 @@
   <div class="skirk-bg-overlay" aria-hidden="true"></div>
   <div class="gold-dust" aria-hidden="true"></div>
   <header class="nav">
+    <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng">
+      <svg class="hamburger-icon" width="22" height="20" viewBox="0 0 22 20" fill="currentColor">
+        <rect x="1" y="2" width="20" height="3" rx="1.5" />
+        <rect x="1" y="8.5" width="20" height="3" rx="1.5" />
+        <rect x="1" y="15" width="20" height="3" rx="1.5" />
+      </svg>
+    </button>
     <a class="brand" href="index.html" aria-label="Tundenxin Trang chủ">
       <img src="primogem.png" alt="Nguyên Thạch" class="primogem" width="48" height="48">
       <span><strong>Tundenxin</strong><small>Genshin Mobile Free</small></span>
@@ -32,6 +39,7 @@
       <a href="index.html#tools">⚔ <span>Tool Genshin</span></a>
       <a href="tools.html">⚒ <span>Công cụ</span></a>
       <a class="active" href="guide.html">▣ <span>Hướng dẫn</span></a>
+      <a href="docs.html">📖 <span>Tài liệu</span></a>
     </nav>
 
     <div class="socials">
@@ -123,6 +131,65 @@
     </section>
   </main>
 
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true"></div>
+  <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Menu điều hướng di động" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <img src="primogem.png" alt="Nguyên Thạch" class="primogem small" width="28" height="28">
+        <div>
+          <strong>Tundenxin</strong>
+          <small>MENU ĐIỀU HƯỚNG</small>
+        </div>
+      </div>
+      <button type="button" id="closeMobileNavBtn" class="mobile-drawer-close" aria-label="Đóng menu">✕</button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-nav-group">
+        <span class="drawer-group-title">✦ DANH MỤC TRANG</span>
+        <nav class="drawer-nav-links">
+          <a class="drawer-nav-item" href="index.html">
+            <span class="drawer-item-icon">⌂</span>
+            <span class="drawer-item-text">Trang chủ</span>
+          </a>
+          <a class="drawer-nav-item" href="index.html#tools">
+            <span class="drawer-item-icon">⚔</span>
+            <span class="drawer-item-text">Tool Genshin</span>
+          </a>
+          <a class="drawer-nav-item" href="tools.html">
+            <span class="drawer-item-icon">⚒</span>
+            <span class="drawer-item-text">Công cụ</span>
+          </a>
+          <a class="drawer-nav-item active" href="guide.html">
+            <span class="drawer-item-icon">▣</span>
+            <span class="drawer-item-text">Hướng dẫn</span>
+          </a>
+          <a class="drawer-nav-item" href="docs.html">
+            <span class="drawer-item-icon">📖</span>
+            <span class="drawer-item-text">Tài liệu</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="drawer-nav-group">
+        <span class="drawer-group-title">✦ KÊNH CỘNG ĐỒNG</span>
+        <div class="drawer-social-links">
+          <a class="drawer-social-item telegram" href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener">
+            <span>➤</span> Telegram Kênh Tool ↗
+          </a>
+          <a class="drawer-social-item discord" href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener">
+            <span>◉</span> Discord Cộng đồng ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <span>✦ Tundenxin • Genshin Mobile Free</span>
+    </div>
+  </aside>
+
   <footer>
     <img src="primogem.png" alt="Nguyên Thạch" class="primogem small" width="26" height="26">
     <b>Tundenxin</b>
@@ -133,6 +200,7 @@
   </footer>
 
   <script src="snow.js" defer></script>
+  <script src="nav.js" defer></script>
   <script>
     const panel = document.getElementById('videoPanel');
     const frame = document.getElementById('videoFrame');
