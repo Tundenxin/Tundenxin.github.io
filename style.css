@@ -516,7 +516,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   min-height: 260px;
   padding: 24px;
@@ -598,30 +598,39 @@ body {
   box-shadow: 0 0 28px rgba(34, 211, 238, 0.6), 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
+.tool-card > .tool-app-icon,
+.tool-card > .letter {
+  margin-bottom: 8px;
+}
+
 .tool-copy {
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .tool-copy small {
   color: var(--skirk-cyan-bright);
   font-size: 10px;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.4px;
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  display: block;
+  margin-bottom: 2px;
+  line-height: 1.2;
 }
 
 .tool-copy h3 {
-  margin: 6px 0 8px;
+  margin: 2px 0 6px;
   font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   color: #ffffff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 16px rgba(0, 0, 0, 0.9);
+  line-height: 1.25;
 }
 
 .status-badge {
@@ -757,7 +766,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 14px;
   width: 100%;
 }
 
@@ -1257,6 +1267,8 @@ footer b {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 .feature-tags {
@@ -1728,10 +1740,12 @@ footer b {
   }
 
   .tool-copy {
-    margin-top: 6px;
+    margin-top: 0;
   }
 
   .tool-copy small {
+    display: block;
+    margin-bottom: 2px;
     font-size: 9px;
     letter-spacing: 1.2px;
   }
