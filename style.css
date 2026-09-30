@@ -633,7 +633,9 @@ body {
   box-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
 }
 
-.status-badge.maintenance {
+.status-badge.maintenance,
+.status-badge.stopped,
+.status-badge.discontinued {
   color: #fb7185;
   background: rgba(244, 63, 94, 0.16);
   border: 1px solid rgba(244, 63, 94, 0.55);
@@ -730,7 +732,9 @@ body {
 }
 
 .download.disabled.maintenance,
-.download.maintenance {
+.download.maintenance,
+.download.disabled.stopped,
+.download.stopped {
   border-color: rgba(244, 63, 94, 0.45);
   background: rgba(244, 63, 94, 0.12);
   color: #fca5a5;
@@ -1331,6 +1335,17 @@ footer b {
   border-color: rgba(45, 212, 191, 0.7);
   box-shadow: 0 0 24px rgba(45, 212, 191, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.5);
   color: #f0fdfa;
+}
+
+.letter.pc {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.4) 0%, rgba(168, 85, 247, 0.4) 100%);
+  border-color: rgba(34, 211, 238, 0.6);
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.tools.tools-pc {
+  padding-top: 20px;
 }
 
 /* Khung lời khuyên / Mẹo hỗ trợ */
@@ -2808,3 +2823,400 @@ body.nav-drawer-open {
   background: rgba(4, 7, 20, 0.5);
   flex-shrink: 0;
 }
+
+/* =========================================================
+   TOOL PC & PRICING DISPLAY (WIBUZSTORE AFFILIATE)
+   ========================================================= */
+.status-badge.vip {
+  color: #fde047;
+  background: rgba(234, 179, 8, 0.16);
+  border: 1px solid rgba(234, 179, 8, 0.55);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.25);
+}
+
+.status-badge.hot {
+  color: #fb7185;
+  background: rgba(244, 63, 94, 0.16);
+  border: 1px solid rgba(244, 63, 94, 0.55);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
+}
+
+.status-badge.lifetime {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(168, 85, 247, 0.55);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
+}
+
+.tool-pc-card {
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+.tool-pc-card:hover {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 
+    inset 0 1.5px 3px rgba(255, 255, 255, 0.4),
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(34, 211, 238, 0.4);
+}
+
+.tool-pricing-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(6, 10, 28, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.08);
+}
+
+.pricing-box-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--skirk-cyan-bright);
+}
+
+.pricing-box-head small {
+  color: #94a3b8;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.pricing-tags-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.pricing-tags-grid.single-col {
+  grid-template-columns: 1fr;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.price-item:hover {
+  background: rgba(34, 211, 238, 0.09);
+  border-color: rgba(34, 211, 238, 0.35);
+  transform: translateY(-1px);
+}
+
+.price-duration {
+  font-size: 11px;
+  color: #cbd5e1;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.price-val {
+  font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #38bdf8;
+  white-space: nowrap;
+}
+
+.price-item.highlight {
+  background: rgba(234, 179, 8, 0.09);
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+.price-item.highlight .price-val {
+  color: #facc15;
+}
+
+.btn-buy-key {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 40%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(56, 189, 248, 0.6) !important;
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.4),
+    0 8px 25px rgba(6, 182, 212, 0.45) !important;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.btn-buy-key:hover {
+  filter: brightness(1.15) !important;
+  box-shadow: 
+    inset 0 2px 3px rgba(255, 255, 255, 0.6),
+    0 12px 30px rgba(6, 182, 212, 0.65),
+    0 0 20px rgba(16, 185, 129, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-hero-pc {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(168, 85, 247, 0.25) 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(34, 211, 238, 0.5) !important;
+  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-hero-pc:hover {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.35) 0%, rgba(168, 85, 247, 0.4) 100%) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 6px 28px rgba(34, 211, 238, 0.45), inset 0 1.5px 3px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* =========================================================
+   BẢNG CHÚ THÍCH TRẠNG THÁI TOOL (TOOL STATUS LEGEND)
+   ========================================================= */
+.tool-status-guide {
+  margin-bottom: 24px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: rgba(10, 16, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.status-guide-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.status-guide-bullet {
+  color: var(--skirk-cyan-bright);
+  font-size: 16px;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+.status-guide-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.status-guide-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.2s ease;
+}
+
+.status-guide-item:hover {
+  transform: translateY(-1px);
+}
+
+.status-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* Xanh: Dùng ngon */
+.status-indicator-dot.green {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981, 0 0 16px rgba(16, 185, 129, 0.6);
+}
+
+.status-guide-item.status-green {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  color: #a7f3d0;
+}
+
+.status-guide-item.status-green strong {
+  color: #34d399;
+}
+
+/* Cam: Risky/Không an toàn */
+.status-indicator-dot.orange {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b, 0 0 16px rgba(245, 158, 11, 0.6);
+}
+
+.status-guide-item.status-orange {
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.12);
+  color: #fde68a;
+}
+
+.status-guide-item.status-orange strong {
+  color: #fbbf24;
+}
+
+/* Đỏ: Không hoạt động/Đang bảo trì */
+.status-indicator-dot.red {
+  background: #f43f5e;
+  box-shadow: 0 0 8px #f43f5e, 0 0 16px rgba(244, 63, 94, 0.6);
+}
+
+.status-guide-item.status-red {
+  border-color: rgba(244, 63, 94, 0.35);
+  background: rgba(244, 63, 94, 0.12);
+  color: #fecdd3;
+}
+
+.status-guide-item.status-red strong {
+  color: #fb7185;
+}
+
+/* Status badges with dot indicator inside cards */
+.status-badge.status-green {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-badge.status-orange {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-badge.status-red {
+  color: #fb7185;
+  background: rgba(244, 63, 94, 0.16);
+  border: 1px solid rgba(244, 63, 94, 0.5);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 640px) {
+  .tool-status-guide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+  .status-guide-list {
+    width: 100%;
+    gap: 8px;
+  }
+}
+
+/* =========================================================
+   CHÚ THÍCH RÕ VÀ TO CHO TOOL CÓ PHÍ (CẦN MUA KEY)
+   ========================================================= */
+.tool-paid-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin: 12px 0 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.22) 0%, rgba(239, 68, 68, 0.16) 100%);
+  border: 1.5px solid rgba(251, 191, 36, 0.7);
+  border-top: 1.5px solid rgba(254, 240, 138, 0.95);
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.28), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 13.5px;
+  line-height: 1.35;
+  animation: pulseNotice 3.5s infinite ease-in-out;
+}
+
+@keyframes pulseNotice {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.28), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+    border-color: rgba(251, 191, 36, 0.7);
+  }
+  50% {
+    box-shadow: 0 4px 26px rgba(245, 158, 11, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    border-color: rgba(253, 224, 71, 1);
+  }
+}
+
+.tool-paid-notice .paid-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8));
+}
+
+.tool-paid-notice strong {
+  font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+  color: #fef08a;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.btn-buy-key-mini {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 40%, #10b981 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(56, 189, 248, 0.6) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 4px 16px rgba(6, 182, 212, 0.4) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px;
+}
+
+.btn-buy-key-mini:hover {
+  filter: brightness(1.15) !important;
+  box-shadow: inset 0 1.5px 3px rgba(255, 255, 255, 0.6), 0 8px 22px rgba(6, 182, 212, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-free {
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.35) 0%, rgba(34, 211, 238, 0.25) 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(129, 140, 248, 0.6) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 4px 16px rgba(88, 101, 242, 0.3) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px;
+}
+
+.btn-free:hover {
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.55) 0%, rgba(34, 211, 238, 0.4) 100%) !important;
+  border-color: #818cf8 !important;
+  box-shadow: inset 0 1.5px 3px rgba(255, 255, 255, 0.5), 0 8px 24px rgba(88, 101, 242, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
+
+
+
+
