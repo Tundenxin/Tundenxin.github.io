@@ -445,6 +445,17 @@ body {
   letter-spacing: 0.3px;
 }
 
+.hero-actions-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.hero-actions-group .cta {
+  margin-top: 0;
+}
+
 .cta:hover, .download:not(.disabled):hover {
   transform: translateY(-2.5px);
   filter: brightness(1.1);
@@ -801,12 +812,21 @@ body {
 
 @media (max-width: 480px) {
   .tool-actions {
-    flex-direction: column;
-    gap: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
   }
   .tool-actions .download,
   .tool-actions .btn-guide {
-    width: 100%;
+    flex: 1;
+    width: auto;
+    min-height: 38px;
+    height: 38px;
+    padding: 6px 8px;
+    font-size: 11.5px;
+    border-radius: 10px;
   }
 }
 
@@ -1580,172 +1600,273 @@ footer b {
 
   /* Hero Banner trên điện thoại */
   .hero { 
-    padding: 35px 14px; 
+    padding: 24px 12px 16px; 
     min-height: auto;
   }
 
   .hero-content {
-    padding: 20px 16px;
-    border-radius: 20px;
-    background: rgba(7, 12, 34, 0.18);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    padding: 16px 14px;
+    border-radius: 16px;
+    background: rgba(7, 12, 34, 0.28);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .stars { display: none; }
 
+  .hero-actions-group {
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    margin-top: 14px !important;
+  }
+
+  .hero-actions-group .cta {
+    flex: 1;
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: 11.5px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
   .section-head {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 4px;
+    margin-bottom: 14px;
   }
 
-  /* Lưới công cụ 1 cột toàn màn hình */
+  .section-head h2 {
+    font-size: 20px;
+    margin: 2px 0 0;
+  }
+
+  .kicker {
+    font-size: 9.5px;
+    letter-spacing: 1px;
+  }
+
+  .count {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  /* Lưới công cụ 1 cột toàn màn hình siêu gọn */
   .tools {
-    padding: 40px 14px;
+    padding: 20px 12px;
   }
 
   .tool-grid, .guide-grid, .utilities-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .tool-card {
     min-height: auto;
-    padding: 20px 18px;
-    border-radius: 18px;
-    background: linear-gradient(145deg, rgba(12, 18, 48, 0.18) 0%, rgba(6, 10, 30, 0.1) 100%);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    padding: 13px 12px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(12, 18, 48, 0.45) 0%, rgba(6, 10, 30, 0.35) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .cta, .download { 
     width: 100%; 
-    min-height: 48px;
+    min-height: 38px;
+    font-size: 12px;
   }
 
   .guide-card .letter,
-  .guide-card .tool-app-icon {
-    width: 52px;
-    height: 52px;
-    font-size: 26px;
-    border-radius: 14px;
+  .guide-card .tool-app-icon,
+  .tool-app-icon,
+  .letter {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
   }
 
-  .tool-app-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
+  .letter {
+    font-size: 20px;
+  }
+
+  .utility-card-top {
+    margin-bottom: 6px !important;
+  }
+
+  .utility-card-top .status-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .status-indicator-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .tool-copy {
+    margin-top: 6px;
+  }
+
+  .tool-copy small {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .tool-copy h3 {
+    font-size: 16.5px;
+    margin: 3px 0 5px;
+    gap: 6px;
+    line-height: 1.3;
+  }
+
+  .tool-copy h3 .status-badge {
+    font-size: 9.5px;
+    padding: 2px 6px;
+  }
+
+  .tool-copy p {
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #e2e8f0;
+  }
+
+  .tool-note-box {
+    margin-top: 6px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    gap: 4px;
+  }
+
+  .tool-note-item p {
+    font-size: 11px;
+    line-height: 1.35;
   }
 
   /* Trang hướng dẫn trên mobile */
   .guide-wrap {
-    padding: 35px 14px;
+    padding: 24px 12px;
   }
 
   .guide-card {
-    grid-template-columns: 52px 1fr 20px;
-    padding: 16px;
-    border-radius: 18px;
-    background: linear-gradient(145deg, rgba(12, 18, 48, 0.18) 0%, rgba(6, 10, 30, 0.1) 100%);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    grid-template-columns: 44px 1fr 18px;
+    padding: 12px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(12, 18, 48, 0.4) 0%, rgba(6, 10, 30, 0.3) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .video-panel { 
-    padding: 16px; 
-    margin-top: 25px;
-    border-radius: 20px;
-    background: rgba(8, 12, 32, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    padding: 14px; 
+    margin-top: 18px;
+    border-radius: 16px;
+    background: rgba(8, 12, 32, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
   /* Banner & Tips Panel trên mobile */
   .utility-tips-panel {
-    padding: 18px 16px;
-    gap: 14px;
+    padding: 14px 12px;
+    gap: 10px;
+    border-radius: 16px;
   }
 
   .tip-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 24px;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
   }
 
   .tip-content h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .tip-action-btn, .banner-btn {
     width: 100%;
     text-align: center;
     justify-content: center;
+    min-height: 38px;
+    font-size: 12px;
   }
 
   .tools-cta-banner {
-    padding: 18px 16px;
-    margin-top: 24px;
+    padding: 14px 12px;
+    margin-top: 18px;
+    border-radius: 16px;
   }
 }
 
 /* 4. ĐIỆN THOẠI MÀN HÌNH NHỎ (<= 480px) */
 @media (max-width: 480px) {
-  .brand strong { font-size: 16px; }
-  .brand small { font-size: 8.5px; }
-  .primogem { width: 36px; height: 36px; }
+  .brand strong { font-size: 15px; }
+  .brand small { font-size: 8px; }
+  .primogem { width: 34px; height: 34px; }
 
   .social {
-    padding: 4px 8px;
-    font-size: 10px;
+    padding: 4px 7px;
+    font-size: 9.5px;
   }
 
   .main-nav a {
-    font-size: 11.5px;
-    padding: 6px 6px;
+    font-size: 11px;
+    padding: 5px 5px;
   }
 
   .hero h1 { 
-    font-size: 32px; 
-    margin: 10px 0 16px;
+    font-size: 22px; 
+    line-height: 1.25;
+    margin: 6px 0 10px;
   }
 
   .notice {
-    padding: 12px 14px;
-    gap: 10px;
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
   }
 
   .notice > b {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    font-size: 13px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    font-size: 11.5px;
   }
 
-  .notice strong { font-size: 13px; }
-  .notice p { font-size: 12px; }
+  .notice strong { font-size: 11.5px; }
+  .notice p { font-size: 11px; line-height: 1.38; }
 
   .tool-copy h3 {
-    font-size: 20px;
+    font-size: 16px;
+    margin: 3px 0 5px;
+  }
+
+  .tool-card {
+    padding: 12px 10px;
+    border-radius: 14px;
   }
 
   .guide-title h1 {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   footer {
-    padding: 22px 14px;
-    font-size: 11.5px;
-    gap: 8px;
+    padding: 18px 12px;
+    font-size: 11px;
+    gap: 6px;
   }
 }
 
 /* 5. ĐIỆN THOẠI MÀN HÌNH CỰC NHỎ HOẶC MÀN GẬP (<= 360px) */
 @media (max-width: 360px) {
-  .nav { padding: 8px 10px; }
-  .hero h1 { font-size: 28px; }
+  .nav { padding: 6px 8px; }
+  .hero h1 { font-size: 19px; }
+  .hero-actions-group { flex-direction: column !important; }
   .main-nav a span { display: inline-block; }
-  .guide-card strong { font-size: 18px; }
+  .guide-card strong { font-size: 15px; }
 }
 
 /* =========================================================
@@ -3216,7 +3337,315 @@ body.nav-drawer-open {
   transform: translateY(-2px) !important;
 }
 
+/* =========================================================
+   TỐI ƯU HÓA GIAO DIỆN SIÊU GỌN GÀNG TRÊN MOBILE (<= 768px & <= 480px)
+   - Tối ưu chiều cao thẻ Card, bo viền, padding, font size
+   - Khắc phục lỗi cắt chữ bảng giá (Alpha 30 Ngày 400.0...): xếp theo cột (Thời hạn trên, Giá dưới)
+   - Cụm nút hành động (Mua Ngay, Tải Ngay, Hướng Dẫn) nằm ngang cân đối, cao 38px
+   - Thẻ Chú thích cần mua key gọn nhẹ, không chiếm diện tích
+   - Tối ưu trang Tài liệu (docs.html) & Hướng dẫn (guide.html)
+   ========================================================= */
 
+@media (max-width: 768px) {
+  /* Chú thích mua key siêu gọn */
+  .tool-paid-notice {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 10px;
+    margin: 7px 0 8px;
+    border-radius: 9px;
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+  .tool-paid-notice .paid-icon {
+    font-size: 15px;
+  }
+  .tool-paid-notice strong {
+    font-size: 12px;
+  }
 
+  /* Khung bảng giá siêu gọn gàng */
+  .tool-pricing-box {
+    margin-top: 7px;
+    padding: 7px 9px;
+    border-radius: 11px;
+  }
+  .pricing-box-head {
+    margin-bottom: 5px;
+    font-size: 9.5px;
+    letter-spacing: 0.5px;
+  }
+  .pricing-box-head small {
+    font-size: 9px;
+  }
+  .pricing-tags-grid {
+    gap: 5px;
+  }
 
+  /* Xếp chồng Thời hạn và Giá để KHÔNG BAO GIỜ bị tràn hoặc mất số */
+  .price-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    padding: 5px 7px;
+    border-radius: 8px;
+    min-height: 40px;
+  }
+  .price-duration {
+    font-size: 10px;
+    color: #cbd5e1;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .price-val {
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  /* Ô lẻ 1 cột (như Bản Free của Lotus) hoặc ô span 2 cột hiển thị ngang 2 bên */
+  .pricing-tags-grid.single-col .price-item,
+  .price-item[style*="span 2"],
+  .price-item.span-2 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  /* Feature Tags gọn gàng */
+  .feature-tags {
+    margin-top: 7px;
+    gap: 4px;
+  }
+  .feature-tags .tag {
+    font-size: 9.5px;
+    padding: 2.5px 7px;
+    border-radius: 6px;
+  }
+
+  /* Cụm nút hành động gọn đẹp, cân bằng */
+  .tool-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .tool-actions .download,
+  .tool-actions .btn-guide,
+  .tool-actions .btn-buy-key,
+  .tool-actions .btn-free,
+  .tool-actions .btn-buy-key-mini {
+    flex: 1;
+    width: auto !important;
+    min-height: 38px !important;
+    height: 38px !important;
+    padding: 6px 8px !important;
+    font-size: 11.5px !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.2px;
+  }
+
+  /* Bảng chú thích trạng thái tool gọn gàng */
+  .tool-status-guide {
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    gap: 6px;
+  }
+  .guide-title {
+    font-size: 10.5px;
+    gap: 5px;
+  }
+  .status-guide-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+  }
+  .status-guide-list .status-badge {
+    font-size: 9.5px;
+    padding: 2.5px 7px;
+    border-radius: 6px;
+  }
+
+  /* Trang Tài liệu (docs.html) tối ưu gọn gàng */
+  .files-wrap {
+    padding: 18px 12px;
+    min-height: calc(100vh - 120px);
+  }
+  .files-title {
+    padding: 14px 12px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  .files-title h1 {
+    font-size: 20px;
+    margin: 4px 0;
+  }
+  .files-title p {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  .file-card {
+    padding: 12px 12px;
+    border-radius: 16px;
+    gap: 10px;
+  }
+  .file-type-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    border-radius: 12px;
+  }
+  .file-name {
+    font-size: 13.5px;
+    margin: 3px 0 5px;
+  }
+  .file-desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  .file-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .file-download-btn,
+  .file-copy-link-btn {
+    flex: 1;
+    min-height: 38px;
+    height: 38px;
+    padding: 6px 8px;
+    font-size: 11.5px;
+    border-radius: 10px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Tinh chỉnh cho điện thoại màn hình nhỏ */
+  .tool-card {
+    padding: 12px 10px;
+    border-radius: 14px;
+  }
+  .tool-app-icon,
+  .letter {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .letter {
+    font-size: 19px;
+  }
+  .tool-copy h3 {
+    font-size: 15.5px;
+    margin: 2px 0 4px;
+  }
+  .tool-copy p {
+    font-size: 11px;
+    line-height: 1.38;
+  }
+  .tool-paid-notice {
+    padding: 5px 8px;
+    margin: 6px 0 7px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+  .tool-paid-notice .paid-icon {
+    font-size: 14px;
+  }
+  .tool-paid-notice strong {
+    font-size: 11.5px;
+  }
+  .tool-pricing-box {
+    margin-top: 6px;
+    padding: 6px 8px;
+    border-radius: 9px;
+  }
+  .price-item {
+    padding: 4px 6px;
+    min-height: 37px;
+    border-radius: 6px;
+  }
+  .price-duration {
+    font-size: 9.5px;
+  }
+  .price-val {
+    font-size: 12px;
+  }
+  .feature-tags {
+    margin-top: 6px;
+    gap: 3px;
+  }
+  .feature-tags .tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  .tool-actions {
+    margin-top: 8px;
+    gap: 5px;
+  }
+  .tool-actions .download,
+  .tool-actions .btn-guide,
+  .tool-actions .btn-buy-key,
+  .tool-actions .btn-free,
+  .tool-actions .btn-buy-key-mini {
+    font-size: 11px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 5px 6px !important;
+    border-radius: 9px !important;
+  }
+  .file-card {
+    padding: 11px 10px;
+  }
+  .file-type-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+  .file-actions {
+    gap: 5px;
+  }
+  .file-download-btn,
+  .file-copy-link-btn {
+    height: 36px;
+    min-height: 36px;
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .price-duration { font-size: 9px; }
+  .price-val { font-size: 11px; }
+  .tool-actions .download,
+  .tool-actions .btn-guide,
+  .tool-actions .btn-buy-key,
+  .tool-actions .btn-free,
+  .tool-actions .btn-buy-key-mini {
+    font-size: 10px !important;
+    padding: 4px 4px !important;
+  }
+  .file-download-btn,
+  .file-copy-link-btn {
+    font-size: 10px;
+    padding: 4px 4px;
+  }
+}
