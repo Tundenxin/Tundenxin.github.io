@@ -1598,38 +1598,59 @@ footer b {
     display: none !important;
   }
 
-  /* Hero Banner trên điện thoại */
+  /* Hero Banner trên điện thoại - Cân bằng hoàn hảo 2 bên */
   .hero { 
-    padding: 24px 12px 16px; 
+    padding: 20px 14px 16px; 
     min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-content {
-    padding: 16px 14px;
-    border-radius: 16px;
-    background: rgba(7, 12, 34, 0.28);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 18px 16px;
+    border-radius: 20px;
+    background: rgba(7, 12, 34, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
   }
 
   .stars { display: none; }
 
+  .notice {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hai nút Hero xếp dọc toàn chiều ngang 100%, cân đối tuyệt đối */
   .hero-actions-group {
     display: flex !important;
-    gap: 8px !important;
-    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 9px !important;
     margin-top: 14px !important;
+    box-sizing: border-box !important;
   }
 
   .hero-actions-group .cta {
-    flex: 1;
-    min-height: 38px;
-    padding: 8px 10px;
-    font-size: 11.5px;
-    border-radius: 10px;
-    text-align: center;
-    justify-content: center;
-    white-space: nowrap;
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
   }
 
   .section-head {
@@ -3427,6 +3448,47 @@ body.nav-drawer-open {
     border-radius: 6px;
   }
 
+  /* Hero Banner - Cân bằng hoàn hảo 2 bên */
+  .hero { 
+    padding: 20px 14px 16px; 
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 18px 16px;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .hero-actions-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 9px !important;
+    margin-top: 14px !important;
+    box-sizing: border-box !important;
+  }
+  .hero-actions-group .cta {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+  }
+
   /* Cụm nút hành động gọn đẹp, cân bằng */
   .tool-actions {
     display: flex;
@@ -3435,13 +3497,15 @@ body.nav-drawer-open {
     gap: 6px;
     margin-top: 10px;
     width: 100%;
+    box-sizing: border-box;
   }
   .tool-actions .download,
   .tool-actions .btn-guide,
   .tool-actions .btn-buy-key,
   .tool-actions .btn-free,
   .tool-actions .btn-buy-key-mini {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
     width: auto !important;
     min-height: 38px !important;
     height: 38px !important;
@@ -3454,6 +3518,7 @@ body.nav-drawer-open {
     text-align: center !important;
     white-space: nowrap !important;
     letter-spacing: 0.2px;
+    box-sizing: border-box !important;
   }
 
   /* Bảng chú thích trạng thái tool gọn gàng */
@@ -3599,17 +3664,22 @@ body.nav-drawer-open {
   .tool-actions {
     margin-top: 8px;
     gap: 5px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .tool-actions .download,
   .tool-actions .btn-guide,
   .tool-actions .btn-buy-key,
   .tool-actions .btn-free,
   .tool-actions .btn-buy-key-mini {
+    flex: 1 1 0;
+    min-width: 0;
     font-size: 11px !important;
     height: 36px !important;
     min-height: 36px !important;
     padding: 5px 6px !important;
     border-radius: 9px !important;
+    box-sizing: border-box !important;
   }
   .file-card {
     padding: 11px 10px;
