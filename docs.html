@@ -62,6 +62,7 @@
 
     <!-- Danh sách tệp -->
     <div class="file-grid" id="fileGrid">
+      <!-- 1. Files TP Shika PC -->
       <article class="file-card" data-category="cfg">
         <div class="file-card-top">
           <div class="file-type-icon cfg" aria-hidden="true">🗺️</div>
@@ -71,16 +72,39 @@
               <span class="file-date">✦ Vision 1.0 - 7.0</span>
             </div>
             <h3 class="file-name">Files TP Shika PC — Custom-tp Shika all Map vision 1.0-7.0</h3>
-            <p class="file-desc">Có all map chỉ nhặt rương đánh quái không giải đố + la hoàn khoảng 75-80 roll.<br><strong style="color: var(--skirk-cyan-bright);">(Đây là Files TP Shika được Tundenxin Custom)</strong></p>
+            <p class="file-desc">Có all map chỉ nhặt rương đánh quái không giải đố + la hoàn khoảng 75-80 roll.<br><strong style="color: #ff4d4f; text-shadow: 0 0 10px rgba(255, 77, 79, 0.35);">(Đây là Files TP Shika được Tundenxin Custom)</strong><br><span style="color: #fde047; font-weight: 600; text-shadow: 0 0 10px rgba(250, 204, 21, 0.45); display: inline-block; margin-top: 3px;">(Files được lấy từ Gachatool và được tổng hợp và làm lại)</span></p>
           </div>
         </div>
         <div class="file-actions">
-          <a class="file-download-btn" href="https://mega.nz/file/OrgCTQpI#fwt44rV-9Cwq3nSQzxyscXtiCUXJESMAgmb3xxL8MM8" target="_blank" rel="noopener">
+          <a class="file-download-btn" href="https://mega.nz/file/OyIhxDaa#fmGdrM2K48qIpw1-ayGRuUh3HzITLWwcxtWRGlOY0BI" target="_blank" rel="noopener">
             <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             <span>TẢI XUỐNG NGAY</span>
             <span class="dl-arrow">→</span>
           </a>
           <button type="button" class="file-copy-link-btn" id="copyShikaBtn" title="Sao chép link tải">📋 Sao chép link</button>
+        </div>
+      </article>
+
+      <!-- 2. Files TP Unicore - Lotus - Shibal -->
+      <article class="file-card" data-category="cfg">
+        <div class="file-card-top">
+          <div class="file-type-icon cfg" aria-hidden="true">🗺️</div>
+          <div class="file-info">
+            <div class="file-meta-tags">
+              <span class="file-badge cfg">TP UNICORE • LOTUS • SHIBAL</span>
+              <span class="file-date">✦ Tundenxin Custom</span>
+            </div>
+            <h3 class="file-name">Files TP Unicore - Lotus - Shibal (Tundenxin)</h3>
+            <p class="file-desc">Tổng hợp Files cấu hình Teleport (TP) all map dành cho các Tool PC Unicore, Lotus và Shibal.<br><strong style="color: #ff4d4f; text-shadow: 0 0 10px rgba(255, 77, 79, 0.35);">(Lưu ý: TP Unicore - Lotus - Shibal được làm giống như Files TP của Shika 100%, chỉ thay đổi Json để phù hợp với Tool Unicore - Lotus - Shibal)</strong><br><span style="color: #fde047; font-weight: 600; text-shadow: 0 0 10px rgba(250, 204, 21, 0.45); display: inline-block; margin-top: 3px;">(Files được lấy từ Gachatool và được tổng hợp và làm lại)</span></p>
+          </div>
+        </div>
+        <div class="file-actions">
+          <a class="file-download-btn" href="https://mega.nz/file/36AEEbpC#fOe7rcsC7C8l338Haj-isYo_s0KG1WNTZIfvunbG4dk" target="_blank" rel="noopener">
+            <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>TẢI XUỐNG NGAY</span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <button type="button" class="file-copy-link-btn" id="copyUnicoreBtn" title="Sao chép link tải">📋 Sao chép link</button>
         </div>
       </article>
     </div>
@@ -167,18 +191,18 @@
   <script src="snow.js" defer></script>
   <script src="nav.js" defer></script>
   <script>
-    const copyBtn = document.getElementById('copyShikaBtn');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        const link = 'https://mega.nz/file/OrgCTQpI#fwt44rV-9Cwq3nSQzxyscXtiCUXJESMAgmb3xxL8MM8';
+    function setupCopyBtn(btnId, link) {
+      const btn = document.getElementById(btnId);
+      if (!btn) return;
+      btn.addEventListener('click', () => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(link).then(() => {
-            const oldText = copyBtn.innerHTML;
-            copyBtn.innerHTML = '✓ Đã chép link!';
-            copyBtn.style.color = '#38bdf8';
+            const oldText = btn.innerHTML;
+            btn.innerHTML = '✓ Đã chép link!';
+            btn.style.color = '#38bdf8';
             setTimeout(() => {
-              copyBtn.innerHTML = oldText;
-              copyBtn.style.color = '';
+              btn.innerHTML = oldText;
+              btn.style.color = '';
             }, 2000);
           }).catch(() => {
             prompt('Sao chép liên kết:', link);
@@ -188,6 +212,9 @@
         }
       });
     }
+
+    setupCopyBtn('copyShikaBtn', 'https://mega.nz/file/OyIhxDaa#fmGdrM2K48qIpw1-ayGRuUh3HzITLWwcxtWRGlOY0BI');
+    setupCopyBtn('copyUnicoreBtn', 'https://mega.nz/file/36AEEbpC#fOe7rcsC7C8l338Haj-isYo_s0KG1WNTZIfvunbG4dk');
   </script>
 </body>
 </html>
