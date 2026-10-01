@@ -164,23 +164,25 @@ body {
   display: block;
   font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
   font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
   line-height: 1.2;
-  background: linear-gradient(120deg, #ffffff 15%, #e0e7ff 50%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+  color: #ffffff;
+  -webkit-text-stroke: 0.35px rgba(255, 255, 255, 0.95);
+  text-shadow: 
+    0 0 14px rgba(56, 189, 248, 0.85),
+    0 0 28px rgba(168, 85, 247, 0.65),
+    0 2px 10px rgba(0, 0, 0, 0.95);
 }
 
 .brand small {
   display: block;
-  color: var(--skirk-cyan-bright);
+  color: #38bdf8;
   font-size: 11px;
   letter-spacing: 1.2px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* Biểu tượng Nguyên Thạch Genshin Impact */
@@ -430,54 +432,101 @@ body {
   font-weight: 700;
 }
 
-/* Nút bấm CTA & Tải Về — Viên Pha Lê Thủy Tinh (Liquid Gem) */
-.cta, .download {
+/* Nút bấm CTA Khám Phá — Cặp đôi Hero Buttons (Tool Mobile & Tool PC) */
+.cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-top: 1.5px solid #ffffff;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(192, 132, 252, 0.9) 35%, rgba(34, 211, 238, 0.9) 80%, rgba(2, 132, 199, 0.95) 100%);
-  color: #050818;
-  text-decoration: none;
-  font-weight: 800;
+  height: 50px !important;
+  min-height: 50px !important;
+  padding: 0 26px !important;
+  box-sizing: border-box !important;
   border-radius: 14px;
-  box-shadow: 
-    inset 0 1.5px 2px #ffffff,
-    0 8px 25px rgba(34, 211, 238, 0.4),
-    0 0 18px rgba(168, 85, 247, 0.3);
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px;
+  font-family: inherit;
+  text-decoration: none;
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  min-height: 48px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.cta {
-  margin-top: 24px;
-  padding: 12px 28px;
-  font-size: 15px;
-  letter-spacing: 0.3px;
+.cta span {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+.cta:hover span {
+  transform: translateX(4px);
+}
+
+/* Nút 1: Xem Tool Mobile — Xanh Lôi Điện / Cyan Skirk Siêu Nổi Bật & Đậm Nét */
+.btn-hero-mobile,
+.cta:not(.btn-hero-pc) {
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 42%, #7c3aed 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.8) !important;
+  border-top: 1.5px solid #ffffff !important;
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.55),
+    0 8px 26px rgba(14, 165, 233, 0.5),
+    0 0 20px rgba(124, 58, 237, 0.35) !important;
+}
+
+.btn-hero-mobile:hover,
+.cta:not(.btn-hero-pc):hover {
+  transform: translateY(-2.5px);
+  filter: brightness(1.12);
+  background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 42%, #8b5cf6 100%) !important;
+  box-shadow: 
+    inset 0 2px 3px #ffffff,
+    0 12px 34px rgba(14, 165, 233, 0.7),
+    0 0 26px rgba(139, 92, 246, 0.55) !important;
+  border-color: #a5f3fc !important;
+}
+
+/* Nút 2: Xem Tool PC — Thủy Tinh Huyền Ảo Tím / Cyan */
+.btn-hero-pc {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3) 0%, rgba(14, 165, 233, 0.22) 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(168, 85, 247, 0.65) !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.35),
+    0 6px 22px rgba(124, 58, 237, 0.35),
+    0 0 16px rgba(14, 165, 233, 0.25) !important;
+}
+
+.btn-hero-pc:hover {
+  transform: translateY(-2.5px);
+  filter: brightness(1.12);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.5) 0%, rgba(14, 165, 233, 0.35) 100%) !important;
+  border-color: #c084fc !important;
+  border-top-color: #ffffff !important;
+  box-shadow: 
+    inset 0 2px 3px rgba(255, 255, 255, 0.55),
+    0 10px 30px rgba(168, 85, 247, 0.55),
+    0 0 22px rgba(56, 189, 248, 0.4) !important;
 }
 
 .hero-actions-group {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
   flex-wrap: wrap;
   margin-top: 24px;
 }
 
 .hero-actions-group .cta {
   margin-top: 0;
-}
-
-.cta:hover, .download:not(.disabled):hover {
-  transform: translateY(-2.5px);
-  filter: brightness(1.1);
-  box-shadow: 
-    inset 0 2px 3px #ffffff,
-    0 12px 35px rgba(34, 211, 238, 0.6),
-    0 0 25px rgba(168, 85, 247, 0.5);
 }
 
 /* =========================================================
@@ -665,10 +714,10 @@ body {
 }
 
 .status-badge.updated {
-  color: #67e8f9;
-  background: rgba(34, 211, 238, 0.16);
-  border: 1px solid rgba(34, 211, 238, 0.5);
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.16);
+  border: 1px solid rgba(74, 222, 128, 0.55);
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.3);
 }
 
 .status-badge.maintenance,
@@ -748,21 +797,86 @@ body {
   color: #10b981;
 }
 
-.download {
+/* Nút Tải Về — Xanh Lá Emerald Siêu Nổi Bật & Dễ Nhận Biết (Unmistakable High-Contrast Download CTA) */
+.download:not(.btn-buy-key):not(.btn-buy-key-mini) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
-  padding: 12px;
-  margin-top: 22px;
+  padding: 12px 16px;
+  margin-top: 0;
   border-radius: 14px;
-  font-size: 14px;
-  letter-spacing: 0.4px;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   font-family: inherit;
+  text-decoration: none;
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(110, 231, 183, 0.8) !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
+    0 4px 18px rgba(16, 185, 129, 0.5),
+    0 0 20px rgba(16, 185, 129, 0.3) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.download:not(.btn-buy-key):not(.btn-buy-key-mini):not(.disabled):hover {
+  transform: translateY(-2.5px);
+  filter: brightness(1.12);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%) !important;
+  box-shadow: 
+    inset 0 2px 3px #ffffff,
+    0 10px 28px rgba(16, 185, 129, 0.75),
+    0 0 25px rgba(52, 211, 153, 0.55) !important;
+  border-color: #a7f3d0 !important;
+}
+
+.download:not(.btn-buy-key):not(.btn-buy-key-mini):not(.disabled):active {
+  transform: scale(0.96);
+  filter: brightness(0.95);
+}
+
+.download svg.dl-icon,
+.file-download-btn svg.dl-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #ffffff;
+  stroke-width: 2.4;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+  transition: transform 0.25s ease;
+}
+
+.download:hover svg.dl-icon,
+.file-download-btn:hover svg.dl-icon {
+  transform: translateY(2px);
+}
+
+.download .dl-arrow,
+.file-download-btn .dl-arrow {
+  display: inline-block;
+  font-weight: 800;
+  margin-left: 2px;
+  transition: transform 0.25s ease;
+}
+
+.download:hover .dl-arrow,
+.file-download-btn:hover .dl-arrow {
+  transform: translateX(3px);
 }
 
 .disabled {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(15, 23, 42, 0.5);
-  color: #64748b;
-  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(15, 23, 42, 0.5) !important;
+  color: #64748b !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
   cursor: not-allowed;
   filter: none !important;
   transform: none !important;
@@ -773,29 +887,60 @@ body {
 .download.maintenance,
 .download.disabled.stopped,
 .download.stopped {
-  border-color: rgba(244, 63, 94, 0.45);
-  background: rgba(244, 63, 94, 0.12);
-  color: #fca5a5;
-  box-shadow: 0 0 16px rgba(244, 63, 94, 0.2);
+  border-color: rgba(244, 63, 94, 0.45) !important;
+  background: rgba(244, 63, 94, 0.12) !important;
+  color: #fca5a5 !important;
+  box-shadow: 0 0 16px rgba(244, 63, 94, 0.2) !important;
+  text-shadow: none !important;
 }
 
-/* Cụm nút hành động bên dưới thẻ Tool (Tải Ngay & Hướng Dẫn) */
+/* Cụm nút hành động bên dưới thẻ Tool (Tải Ngay & Hướng Dẫn) - Cân Bằng Hoàn Hảo */
 .tool-actions {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 10px;
   margin-top: auto;
   padding-top: 14px;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.tool-actions > * {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.tool-actions .download,
+.tool-actions .btn-guide,
+.tool-actions .btn-buy-key,
+.tool-actions .btn-free,
+.tool-actions .btn-buy-key-mini {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-sizing: border-box !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  border-radius: 14px !important;
 }
 
 .tool-actions .download {
-  margin-top: 0;
   flex: 1.25;
   width: auto;
   white-space: nowrap;
   font-size: 13px;
-  padding: 12px 10px;
+  padding: 0 12px !important;
+}
+
+.tool-card > .download,
+.utility-card > .download {
+  margin-top: auto !important;
 }
 
 .btn-guide {
@@ -803,7 +948,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 12px 12px;
+  padding: 0 12px;
+  height: 48px;
   min-height: 48px;
   border-radius: 14px;
   font-size: 13px;
@@ -824,6 +970,8 @@ body {
   cursor: pointer;
   white-space: nowrap;
   flex: 1;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .btn-guide:hover {
@@ -850,11 +998,14 @@ body {
   .tool-actions .btn-guide {
     flex: 1;
     width: auto;
-    min-height: 38px;
-    height: 38px;
-    padding: 6px 8px;
-    font-size: 11.5px;
-    border-radius: 10px;
+    min-height: 38px !important;
+    height: 38px !important;
+    padding: 6px 8px !important;
+    font-size: 11.5px !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -1110,15 +1261,16 @@ body {
 }
 
 .no-video-actions .download {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  border-color: rgba(251, 191, 36, 0.7);
-  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%) !important;
+  border: 1.5px solid rgba(110, 231, 183, 0.8) !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.5), 0 4px 18px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3) !important;
 }
 
 .no-video-actions .download:hover {
-  background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
-  border-color: #fef3c7;
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%) !important;
+  border-color: #a7f3d0 !important;
+  box-shadow: inset 0 2px 3px #ffffff, 0 10px 28px rgba(16, 185, 129, 0.75), 0 0 25px rgba(52, 211, 153, 0.55) !important;
 }
 
 /* =========================================================
@@ -1607,8 +1759,8 @@ footer b {
     flex: 1; 
     gap: 10px;
   }
-  .brand strong { font-size: 17px; }
-  .brand small { font-size: 9px; }
+  .brand strong { font-size: 18px; font-weight: 800; }
+  .brand small { font-size: 9.5px; font-weight: 700; }
   .primogem { width: 38px; height: 38px; }
 
   .socials { 
@@ -1673,10 +1825,11 @@ footer b {
 
   .hero-actions-group .cta {
     width: 100% !important;
-    min-height: 42px !important;
-    padding: 10px 16px !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 0 16px !important;
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
     border-radius: 12px !important;
     display: flex !important;
     align-items: center !important;
@@ -1860,8 +2013,8 @@ footer b {
 
 /* 4. ĐIỆN THOẠI MÀN HÌNH NHỎ (<= 480px) */
 @media (max-width: 480px) {
-  .brand strong { font-size: 15px; }
-  .brand small { font-size: 8px; }
+  .brand strong { font-size: 16.5px; font-weight: 800; }
+  .brand small { font-size: 9px; font-weight: 700; }
   .primogem { width: 34px; height: 34px; }
 
   .social {
@@ -2643,25 +2796,27 @@ footer b {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 16px;
+  padding: 11px 16px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.25) 0%, rgba(168, 85, 247, 0.2) 100%);
-  border: 1px solid rgba(34, 211, 238, 0.45);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.6);
-  color: #fff;
+  background: linear-gradient(135deg, #10b981 0%, #059669 55%, #047857 100%);
+  border: 1px solid rgba(110, 231, 183, 0.7);
+  border-top: 1.5px solid #ffffff;
+  color: #fff !important;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.45), 0 4px 18px rgba(16, 185, 129, 0.45);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
 }
 
 .file-download-btn:hover {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.5) 0%, rgba(168, 85, 247, 0.4) 100%);
-  border-color: #38bdf8;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  transform: translateY(-1.5px);
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 55%, #059669 100%);
+  border-color: #6ee7b7;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.65), inset 0 1.5px 3px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
 .file-copy-link-btn {
@@ -2897,18 +3052,22 @@ body.nav-drawer-open {
 .mobile-drawer-brand strong {
   display: block;
   font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
   line-height: 1.2;
+  letter-spacing: 0.5px;
+  -webkit-text-stroke: 0.3px rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.8), 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .mobile-drawer-brand small {
   display: block;
-  font-size: 9px;
-  color: var(--skirk-cyan-bright);
+  font-size: 9.5px;
+  color: #38bdf8;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
 }
 
 .mobile-drawer-close {
@@ -3198,18 +3357,6 @@ body.nav-drawer-open {
   transform: translateY(-2px) !important;
 }
 
-.btn-hero-pc {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(168, 85, 247, 0.25) 100%) !important;
-  color: #ffffff !important;
-  border-color: rgba(34, 211, 238, 0.5) !important;
-  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
-}
-
-.btn-hero-pc:hover {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.35) 0%, rgba(168, 85, 247, 0.4) 100%) !important;
-  border-color: #38bdf8 !important;
-  box-shadow: 0 6px 28px rgba(34, 211, 238, 0.45), inset 0 1.5px 3px rgba(255, 255, 255, 0.5) !important;
-}
 
 /* =========================================================
    BẢNG CHÚ THÍCH TRẠNG THÁI TOOL (TOOL STATUS LEGEND)
@@ -3571,10 +3718,11 @@ body.nav-drawer-open {
   }
   .hero-actions-group .cta {
     width: 100% !important;
-    min-height: 42px !important;
-    padding: 10px 16px !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 0 16px !important;
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
     border-radius: 12px !important;
     display: flex !important;
     align-items: center !important;
@@ -3614,6 +3762,9 @@ body.nav-drawer-open {
     white-space: nowrap !important;
     letter-spacing: 0.2px;
     box-sizing: border-box !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   /* Bảng chú thích trạng thái tool gọn gàng */
@@ -3776,6 +3927,9 @@ body.nav-drawer-open {
     padding: 5px 6px !important;
     border-radius: 9px !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   .file-card {
     padding: 11px 10px;
@@ -3808,6 +3962,9 @@ body.nav-drawer-open {
   .tool-actions .btn-buy-key-mini {
     font-size: 10px !important;
     padding: 4px 4px !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   .file-download-btn,
   .file-copy-link-btn {
