@@ -45,14 +45,28 @@
   --line-hover: rgba(34, 211, 238, 0.65);
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   background-color: var(--bg-deep);
+  touch-action: manipulation;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation;
+}
+
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible {
+  outline: none !important;
 }
 
 body {
@@ -67,6 +81,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 /* =========================================================
@@ -488,6 +503,7 @@ body {
   margin: 6px 0 0;
   color: #ffffff;
   letter-spacing: -0.3px;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95);
 }
 
 .count {
@@ -544,20 +560,7 @@ body {
     0 0 30px rgba(34, 211, 238, 0.35);
 }
 
-.tool-card:after {
-  content: '✦';
-  position: absolute;
-  right: -8px;
-  top: -24px;
-  font-size: 120px;
-  color: rgba(255, 255, 255, 0.04);
-  pointer-events: none;
-  transition: color 0.3s ease;
-}
 
-.tool-card:hover:after {
-  color: rgba(34, 211, 238, 0.1);
-}
 
 /* Icon App Genshin & Khối Chữ Cái */
 .tool-app-icon {
@@ -601,6 +604,21 @@ body {
 .tool-card > .tool-app-icon,
 .tool-card > .letter {
   margin-bottom: 8px;
+}
+
+/* Icon Tool Eleutheria — Bo góc chuẩn theo viền xanh neon */
+.tool-app-icon[src*="tool-eleutheria"] {
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  box-shadow: none;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.55)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+}
+
+.tool-card:hover .tool-app-icon[src*="tool-eleutheria"],
+.guide-card:hover .tool-app-icon[src*="tool-eleutheria"] {
+  border: none;
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.85)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
 }
 
 .tool-copy {
@@ -1576,6 +1594,9 @@ footer b {
     justify-content: space-between;
     padding: 10px 14px;
     gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   .mobile-menu-btn {
@@ -1701,9 +1722,11 @@ footer b {
     min-height: auto;
     padding: 13px 12px;
     border-radius: 16px;
-    background: linear-gradient(145deg, rgba(12, 18, 48, 0.45) 0%, rgba(6, 10, 30, 0.35) 100%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: linear-gradient(145deg, rgba(14, 20, 52, 0.92) 0%, rgba(8, 12, 34, 0.9) 100%);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   }
 
   .cta, .download { 
@@ -1995,6 +2018,16 @@ footer b {
   border-color: rgba(244, 63, 94, 0.5);
   color: #fff;
   transform: rotate(90deg);
+}
+
+.tx-notice-close:active {
+  transform: scale(0.92);
+  background: rgba(244, 63, 94, 0.35);
+}
+
+.tx-notice-close:focus,
+.tx-notice-close:focus-visible {
+  outline: none !important;
 }
 
 /* Badge cảnh báo */
@@ -2323,7 +2356,7 @@ footer b {
 }
 
 /* =========================================================
-   TRANG CHIA SẺ FILE & TÀI LIỆU (DOCS.HTML)
+   TRANG CHIA SẺ FILE TP & TẬP TIN (DOCS.HTML)
    - Lưới thẻ chia sẻ tệp Liquid Glass
    - Phân loại icon định dạng (Config, Script, Zip, Doc, Apk)
    - Nút Tải về & Nút Copy Link một chạm
@@ -2712,7 +2745,7 @@ footer b {
    NÚT HAMBURGER & MENU TRƯỢT DI ĐỘNG (MOBILE NAV DRAWER)
    - Chỉ áp dụng trên điện thoại (<= 768px), máy tính ẩn hoàn toàn
    - Chiếm 1/2 màn hình dọc (55vw, 100vh) từ góc trái
-   - Chứa đầy đủ Tool, Công cụ, Hướng dẫn, Tài liệu, Socials
+   - Chứa đầy đủ Tool, Công cụ, Hướng dẫn, File TP, Socials
    ========================================================= */
 
 /* Desktop: Ẩn hoàn toàn các thành phần menu di động */
@@ -2729,10 +2762,10 @@ footer b {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
-  background: rgba(12, 18, 48, 0.7);
+  background: rgba(12, 18, 48, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1.5px solid rgba(255, 255, 255, 0.45);
   color: var(--skirk-cyan-bright);
@@ -2741,18 +2774,48 @@ footer b {
   box-shadow: 0 0 15px rgba(34, 211, 238, 0.22), inset 0 1px 2px rgba(255, 255, 255, 0.2);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.mobile-menu-btn:hover,
-.mobile-menu-btn:active {
+.mobile-menu-btn:hover {
   background: rgba(34, 211, 238, 0.2);
   border-color: var(--skirk-cyan);
   color: #ffffff;
-  transform: scale(1.05);
 }
 
-.mobile-menu-btn .hamburger-icon {
+.mobile-menu-btn:active {
+  transform: scale(0.92);
+}
+
+.mobile-menu-btn:focus,
+.mobile-menu-btn:focus-visible {
+  outline: none !important;
+}
+
+.hamburger-box {
+  width: 20px;
+  height: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.hamburger-line {
   display: block;
+  width: 100%;
+  height: 2.2px;
+  background-color: var(--skirk-cyan-bright);
+  border-radius: 2px;
+  transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease,
+              background-color 0.26s ease;
+  transform-origin: center;
 }
 
 /* Khóa cuộn trang khi menu đang mở */
@@ -2760,17 +2823,19 @@ body.nav-drawer-open {
   overflow: hidden !important;
 }
 
-/* Lớp phủ mờ nền khi mở Drawer */
+/* Lớp phủ mờ nền khi mở Drawer - Tối ưu 60fps mượt mà */
 .mobile-nav-overlay {
   position: fixed;
   inset: 0;
   background: rgba(3, 5, 20, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, visibility;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .mobile-nav-overlay.open {
@@ -2778,36 +2843,42 @@ body.nav-drawer-open {
   visibility: visible;
 }
 
-/* Bảng trượt dọc chiếm 1/2 màn hình từ góc trái (Mobile Side Drawer) */
+/* Bảng trượt dọc menu di động (Mobile Side Drawer) - Phủ toàn màn hình từ top 0, che hoàn toàn navbar */
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 55vw;
-  min-width: 250px;
+  width: 72vw;
+  min-width: 260px;
   max-width: 320px;
   height: 100vh;
   height: 100dvh;
+  padding-top: 0;
+  box-sizing: border-box;
   background: linear-gradient(165deg, rgba(10, 16, 44, 0.98) 0%, rgba(4, 7, 24, 0.99) 100%);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border-right: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 12px 0 50px rgba(0, 0, 0, 0.85), inset -1.5px 0 0 rgba(34, 211, 238, 0.45);
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.8), inset -1.5px 0 0 rgba(34, 211, 238, 0.35);
   z-index: 1001;
-  transform: translateX(-100%);
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .mobile-nav-drawer.open {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 /* Header của Drawer */
 .mobile-drawer-header {
-  padding: 16px 18px;
+  padding: 14px 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
@@ -2826,7 +2897,7 @@ body.nav-drawer-open {
 .mobile-drawer-brand strong {
   display: block;
   font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
@@ -2844,16 +2915,18 @@ body.nav-drawer-open {
   width: 32px;
   height: 32px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--skirk-muted);
-  font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
   line-height: 1;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+  touch-action: manipulation;
 }
 
 .mobile-drawer-close:hover,
@@ -2861,7 +2934,13 @@ body.nav-drawer-open {
   background: rgba(244, 63, 94, 0.25);
   border-color: rgba(244, 63, 94, 0.6);
   color: #fff;
-  transform: rotate(90deg);
+  transform: scale(0.92);
+  outline: none !important;
+}
+
+.mobile-drawer-close:focus,
+.mobile-drawer-close:focus-visible {
+  outline: none !important;
 }
 
 /* Thân của Drawer */
@@ -2869,6 +2948,8 @@ body.nav-drawer-open {
   padding: 18px 14px;
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -3378,7 +3459,7 @@ body.nav-drawer-open {
    - Khắc phục lỗi cắt chữ bảng giá (Alpha 30 Ngày 400.0...): xếp theo cột (Thời hạn trên, Giá dưới)
    - Cụm nút hành động (Mua Ngay, Tải Ngay, Hướng Dẫn) nằm ngang cân đối, cao 38px
    - Thẻ Chú thích cần mua key gọn nhẹ, không chiếm diện tích
-   - Tối ưu trang Tài liệu (docs.html) & Hướng dẫn (guide.html)
+   - Tối ưu trang File TP (docs.html) & Hướng dẫn (guide.html)
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -3558,7 +3639,7 @@ body.nav-drawer-open {
     border-radius: 6px;
   }
 
-  /* Trang Tài liệu (docs.html) tối ưu gọn gàng */
+  /* Trang File TP (docs.html) tối ưu gọn gàng */
   .files-wrap {
     padding: 18px 12px;
     min-height: calc(100vh - 120px);
@@ -3622,6 +3703,7 @@ body.nav-drawer-open {
     padding: 12px 10px;
     border-radius: 14px;
   }
+
   .tool-app-icon,
   .letter {
     width: 40px;

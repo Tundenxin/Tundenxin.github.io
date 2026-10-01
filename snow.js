@@ -62,7 +62,8 @@
   function createParticles() {
     particles = [];
     const isMobile = window.innerWidth <= 768;
-    const count = isMobile ? 36 : 72;
+    // Giảm bớt số lượng hạt: Desktop ~25 hạt, Mobile ~12 hạt (thanh thoát, nhẹ nhàng)
+    const count = isMobile ? 12 : 25;
 
     for (let i = 0; i < count; i++) {
       particles.push(initParticle(false));
@@ -70,58 +71,33 @@
   }
 
   function initParticle(fromTop) {
-    const isStar = Math.random() < 0.24; // ~24% tinh thể sao băng ✦
-    const radius = isStar ? Math.random() * 3 + 2.2 : Math.random() * 2.4 + 1;
+    const radius = Math.random() * 1.4 + 0.8; // Hạt tuyết tròn mềm mịn, nhỏ gọn
     return {
       x: Math.random() * width,
       y: fromTop ? -15 - Math.random() * 25 : Math.random() * height,
       radius: radius,
-      speedY: Math.random() * 1.1 + 0.55,
-      speedX: (Math.random() - 0.5) * 0.45,
+      speedY: Math.random() * 0.5 + 0.3, // Rơi chậm rãi, êm dịu
+      speedX: (Math.random() - 0.5) * 0.3,
       angle: Math.random() * Math.PI * 2,
-      angularSpeed: Math.random() * 0.018 + 0.008,
-      sway: Math.random() * 1.4 + 0.7,
-      opacity: Math.random() * 0.45 + 0.45,
-      isStar: isStar,
-      color: Math.random() < 0.38 ? '#a5f3fc' : '#ffffff', // Xanh băng Cyan & Trắng tuyết
-      spin: Math.random() * Math.PI * 2,
-      spinSpeed: (Math.random() - 0.5) * 0.025
+      angularSpeed: Math.random() * 0.012 + 0.006,
+      sway: Math.random() * 0.8 + 0.4,
+      opacity: Math.random() * 0.3 + 0.18, // Trong suốt và dịu mắt (0.18 - 0.48)
+      color: Math.random() < 0.35 ? '#a5f3fc' : '#ffffff' // Xanh băng Cyan nhạt & Trắng tuyết
     };
-  }
-
-  function drawCrystalStar(cx, cy, spikes, outerRadius, innerRadius) {
-    let rot = (Math.PI / 2) * 3;
-    let x = cx;
-    let y = cy;
-    const step = Math.PI / spikes;
-
-    ctx.beginPath();
-    ctx.moveTo(cx, cy - outerRadius);
-    for (let i = 0; i < spikes; i++) {
-      x = cx + Math.cos(rot) * outerRadius;
-      y = cy + Math.sin(rot) * outerRadius;
-      ctx.lineTo(x, y);
-      rot += step;
-
-      x = cx + Math.cos(rot) * innerRadius;
-      y = cy + Math.sin(rot) * innerRadius;
-      ctx.lineTo(x, y);
-      rot += step;
-    }
-    ctx.lineTo(cx, cy - outerRadius);
-    ctx.closePath();
-    ctx.fill();
   }
 
   function update() {
     if (!ctx) return;
+    if (document.body.classList.contains('nav-drawer-open')) {
+      animId = requestAnimationFrame(update);
+      return;
+    }
     ctx.clearRect(0, 0, width, height);
 
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
 
       p.angle += p.angularSpeed;
-      p.spin += p.spinSpeed;
       p.y += p.speedY;
       p.x += p.speedX + Math.sin(p.angle) * p.sway;
 
@@ -141,22 +117,16 @@
         particles[i] = initParticle(true);
       }
 
-      // Vẽ hạt tuyết với ánh hào quang mềm
+      // Vẽ hạt tuyết tròn với ánh hào quang dịu nhẹ
       ctx.save();
       ctx.globalAlpha = p.opacity;
       ctx.fillStyle = p.color;
-      ctx.shadowColor = p.color === '#a5f3fc' ? 'rgba(56, 189, 248, 0.75)' : 'rgba(255, 255, 255, 0.65)';
-      ctx.shadowBlur = p.radius * 2.6;
+      ctx.shadowColor = p.color === '#a5f3fc' ? 'rgba(56, 189, 248, 0.4)' : 'rgba(255, 255, 255, 0.35)';
+      ctx.shadowBlur = p.radius * 1.5;
 
-      if (p.isStar) {
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.spin);
-        drawCrystalStar(0, 0, 4, p.radius * 1.55, p.radius * 0.45);
-      } else {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
 
       ctx.restore();
     }

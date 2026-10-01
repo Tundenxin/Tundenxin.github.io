@@ -27,6 +27,7 @@
 
     if (toggleBtn) {
       toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         if (drawer && drawer.classList.contains('open')) {
           closeNav();
@@ -37,11 +38,18 @@
     }
 
     if (closeBtn) {
-      closeBtn.addEventListener('click', closeNav);
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeNav();
+      });
     }
 
     if (overlay) {
-      overlay.addEventListener('click', closeNav);
+      overlay.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeNav();
+      });
     }
 
     // Đóng drawer khi người dùng click vào link điều hướng

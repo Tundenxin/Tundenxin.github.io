@@ -14,7 +14,12 @@
   const modalHtml = `
     <div id="txNoticeOverlay" class="tx-notice-overlay" aria-hidden="true">
       <div class="tx-notice-modal" role="dialog" aria-modal="true" aria-labelledby="txNoticeTitle">
-        <button type="button" class="tx-notice-close" id="txNoticeCloseIcon" aria-label="Đóng thông báo" title="Đóng">✕</button>
+        <button type="button" class="tx-notice-close" id="txNoticeCloseIcon" aria-label="Đóng thông báo" title="Đóng">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="1" y1="1" x2="13" y2="13"></line>
+            <line x1="13" y1="1" x2="1" y2="13"></line>
+          </svg>
+        </button>
         
         <div class="tx-notice-badge">
           <span class="tx-notice-pulse"></span>
@@ -61,7 +66,12 @@
             <span>Tắt 60 phút</span>
           </button>
           <button type="button" class="tx-btn-dismiss" id="txNoticeCloseBtn">
-            <span class="tx-btn-icon">✕</span>
+            <span class="tx-btn-icon">
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px;" aria-hidden="true">
+                <line x1="1" y1="1" x2="13" y2="13"></line>
+                <line x1="13" y1="1" x2="1" y2="13"></line>
+              </svg>
+            </span>
             <span>Tắt thông báo</span>
           </button>
         </div>
