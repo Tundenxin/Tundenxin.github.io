@@ -542,8 +542,9 @@
               <span class="tag">✦ Kích Hoạt Tức Thì</span>
             </div>
           </div>
-          <div class="tool-actions">
-            <a class="download btn-buy-key" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA NGAY ↗</a>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=slash" title="Xem hướng dẫn cài đặt &amp; kích hoạt Tool Slash WuWa">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
       </div>
@@ -631,7 +632,7 @@
     <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
-  <!-- Modal Chọn Nhóm Tải Tool Mobile (Telegram / Discord) & Đếm ngược 5s mở khóa link tải -->
+  <!-- Modal Chọn Nhóm Tải Tool Mobile (Telegram / Discord) & Đếm ngược 10s mở khóa link tải -->
   <div id="txDownloadModalOverlay" class="tx-dl-modal-overlay" aria-hidden="true">
     <div class="tx-dl-modal" role="dialog" aria-modal="true" aria-labelledby="dlModalTitle">
       <button type="button" class="tx-dl-modal-close" id="txDlModalCloseBtn" aria-label="Đóng" title="Đóng">
@@ -649,7 +650,7 @@
       <h2 id="dlModalTitle" class="tx-dl-modal-title">Tải <span id="dlModalToolName">Tool Mobile</span></h2>
 
       <p class="tx-dl-modal-desc">
-        Để tải file an toàn và tránh bị quét link, vui lòng <strong>tham gia 1 trong 2 máy chủ</strong> bên dưới. Sau khi bấm tham gia, hệ thống sẽ <strong>đếm ngược 5 giây</strong> để mở khóa link tải trực tiếp:
+        Vào nhóm để <strong>lấy link tải nhanh nhất</strong>, và có thể <strong>biết được thông báo mỗi khi có bản Update mới</strong>. Vui lòng tham gia 1 trong 2 máy chủ bên dưới, sẽ có link tải về.
       </p>
 
       <div class="tx-dl-group-options">
@@ -694,7 +695,7 @@
           <span class="tx-dl-status-icon" id="txDlStatusIcon">🔒</span>
           <div class="tx-dl-status-text">
             <strong id="txDlStatusTitle">Bước 1/2: Chưa tham gia máy chủ</strong>
-            <span id="txDlStatusSub">Bấm vào Telegram hoặc Discord ở trên để bắt đầu đếm ngược 5 giây.</span>
+            <span id="txDlStatusSub">Bấm vào Telegram hoặc Discord ở trên để bắt đầu đếm ngược 10 giây.</span>
           </div>
         </div>
 
@@ -706,13 +707,13 @@
           <a href="#" id="txDlFinalBtn" class="tx-dl-final-btn is-locked" target="_blank" rel="noopener" aria-disabled="true">
             <span class="tx-dl-btn-icon" id="txDlBtnIcon">🔒</span>
             <span id="txDlBtnText">Chờ tham gia 1 trong 2 máy chủ...</span>
-            <span class="tx-dl-btn-timer" id="txDlBtnTimer" style="display: none;">5s</span>
+            <span class="tx-dl-btn-timer" id="txDlBtnTimer" style="display: none;">10s</span>
           </a>
         </div>
       </div>
 
       <div class="tx-dl-modal-footer-tip">
-        <span>💡 <strong>Lưu ý:</strong> Sau khi hoàn tất 5 giây đếm ngược, nút tải xanh sẽ mở khóa cho phép bạn tải trực tiếp file về máy.</span>
+        <span>💡 <strong>Lưu ý:</strong> Sau khi hoàn tất 10 giây đếm ngược, nút tải xanh sẽ mở khóa cho phép bạn tải trực tiếp file về máy.</span>
       </div>
     </div>
   </div>
@@ -721,7 +722,7 @@
   <script src="snow.js" defer></script>
   <script src="nav.js" defer></script>
   <script>
-    // Modal chọn nhóm Telegram / Discord & đếm ngược 5s mở khóa link tải Tool Mobile
+    // Modal chọn nhóm Telegram / Discord & đếm ngược 10s mở khóa link tải Tool Mobile
     (function () {
       const overlay = document.getElementById('txDownloadModalOverlay');
       const closeBtn = document.getElementById('txDlModalCloseBtn');
@@ -760,7 +761,7 @@
         // Reset status & progress
         if (statusIcon) statusIcon.textContent = '🔒';
         if (statusTitle) statusTitle.textContent = 'Bước 1/2: Chưa tham gia máy chủ';
-        if (statusSub) statusSub.textContent = 'Bấm vào Telegram hoặc Discord ở trên để bắt đầu đếm ngược 5 giây.';
+        if (statusSub) statusSub.textContent = 'Bấm vào Telegram hoặc Discord ở trên để bắt đầu đếm ngược 10 giây.';
         if (progressBar) progressBar.style.width = '0%';
 
         // Reset button
@@ -773,7 +774,7 @@
         if (btnText) btnText.textContent = 'Chờ tham gia 1 trong 2 máy chủ...';
         if (btnTimer) {
           btnTimer.style.display = 'none';
-          btnTimer.textContent = '5s';
+          btnTimer.textContent = '10s';
         }
       }
 
@@ -819,10 +820,10 @@
       function startCountdown() {
         if (isUnlocked || countdownTimer) return;
 
-        let secondsLeft = 5;
+        let secondsLeft = 10;
         if (statusIcon) statusIcon.textContent = '⏳';
         if (statusTitle) statusTitle.textContent = 'Bước 2/2: Đang xác thực máy chủ...';
-        if (statusSub) statusSub.textContent = 'Vui lòng đợi 5 giây để hệ thống mở khóa link tải trực tiếp.';
+        if (statusSub) statusSub.textContent = 'Vui lòng đợi 10 giây để hệ thống mở khóa link tải trực tiếp.';
         
         if (finalBtn) {
           finalBtn.className = 'tx-dl-final-btn is-counting';
@@ -834,13 +835,13 @@
           btnTimer.textContent = secondsLeft + 's';
         }
         if (progressBar) {
-          progressBar.style.width = '10%';
+          progressBar.style.width = '5%';
         }
 
         countdownTimer = setInterval(() => {
           secondsLeft--;
           if (progressBar) {
-            progressBar.style.width = ((5 - secondsLeft) / 5 * 100) + '%';
+            progressBar.style.width = ((10 - secondsLeft) / 10 * 100) + '%';
           }
           if (btnTimer) {
             btnTimer.textContent = secondsLeft + 's';

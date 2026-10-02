@@ -3309,7 +3309,7 @@ footer b {
 }
 
 /* =========================================================
-   MODAL CHỌN NHÓM & MỞ KHÓA LINK TẢI 5S (TELEGRAM & DISCORD)
+   MODAL CHỌN NHÓM & MỞ KHÓA LINK TẢI 10S (TELEGRAM & DISCORD)
    ========================================================= */
 button.download {
   font-family: inherit;
@@ -3585,7 +3585,7 @@ button.download {
   color: #818cf8;
 }
 
-/* Khung mở khóa & đếm ngược 5s */
+/* Khung mở khóa & đếm ngược 10s */
 .tx-dl-unlock-box {
   background: rgba(9, 14, 38, 0.75);
   border: 1px solid rgba(56, 189, 248, 0.25);
