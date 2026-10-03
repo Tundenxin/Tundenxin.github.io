@@ -37,7 +37,7 @@
     <nav class="main-nav">
       <a href="index.html">🏠 <span>Trang chủ</span></a>
       <a href="index.html#tools">📱 <span>Tool Mobile</span></a>
-      <a href="index.html#tools-pc">💻 <span>Tool PC</span></a>
+      <a href="index.html#tools-pc">🛒 <span>Kho Tool Game</span></a>
       <a href="tools.html">🛠️ <span>Công cụ</span></a>
       <a class="active" href="guide.html">📖 <span>Hướng dẫn</span></a>
       <a href="docs.html">📁 <span>File TP</span></a>
@@ -57,203 +57,222 @@
     </div>
 
     <!-- Bộ lọc theo danh mục -->
-    <div class="guide-filter-tabs">
+                        <div class="guide-filter-tabs">
       <button type="button" class="guide-tab-btn active" data-filter="all">
-        <span class="tab-icon">✦</span>
+        <span class="game-tab-all-icon">ALL</span>
         <span class="tab-label">Tất Cả</span>
-        <span class="tab-badge">11</span>
+        <span class="tab-badge">27</span>
       </button>
-      <button type="button" class="guide-tab-btn" data-filter="mobile">
-        <span class="tab-icon">📱</span>
-        <span class="tab-label">Mobile Android</span>
-        <span class="tab-badge">4</span>
+      <button type="button" class="guide-tab-btn" data-filter="genshin" title="Genshin Impact (10 Tool)">
+        <img src="game-genshin.webp" alt="Genshin Impact" class="game-tab-img">
+        <span class="tab-label">Genshin Impact</span>
+        <span class="tab-badge">10</span>
       </button>
-      <button type="button" class="guide-tab-btn" data-filter="pc">
-        <span class="tab-icon">💻</span>
-        <span class="tab-label">PC Máy Tính</span>
-        <span class="tab-badge">6</span>
+      <button type="button" class="guide-tab-btn" data-filter="wuwa" title="Wuthering Waves (3 Tool)">
+        <img src="game-wuwa.png" alt="Wuthering Waves" class="game-tab-img">
+        <span class="tab-label">Wuthering Waves</span>
+        <span class="tab-badge">3</span>
       </button>
-      <button type="button" class="guide-tab-btn" data-filter="troubleshoot">
+      <button type="button" class="guide-tab-btn" data-filter="hsr" title="Honkai: Star Rail (2 Tool)">
+        <img src="game-hsr.webp" alt="Honkai: Star Rail" class="game-tab-img">
+        <span class="tab-label">Honkai: Star Rail</span>
+        <span class="tab-badge">2</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="zzz" title="Zenless Zone Zero (3 Tool)">
+        <img src="game-zzz.webp" alt="Zenless Zone Zero" class="game-tab-img">
+        <span class="tab-label">Zenless Zone Zero</span>
+        <span class="tab-badge">3</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="endfield" title="Arknights: Endfield (2 Tool)">
+        <img src="game-endfield.webp" alt="Arknights: Endfield" class="game-tab-img">
+        <span class="tab-label">Arknights: Endfield</span>
+        <span class="tab-badge">2</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="nte" title="Neverness to Everness (3 Tool)">
+        <img src="game-nte.webp" alt="Neverness to Everness" class="game-tab-img">
+        <span class="tab-label">Neverness to Everness</span>
+        <span class="tab-badge">3</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="dna" title="Duet Night Abyss (2 Tool)">
+        <img src="game-dna.jpg" alt="Duet Night Abyss" class="game-tab-img">
+        <span class="tab-label">Duet Night Abyss</span>
+        <span class="tab-badge">2</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="other" title="Game Khác (2 Tool)">
+        <span class="tab-icon">🎮</span>
+        <span class="tab-label">Game Khác</span>
+        <span class="tab-badge">2</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="troubleshoot" title="Sửa Lỗi Unicore">
         <span class="tab-icon">🛠️</span>
-        <span class="tab-label">Khắc Phục Lỗi Unicore</span>
+        <span class="tab-label">Sửa Lỗi Unicore</span>
         <span class="tab-badge badge-warn">5 Lỗi</span>
       </button>
     </div>
 
-    <!-- Lưới danh sách Tool -->
+    <!-- Lưới danh sách 24 Tool chuẩn Shop WibuzStore -->
     <div class="guide-grid">
-      <!-- 1. Kuro (Mobile) -->
-      <button class="guide-card" data-category="mobile" data-tool-id="kuro" data-title="Hướng dẫn setting và các tính năng của Tool Kuro" data-video="https://www.youtube.com/embed/UC3BvsKfpBY">
+      <button class="guide-card" data-category="mobile" data-game="genshin" data-tool-id="kuro" data-title="Hướng dẫn setting và các tính năng của Tool Kuro" data-video="https://www.youtube.com/embed/UC3BvsKfpBY">
         <div class="guide-card-icon-wrap">
           <img src="tool-kuro.png" alt="Genshin Impact Kuro" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge mobile" title="Mobile Android">📱</span>
+          <span class="guide-icon-badge mobile" title="Genshin Mobile Free" style="background:#10b981;">🎁</span>
         </div>
         <span>
           <div class="guide-card-badges">
-            <small>GENSHIN IMPACT • MOBILE v2.5</small>
+            <small style="color:#34d399;font-weight:800;">GENSHIN IMPACT • MIỄN PHÍ</small>
             <span class="guide-type-pill pill-video">▶ VIDEO</span>
           </div>
-          <strong>Kuro.apk</strong>
+          <strong>Kuro.apk v2.5 ( Android )</strong>
           <em>Video hướng dẫn setting &amp; tính năng</em>
         </span>
         <b>▶</b>
       </button>
 
-      <!-- 2. DMSHBY (Mobile) -->
-      <button class="guide-card" data-category="mobile" data-tool-id="dmshby" data-title="Hướng dẫn cài đặt Tool DMSHBY chi tiết" data-video="https://www.youtube.com/embed/D0v4Izh_cfY">
+      <button class="guide-card" data-category="mobile" data-game="genshin" data-tool-id="dmshby" data-title="Hướng dẫn cài đặt Tool DMSHBY chi tiết" data-video="https://www.youtube.com/embed/D0v4Izh_cfY">
         <div class="guide-card-icon-wrap">
           <img src="tool-dmshby.png" alt="Genshin Impact DMSHBY" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge mobile" title="Mobile Android">📱</span>
+          <span class="guide-icon-badge mobile" title="Genshin Mobile Free" style="background:#10b981;">🎁</span>
         </div>
         <span>
           <div class="guide-card-badges">
-            <small>GENSHIN IMPACT • VISION 7.1</small>
+            <small style="color:#34d399;font-weight:800;">GENSHIN IMPACT • MIỄN PHÍ</small>
             <span class="guide-type-pill pill-video">▶ VIDEO</span>
           </div>
-          <strong>DMSHBY.sh</strong>
+          <strong>DMSHBY.sh ( Android )</strong>
           <em>Video hướng dẫn cài đặt VPhoneGaGa/Root</em>
         </span>
         <b>▶</b>
       </button>
 
-      <!-- 3. Shika Mobile (Android) -->
-      <button class="guide-card doc-guide-card" data-category="mobile" data-tool-id="shika-mobile" data-target-panel="panel-shika-mobile">
+      <button class="guide-card doc-guide-card" data-category="mobile" data-game="genshin" data-tool-id="eleutheria" data-target-panel="panel-eleutheria">
         <div class="guide-card-icon-wrap">
-          <img src="tool-shika-mobile.png" alt="Genshin Impact Shika Mobile" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge mobile" title="Mobile Android">📱</span>
+          <img src="tool-eleutheria.png" alt="Genshin Impact Eleutheria" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge mobile" title="Genshin Mobile Free" style="background:#10b981;">🎁</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small style="color:#34d399;font-weight:800;">GENSHIN IMPACT • MIỄN PHÍ</small>
+            <span class="guide-type-pill pill-doc">📖 HƯỚNG DẪN</span>
+          </div>
+          <strong>Eleutheria ( Android )</strong>
+          <em>Hướng dẫn cài đặt &amp; link nhóm tải APK</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="mobile" data-game="genshin" data-tool-id="shika-mobile" data-target-panel="panel-shika-mobile">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-shika-mobile.png" alt="Shika Mobile" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge mobile" title="Genshin Mobile">📱</span>
         </div>
         <span>
           <div class="guide-card-badges">
             <small>GENSHIN IMPACT • ANDROID</small>
             <span class="guide-type-pill pill-doc">📖 HƯỚNG DẪN</span>
           </div>
-          <strong>Shika Mobile</strong>
+          <strong>Shika Mobile ( Android )</strong>
           <em>Tài liệu cài đặt Loader, nhập key &amp; tính năng</em>
         </span>
         <b>📖</b>
       </button>
 
-      <!-- 4. Eleutheria (Mobile) -->
-      <button class="guide-card doc-guide-card" data-category="mobile" data-tool-id="eleutheria" data-target-panel="panel-eleutheria">
+      <button class="guide-card doc-guide-card" data-category="mobile" data-game="genshin" data-tool-id="minty-mobile" data-target-panel="panel-minty-mobile">
         <div class="guide-card-icon-wrap">
-          <img src="tool-eleutheria.png" alt="Genshin Impact Eleutheria" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge mobile" title="Mobile Android">📱</span>
+          <img src="tool-minty-gi-mobile-android.png" alt="Minty GI Mobile" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge mobile" title="Genshin Mobile">📱</span>
         </div>
         <span>
           <div class="guide-card-badges">
-            <small>GENSHIN IMPACT • 7.1 v1.51</small>
+            <small>GENSHIN IMPACT • ANDROID</small>
             <span class="guide-type-pill pill-doc">📖 HƯỚNG DẪN</span>
           </div>
-          <strong>Eleutheria</strong>
-          <em>Hướng dẫn cài đặt &amp; link nhóm tải APK</em>
+          <strong>Minty GI Mobile ( Android )</strong>
+          <em>M-Loader.apk, tải bản mod game &amp; menu nổi</em>
         </span>
         <b>📖</b>
       </button>
 
-      <!-- 5. Shika PC (Beta / Alpha) -->
-      <button class="guide-card doc-guide-card" data-category="pc" data-tool-id="shika-pc" data-target-panel="panel-shika-pc">
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="genshin" data-tool-id="unicore" data-target-panel="panel-unicore">
         <div class="guide-card-icon-wrap">
-          <img src="tool-shika.png" alt="Shika Beta / Alpha PC" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
-        </div>
-        <span>
-          <div class="guide-card-badges">
-            <small>GENSHIN IMPACT • PC (BETA / ALPHA)</small>
-            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
-          </div>
-          <strong>Shika PC</strong>
-          <em>Cài đặt Loader, phím TAB &amp; danh mục tính năng</em>
-        </span>
-        <b>📖</b>
-      </button>
-
-      <!-- 6. Lotus (PC) -->
-      <button class="guide-card doc-guide-card" data-category="pc" data-tool-id="lotus" data-target-panel="panel-lotus">
-        <div class="guide-card-icon-wrap">
-          <img src="tool-lotus.png" alt="Lotus Genshin Impact" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
-        </div>
-        <span>
-          <div class="guide-card-badges">
-            <small>GENSHIN IMPACT • PC EXTERNAL</small>
-            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
-          </div>
-          <strong>Lotus</strong>
-          <em>Video setup, phím INSERT &amp; việt hoá</em>
-        </span>
-        <b>📖</b>
-      </button>
-
-      <!-- 7. UNI EMPIRE / Unicore (PC) -->
-      <button class="guide-card doc-guide-card" data-category="pc" data-tool-id="unicore" data-target-panel="panel-unicore">
-        <div class="guide-card-icon-wrap">
-          <img src="tool-unicore.png" alt="UNI EMPIRE Unicore" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+          <img src="tool-unicore.png" alt="Unicore Genshin" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="Genshin PC">💻</span>
         </div>
         <span>
           <div class="guide-card-badges">
             <small>GENSHIN IMPACT • PC INTERNAL</small>
             <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
           </div>
-          <strong>UNI EMPIRE</strong>
-          <em>Video hướng dẫn, F2 inject, phím INSERT</em>
+          <strong>Unicore ( PC )</strong>
+          <em>Internal Inject F2, phím INSERT &amp; bypass AC</em>
         </span>
         <b>📖</b>
       </button>
 
-      <!-- 8. Sửa Lỗi Unicore -->
-      <button class="guide-card doc-guide-card" data-category="troubleshoot" data-tool-id="unicore-fix" data-target-panel="panel-unicore-fix">
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="genshin" data-tool-id="lotus" data-target-panel="panel-lotus">
         <div class="guide-card-icon-wrap">
-          <img src="tool-unicore.png" alt="Khắc Phục Lỗi Unicore" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge fix" title="Khắc Phục Lỗi Unicore">🛠️</span>
-        </div>
-        <span>
-          <div class="guide-card-badges">
-            <small>TROUBLESHOOT • UNICORE</small>
-            <span class="guide-type-pill pill-fix">🛠️ SỬA LỖI</span>
-          </div>
-          <strong>Khắc Phục Lỗi Unicore</strong>
-          <em>Sửa 5 lỗi: BSOD, Mất Menu, Hyper-V, HWID, Connection</em>
-        </span>
-        <b>⚠️</b>
-      </button>
-
-      <!-- 9. antiaddict. (PC) -->
-      <button class="guide-card doc-guide-card" data-category="pc" data-tool-id="antiaddict" data-target-panel="panel-antiaddict">
-        <div class="guide-card-icon-wrap">
-          <img src="tool-antiaddict.png" alt="antiaddict. Genshin Impact" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+          <img src="tool-lotus.png" alt="Lotus Genshin" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="Genshin PC">💻</span>
         </div>
         <span>
           <div class="guide-card-badges">
             <small>GENSHIN IMPACT • PC EXTERNAL</small>
             <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
           </div>
-          <strong>antiaddict.</strong>
+          <strong>Lotus ( PC )</strong>
+          <em>Video setup, phím INSERT &amp; việt hoá</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="genshin" data-tool-id="antiaddict" data-target-panel="panel-antiaddict">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-antiaddict.png" alt="antiaddict. Genshin" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="Genshin PC">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>GENSHIN IMPACT • PC EXTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>antiaddict. ( PC )</strong>
           <em>Video hướng dẫn, liên kết Discord &amp; phím F1</em>
         </span>
         <b>📖</b>
       </button>
 
-      <!-- 10. Shibal (PC) -->
-      <button class="guide-card doc-guide-card" data-category="pc" data-tool-id="shibal" data-target-panel="panel-shibal">
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="genshin" data-tool-id="shibal" data-target-panel="panel-shibal">
         <div class="guide-card-icon-wrap">
-          <img src="tool-shibal.png" alt="Shibal Genshin Impact" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+          <img src="tool-shibal.png" alt="Shibal Genshin" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="Genshin PC">💻</span>
         </div>
         <span>
           <div class="guide-card-badges">
             <small>GENSHIN IMPACT • PC</small>
             <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
           </div>
-          <strong>Shibal</strong>
+          <strong>Shibal ( PC )</strong>
           <em>Kích hoạt verify Discord 5 phút &amp; phím INSERT</em>
         </span>
         <b>📖</b>
       </button>
 
-      <!-- 11. Slash WuWa (PC) -->
-      <button class="guide-card doc-guide-card" data-category="pc" data-tool-id="slash" data-target-panel="panel-slash">
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="genshin" data-tool-id="shika-pc" data-target-panel="panel-shika-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-shika.png" alt="Shika PC" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="Genshin PC">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>GENSHIN IMPACT • PC (BETA / ALPHA)</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Shika ( PC )</strong>
+          <em>Cài đặt Loader, phím TAB &amp; danh mục tính năng</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="wuwa" data-tool-id="slash" data-target-panel="panel-slash">
         <div class="guide-card-icon-wrap">
           <img src="tool-slash.png" alt="Slash WuWa" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
           <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
@@ -263,8 +282,264 @@
             <small>WUTHERING WAVES • PC</small>
             <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
           </div>
-          <strong>Slash WuWa</strong>
+          <strong>Slash WuWa ( PC )</strong>
           <em>Video setup, claim key Discord, web/overlay &amp; tính năng</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="wuwa" data-tool-id="kittenwaves" data-target-panel="panel-kittenwaves">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-kittenwaves.png" alt="Kittenwaves WuWa" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>WUTHERING WAVES • PC VĨNH VIỄN</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Kittenwaves ( PC )</strong>
+          <em>Xóa Streamline, cấu hình loader &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="wuwa" data-tool-id="uniwaves" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-uniwaves.png" alt="Uniwaves" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>WUTHERING WAVES • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Uniwaves ( PC )</strong>
+          <em>Unicore WuWa: F2 inject, phím INSERT &amp; godmode</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="hsr" data-tool-id="unistar" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-unistar.png" alt="Unistar HSR" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>HONKAI: STAR RAIL • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Unistar ( PC )</strong>
+          <em>Unicore HSR: F2 inject, speed hack &amp; auto battle</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="hsr" data-tool-id="minty-sr" data-target-panel="panel-minty-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-sr.png" alt="Minty-SR HSR" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>HONKAI: STAR RAIL • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Minty-SR ( PC )</strong>
+          <em>Minty Loader, chọn Honkai Star Rail &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="mobile" data-game="zzz" data-tool-id="minty-zzz-mobile" data-target-panel="panel-minty-mobile">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-zzz-mobile-android.png" alt="Minty ZZZ Mobile" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge mobile" title="Mobile Android">📱</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ZENLESS ZONE ZERO • ANDROID</small>
+            <span class="guide-type-pill pill-doc">📖 HƯỚNG DẪN</span>
+          </div>
+          <strong>Minty ZZZ Mobile ( Android )</strong>
+          <em>M-Loader APK, mod game ZZZ &amp; menu nổi</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="zzz" data-tool-id="unizone" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-unizone.png" alt="Unizone ZZZ" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ZENLESS ZONE ZERO • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Unizone ( PC )</strong>
+          <em>Unicore ZZZ: F2 inject, phím INSERT &amp; kill aura</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="zzz" data-tool-id="minty-zzz" data-target-panel="panel-minty-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-zzz.png" alt="Minty-ZZZ" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ZENLESS ZONE ZERO • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Minty-ZZZ ( PC )</strong>
+          <em>Minty Loader, chọn Zenless Zone Zero &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="endfield" data-tool-id="uni-endfield" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-uni-endfield.png" alt="Uni:Endfield" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ARKNIGHTS: ENDFIELD • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Uni:Endfield ( PC )</strong>
+          <em>Unicore Endfield: F2 inject, speed &amp; auto attack</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="endfield" data-tool-id="minty-ae" data-target-panel="panel-minty-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-ae.png" alt="Minty-AE Endfield" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ARKNIGHTS: ENDFIELD • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Minty-AE ( PC )</strong>
+          <em>Minty Loader, chọn Arknights Endfield &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="nte" data-tool-id="uninte" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-uninte.png" alt="UniNTE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>NEVERNESS TO EVERNESS • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>UniNTE ( PC )</strong>
+          <em>Unicore NTE: F2 inject, phím INSERT &amp; kill aura</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="nte" data-tool-id="minty-nte" data-target-panel="panel-minty-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-nte.png" alt="Minty-NTE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>NEVERNESS TO EVERNESS • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Minty-NTE ( PC )</strong>
+          <em>Minty Loader, chọn Neverness to Everness &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="nte" data-tool-id="kinu" data-target-panel="panel-kinu">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-kinu.png" alt="Kinu NTE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>NEVERNESS TO EVERNESS • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Kinu ( PC )</strong>
+          <em>Kích hoạt Shika Hub, LAUNCH loader &amp; phím TAB</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="dna" data-tool-id="unidna" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-unidna.png" alt="UniDNA" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>DUET NIGHT ABYSS • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>UniDNA ( PC )</strong>
+          <em>Unicore DNA: F2 inject, phím INSERT &amp; ESP</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="dna" data-tool-id="minty-dna" data-target-panel="panel-minty-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-dna.png" alt="Minty-DNA" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>DUET NIGHT ABYSS • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Minty-DNA ( PC )</strong>
+          <em>Minty Loader, chọn Duet Night Abyss &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="other" data-tool-id="minty-bp" data-target-panel="panel-minty-pc">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-minty-bp-blue-protocol-star-resonance.png" alt="Minty-BP" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>BLUE PROTOCOL: STAR RESONANCE • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Minty-BP ( PC )</strong>
+          <em>Minty Loader, chọn Blue Protocol &amp; phím INSERT</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="other" data-tool-id="soroka" data-target-panel="panel-soroka">
+        <div class="guide-card-icon-wrap">
+          <img src="tool-soroka-stella-sora.png" alt="Soroka Stella Sora" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>STELLA SORA • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Soroka ( PC )</strong>
+          <em>Tải loader catbox, Play game &amp; phím F12</em>
         </span>
         <b>📖</b>
       </button>
@@ -1440,6 +1715,385 @@
         </div>
       </div>
     </section>
+  
+    <!-- =========================================================
+         PANEL 11: KITTENWAVES (WUTHERING WAVES PC)
+         ========================================================= -->
+    <section class="video-panel doc-guide-panel" id="panel-kittenwaves" hidden>
+      <div class="video-head">
+        <div class="video-head-left">
+          <div class="panel-header-icon-wrap">
+            <img src="tool-kittenwaves.png" alt="Kittenwaves WuWa" class="panel-header-tool-icon">
+            <span class="panel-header-badge pc">💻</span>
+          </div>
+          <div class="panel-head-titles">
+            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • KITTENWAVES (WUTHERING WAVES PC)</span>
+            <h2>Hướng Dẫn Cài Đặt &amp; Sử Dụng Kittenwaves</h2>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Wuthering Waves • Key Vĩnh Viễn Không Giới Hạn</small>
+          </div>
+        </div>
+        <button class="panel-close-btn" aria-label="Đóng">×</button>
+      </div>
+      <div class="doc-guide-body">
+        <div class="video-frame" style="margin-bottom:16px;">
+          <iframe src="https://www.youtube.com/embed/t-va-O6NE5E" title="Video hướng dẫn Kittenwaves WuWa" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div class="doc-quick-actions">
+          <a class="doc-action-btn buy" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 <span>Mua Key Kittenwaves (Vĩnh Viễn)</span></a>
+          <a class="doc-action-btn primary" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">💬 <span>Kênh Hỗ Trợ WibuzStore</span></a>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 1</div>
+          <div class="doc-step-content">
+            <h3>Bước 1: Xóa Thư Mục Streamline</h3>
+            <p>1. Tìm và mở đường dẫn thư mục cài game trên máy tính của bạn:</p>
+            <div class="doc-code-block" style="background:rgba(0,0,0,0.5);padding:10px 14px;border-radius:8px;font-family:monospace;color:#38bdf8;margin:8px 0;">
+              \Wuthering Waves Game\Engine\Plugins\Runtime\Nvidia\
+            </div>
+            <p>2. Xóa hẳn thư mục có tên <strong>Streamline</strong> trong thư mục trên.</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 2</div>
+          <div class="doc-step-content">
+            <h3>Bước 2 &amp; 3: Chuẩn Bị File &amp; Chạy Loader</h3>
+            <p>1. Đặt file <code>DLL</code> vào cùng một thư mục với file Loader của tool.</p>
+            <p style="margin-top:6px;">2. Chạy file Loader bằng quyền quản trị viên (<strong>Run as Administrator</strong>).</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 4 &amp; 5</div>
+          <div class="doc-step-content">
+            <h3>Bước 4 &amp; 5: Nhập Đường Dẫn Game &amp; Mở Menu</h3>
+            <p>1. Khi Loader yêu cầu, bạn nhập đường dẫn chính xác tới file chạy game trên máy:</p>
+            <div class="doc-code-block" style="background:rgba(0,0,0,0.5);padding:10px 14px;border-radius:8px;font-family:monospace;color:#facc15;margin:8px 0;">
+              \Wuthering Waves Game\Client\Binaries\Win64\Client-Win64-Shipping.exe
+            </div>
+            <p>2. Chờ game khởi chạy, nhấn phím <span class="doc-hotkey-badge" style="color:#f59e0b;border-color:#f59e0b;">INSERT</span> để ẩn/hiện menu điều khiển ingame.</p>
+
+            <div class="doc-warning-banner" style="margin-top:14px;">
+              <div class="doc-warning-icon">🛠️</div>
+              <div class="doc-warning-content">
+                <strong>KHẮC PHỤC NHANH VÀI LỖI CƠ BẢN:</strong>
+                <ul style="margin:6px 0 0 16px;line-height:1.6;">
+                  <li>Nếu chờ lâu không thấy game chạy: Mở Task Manager tắt cả game và loader rồi thử mở lại.</li>
+                  <li>Nếu inject thành công nhưng không thấy menu: Tắt tất cả phần mềm đang sử dụng Overlay (RivaTuner, Shadowplay, MSI Afterburner, Discord overlay...).</li>
+                  <li>Nếu game bị crash hoặc tool không hoạt động: Tắt và mở lại tool với quyền Admin.</li>
+                  <li>Nếu vẫn bị hiện thông báo bắt xóa folder Streamline mặc dù đã xóa: Thêm <code>-dx11</code> vào file <code>gamepath.txt</code>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bảng tính năng Kittenwaves -->
+            <div class="doc-features-wrap" style="margin-top:20px;">
+              <div class="doc-features-title">📋 Danh Sách Tính Năng Kittenwaves:</div>
+              <details class="doc-features-accordion" open>
+                <summary>⚡ Chiến Đấu &amp; Nhân Vật</summary>
+                <ul>
+                  <li><strong>God Mode:</strong> Bất tử, không nhận sát thương.</li>
+                  <li><strong>Auto Revive:</strong> Tự động hồi sinh khi ngã xuống.</li>
+                  <li><strong>Enemy Vacuum:</strong> Hút toàn bộ quái vật về một điểm gom cụm.</li>
+                  <li><strong>No Skill Cooldown:</strong> Không thời gian hồi chiêu kỹ năng.</li>
+                  <li><strong>Infinite Stamina:</strong> Vô hạn thể lực leo núi, bơi lội, lướt.</li>
+                  <li><strong>Fly &amp; No Clip:</strong> Bay tự do trên không trung và đi xuyên vật cản.</li>
+                </ul>
+              </details>
+              <details class="doc-features-accordion">
+                <summary>🌍 Thu Thập &amp; Thế Giới</summary>
+                <ul>
+                  <li><strong>Auto Loot &amp; Chest:</strong> Tự động nhặt đồ và mở rương báu xung quanh.</li>
+                  <li><strong>Auto Absorb Echo:</strong> Tự động hấp thụ Echo tức thì.</li>
+                  <li><strong>Auto Puzzle:</strong> Tự giải câu đố cơ quan trên bản đồ.</li>
+                  <li><strong>ESP &amp; Teleport:</strong> Hiển thị vị trí rương, quái, Echo và dịch chuyển map tức thời.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PANEL 12: MINTY PC (HSR, ZZZ, A9E, NTE, DNA, BP)
+         ========================================================= -->
+    <section class="video-panel doc-guide-panel" id="panel-minty-pc" hidden>
+      <div class="video-head">
+        <div class="video-head-left">
+          <div class="panel-header-icon-wrap">
+            <img src="tool-minty-sr.png" alt="Minty PC" class="panel-header-tool-icon">
+            <span class="panel-header-badge pc">💻</span>
+          </div>
+          <div class="panel-head-titles">
+            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • MINTY PC MULTI-GAME</span>
+            <h2>Hướng Dẫn Cài Đặt Minty PC (HSR, ZZZ, A9E, NTE, DNA, BP)</h2>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Dùng chung 1 loader hỗ trợ nhiều game hot PC</small>
+          </div>
+        </div>
+        <button class="panel-close-btn" aria-label="Đóng">×</button>
+      </div>
+      <div class="doc-guide-body">
+        <div class="doc-quick-actions">
+          <a class="doc-action-btn buy" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 <span>Mua Key Minty PC</span></a>
+          <a class="doc-action-btn download" href="https://loader.kindawindy.today/" target="_blank" rel="noopener">📥 <span>Tải Loader Minty PC</span></a>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 1 &amp; 2</div>
+          <div class="doc-step-content">
+            <h3>Bước 1 &amp; 2: Tải Loader &amp; Nhập Key</h3>
+            <p>1. Tải loader từ trang web chính thức: <a href="https://loader.kindawindy.today/" target="_blank" rel="noopener" class="doc-link">https://loader.kindawindy.today/ ↗</a></p>
+            <p style="margin-top:6px;">2. Thêm thư mục chứa loader vào danh sách loại trừ (Exclusion) của Windows Defender hoặc phần mềm diệt virus trên máy.</p>
+            <p style="margin-top:6px;">3. Mở Loader lên, chọn game bạn muốn sử dụng (<strong>HSR, ZZZ, DNA, A9E, BP, NTE</strong>) và dán mã key đã mua tại <a href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener" class="doc-link">WibuzStore ↗</a>.</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 3, 4 &amp; 5</div>
+          <div class="doc-step-content">
+            <h3>Bước 3, 4 &amp; 5: Khởi Chạy &amp; Phím Mở Menu</h3>
+            <p>1. Click nút <strong>"Start Game"</strong> trên giao diện loader.</p>
+            <p style="margin-top:6px;">2. <strong>Bạn tự mở game lên thủ công</strong> và chờ vài giây cho tool tự động inject vào game.</p>
+            <p style="margin-top:6px;">3. Ẩn/Hiện menu điều khiển tool bằng phím <span class="doc-hotkey-badge" style="color:#f59e0b;border-color:#f59e0b;">INSERT</span>.</p>
+
+            <!-- Bảng tính năng Minty PC -->
+            <div class="doc-features-wrap" style="margin-top:20px;">
+              <div class="doc-features-title">📋 Tính Năng Nổi Bật Theo Từng Game:</div>
+              <details class="doc-features-accordion" open>
+                <summary>🚂 Honkai: Star Rail (Minty-SR)</summary>
+                <ul>
+                  <li>Auto Battle tự động đánh ải siêu tốc, mở khóa nút thoát trận.</li>
+                  <li>Speedup Battle: Tăng tốc độ chiến đấu tuỳ biến cao.</li>
+                  <li>Auto Loot, tự nhặt rương, Space Anchor, quái vật.</li>
+                  <li>Skip Cutscenes &amp; Auto Dialogs: Bỏ qua đối thoại và cắt cảnh nhanh.</li>
+                  <li>FPS Unlocker, FOV Changer, Noclip xuyên vật cản.</li>
+                </ul>
+              </details>
+              <details class="doc-features-accordion">
+                <summary>⚡ Zenless Zone Zero (Minty-ZZZ)</summary>
+                <ul>
+                  <li>No Cooldown: Không hồi chiêu kỹ năng đặc biệt.</li>
+                  <li>Auto Dodge &amp; Parry: Tự động né đòn phản xạ hoàn hảo.</li>
+                  <li>Game Speedup: Tăng tốc độ game mượt mà.</li>
+                  <li>ESP Rương và Quái vật, bỏ qua đối thoại cốt truyện.</li>
+                </ul>
+              </details>
+              <details class="doc-features-accordion">
+                <summary>🛡️ Arknights: Endfield &amp; Game Khác (A9E, NTE, DNA, BP)</summary>
+                <ul>
+                  <li>Auto Farm tài nguyên tự động, hỗ trợ cày cấp nhanh.</li>
+                  <li>Auto Aim, Vô hạn đạn cho Duet Night Abyss.</li>
+                  <li>Tốc độ di chuyển, Speed Hack xe đua cho Neverness to Everness.</li>
+                  <li>ESP quặng, rương báu và quái vật cho Blue Protocol.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PANEL 13: MINTY MOBILE (ANDROID - GENSHIN & ZZZ)
+         ========================================================= -->
+    <section class="video-panel doc-guide-panel" id="panel-minty-mobile" hidden>
+      <div class="video-head">
+        <div class="video-head-left">
+          <div class="panel-header-icon-wrap">
+            <img src="tool-minty-gi-mobile-android.png" alt="Minty Mobile Android" class="panel-header-tool-icon">
+            <span class="panel-header-badge mobile">📱</span>
+          </div>
+          <div class="panel-head-titles">
+            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • MINTY MOBILE (ANDROID)</span>
+            <h2>Hướng Dẫn Cài Đặt Minty Mobile (Android)</h2>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Hỗ trợ Genshin Impact &amp; Zenless Zone Zero • Credit: Schvis</small>
+          </div>
+        </div>
+        <button class="panel-close-btn" aria-label="Đóng">×</button>
+      </div>
+      <div class="doc-guide-body">
+        <div class="doc-quick-actions">
+          <a class="doc-action-btn buy" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 <span>Mua Key Minty Mobile</span></a>
+          <a class="doc-action-btn download" href="https://apk.kindawindy.today/" target="_blank" rel="noopener">📥 <span>Tải M-Loader.apk</span></a>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 1</div>
+          <div class="doc-step-content">
+            <h3>Bước 1: Cài Đặt File M-Loader.apk</h3>
+            <p>1. Tải file cài đặt: <a href="https://apk.kindawindy.today/" target="_blank" rel="noopener" class="doc-link"><strong>M-Loader.apk</strong> ↗</a> (dùng chung cho cả Genshin Impact và ZZZ).</p>
+            <p style="margin-top:6px;">2. Mở file APK, nếu điện thoại hiện cảnh báo hãy vào <strong>Cài đặt (Settings) → Cho phép từ nguồn này (Allow from this source)</strong> để cài đặt. Nếu Play Protect cảnh báo, bấm tiếp tục cài đặt.</p>
+            <p style="margin-top:6px;">3. Loader sẽ tự động kiểm tra và update phiên bản mới mỗi khi khởi động.</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 2 &amp; 3</div>
+          <div class="doc-step-content">
+            <h3>Bước 2 &amp; 3: Kích Hoạt Key &amp; Cài Bản Game Mod</h3>
+            <p>1. Mở app M-Loader, chuyển qua tab thứ 2 (<strong>Game Manager / Project Card</strong>).</p>
+            <p style="margin-top:6px;">2. Chọn <strong>Authenticate</strong> và nhập mã key đã mua tại WibuzStore.</p>
+            <p style="margin-top:6px;">3. Chọn dòng <strong>Not Installed</strong>, bấm xác nhận và chờ ứng dụng tải phiên bản game đã tích hợp sẵn tool <em>(yêu cầu kết nối WiFi ổn định)</em>.</p>
+            <p style="margin-top:6px;">4. Quy trình tự động diễn ra: <strong>Uninstalling → Downloading → Unpacking → Installing</strong>. Sau khi hiện chữ <strong>Installed</strong> là cài đặt xong (chỉ cần làm 1 lần duy nhất, tài nguyên game không bị mất).</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 4</div>
+          <div class="doc-step-content">
+            <h3>Bước 4: Mở Tool &amp; Vào Game</h3>
+            <p>1. Trên giao diện M-Loader, chọn game bạn muốn chơi rồi bấm nút <strong>Start</strong>.</p>
+            <p style="margin-top:6px;">2. Nếu xuất hiện thông báo <em>"Close the game first"</em>, hãy đóng hoàn toàn ứng dụng game đang chạy ngầm rồi bấm <strong>Start</strong> lại.</p>
+            <p style="margin-top:6px;">3. Chờ khi màn hình báo <strong>"Loaded!"</strong>, lúc này bạn mở game lên, chờ vài giây biểu tượng menu nổi của tool sẽ xuất hiện trên màn hình.</p>
+
+            <div class="doc-info-tip" style="margin-top:14px;">
+              <span class="tip-icon">💡</span>
+              <div>
+                <strong>LƯU Ý KHI KẸT MÀN HÌNH LOADING:</strong>
+                <p style="margin-top:2px;">Nếu M-Loader bị kẹt ở màn hình Loading: Hãy thử tắt bật lại WiFi/4G, tắt VPN hoặc các bộ lọc chặn quảng cáo. Trường hợp bị nhà mạng chặn kết nối, hãy cài thêm ứng dụng 1.1.1.1 (Warp).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PANEL 14: KINU (NEVERNESS TO EVERNESS PC)
+         ========================================================= -->
+    <section class="video-panel doc-guide-panel" id="panel-kinu" hidden>
+      <div class="video-head">
+        <div class="video-head-left">
+          <div class="panel-header-icon-wrap">
+            <img src="tool-kinu.png" alt="Kinu NTE" class="panel-header-tool-icon">
+            <span class="panel-header-badge pc">💻</span>
+          </div>
+          <div class="panel-head-titles">
+            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • KINU (NEVERNESS TO EVERNESS PC)</span>
+            <h2>Hướng Dẫn Cài Đặt &amp; Sử Dụng Kinu NTE</h2>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Neverness to Everness • Nền Tảng Shika Hub</small>
+          </div>
+        </div>
+        <button class="panel-close-btn" aria-label="Đóng">×</button>
+      </div>
+      <div class="doc-guide-body">
+        <div class="doc-quick-actions">
+          <a class="doc-action-btn buy" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 <span>Mua Key Kinu</span></a>
+          <a class="doc-action-btn primary" href="https://shikahub.org/en/auth" target="_blank" rel="noopener">🌐 <span>Trang Chủ Shika Hub</span></a>
+          <a class="doc-action-btn key" href="https://shikahub.org/en/dashboard/licenses" target="_blank" rel="noopener">🔑 <span>Nhập Key Kinu</span></a>
+          <a class="doc-action-btn download" href="https://shikahub.org/en/dashboard/downloads" target="_blank" rel="noopener">📥 <span>Tải Loader Tool</span></a>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 1 &amp; 2</div>
+          <div class="doc-step-content">
+            <h3>Bước 1 &amp; 2: Đăng Ký Tài Khoản &amp; Kích Hoạt Key</h3>
+            <p>1. Truy cập vào trang chủ: <a href="https://shikahub.org/en/auth" target="_blank" rel="noopener" class="doc-link">https://shikahub.org/en/auth ↗</a> để đăng ký tài khoản (nếu không thấy mã gửi về, hãy kiểm tra mục Thư rác / Spam).</p>
+            <p style="margin-top:6px;">2. Truy cập vào mục quản lý key: <a href="https://shikahub.org/en/dashboard/licenses" target="_blank" rel="noopener" class="doc-link">https://shikahub.org/en/dashboard/licenses ↗</a>, dán mã key bạn đã mua và click <strong>Activate</strong>.</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 3 &amp; 4</div>
+          <div class="doc-step-content">
+            <h3>Bước 3 &amp; 4: Tải Loader, Khởi Chạy &amp; Mở Menu</h3>
+            <p>1. Tải Loader tool tại: <a href="https://shikahub.org/en/dashboard/downloads" target="_blank" rel="noopener" class="doc-link">Downloads Shika Hub ↗</a>. Nếu máy tính thiếu thư viện C++, hãy cài thêm gói <a href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" target="_blank" rel="noopener" class="doc-link">vcredist AIO ↗</a>.</p>
+            <p style="margin-top:6px;">2. Mở file Loader tool vừa tải về, đăng nhập tài khoản Shika Hub của bạn, chọn game <strong>Kinu</strong> và click nút <strong>LAUNCH</strong>.</p>
+            <p style="margin-top:6px;">3. Chờ Kinu nạp dữ liệu xong và xuất hiện dòng chữ <strong>RUN GAME</strong>, lúc này bạn <strong>tự mở game Neverness to Everness lên</strong>.</p>
+            <p style="margin-top:6px;">4. Bấm phím <span class="doc-hotkey-badge" style="color:#ef4444;border-color:#ef4444;">TAB</span> để ẩn/hiện menu điều khiển tool.</p>
+
+            <!-- Bảng tính năng Kinu -->
+            <div class="doc-features-wrap" style="margin-top:20px;">
+              <div class="doc-features-title">📋 Danh Sách Tính Năng Kinu NTE:</div>
+              <details class="doc-features-accordion" open>
+                <summary>⚡ Tính Năng Chiến Đấu &amp; Khám Phá Đô Thị</summary>
+                <ul>
+                  <li><strong>Kill Aura:</strong> Tự động tiêu diệt quái vật xung quanh diện rộng.</li>
+                  <li><strong>God Mode:</strong> Bất tử, không lo ngã chết hay mất máu.</li>
+                  <li><strong>Speed Hack:</strong> Tăng tốc độ chạy nhân vật và xe đua đô thị.</li>
+                  <li><strong>No Cooldown:</strong> Không thời gian hồi chiêu dị năng.</li>
+                  <li><strong>Auto Loot &amp; Chest:</strong> Tự động nhặt dị vật và mở rương báu trên đường phố.</li>
+                  <li><strong>ESP Entities:</strong> Hiển thị vị trí rương, quái vật, NPC xuyên tường.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PANEL 15: SOROKA (STELLA SORA PC)
+         ========================================================= -->
+    <section class="video-panel doc-guide-panel" id="panel-soroka" hidden>
+      <div class="video-head">
+        <div class="video-head-left">
+          <div class="panel-header-icon-wrap">
+            <img src="tool-soroka-stella-sora.png" alt="Soroka Stella Sora" class="panel-header-tool-icon">
+            <span class="panel-header-badge pc">💻</span>
+          </div>
+          <div class="panel-head-titles">
+            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • SOROKA (STELLA SORA PC)</span>
+            <h2>Hướng Dẫn Cài Đặt &amp; Sử Dụng Soroka</h2>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Stella Sora • Credit: Adwin</small>
+          </div>
+        </div>
+        <button class="panel-close-btn" aria-label="Đóng">×</button>
+      </div>
+      <div class="doc-guide-body">
+        <div class="doc-quick-actions">
+          <a class="doc-action-btn buy" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 <span>Mua Key Soroka</span></a>
+          <a class="doc-action-btn download" href="https://files.catbox.moe/93cywu.zip" target="_blank" rel="noopener">📥 <span>Tải Loader Soroka (.zip)</span></a>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 1 &amp; 2</div>
+          <div class="doc-step-content">
+            <h3>Bước 1 &amp; 2: Tải Loader &amp; Lưu Mã Key</h3>
+            <p>1. Tải loader tool tại link: <a href="https://files.catbox.moe/93cywu.zip" target="_blank" rel="noopener" class="doc-link"><strong>Tải Loader Soroka ↗</strong></a>. Giải nén vào một thư mục riêng và tạm thời tắt Windows Defender / phần mềm diệt virus.</p>
+            <p style="margin-top:6px;">2. Chạy file Loader, nhập key bạn đã mua vào ô và bấm nút <strong>Save</strong>.</p>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 3 &amp; 4</div>
+          <div class="doc-step-content">
+            <h3>Bước 3 &amp; 4: Chọn Đường Dẫn Game &amp; Khởi Chạy</h3>
+            <p>1. Chọn đường dẫn chính xác tới file chạy game: <code>StellaSora.exe</code> trên máy tính của bạn.</p>
+            <p style="margin-top:6px;">2. Click nút <strong>PLAY</strong> và đợi game khởi chạy.</p>
+
+            <div class="doc-warning-banner" style="margin-top:12px;">
+              <div class="doc-warning-icon">⚠</div>
+              <div class="doc-warning-content">
+                <strong>LƯU Ý CÀI ĐẶT ĐỒ HỌA:</strong>
+                <p style="margin:4px 0 0 0;">Hãy <strong>tắt tính năng NVIDIA Frame Generation (DLSS)</strong> trong cài đặt game để menu hoạt động chính xác.</p>
+              </div>
+            </div>
+
+            <p style="margin-top:12px;">3. Ẩn/Hiện menu điều khiển tool bằng phím <span class="doc-hotkey-badge" style="color:#ef4444;border-color:#ef4444;">F12</span>.</p>
+
+            <!-- Bảng tính năng Soroka -->
+            <div class="doc-features-wrap" style="margin-top:20px;">
+              <div class="doc-features-title">📋 Tính Năng Nổi Bật Soroka:</div>
+              <details class="doc-features-accordion" open>
+                <summary>⚡ Tính Năng Chiến Đấu</summary>
+                <ul>
+                  <li><strong>God Mode:</strong> Bất tử nhân vật.</li>
+                  <li><strong>Auto Clear Stage:</strong> Tự động quét sạch ải nhanh chóng.</li>
+                  <li><strong>Speed Hack:</strong> Tăng tốc độ trận đấu.</li>
+                  <li><strong>No Cooldown:</strong> Không thời gian hồi chiêu.</li>
+                  <li><strong>Auto Loot:</strong> Tự động nhặt tài nguyên và phần thưởng rơi.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 <!-- Mobile Navigation Drawer -->
@@ -1474,8 +2128,8 @@
             <span class="drawer-item-text">Tool Mobile</span>
           </a>
           <a class="drawer-nav-item" href="index.html#tools-pc">
-            <span class="drawer-item-icon">💻</span>
-            <span class="drawer-item-text">Tool PC</span>
+            <span class="drawer-item-icon">🛒</span>
+            <span class="drawer-item-text">Kho Tool Game</span>
           </a>
           <a class="drawer-nav-item" href="tools.html">
             <span class="drawer-item-icon">🛠️</span>
@@ -1546,12 +2200,25 @@
 
           cards.forEach(card => {
             const cat = card.dataset.category || 'pc';
-            if (filter === 'all' || cat === filter) {
+            const catList = cat.split(' ');
+            const game = card.dataset.game || '';
+            const gameList = game.split(' ');
+            if (filter === 'all' || gameList.includes(filter) || catList.includes(filter)) {
               card.classList.remove('is-hidden');
             } else {
               card.classList.add('is-hidden');
             }
           });
+
+          // Nếu chọn tab sửa lỗi Unicore, tự động mở panel sửa lỗi
+          if (filter === 'troubleshoot') {
+            hideAllPanels();
+            const fixPanel = document.getElementById('panel-unicore-fix');
+            if (fixPanel) {
+              fixPanel.hidden = false;
+              fixPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
         });
       });
 

@@ -36,8 +36,7 @@
     
     <nav class="main-nav">
       <a class="active" href="index.html">🏠 <span>Trang chủ</span></a>
-      <a href="#tools">📱 <span>Tool Mobile</span></a>
-      <a href="#tools-pc">💻 <span>Tool PC</span></a>
+      <a href="#tools">🛒 <span>Kho Tool Game</span></a>
       <a href="tools.html">🛠️ <span>Công cụ</span></a>
       <a href="guide.html">📖 <span>Hướng dẫn</span></a>
       <a href="docs.html">📁 <span>File TP</span></a>
@@ -55,108 +54,243 @@
         <div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div>
         <div class="stars">✦ · ✧ · ✦ ✧ · ✦ · ✧</div>
       </div>
-      <div class="hero-content">
-        <span class="eyebrow">✦ GENSHIN IMPACT • MOBILE & PC ✦</span>
-        <h1>Tool Genshin Impact<br><span>Mobile và PC</span></h1>
-        <div class="notice">
-          <b>!</b>
-          <div>
-            <strong>Không có tool nào là thực sự an toàn.</strong>
-            <p>Tool Mobile hạn chế về thiết bị nên không thể có Bypass, chỉ có thể hạn chế việc bị Ban. Nên chỉ trải nghiệm trên <em>acc Clone</em>, acc Chính thì không nên.</p>
+      <div class="hero-content hero-banner-wide">
+        <div class="hero-banner-main">
+          <div class="hero-banner-left">
+            <span class="eyebrow">✦ HỆ THỐNG TOOL GAME HOT • GENSHIN, WUWA, HSR, ZZZ &amp; NHIỀU GAME ✦</span>
+            <h1>Kho Tool Game Bản Quyền<br><span>Mobile và PC</span></h1>
           </div>
-        </div>
-        <div class="hero-actions-group">
-          <a class="cta btn-hero-mobile" href="#tools">📱 Xem Tool Mobile <span>→</span></a>
-          <a class="cta btn-hero-pc" href="#tools-pc">💻 Xem Tool PC (Có Giá Key) <span>→</span></a>
+
+          <div class="hero-banner-right">
+            <ul class="hero-announce-list">
+              <li>
+                <span class="bullet-dot red">●</span>
+                <span class="announce-title">CHÀO MỪNG ĐẾN VỚI TUNDENXIN — CHÚC CÁC BẠN CÓ MỘT NGÀY VUI VẺ~~</span>
+              </li>
+              <li>
+                <span class="bullet-dot purple">●</span>
+                <span><strong>Sever Discord:</strong> <a href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener">Discord Tundenxin ↗</a></span>
+              </li>
+              <li>
+                <span class="bullet-dot cyan">●</span>
+                <span><strong>Nhóm Telegram:</strong> <a href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener">Telegram BoxToolGS_VN ↗</a></span>
+              </li>
+              <li>
+                <span class="bullet-dot crimson">●</span>
+                <span class="announce-warn"><strong>Lưu ý an toàn:</strong> Không có tool nào an toàn 100%. Tool Mobile nên trải nghiệm trên <em>acc Clone</em>, acc Chính thì không nên.</span>
+              </li>
+              <li>
+                <span class="bullet-dot orange">●</span>
+                <span><strong>Hướng dẫn &amp; cài đặt:</strong> <a href="guide.html">Click để xem</a></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="tools" id="tools">
+    <!-- MỤC KHO TOOL GAME (TỔNG HỢP MOBILE & PC) -->
+    <section class="tools tools-pc" id="tools">
+      <span id="tools-pc" style="position:relative;top:-80px;display:block;"></span>
       <div class="section-head">
-        <div><span class="kicker">✦ MOBILE EDITIONS • VOID REALM</span><h2>Tool Mobile <span>Genshin</span></h2></div>
-        <div class="count">✦ 5 Bản Hoạt Động</div>
+        <div>
+          <span class="kicker">✦ HỆ THỐNG TOOL BẢN QUYỀN • WIBUZSTORE PARTNER</span>
+          <h2>Kho Tool Game <span>Mobile &amp; PC</span></h2>
+        </div>
+        <div class="count">✦ Đầy Đủ Tool Mobile &amp; PC • Bản Quyền &amp; Miễn Phí</div>
       </div>
-      <div class="tool-grid">
-        <article class="tool-card">
-          <img src="tool-kuro.png" alt="Genshin Impact Kuro v2.5.apk" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+
+      <!-- BỘ LỌC TÌM KIẾM & CHỌN GAME -->
+      <div class="shop-filter-controls">
+        <div class="shop-search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="shopToolSearchInput" class="shop-search-input" placeholder="Tìm kiếm tool hoặc tên game (ví dụ: Unicore, Slash, Minty, ZZZ, WuWa, HSR...)" autocomplete="off">
+          <button type="button" id="clearSearchBtn" class="clear-search-btn" title="Xóa tìm kiếm" hidden>×</button>
+        </div>
+
+                        <div class="game-filter-tabs">
+          <button type="button" class="game-tab-btn active" data-filter-game="all">
+            <span class="game-tab-all-icon">ALL</span>
+            <span class="tab-label">Tất Cả</span>
+            <span class="tab-badge">27</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="genshin">
+            <img src="game-genshin.webp" alt="Genshin Impact" class="game-tab-img">
+            <span class="tab-label">Genshin Impact</span>
+            <span class="tab-badge">10</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="wuwa">
+            <img src="game-wuwa.png" alt="Wuthering Waves" class="game-tab-img">
+            <span class="tab-label">Wuthering Waves</span>
+            <span class="tab-badge">3</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="hsr">
+            <img src="game-hsr.webp" alt="Honkai: Star Rail" class="game-tab-img">
+            <span class="tab-label">Honkai: Star Rail</span>
+            <span class="tab-badge">2</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="zzz">
+            <img src="game-zzz.webp" alt="Zenless Zone Zero" class="game-tab-img">
+            <span class="tab-label">Zenless Zone Zero</span>
+            <span class="tab-badge">3</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="endfield">
+            <img src="game-endfield.webp" alt="Arknights: Endfield" class="game-tab-img">
+            <span class="tab-label">Arknights: Endfield</span>
+            <span class="tab-badge">2</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="nte">
+            <img src="game-nte.webp" alt="Neverness to Everness" class="game-tab-img">
+            <span class="tab-label">Neverness to Everness</span>
+            <span class="tab-badge">3</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="dna">
+            <img src="game-dna.jpg" alt="Duet Night Abyss" class="game-tab-img">
+            <span class="tab-label">Duet Night Abyss</span>
+            <span class="tab-badge">2</span>
+          </button>
+          <button type="button" class="game-tab-btn" data-filter-game="other">
+            <span class="tab-icon">🎮</span>
+            <span class="tab-label">Game Khác</span>
+            <span class="tab-badge">2</span>
+          </button>
+        </div>
+      </div>
+
+      
+
+      <!-- DANH SÁCH TOOL ĐƯỢC PHÂN CHIA THEO TỪNG GAME -->
+      <div id="shopCatalogContainer">
+
+      <!-- =========================================================
+           GAME SECTION: GENSHIN IMPACT (GENSHIN)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="genshin">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-genshin.webp" alt="Genshin Impact" class="game-group-avatar">
+            <div>
+              <h3>Genshin Impact</h3>
+              <small>10 Tool (7 Bản Quyền VIP + 3 Miễn Phí) • MiHoyoverse</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Hệ thống tool bản quyền Genshin Impact PC và Mobile cao cấp nhất.</span>
+        </div>
+
+        <div class="tool-grid">
+        <article class="tool-card tool-pc-card" data-tool-name="kuro" data-game="genshin" data-platform="mobile">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-kuro.png" alt="Genshin Impact Kuro v2.5.apk" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT • ANDROID FREE</small>
+                <h3>Kuro.apk v2.5 ( Android )</h3>
+              </div>
+            </div>
+            <span class="status-badge status-green"><span class="status-indicator-dot green"></span>
+          </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT</small>
-            <h3>Kuro.apk <span class="status-badge updated">Đã Update</span></h3>
-            <p>Tool Genshin Impact Mobile — Phiên bản Kuro v2.5 cập nhật mới nhất.</p>
-            <div class="feature-tags">
+            <p>Tool Genshin Impact Mobile — Phiên bản Kuro v2.5 cập nhật mới nhất. Tải trực tiếp APK hoàn toàn miễn phí.</p>
+            
+            <div class="tool-paid-notice" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #6ee7b7;">
+              <span class="paid-icon">🎁</span>
+              <span><strong>MIỄN PHÍ:</strong> Tải trực tiếp không cần mua key</span>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 10px;">
               <span class="tag">✦ Kuro v2.5</span>
               <span class="tag">✦ Link tải trực tiếp</span>
+              <span class="tag">✦ Android APK</span>
             </div>
           </div>
           <div class="tool-actions">
-            <button type="button" class="download js-mobile-dl-btn" data-tool-name="Kuro.apk v2.5" data-tool-url="https://github.com/4firas/Kuro-GI/releases/download/v2.5/KURO-v2.5.apk" title="Tải Kuro.apk v2.5 (Yêu cầu tham gia máy chủ)">
-              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <button type="button" class="btn-buy download js-mobile-dl-btn" data-tool-name="Kuro.apk v2.5" data-tool-url="https://github.com/4firas/Kuro-GI/releases/download/v2.5/KURO-v2.5.apk" title="Tải Kuro.apk v2.5 (Yêu cầu tham gia máy chủ)" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               <span>TẢI NGAY</span>
-              <span class="dl-arrow">→</span>
             </button>
             <a class="btn-guide" href="guide.html?tool=kuro" title="Xem hướng dẫn setting và các tính năng của Tool Kuro">▶ &nbsp; Hướng dẫn</a>
           </div>
         </article>
 
-        <article class="tool-card">
-          <img src="tool-dmshby.png" alt="Genshin Impact DMSHBY.sh" class="tool-app-icon">
-          <div class="tool-copy">
-            <small>GENSHIN IMPACT</small>
-            <h3>DMSHBY.sh <span class="status-badge updated">Đã Update</span></h3>
-            <p>Tool Genshin Impact Mobile — Genshin Impact Vision 7.1 update 26/9/2026.</p>
-            <div class="feature-tags">
-              <span class="tag">✦ Genshin Impact Vision 7.1</span>
-              <span class="tag">✦ Link tải trực tiếp</span>
+        <article class="tool-card tool-pc-card" data-tool-name="dmshby" data-game="genshin" data-platform="mobile">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-dmshby.png" alt="Genshin Impact DMSHBY.sh" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT • ROOT / VPHONE</small>
+                <h3>DMSHBY.sh ( Android )</h3>
+              </div>
             </div>
-            <div class="tool-note-box">
-              <div class="tool-note-item">
-                <span class="note-bullet unrooted">⚡</span>
-                <p><strong>Máy chưa Root:</strong> Cần tải <a href="tools.html">Vphone / máy ảo có Root</a> để sử dụng DMSHBY.</p>
-              </div>
-              <div class="tool-note-item">
-                <span class="note-bullet rooted">✓</span>
-                <p><strong>Máy đã Root:</strong> Chạy trực tiếp file, không cần máy ảo.</p>
-              </div>
+            <span class="status-badge status-green"><span class="status-indicator-dot green"></span>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Genshin Impact Mobile — Vision 7.1. Máy chưa Root cần dùng máy ảo VPhoneGaGa, máy Root chạy trực tiếp.</p>
+            
+            <div class="tool-paid-notice" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #6ee7b7;">
+              <span class="paid-icon">🎁</span>
+              <span><strong>MIỄN PHÍ:</strong> Tải trực tiếp không cần mua key</span>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 10px;">
+              <span class="tag">✦ Vision 7.1</span>
+              <span class="tag">✦ Script .sh</span>
+              <span class="tag">✦ Root &amp; VPhone</span>
             </div>
           </div>
           <div class="tool-actions">
-            <button type="button" class="download js-mobile-dl-btn" data-tool-name="DMSHBY.sh (Vision 7.1)" data-tool-url="https://mega.nz/file/ivwEGQwA#8y_0LxkMWJhiQi4F-C7Rt6KjBxQvI56oJ3HpY8tdSHw" title="Tải DMSHBY.sh (Yêu cầu tham gia máy chủ)">
-              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <button type="button" class="btn-buy download js-mobile-dl-btn" data-tool-name="DMSHBY.sh (Vision 7.1)" data-tool-url="https://mega.nz/file/ivwEGQwA#8y_0LxkMWJhiQi4F-C7Rt6KjBxQvI56oJ3HpY8tdSHw" title="Tải DMSHBY.sh (Yêu cầu tham gia máy chủ)" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               <span>TẢI NGAY</span>
-              <span class="dl-arrow">→</span>
             </button>
             <a class="btn-guide" href="guide.html?tool=dmshby" title="Xem hướng dẫn cài đặt Tool DMSHBY chi tiết">▶ &nbsp; Hướng dẫn</a>
           </div>
         </article>
 
-        <article class="tool-card">
-          <img src="tool-eleutheria.png" alt="Genshin Impact Eleutheria 7.1 v1.51.apk" class="tool-app-icon">
+        <article class="tool-card tool-pc-card" data-tool-name="eleutheria" data-game="genshin" data-platform="mobile">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-eleutheria.png" alt="Genshin Impact Eleutheria" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT • 7.1 v1.51</small>
+                <h3>Eleutheria.apk ( Android )</h3>
+              </div>
+            </div>
+            <span class="status-badge status-green"><span class="status-indicator-dot green"></span>
+          </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT</small>
-            <h3>Eleutheria.apk <span class="status-badge updated">Đã Update</span></h3>
-            <p>Tool Genshin Impact Mobile — Phiên bản GI Eleutheria 7.1 v1.51.</p>
-            <div class="feature-tags">
-              <span class="tag">✦ GI Eleutheria 7.1 v1.51</span>
-              <span class="tag">✦ Link tải trực tiếp</span>
+            <p>Tool Genshin Impact Mobile — Phiên bản GI Eleutheria 7.1 v1.51. Hỗ trợ nhiều tính năng khám phá và mở rương.</p>
+            
+            <div class="tool-paid-notice" style="background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #6ee7b7;">
+              <span class="paid-icon">🎁</span>
+              <span><strong>MIỄN PHÍ:</strong> Tải trực tiếp không cần mua key</span>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 10px;">
+              <span class="tag">✦ 7.1 v1.51</span>
+              <span class="tag">✦ Link tải MediaFire</span>
+              <span class="tag">✦ Android APK</span>
             </div>
           </div>
           <div class="tool-actions">
-            <button type="button" class="download js-mobile-dl-btn" data-tool-name="Eleutheria.apk (7.1 v1.51)" data-tool-url="https://www.mediafire.com/file/d7069dqkaf1kcmy/GI_Eleutheria_7.1_v1.51.apk/file" title="Tải Eleutheria.apk (Yêu cầu tham gia máy chủ)">
-              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <button type="button" class="btn-buy download js-mobile-dl-btn" data-tool-name="Eleutheria.apk (7.1 v1.51)" data-tool-url="https://www.mediafire.com/file/d7069dqkaf1kcmy/GI_Eleutheria_7.1_v1.51.apk/file" title="Tải Eleutheria.apk (Yêu cầu tham gia máy chủ)" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               <span>TẢI NGAY</span>
-              <span class="dl-arrow">→</span>
             </button>
-            <a class="btn-guide" href="guide.html?tool=eleutheria" title="Tool Eleutheria hiện chưa có video hướng dẫn">▶ &nbsp; Hướng dẫn</a>
+            <a class="btn-guide" href="guide.html?tool=eleutheria" title="Xem hướng dẫn Tool Eleutheria">▶ &nbsp; Hướng dẫn</a>
           </div>
         </article>
 
-        <!-- Shika Mobile (Android) -->
-        <article class="tool-card tool-pc-card">
-          <img src="tool-shika-mobile.png" alt="Genshin Impact Shika Mobile Android" class="tool-app-icon">
+        <article class="tool-card tool-pc-card" data-tool-name="shika mobile (android)" data-game="genshin" data-platform="mobile">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-shika-mobile.png" alt="Shika Mobile (Android)" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT MOBILE • ANDROID</small>
+                <h3>Shika Mobile ( Android )</h3>
+              </div>
+            </div>
+          </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT MOBILE • WIBUZSTORE</small>
-            <h3>Shika Mobile</h3>
             <p>Tool Shika dành cho điện thoại Android — Full tính năng mod khám phá, tối ưu mượt mà, hỗ trợ máy chưa Root qua máy ảo và máy đã Root.</p>
             
             <div class="tool-paid-notice">
@@ -170,6 +304,7 @@
                 <small>Kích hoạt tự động</small>
               </div>
               <div class="pricing-tags-grid">
+
                 <div class="price-item">
                   <span class="price-duration">3 Ngày</span>
                   <span class="price-val">50.000đ</span>
@@ -179,82 +314,87 @@
                   <span class="price-val">100.000đ</span>
                 </div>
                 <div class="price-item highlight" style="grid-column: span 2;">
-                  <span class="price-duration">30 Ngày (Tiết kiệm)</span>
+                  <span class="price-duration">30 Ngày</span>
                   <span class="price-val">160.000đ</span>
                 </div>
               </div>
             </div>
 
             <div class="feature-tags" style="margin-top: 12px;">
-              <span class="tag">✦ Android</span>
-              <span class="tag">✦ Auto & Teleport</span>
-              <span class="tag">✦ Giao Key Tức Thì</span>
+              <span class="tag">✦ Android Mobile</span>
+              <span class="tag">✦ Hỗ Trợ Máy Ảo/Root</span>
+              <span class="tag">✦ Mod Khám Phá</span>
             </div>
           </div>
           <div class="tool-actions has-3-btns">
-            <a class="download" href="https://shikahub.org/en/dashboard/downloads" target="_blank" rel="noopener">
-              <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span>TẢI LAUNCHER</span>
-              <span class="dl-arrow">→</span>
-            </a>
-            <a class="btn-guide" href="guide.html?tool=shika-mobile" title="Xem tài liệu hướng dẫn cài đặt Shika Mobile chi tiết">📖 &nbsp; Hướng dẫn</a>
-            <a class="btn-guide btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener" title="Mua key kích hoạt Shika Mobile">🛒 &nbsp; Mua Key ↗</a>
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=shika-mobile" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
-      </div>
 
-      <div class="tools-cta-banner">
-        <div class="banner-text">
-          <span class="badge-mini">✦ CÔNG CỤ HỖ TRỢ</span>
-          <strong>Cần tải Máy ảo VPhoneGaGa hoặc phần mềm MT Manager?</strong>
-          <p>Tổng hợp 8 phiên bản VPhoneGaGa (VIP 9.0, 64-Bit, ColorOS, Android 7...) và MT Manager đã có mặt tại tab Công Cụ.</p>
-        </div>
-        <a class="banner-btn" href="tools.html">⚒ Xem Tab Công Cụ <span>→</span></a>
-      </div>
-    </section>
-
-    <!-- MỤC TOOL PC -->
-    <section class="tools tools-pc" id="tools-pc">
-      <div class="section-head">
-        <div>
-          <span class="kicker">✦ PC EDITIONS • WIBUZSTORE PARTNER</span>
-          <h2>Tool PC <span>Genshin & Wuthering Waves</span></h2>
-        </div>
-        <div class="count">✦ 6 Bản Tool PC • Bảng Giá Key</div>
-      </div>
-
-      <!-- BẢNG CHÚ THÍCH TRẠNG THÁI TOOL -->
-      <div class="tool-status-guide">
-        <div class="status-guide-header">
-          <span class="status-guide-bullet">●</span>
-          <strong>Trạng thái Tool:</strong>
-        </div>
-        <ul class="status-guide-list">
-          <li class="status-guide-item status-green">
-            <span class="status-indicator-dot green"></span>
-            <span><strong>Xanh:</strong> Dùng ngon</span>
-          </li>
-          <li class="status-guide-item status-orange">
-            <span class="status-indicator-dot orange"></span>
-            <span><strong>Cam:</strong> Risky/Không an toàn</span>
-          </li>
-          <li class="status-guide-item status-red">
-            <span class="status-indicator-dot red"></span>
-            <span><strong>Đỏ:</strong> Không hoạt động/Đang bảo trì</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="tool-grid">
-        <!-- 1. Unicore PC -->
-        <article class="tool-card tool-pc-card">
-          <div class="utility-card-top">
-            <img src="tool-unicore.png" alt="Tool Genshin Impact Unicore PC" class="tool-app-icon">
-            <span class="status-badge status-green"><span class="status-indicator-dot green"></span> Dùng ngon</span>
+        <article class="tool-card tool-pc-card" data-tool-name="minty-gi-mobile (android)" data-game="genshin" data-platform="mobile">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-gi-mobile-android.png" alt="Minty-GI-Mobile (Android)" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT MOBILE • ANDROID</small>
+                <h3>Minty-GI-Mobile ( Android )</h3>
+              </div>
+            </div>
           </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
-            <h3>Unicore PC</h3>
+            <p>Bản mod Minty chuyên dụng Android, giao diện nổi mượt mà, ESP quái & rương, tự động nhặt đồ, God Mode, No CD chiêu thức.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">100.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">180.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">300.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Minty Android</span>
+              <span class="tag">✦ Menu Nổi Ingame</span>
+              <span class="tag">✦ Auto Loot</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-mobile" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+
+        <article class="tool-card tool-pc-card" data-tool-name="unicore" data-game="genshin">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-unicore.png" alt="Unicore" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
+                <h3>Unicore ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
             <p>Bản mod cheat Genshin PC cao cấp, đa dạng tính năng: ESP quái/rương/oculi, Teleport nhanh, No CD, God Mode, Tự động nhặt đồ.</p>
             
             <div class="tool-paid-notice">
@@ -268,17 +408,18 @@
                 <small>Kích hoạt tự động</small>
               </div>
               <div class="pricing-tags-grid">
-                <div class="price-item">
-                  <span class="price-duration">1 Ngày</span>
-                  <span class="price-val">120.000đ</span>
-                </div>
+
                 <div class="price-item">
                   <span class="price-duration">7 Ngày</span>
                   <span class="price-val">225.000đ</span>
                 </div>
-                <div class="price-item highlight" style="grid-column: span 2;">
-                  <span class="price-duration">30 Ngày (Tiết kiệm)</span>
+                <div class="price-item highlight">
+                  <span class="price-duration">30 Ngày</span>
                   <span class="price-val">500.000đ</span>
+                </div>
+                <div class="price-item" style="grid-column: span 2;">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">120.000đ</span>
                 </div>
               </div>
             </div>
@@ -291,74 +432,22 @@
           </div>
           <div class="tool-actions has-3-btns">
             <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
-            <a class="btn-guide" href="guide.html?tool=unicore" title="Xem hướng dẫn cài đặt & sửa lỗi Unicore">📖 &nbsp; Hướng dẫn</a>
+            <a class="btn-guide" href="guide.html?tool=unicore" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
 
-        <!-- 2. Lotus PC -->
-        <article class="tool-card tool-pc-card">
-          <div class="utility-card-top">
-            <img src="tool-lotus.png" alt="Tool Genshin Impact Lotus PC" class="tool-app-icon">
-            <span class="status-badge status-orange"><span class="status-indicator-dot orange"></span> Risky</span>
-          </div>
-          <div class="tool-copy">
-            <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
-            <h3>Lotus PC</h3>
-            <p>Tool Genshin PC quốc dân có cả bản Free và bản VIP giá rẻ, giao diện thân thiện, cài đặt đơn giản, tối ưu mượt mà cho mọi cấu hình máy tính.</p>
-            
-            <div class="tool-paid-notice">
-              <span class="paid-icon">🔑</span>
-              <span><strong>LƯU Ý:</strong> Bản Free tải qua Discord, bản VIP cần mua key</span>
-            </div>
-
-            <div class="tool-pricing-box">
-              <div class="pricing-box-head">
-                <span>BẢNG GIÁ & PHIÊN BẢN:</span>
-                <small>Free & Key VIP</small>
-              </div>
-              <div class="pricing-tags-grid">
-                <div class="price-item" style="grid-column: span 2; background: rgba(88, 101, 242, 0.12); border-color: rgba(129, 140, 248, 0.45);">
-                  <span class="price-duration">Bản Free (Cộng đồng Discord)</span>
-                  <span class="price-val" style="color: #a5b4fc;">Miễn Phí</span>
-                </div>
-                <div class="price-item">
-                  <span class="price-duration">VIP 1 Ngày</span>
-                  <span class="price-val">50.000đ</span>
-                </div>
-                <div class="price-item">
-                  <span class="price-duration">VIP 7 Ngày</span>
-                  <span class="price-val">100.000đ</span>
-                </div>
-                <div class="price-item highlight" style="grid-column: span 2;">
-                  <span class="price-duration">VIP 30 Ngày (Khuyên dùng)</span>
-                  <span class="price-val">150.000đ</span>
-                </div>
+        <article class="tool-card tool-pc-card" data-tool-name="lotus" data-game="genshin">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-lotus.png" alt="Lotus" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT PC • EXTERNAL</small>
+                <h3>Lotus ( PC )</h3>
               </div>
             </div>
-
-            <div class="feature-tags" style="margin-top: 12px;">
-              <span class="tag">✦ Có Bản Free</span>
-              <span class="tag">✦ Key VIP từ 50k</span>
-              <span class="tag">✦ Cày Map Siêu Tốc</span>
-            </div>
-          </div>
-          <div class="tool-actions has-3-btns">
-            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener" title="Mua key Lotus VIP tại WibuzStore">🛒 &nbsp; MUA KEY ↗</a>
-            <a class="btn-guide btn-free" href="https://discord.gg/dTdpEuyarK" target="_blank" rel="noopener" title="Tham gia Discord để nhận bản Lotus Free">◉ &nbsp; BẢN FREE ↗</a>
-            <a class="btn-guide" href="guide.html?tool=lotus" title="Xem hướng dẫn cài đặt & chức năng Tool Lotus">📖 &nbsp; Hướng dẫn</a>
-          </div>
-        </article>
-
-        <!-- 3. antiaddict PC -->
-        <article class="tool-card tool-pc-card">
-          <div class="utility-card-top">
-            <img src="tool-antiaddict.png" alt="Tool Genshin Impact antiaddict PC" class="tool-app-icon">
-            <span class="status-badge status-orange"><span class="status-indicator-dot orange"></span> Risky</span>
           </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
-            <h3>antiaddict PC</h3>
-            <p>Tool Genshin PC chú trọng tính an toàn & độ ổn định vượt trội, nhiều mốc thời gian linh hoạt phù hợp cho mọi nhu cầu trải nghiệm.</p>
+            <p>Bản External an toàn cao, Menu tiếng Việt mượt mà, ESP quái & rương, Auto Lượm đồ tức thì, Tùy biến tốc độ cực ngon.</p>
             
             <div class="tool-paid-notice">
               <span class="paid-icon">🔑</span>
@@ -368,9 +457,62 @@
             <div class="tool-pricing-box">
               <div class="pricing-box-head">
                 <span>BẢNG GIÁ KEY:</span>
-                <small>Gói đa dạng</small>
+                <small>Kích hoạt tự động</small>
               </div>
               <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">50.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">100.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">150.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ External An Toàn</span>
+              <span class="tag">✦ Menu Tiếng Việt</span>
+              <span class="tag">✦ Auto Lượm Đồ</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=lotus" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+
+        <article class="tool-card tool-pc-card" data-tool-name="antiaddict" data-game="genshin">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-antiaddict.png" alt="antiaddict" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT PC • EXTERNAL</small>
+                <h3>antiaddict ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>External cao cấp phát triển bởi Schvis: Auto Oculi/Chest/Domain, Material Gatherer, Auto Quest, Always Crit, Skip Cutscene.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
                 <div class="price-item">
                   <span class="price-duration">1 Ngày</span>
                   <span class="price-val">65.000đ</span>
@@ -391,27 +533,29 @@
             </div>
 
             <div class="feature-tags" style="margin-top: 12px;">
-              <span class="tag">✦ An Toàn Ổn Định</span>
-              <span class="tag">✦ 4 Gói Thời Gian</span>
-              <span class="tag">✦ Kích Hoạt Tức Thì</span>
+              <span class="tag">✦ Auto Quest & Chest</span>
+              <span class="tag">✦ Material Gatherer</span>
+              <span class="tag">✦ Kích Hoạt Tự Động</span>
             </div>
           </div>
           <div class="tool-actions has-3-btns">
             <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
-            <a class="btn-guide" href="guide.html?tool=antiaddict" title="Xem hướng dẫn cài đặt & chức năng Tool antiaddict">📖 &nbsp; Hướng dẫn</a>
+            <a class="btn-guide" href="guide.html?tool=antiaddict" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
 
-        <!-- 4. Shibal PC -->
-        <article class="tool-card tool-pc-card">
-          <div class="utility-card-top">
-            <img src="tool-shibal.png" alt="Tool Genshin Impact Shibal PC" class="tool-app-icon">
-            <span class="status-badge status-red"><span class="status-indicator-dot red"></span> Đang bảo trì</span>
+        <article class="tool-card tool-pc-card" data-tool-name="shibal" data-game="genshin">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-shibal.png" alt="Shibal" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT PC • KEY VĨNH VIỄN</small>
+                <h3>Shibal ( PC )</h3>
+              </div>
+            </div>
           </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
-            <h3>Shibal PC</h3>
-            <p>Invite code xác minh role Member vào server Discord kín của Shibal. Kích hoạt 1 lần duy nhất để tải và sử dụng Tool Shibal PC vĩnh viễn.</p>
+            <p>Tool mua 1 lần sở hữu Vĩnh Viễn, verify Discord 5 phút: No CD, ESP rương/thần đồng, Auto nhặt đồ tầm xa, Unlock FPS.</p>
             
             <div class="tool-paid-notice">
               <span class="paid-icon">🔑</span>
@@ -420,39 +564,42 @@
 
             <div class="tool-pricing-box">
               <div class="pricing-box-head">
-                <span>BẢNG GIÁ INVITE CODE:</span>
-                <small>Kích hoạt 1 lần</small>
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
               </div>
-              <div class="pricing-tags-grid single-col">
-                <div class="price-item highlight">
-                  <span class="price-duration">Code Verify Member Discord (Vĩnh Viễn)</span>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">Vĩnh Viễn</span>
                   <span class="price-val">200.000đ</span>
                 </div>
               </div>
             </div>
 
             <div class="feature-tags" style="margin-top: 12px;">
-              <span class="tag">✦ 1 Lần Dùng Mãi Mãi</span>
-              <span class="tag">✦ Server Discord Kín</span>
-              <span class="tag">✦ Tool Miễn Phí Bên Trong</span>
+              <span class="tag">✦ Mua 1 Lần Vĩnh Viễn</span>
+              <span class="tag">✦ No Cooldown</span>
+              <span class="tag">✦ Auto Farm</span>
             </div>
           </div>
           <div class="tool-actions has-3-btns">
             <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
-            <a class="btn-guide" href="guide.html?tool=shibal" title="Xem hướng dẫn kích hoạt & sử dụng Tool Shibal">📖 &nbsp; Hướng dẫn</a>
+            <a class="btn-guide" href="guide.html?tool=shibal" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
 
-        <!-- 5. Shika PC -->
-        <article class="tool-card tool-pc-card">
-          <div class="utility-card-top">
-            <img src="tool-shika.png" alt="Tool Genshin Impact Shika PC" class="tool-app-icon">
-            <span class="status-badge status-orange"><span class="status-indicator-dot orange"></span> Risky</span>
+        <article class="tool-card tool-pc-card" data-tool-name="shika" data-game="genshin">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-shika.png" alt="Shika" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
+                <h3>Shika ( PC )</h3>
+              </div>
+            </div>
           </div>
           <div class="tool-copy">
-            <small>GENSHIN IMPACT PC • WIBUZSTORE</small>
-            <h3>Shika PC</h3>
-            <p>Tool Shika PC bản quyền danh tiếng: Đầy đủ các gói Beta vĩnh viễn và Alpha cao cấp, ưu tiên tính năng độc quyền và update sớm trước bản Free.</p>
+            <p>Bản quyền chính hãng Shika, mở khoá menu phím TAB, No CD, God Mode, Kill Aura, Teleport Map, Auto Puzzle thông minh.</p>
             
             <div class="tool-paid-notice">
               <span class="paid-icon">🔑</span>
@@ -461,25 +608,26 @@
 
             <div class="tool-pricing-box">
               <div class="pricing-box-head">
-                <span>BẢNG GIÁ CÁC GÓI:</span>
-                <small>Beta & Alpha</small>
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
               </div>
               <div class="pricing-tags-grid">
-                <div class="price-item">
-                  <span class="price-duration">Alpha (7 Ngày)</span>
-                  <span class="price-val">185.000đ</span>
-                </div>
-                <div class="price-item">
-                  <span class="price-duration">Alpha (30 Ngày)</span>
-                  <span class="price-val">400.000đ</span>
-                </div>
+
                 <div class="price-item highlight">
-                  <span class="price-duration">Beta (Vĩnh Viễn)</span>
+                  <span class="price-duration">Vĩnh Viễn</span>
                   <span class="price-val">265.000đ</span>
                 </div>
                 <div class="price-item highlight">
-                  <span class="price-duration">Alpha (Vĩnh Viễn)</span>
+                  <span class="price-duration">Vĩnh Viễn</span>
                   <span class="price-val">1.799.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">185.000đ</span>
+                </div>
+                <div class="price-item highlight">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">400.000đ</span>
                 </div>
               </div>
             </div>
@@ -492,27 +640,44 @@
           </div>
           <div class="tool-actions has-3-btns">
             <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
-            <a class="btn-guide" href="guide.html?tool=shika-pc" title="Xem hướng dẫn cài đặt & kích hoạt Tool Shika PC">📖 &nbsp; Hướng dẫn</a>
+            <a class="btn-guide" href="guide.html?tool=shika-pc" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
+      </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: WUTHERING WAVES (WUWA)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="wuwa">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-wuwa.png" alt="Wuthering Waves" class="game-group-avatar">
+            <div>
+              <h3>Wuthering Waves</h3>
+              <small>3 Tool Bản Quyền • Kuro Games</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Bản quyền tool Wuthering Waves & Solo Leveling Arise mượt mà, đầy đủ tính năng.</span>
+        </div>
 
-        <!-- 6. Slash - Wuthering Waves PC -->
-        <article class="tool-card tool-pc-card">
-          <div class="utility-card-top">
-            <img src="tool-slash.png" alt="Tool Slash Wuthering Waves PC" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
-            <span class="status-badge status-green"><span class="status-indicator-dot green"></span> Dùng ngon</span>
+        <div class="tool-grid">
+        <!-- Tool: Slash - Wuthering Waves - Solo Leveling:ARISE -->
+        <article class="tool-card tool-pc-card" data-tool-name="slash - wuthering waves - solo leveling:arise" data-game="wuwa">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-slash.png" alt="Slash - Wuthering Waves - Solo Leveling:ARISE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>WUTHERING WAVES PC • WIBUZSTORE</small>
+                <h3>Slash - Wuthering Waves - Solo Leveling:ARISE ( PC )</h3>
+              </div>
+            </div>
           </div>
           <div class="tool-copy">
-            <small>WUTHERING WAVES PC • WIBUZSTORE</small>
-            <h3>Slash PC</h3>
-            <p>Tool Slash PC bản quyền hỗ trợ Wuthering Waves & Solo Leveling: No CD, God Mode, Kill Aura, Teleport Map, Auto Farm, ESP Rương & Quái.</p>
+            <p>Tool Slash PC bản quyền hỗ trợ Wuthering Waves & Solo Leveling: No CD, God Mode, Cung mệnh C6, Trấn R5, Hút quái, Teleport Map, Auto Farm Boss/Echo, ESP Rương & Quái.</p>
             
             <div class="tool-paid-notice">
-              <span class="paid-icon">🎁</span>
-              <div>
-                <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span><br>
-                <span style="color: #67e8f9; font-weight: 700;">✦ Mua Slash tặng kèm Bypass Genshin cũng như các loại game khác miễn phí!</span>
-              </div>
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
             </div>
 
             <div class="tool-pricing-box">
@@ -521,16 +686,17 @@
                 <small>Kích hoạt tự động</small>
               </div>
               <div class="pricing-tags-grid">
+
                 <div class="price-item">
-                  <span class="price-duration">Gói 3 Ngày</span>
+                  <span class="price-duration">3 Ngày</span>
                   <span class="price-val">100.000đ</span>
                 </div>
                 <div class="price-item">
-                  <span class="price-duration">Gói 7 Ngày</span>
+                  <span class="price-duration">7 Ngày</span>
                   <span class="price-val">150.000đ</span>
                 </div>
                 <div class="price-item highlight" style="grid-column: span 2;">
-                  <span class="price-duration">Gói 30 Ngày (Tiết kiệm nhất)</span>
+                  <span class="price-duration">30 Ngày</span>
                   <span class="price-val">260.000đ</span>
                 </div>
               </div>
@@ -538,16 +704,971 @@
 
             <div class="feature-tags" style="margin-top: 12px;">
               <span class="tag">✦ Wuthering Waves</span>
-              <span class="tag" style="color: #67e8f9; border-color: rgba(34, 211, 238, 0.45); background: rgba(34, 211, 238, 0.15);">🎁 Tặng Bypass Genshin</span>
-              <span class="tag">✦ Kích Hoạt Tức Thì</span>
+              <span class="tag">🎁 Tặng Bypass Genshin</span>
+              <span class="tag">✦ Mở Khóa C6 & Trấn R5</span>
             </div>
           </div>
           <div class="tool-actions has-3-btns">
             <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
-            <a class="btn-guide" href="guide.html?tool=slash" title="Xem hướng dẫn cài đặt &amp; kích hoạt Tool Slash WuWa">📖 &nbsp; Hướng dẫn</a>
+            <a class="btn-guide" href="guide.html?tool=slash" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Kittenwaves -->
+        <article class="tool-card tool-pc-card" data-tool-name="kittenwaves" data-game="wuwa">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-kittenwaves.png" alt="Kittenwaves" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>WUTHERING WAVES PC • KEY VĨNH VIỄN</small>
+                <h3>Kittenwaves ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool VIP Kittenwaves dùng vĩnh viễn không giới hạn ngày — Full tính năng chiến đấu bá đạo, God Mode, Hút quái, Tự động nhặt Echo, Bay lượn tự do, Teleport toàn map.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">Vĩnh Viễn</span>
+                  <span class="price-val">650.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Sở Hữu Vĩnh Viễn</span>
+              <span class="tag">✦ Hút Quái & Echo</span>
+              <span class="tag">✦ Bay Lượn Mọi Nơi</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=kittenwaves" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Uniwaves -->
+        <article class="tool-card tool-pc-card" data-tool-name="uniwaves" data-game="wuwa">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-uniwaves.png" alt="Uniwaves" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>WUTHERING WAVES PC • UNICORE ENGINE</small>
+                <h3>Uniwaves ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Uniwaves cao cấp cho Wuthering Waves — ESP Echo & Rương báu, God Mode, Vô hạn Stamina, Kill Aura quái, Dịch chuyển theo marker map, Auto giải đố cơ quan.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+                <div class="price-item highlight">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">400.000đ</span>
+                </div>
+                <div class="price-item" style="grid-column: span 2;">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ ESP Echo & Rương</span>
+              <span class="tag">✦ Vô Hạn Stamina</span>
+              <span class="tag">✦ Kill Aura Quái</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=uniwaves" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: HONKAI: STAR RAIL (HSR)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="hsr">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-hsr.webp" alt="Honkai: Star Rail" class="game-group-avatar">
+            <div>
+              <h3>Honkai: Star Rail</h3>
+              <small>2 Tool Bản Quyền • MiHoyoverse</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Tool tự động cày cuốc, tăng tốc chiến đấu và khám phá Vũ Trụ Mô Phỏng.</span>
+        </div>
+
+        <div class="tool-grid">
+        <!-- Tool: Unistar -->
+        <article class="tool-card tool-pc-card" data-tool-name="unistar" data-game="hsr">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-unistar.png" alt="Unistar" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>HONKAI: STAR RAIL PC • UNICORE ENGINE</small>
+                <h3>Unistar ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool VIP cho Honkai Star Rail PC — Auto Battle siêu tốc, Speed Hack thế giới & ải chiến đấu, Tự động chạy Vũ Trụ Mô Phỏng, ESP Rương & Kẻ Địch, Bỏ qua thoại & Ult.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">50.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">105.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">210.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Auto Battle Siêu Tốc</span>
+              <span class="tag">✦ Vũ Trụ Mô Phỏng</span>
+              <span class="tag">✦ Speed Hack</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=unistar" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Minty-SR -->
+        <article class="tool-card tool-pc-card" data-tool-name="minty-sr" data-game="hsr">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-sr.png" alt="Minty-SR" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>HONKAI: STAR RAIL PC • MINTY LOADER</small>
+                <h3>Minty-SR ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Minty PC giá rẻ siêu ổn định cho Honkai: Star Rail — Tăng tốc chiến đấu đa cấp độ, Auto Farm tài nguyên, Bỏ qua hoạt ảnh chiêu thức, Tự động nhặt đồ & giải đố.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">25.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Giá Rẻ Siêu Ổn Định</span>
+              <span class="tag">✦ Auto Farm Tài Nguyên</span>
+              <span class="tag">✦ Bỏ Qua Hoạt Ảnh</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-sr" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: ZENLESS ZONE ZERO (ZZZ)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="zzz">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-zzz.webp" alt="Zenless Zone Zero" class="game-group-avatar">
+            <div>
+              <h3>Zenless Zone Zero</h3>
+              <small>3 Tool Bản Quyền • MiHoyoverse</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Tool chiến đấu, né đòn phản xạ và cày Lỗ Hổng Số 0 cho ZZZ PC & Android.</span>
+        </div>
+
+        <div class="tool-grid">
+        <article class="tool-card tool-pc-card" data-tool-name="minty-zzz-mobile (android)" data-game="zzz" data-platform="mobile">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-zzz-mobile-android.png" alt="Minty-ZZZ-Mobile (Android)" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>ZENLESS ZONE ZERO MOBILE • ANDROID</small>
+                <h3>Minty-ZZZ-Mobile ( Android )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Bản mod Minty ZZZ chuyên dụng cho điện thoại Android — Menu overlay nổi, Hỗ trợ máy Root và Máy ảo, Auto né đòn, God Mode, Tăng tốc ải, Cày Hollow Zero dễ dàng.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">50.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Android Mobile</span>
+              <span class="tag">✦ Menu Nổi Overlay</span>
+              <span class="tag">✦ Hỗ Trợ Máy Ảo</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-zzz-mobile" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+
+        <article class="tool-card tool-pc-card" data-tool-name="unizone" data-game="zzz">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-unizone.png" alt="Unizone" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>ZENLESS ZONE ZERO PC • UNICORE ENGINE</small>
+                <h3>Unizone ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool VIP cho Zenless Zone Zero PC — God Mode bất tử, Auto Dodge & Auto Parry phản đòn 100%, Vô hạn năng lượng Daze & Decibel nộ, Nhân sát thương, Tự động chạy Lỗ Hổng Số 0.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+                <div class="price-item highlight">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">400.000đ</span>
+                </div>
+                <div class="price-item" style="grid-column: span 2;">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Auto Dodge & Parry</span>
+              <span class="tag">✦ God Mode Bất Tử</span>
+              <span class="tag">✦ Auto Hollow Zero</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=unizone" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+
+        <article class="tool-card tool-pc-card" data-tool-name="minty-zzz" data-game="zzz">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-zzz.png" alt="Minty-ZZZ" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>ZENLESS ZONE ZERO PC • MINTY LOADER</small>
+                <h3>Minty-ZZZ ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Minty bản PC cho ZZZ — No CD kỹ năng, Tự động né đòn hoàn hảo, Tăng tốc độ game, ESP quái vật & rương đồ, Bỏ qua đối thoại cốt truyện.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">25.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ No Cooldown Kỹ Năng</span>
+              <span class="tag">✦ Auto Né Hoàn Hảo</span>
+              <span class="tag">✦ ESP Rương & Quái</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-zzz" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
           </div>
         </article>
       </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: ARKNIGHTS: ENDFIELD (ENDFIELD)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="endfield">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-endfield.webp" alt="Arknights: Endfield" class="game-group-avatar">
+            <div>
+              <h3>Arknights: Endfield</h3>
+              <small>2 Tool Bản Quyền • Hypergryph / Gryphline</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Tool trải nghiệm sớm siêu phẩm thế giới mở Arknights: Endfield.</span>
+        </div>
+
+        <div class="tool-grid">
+        <!-- Tool: Uni:Endfield -->
+        <article class="tool-card tool-pc-card" data-tool-name="uni:endfield" data-game="endfield">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-uni-endfield.png" alt="Uni:Endfield" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>ARKNIGHTS: ENDFIELD PC • UNICORE ENGINE</small>
+                <h3>Uni:Endfield ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Unicore cho siêu phẩm Arknights: Endfield PC — God Mode, Tăng tốc độ game, ESP nguyên liệu & kẻ địch, Auto Farm tài nguyên xây dựng căn cứ, Dịch chuyển tức thời.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">400.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Trải Nghiệm Sớm</span>
+              <span class="tag">✦ Auto Farm Căn Cứ</span>
+              <span class="tag">✦ God Mode & Speed</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=uni-endfield" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Minty-AE -->
+        <article class="tool-card tool-pc-card" data-tool-name="minty-ae" data-game="endfield">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-ae.png" alt="Minty-AE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>ARKNIGHTS: ENDFIELD PC • MINTY LOADER</small>
+                <h3>Minty-AE ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Minty PC cho Arknights: Endfield — No CD chiêu thức, Tự động nhặt vật phẩm rơi, Tăng tốc ải chiến đấu, Tối ưu cấu hình mượt mà, dễ sử dụng.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">3 Ngày</span>
+                  <span class="price-val">65.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">265.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ No Cooldown Chiêu</span>
+              <span class="tag">✦ Auto Nhặt Vật Phẩm</span>
+              <span class="tag">✦ Tối Ưu Cấu Hình</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-ae" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: NEVERNESS TO EVERNESS (NTE) (NTE)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="nte">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-nte.webp" alt="Neverness to Everness" class="game-group-avatar">
+            <div>
+              <h3>Neverness to Everness (NTE)</h3>
+              <small>3 Tool Bản Quyền • Hotta Studio / Perfect World</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Tool đô thị siêu nhiên NTE: Dị năng, tốc độ xe đua, ESP khám phá thành phố.</span>
+        </div>
+
+        <div class="tool-grid">
+        <!-- Tool: UniNTE -->
+        <article class="tool-card tool-pc-card" data-tool-name="uninte" data-game="nte">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-uninte.png" alt="UniNTE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>NEVERNESS TO EVERNSS PC • UNICORE ENGINE</small>
+                <h3>UniNTE ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Unicore cao cấp cho bom tấn Neverness to Everness (NTE) — ESP toàn thành phố đô thị, Vô hạn năng lượng dị năng, Tốc độ xe & nhân vật cực nhanh, God Mode, Teleport tọa độ.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">120.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">225.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">500.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Bom Tấn Đô Thị NTE</span>
+              <span class="tag">✦ Speed Hack Xe Đua</span>
+              <span class="tag">✦ ESP Thành Phố</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=uninte" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Minty-NTE -->
+        <article class="tool-card tool-pc-card" data-tool-name="minty-nte" data-game="nte">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-nte.png" alt="Minty-NTE" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>NEVERNESS TO EVERNSS PC • MINTY LOADER</small>
+                <h3>Minty-NTE ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Minty PC cho Neverness to Everness — Menu điều khiển mượt mà, No CD, Tự động hoàn thành nhiệm vụ, Hút vật phẩm, Ẩn UID an toàn.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">3 Ngày</span>
+                  <span class="price-val">65.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">320.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Giao Diện Mượt Mà</span>
+              <span class="tag">✦ Auto Hoàn Thành Nhiệm Vụ</span>
+              <span class="tag">✦ Ẩn UID An Toàn</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-nte" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Kinu -->
+        <article class="tool-card tool-pc-card" data-tool-name="kinu" data-game="nte">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-kinu.png" alt="Kinu" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>NEVERNESS TO EVERNSS PC • KINU LOADER</small>
+                <h3>Kinu ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Kinu chuyên dụng NTE — Giá rẻ sinh viên, Kill Aura diện rộng, Tự động mở rương và thu thập dị vật đường phố, Speed Hack tuỳ chỉnh.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">40.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">3 Ngày</span>
+                  <span class="price-val">80.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">145.000đ</span>
+                </div>
+                <div class="price-item highlight">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">260.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Giá Rẻ Sinh Viên</span>
+              <span class="tag">✦ Kill Aura Diện Rộng</span>
+              <span class="tag">✦ Tự Mở Rương Đô Thị</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=kinu" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: DUET NIGHT ABYSS (DNA)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="dna">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <img src="game-dna.jpg" alt="Duet Night Abyss" class="game-group-avatar">
+            <div>
+              <h3>Duet Night Abyss</h3>
+              <small>2 Tool Bản Quyền • Pan Studio / Hero Entertainment</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Tool bắn súng và chặt chém tự do Duet Night Abyss mượt mà, không giới hạn.</span>
+        </div>
+
+        <div class="tool-grid">
+        <!-- Tool: UniDNA -->
+        <article class="tool-card tool-pc-card" data-tool-name="unidna" data-game="dna">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-unidna.png" alt="UniDNA" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>DUET NIGHT ABYSS PC • UNICORE ENGINE</small>
+                <h3>UniDNA ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Unicore cho Duet Night Abyss PC — Vô hạn đạn & năng lượng kỹ năng, No CD súng & kiếm xoay chuyển tức thì, Auto Farm quái, ESP tài nguyên, Dịch chuyển phụ bản.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">140.000đ</span>
+                </div>
+                <div class="price-item highlight">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">300.000đ</span>
+                </div>
+                <div class="price-item" style="grid-column: span 2;">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">65.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Vô Hạn Đạn & Năng Lượng</span>
+              <span class="tag">✦ No CD Kiếm & Súng</span>
+              <span class="tag">✦ ESP Tài Nguyên</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=unidna" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Minty-DNA -->
+        <article class="tool-card tool-pc-card" data-tool-name="minty-dna" data-game="dna">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-dna.png" alt="Minty-DNA" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>DUET NIGHT ABYSS PC • MINTY LOADER</small>
+                <h3>Minty-DNA ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Minty PC cho Duet Night Abyss — Tự động ngắm & bắn, God Mode, Tăng tốc độ di chuyển và lướt trên không trung, Mở khoá FPS cao mượt mà.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">3 Ngày</span>
+                  <span class="price-val">70.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">135.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">240.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Auto Aim & Bắn</span>
+              <span class="tag">✦ Lướt Không Trung</span>
+              <span class="tag">✦ Mở Khóa FPS Cao</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-dna" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      <!-- =========================================================
+           GAME SECTION: GAME KHÁC (BLUE PROTOCOL & STELLA SORA) (OTHER)
+           ========================================================= -->
+      <div class="game-group-section" data-game-key="other">
+        <div class="game-group-header">
+          <div class="game-group-title-wrap">
+            <span class="game-badge-icon">🎮</span>
+            <div>
+              <h3>Game Khác (Blue Protocol & Stella Sora)</h3>
+              <small>2 Tool Bản Quyền • Bandai Namco / Yostar</small>
+            </div>
+          </div>
+          <span class="game-group-tag">✦ Tổng hợp các tool bản quyền cho Blue Protocol Star Resonance và Stella Sora.</span>
+        </div>
+
+        <div class="tool-grid">
+        <!-- Tool: Minty-BP | Blue Protocol: Star Resonance -->
+        <article class="tool-card tool-pc-card" data-tool-name="minty-bp | blue protocol: star resonance" data-game="other">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-minty-bp-blue-protocol-star-resonance.png" alt="Minty-BP | Blue Protocol: Star Resonance" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>BLUE PROTOCOL PC • MINTY LOADER</small>
+                <h3>Minty-BP | Blue Protocol: Star Resonance ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Minty PC cho Blue Protocol: Star Resonance — Auto Farm quái vật, No CD kỹ năng lớp nhân vật, ESP Rương & Điểm thu thập khoáng sản, Tăng tốc phụ bản.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">3 Ngày</span>
+                  <span class="price-val">120.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">160.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">320.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Blue Protocol</span>
+              <span class="tag">✦ Auto Farm Quái</span>
+              <span class="tag">✦ ESP Rương & Quặng</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=minty-bp" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        <!-- Tool: Soroka - Stella Sora -->
+        <article class="tool-card tool-pc-card" data-tool-name="soroka - stella sora" data-game="other">
+          <div class="tool-card-header-row">
+            <div class="tool-header-left">
+              <img src="tool-soroka-stella-sora.png" alt="Soroka - Stella Sora" class="tool-app-icon" onerror="this.src='genshin-icon.png'">
+              <div class="tool-card-title-group">
+                <small>STELLA SORA PC • SOROKA LOADER</small>
+                <h3>Soroka - Stella Sora ( PC )</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tool-copy">
+            <p>Tool Soroka PC cho Stella Sora — Mod tính năng chiến đấu, Auto Clear Stage, God Mode, Tự động nhặt đồ, Hỗ trợ cày cấp và nguyên liệu nhanh chóng.</p>
+            
+            <div class="tool-paid-notice">
+              <span class="paid-icon">🔑</span>
+              <span><strong>LƯU Ý:</strong> Cần mua key mới có thể sử dụng</span>
+            </div>
+
+            <div class="tool-pricing-box">
+              <div class="pricing-box-head">
+                <span>BẢNG GIÁ KEY:</span>
+                <small>Kích hoạt tự động</small>
+              </div>
+              <div class="pricing-tags-grid">
+
+                <div class="price-item">
+                  <span class="price-duration">1 Ngày</span>
+                  <span class="price-val">40.000đ</span>
+                </div>
+                <div class="price-item">
+                  <span class="price-duration">7 Ngày</span>
+                  <span class="price-val">95.000đ</span>
+                </div>
+                <div class="price-item highlight" style="grid-column: span 2;">
+                  <span class="price-duration">30 Ngày</span>
+                  <span class="price-val">140.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-tags" style="margin-top: 12px;">
+              <span class="tag">✦ Stella Sora</span>
+              <span class="tag">✦ Auto Clear Stage</span>
+              <span class="tag">✦ Cày Cấp Siêu Nhanh</span>
+            </div>
+          </div>
+          <div class="tool-actions has-3-btns">
+            <a class="download btn-buy-key-mini" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 &nbsp; MUA KEY ↗</a>
+            <a class="btn-guide" href="guide.html?tool=soroka" title="Xem hướng dẫn cài đặt &amp; sử dụng">📖 &nbsp; Hướng dẫn</a>
+          </div>
+        </article>
+        </div>
+      </div>
+      </div>
+
+      <!-- Thông báo khi tìm kiếm không ra kết quả -->
+      <div id="shopNoResults" class="shop-no-results" hidden>
+        <span>🔍</span>
+        <h4>Không tìm thấy tool phù hợp</h4>
+        <p>Thử tìm với từ khóa khác như "Unicore", "Slash", "Minty", "HSR", "ZZZ"...</p>
+      </div>
+
+      <!-- BANNER CÔNG CỤ HỖ TRỢ VPHONEGAGA & MT MANAGER -->
+      <div class="tools-cta-banner" style="margin-top: 36px;">
+        <div class="banner-text">
+          <span class="badge-mini">✦ CÔNG CỤ HỖ TRỢ</span>
+          <strong>Cần tải Máy ảo VPhoneGaGa hoặc phần mềm MT Manager?</strong>
+          <p>Tổng hợp 8 phiên bản VPhoneGaGa (VIP 9.0, 64-Bit, ColorOS, Android 7...) và MT Manager đã có mặt tại tab Công Cụ.</p>
+        </div>
+        <a class="banner-btn" href="tools.html">⚒ Xem Tab Công Cụ <span>→</span></a>
+      </div>
+
     </section>
   </main>
 
@@ -579,12 +1700,8 @@
             <span class="drawer-item-text">Trang chủ</span>
           </a>
           <a class="drawer-nav-item" href="#tools">
-            <span class="drawer-item-icon">📱</span>
-            <span class="drawer-item-text">Tool Mobile</span>
-          </a>
-          <a class="drawer-nav-item" href="#tools-pc">
-            <span class="drawer-item-icon">💻</span>
-            <span class="drawer-item-text">Tool PC</span>
+            <span class="drawer-item-icon">🛒</span>
+            <span class="drawer-item-text">Kho Tool Game</span>
           </a>
           <a class="drawer-nav-item" href="tools.html">
             <span class="drawer-item-icon">🛠️</span>
@@ -634,86 +1751,72 @@
 
   <!-- Modal Chọn Nhóm Tải Tool Mobile (Telegram / Discord) & Đếm ngược 10s mở khóa link tải -->
   <div id="txDownloadModalOverlay" class="tx-dl-modal-overlay" aria-hidden="true">
-    <div class="tx-dl-modal" role="dialog" aria-modal="true" aria-labelledby="dlModalTitle">
+    <div class="tx-dl-modal tx-dl-modal-compact" role="dialog" aria-modal="true" aria-labelledby="dlModalTitle">
       <button type="button" class="tx-dl-modal-close" id="txDlModalCloseBtn" aria-label="Đóng" title="Đóng">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="1" y1="1" x2="13" y2="13"></line>
           <line x1="13" y1="1" x2="1" y2="13"></line>
         </svg>
       </button>
 
-      <div class="tx-dl-modal-badge">
-        <span class="tx-dl-badge-dot"></span>
-        <span>✦ THAM GIA MÁY CHỦ ĐỂ MỞ KHÓA LINK TẢI ✦</span>
+      <div class="tx-dl-compact-header">
+        <h2 id="dlModalTitle" class="tx-dl-modal-title">Tải <span id="dlModalToolName">Tool Mobile</span></h2>
+        <span class="tx-dl-compact-badge">⚡ Có Key? Nhập để tải luôn không cần chờ</span>
       </div>
 
-      <h2 id="dlModalTitle" class="tx-dl-modal-title">Tải <span id="dlModalToolName">Tool Mobile</span></h2>
+      <!-- Khung Nhập Key Tải Luôn Siêu Gọn (Không hiển thị mã key) -->
+      <div class="tx-dl-key-box compact" id="txDlKeyBox">
+        <div class="tx-dl-key-input-wrap">
+          <input type="text" id="txDlKeyInput" class="tx-dl-key-input" placeholder="Nhập key mở khóa để tải luôn..." autocomplete="off" spellcheck="false">
+          <button type="button" id="txDlKeySubmitBtn" class="tx-dl-key-btn">Tải Luôn 🚀</button>
+        </div>
+        <div id="txDlKeyMsg" class="tx-dl-key-msg" hidden></div>
+      </div>
 
-      <p class="tx-dl-modal-desc">
-        Vào nhóm để <strong>lấy link tải nhanh nhất</strong>, và có thể <strong>biết được thông báo mỗi khi có bản Update mới</strong>. Vui lòng tham gia 1 trong 2 máy chủ bên dưới, sẽ có link tải về.
-      </p>
+      <div class="tx-dl-divider compact">
+        <span>HOẶC BẤM THAM GIA ĐỢI 120 GIÂY</span>
+      </div>
 
-      <div class="tx-dl-group-options">
-        <!-- Nhóm Telegram -->
-        <a href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener" class="tx-dl-group-card telegram js-dl-server-card" data-server="telegram">
-          <div class="tx-dl-group-icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .26z"/>
-            </svg>
-          </div>
-          <div class="tx-dl-group-info">
-            <div class="tx-dl-group-top">
-              <strong>Kênh Telegram Tool GS</strong>
-              <span class="tx-dl-check-pill" id="txPillTelegram">Bấm để tham gia ↗</span>
-            </div>
-            <p>Nhận link tải trực tiếp, file APK, script &amp; thông báo update mới nhất</p>
-            <span class="tx-dl-join-btn">➤ Tham Gia Telegram ↗</span>
+      <!-- 2 Nút Máy Chủ Thu Gọn Song Song (Grid 2 Cột) -->
+      <div class="tx-dl-group-options compact-grid">
+        <a href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener" class="tx-dl-group-card compact telegram js-dl-server-card" data-server="telegram">
+          <span class="tx-dl-mini-icon telegram">➤</span>
+          <div class="tx-dl-mini-info">
+            <strong>Kênh Telegram</strong>
+            <small id="txPillTelegram">Bấm tham gia ↗</small>
           </div>
         </a>
 
-        <!-- Nhóm Discord -->
-        <a href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener" class="tx-dl-group-card discord js-dl-server-card" data-server="discord">
-          <div class="tx-dl-group-icon">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
-              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-            </svg>
-          </div>
-          <div class="tx-dl-group-info">
-            <div class="tx-dl-group-top">
-              <strong>Server Discord Cộng Đồng</strong>
-              <span class="tx-dl-check-pill" id="txPillDiscord">Bấm để tham gia ↗</span>
-            </div>
-            <p>Kênh tải tool, phòng chat cộng đồng, giải đáp lỗi &amp; hướng dẫn cài đặt</p>
-            <span class="tx-dl-join-btn discord">◉ Tham Gia Discord ↗</span>
+        <a href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener" class="tx-dl-group-card compact discord js-dl-server-card" data-server="discord">
+          <span class="tx-dl-mini-icon discord">◉</span>
+          <div class="tx-dl-mini-info">
+            <strong>Server Discord</strong>
+            <small id="txPillDiscord">Bấm tham gia ↗</small>
           </div>
         </a>
       </div>
 
-      <!-- Khung Trạng Thái & Nút Mở Khóa Tải Về -->
-      <div class="tx-dl-unlock-box" id="txDlUnlockBox">
-        <div class="tx-dl-countdown-status" id="txDlCountdownStatus">
+      <!-- Khung Đếm Ngược & Nút Tải Thu Gọn -->
+      <div class="tx-dl-unlock-box compact" id="txDlUnlockBox">
+        <div class="tx-dl-countdown-status compact" id="txDlCountdownStatus">
           <span class="tx-dl-status-icon" id="txDlStatusIcon">🔒</span>
           <div class="tx-dl-status-text">
-            <strong id="txDlStatusTitle">Bước 1/2: Chưa tham gia máy chủ</strong>
-            <span id="txDlStatusSub">Bấm vào Telegram hoặc Discord ở trên để bắt đầu đếm ngược 10 giây.</span>
+            <strong id="txDlStatusTitle">Chưa tham gia máy chủ</strong>
+            <span id="txDlStatusSub">Bấm Telegram hoặc Discord ở trên để đếm ngược 120s.</span>
           </div>
         </div>
 
-        <div class="tx-dl-progress-wrap" id="txDlProgressWrap">
+        <div class="tx-dl-progress-wrap compact" id="txDlProgressWrap">
           <div class="tx-dl-progress-bar" id="txDlProgressBar" style="width: 0%;"></div>
         </div>
 
         <div class="tx-dl-action-area">
-          <a href="#" id="txDlFinalBtn" class="tx-dl-final-btn is-locked" target="_blank" rel="noopener" aria-disabled="true">
+          <a href="#" id="txDlFinalBtn" class="tx-dl-final-btn is-locked compact" target="_blank" rel="noopener" aria-disabled="true">
             <span class="tx-dl-btn-icon" id="txDlBtnIcon">🔒</span>
             <span id="txDlBtnText">Chờ tham gia 1 trong 2 máy chủ...</span>
-            <span class="tx-dl-btn-timer" id="txDlBtnTimer" style="display: none;">10s</span>
+            <span class="tx-dl-btn-timer" id="txDlBtnTimer" style="display: none;">120s</span>
           </a>
         </div>
-      </div>
-
-      <div class="tx-dl-modal-footer-tip">
-        <span>💡 <strong>Lưu ý:</strong> Sau khi hoàn tất 10 giây đếm ngược, nút tải xanh sẽ mở khóa cho phép bạn tải trực tiếp file về máy.</span>
       </div>
     </div>
   </div>
@@ -722,7 +1825,7 @@
   <script src="snow.js" defer></script>
   <script src="nav.js" defer></script>
   <script>
-    // Modal chọn nhóm Telegram / Discord & đếm ngược 10s mở khóa link tải Tool Mobile
+        // Modal chọn nhóm Telegram / Discord & đếm ngược 120s mở khóa link tải Tool Mobile (hỗ trợ nhập Key tundenxin để tải luôn)
     (function () {
       const overlay = document.getElementById('txDownloadModalOverlay');
       const closeBtn = document.getElementById('txDlModalCloseBtn');
@@ -738,6 +1841,9 @@
       const btnIcon = document.getElementById('txDlBtnIcon');
       const btnText = document.getElementById('txDlBtnText');
       const btnTimer = document.getElementById('txDlBtnTimer');
+      const keyInput = document.getElementById('txDlKeyInput');
+      const keySubmitBtn = document.getElementById('txDlKeySubmitBtn');
+      const keyMsg = document.getElementById('txDlKeyMsg');
 
       if (!overlay) return;
 
@@ -758,10 +1864,18 @@
         if (pillTelegram) pillTelegram.textContent = 'Bấm để tham gia ↗';
         if (pillDiscord) pillDiscord.textContent = 'Bấm để tham gia ↗';
 
+        // Reset key input
+        if (keyInput) keyInput.value = '';
+        if (keyMsg) {
+          keyMsg.hidden = true;
+          keyMsg.textContent = '';
+          keyMsg.className = 'tx-dl-key-msg';
+        }
+
         // Reset status & progress
         if (statusIcon) statusIcon.textContent = '🔒';
-        if (statusTitle) statusTitle.textContent = 'Bước 1/2: Chưa tham gia máy chủ';
-        if (statusSub) statusSub.textContent = 'Bấm vào Telegram hoặc Discord ở trên để bắt đầu đếm ngược 10 giây.';
+        if (statusTitle) statusTitle.textContent = 'Chưa tham gia máy chủ';
+        if (statusSub) statusSub.textContent = 'Bấm Telegram hoặc Discord ở trên để đếm ngược 120 giây (hoặc nhập Key để tải luôn).';
         if (progressBar) progressBar.style.width = '0%';
 
         // Reset button
@@ -774,7 +1888,7 @@
         if (btnText) btnText.textContent = 'Chờ tham gia 1 trong 2 máy chủ...';
         if (btnTimer) {
           btnTimer.style.display = 'none';
-          btnTimer.textContent = '10s';
+          btnTimer.textContent = '120s';
         }
       }
 
@@ -817,13 +1931,80 @@
         if (btnTimer) btnTimer.style.display = 'none';
       }
 
+      function handleKeySubmit() {
+        if (!keyInput) return;
+        const val = (keyInput.value || '').trim().toLowerCase();
+        if (val === 'tundenxin') {
+          if (keyMsg) {
+            keyMsg.className = 'tx-dl-key-msg success';
+            keyMsg.textContent = '✅ Key chính xác! Đang mở khóa và tải xuống ngay...';
+            keyMsg.hidden = false;
+          }
+          if (countdownTimer) {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+          }
+          triggerUnlock();
+          setTimeout(() => {
+            if (currentToolUrl && currentToolUrl !== '#' && currentToolUrl !== '') {
+              window.open(currentToolUrl, '_blank');
+            }
+          }, 350);
+        } else {
+          if (keyMsg) {
+            keyMsg.className = 'tx-dl-key-msg error';
+            keyMsg.textContent = '❌ Key không chính xác! Vui lòng thử lại hoặc chờ đếm ngược 120s.';
+            keyMsg.hidden = false;
+          }
+          keyInput.focus();
+        }
+      }
+
+      if (keySubmitBtn) {
+        keySubmitBtn.addEventListener('click', handleKeySubmit);
+      }
+      if (keyInput) {
+        keyInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            handleKeySubmit();
+          }
+        });
+      }
+
+      // Phím tắt bí mật: gõ trực tiếp 'tundenxin' trên bàn phím khi mở modal sẽ tự động mở khóa tải luôn
+      let secretKeyBuffer = '';
+      window.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('active') || isUnlocked) return;
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') && e.target !== keyInput) return;
+        if (e.key && e.key.length === 1 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+          secretKeyBuffer += e.key.toLowerCase();
+          if (secretKeyBuffer.length > 25) {
+            secretKeyBuffer = secretKeyBuffer.slice(-25);
+          }
+          if (secretKeyBuffer.endsWith('tundenxin')) {
+            secretKeyBuffer = '';
+            if (countdownTimer) {
+              clearInterval(countdownTimer);
+              countdownTimer = null;
+            }
+            triggerUnlock();
+            setTimeout(() => {
+              if (currentToolUrl && currentToolUrl !== '#' && currentToolUrl !== '') {
+                window.open(currentToolUrl, '_blank');
+              }
+            }, 350);
+          }
+        }
+      });
+
       function startCountdown() {
         if (isUnlocked || countdownTimer) return;
 
-        let secondsLeft = 10;
+        let secondsLeft = 120;
         if (statusIcon) statusIcon.textContent = '⏳';
-        if (statusTitle) statusTitle.textContent = 'Bước 2/2: Đang xác thực máy chủ...';
-        if (statusSub) statusSub.textContent = 'Vui lòng đợi 10 giây để hệ thống mở khóa link tải trực tiếp.';
+        if (statusTitle) statusTitle.textContent = 'Đang xác thực máy chủ...';
+        if (statusSub) statusSub.textContent = 'Vui lòng đợi 120 giây để hệ thống mở khóa (hoặc nhập Key để tải luôn).';
         
         if (finalBtn) {
           finalBtn.className = 'tx-dl-final-btn is-counting';
@@ -835,16 +2016,19 @@
           btnTimer.textContent = secondsLeft + 's';
         }
         if (progressBar) {
-          progressBar.style.width = '5%';
+          progressBar.style.width = '2%';
         }
 
         countdownTimer = setInterval(() => {
           secondsLeft--;
           if (progressBar) {
-            progressBar.style.width = ((10 - secondsLeft) / 10 * 100) + '%';
+            progressBar.style.width = ((120 - secondsLeft) / 120 * 100) + '%';
           }
           if (btnTimer) {
             btnTimer.textContent = secondsLeft + 's';
+          }
+          if (statusSub) {
+            statusSub.textContent = 'Còn ' + secondsLeft + ' giây... (hoặc nhập Key ở trên để tải luôn)';
           }
 
           if (secondsLeft <= 0) {
@@ -890,6 +2074,86 @@
           closeModal();
         }
       });
+          // ==========================================
+      // BỘ LỌC TỪNG GAME & TÌM KIẾM TOOL WIBUZSTORE
+      // ==========================================
+      (function initGameCatalog() {
+        const gameTabs = document.querySelectorAll(".game-tab-btn");
+        const gameSections = document.querySelectorAll(".game-group-section");
+        const searchInput = document.getElementById("shopToolSearchInput");
+        const clearBtn = document.getElementById("clearSearchBtn");
+        const noResults = document.getElementById("shopNoResults");
+
+        let activeGame = "all";
+
+        function filterShopTools() {
+          const query = (searchInput ? searchInput.value : "").toLowerCase().trim();
+          if (clearBtn) clearBtn.hidden = !query;
+
+          let totalVisibleCards = 0;
+
+          gameSections.forEach(section => {
+            const sectionGameKey = section.dataset.gameKey;
+            const matchesGameTab = (activeGame === "all" || activeGame === sectionGameKey);
+
+            const cards = section.querySelectorAll(".tool-card");
+            let visibleInThisSection = 0;
+
+            cards.forEach(card => {
+              const toolName = (card.dataset.toolName || "").toLowerCase();
+              const titleEl = card.querySelector("h3");
+              const titleText = titleEl ? titleEl.textContent.toLowerCase() : "";
+              const copyEl = card.querySelector(".tool-copy");
+              const copyText = copyEl ? copyEl.textContent.toLowerCase() : "";
+
+              const matchesSearch = !query || 
+                toolName.includes(query) || 
+                titleText.includes(query) || 
+                copyText.includes(query) || 
+                sectionGameKey.includes(query);
+
+              if (matchesGameTab && matchesSearch) {
+                card.classList.remove("is-hidden");
+                visibleInThisSection++;
+                totalVisibleCards++;
+              } else {
+                card.classList.add("is-hidden");
+              }
+            });
+
+            if (matchesGameTab && visibleInThisSection > 0) {
+              section.classList.remove("is-hidden");
+            } else {
+              section.classList.add("is-hidden");
+            }
+          });
+
+          if (noResults) {
+            noResults.hidden = (totalVisibleCards > 0);
+          }
+        }
+
+        gameTabs.forEach(btn => {
+          btn.addEventListener("click", () => {
+            gameTabs.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            activeGame = btn.dataset.filterGame || "all";
+            filterShopTools();
+          });
+        });
+
+        if (searchInput) {
+          searchInput.addEventListener("input", filterShopTools);
+        }
+
+        if (clearBtn) {
+          clearBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            filterShopTools();
+            searchInput.focus();
+          });
+        }
+      })();
     })();
   </script>
 </body>
