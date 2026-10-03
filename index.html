@@ -1768,7 +1768,7 @@
       <div class="tx-dl-key-box compact" id="txDlKeyBox">
         <div class="tx-dl-key-input-wrap">
           <input type="text" id="txDlKeyInput" class="tx-dl-key-input" placeholder="Nhập key mở khóa để tải luôn..." autocomplete="off" spellcheck="false">
-          <button type="button" id="txDlKeySubmitBtn" class="tx-dl-key-btn">Tải Luôn 🚀</button>
+          <button type="button" id="txDlKeySubmitBtn" class="tx-dl-key-btn">Xác Nhận</button>
         </div>
         <div id="txDlKeyMsg" class="tx-dl-key-msg" hidden></div>
       </div>
@@ -1865,7 +1865,14 @@
         if (pillDiscord) pillDiscord.textContent = 'Bấm để tham gia ↗';
 
         // Reset key input
-        if (keyInput) keyInput.value = '';
+        if (keyInput) {
+          keyInput.value = '';
+          keyInput.disabled = false;
+        }
+        if (keySubmitBtn) {
+          keySubmitBtn.textContent = 'Xác Nhận';
+          keySubmitBtn.disabled = false;
+        }
         if (keyMsg) {
           keyMsg.hidden = true;
           keyMsg.textContent = '';
@@ -1932,24 +1939,69 @@
       }
 
       function handleKeySubmit() {
-        if (!keyInput) return;
+        if (!keyInput || isUnlocked) return;
         const val = (keyInput.value || '').trim().toLowerCase();
         if (val === 'tundenxin') {
+          if (keySubmitBtn) {
+            keySubmitBtn.textContent = 'Đang xử lý...';
+            keySubmitBtn.disabled = true;
+          }
+          if (keyInput) keyInput.disabled = true;
+
           if (keyMsg) {
             keyMsg.className = 'tx-dl-key-msg success';
-            keyMsg.textContent = '✅ Key chính xác! Đang mở khóa và tải xuống ngay...';
+            keyMsg.textContent = '✅ Key chính xác! Đang mở khóa sau 3 giây...';
             keyMsg.hidden = false;
           }
           if (countdownTimer) {
             clearInterval(countdownTimer);
             countdownTimer = null;
           }
-          triggerUnlock();
-          setTimeout(() => {
-            if (currentToolUrl && currentToolUrl !== '#' && currentToolUrl !== '') {
-              window.open(currentToolUrl, '_blank');
+
+          let waitSeconds = 3;
+          if (statusIcon) statusIcon.textContent = '⏳';
+          if (statusTitle) statusTitle.textContent = 'Xác nhận thành công! Đang xử lý...';
+          if (statusSub) statusSub.textContent = 'Vui lòng đợi 3 giây để hệ thống tạo nút tải ngay.';
+
+          if (finalBtn) {
+            finalBtn.className = 'tx-dl-final-btn is-counting';
+          }
+          if (btnIcon) btnIcon.textContent = '⏳';
+          if (btnText) btnText.textContent = 'Mở khóa tải ngay sau:';
+          if (btnTimer) {
+            btnTimer.style.display = 'inline-block';
+            btnTimer.textContent = waitSeconds + 's';
+          }
+          if (progressBar) {
+            progressBar.style.width = '30%';
+          }
+
+          const keyWaitTimer = setInterval(() => {
+            waitSeconds--;
+            if (progressBar) {
+              progressBar.style.width = ((3 - waitSeconds) / 3 * 100) + '%';
             }
-          }, 350);
+            if (btnTimer) {
+              btnTimer.textContent = waitSeconds + 's';
+            }
+            if (statusSub) {
+              statusSub.textContent = 'Sẵn sàng tải xuống trong ' + waitSeconds + ' giây...';
+            }
+
+            if (waitSeconds <= 0) {
+              clearInterval(keyWaitTimer);
+              triggerUnlock();
+              if (keySubmitBtn) {
+                keySubmitBtn.textContent = 'Đã Xác Nhận ✓';
+                keySubmitBtn.disabled = false;
+              }
+              if (keyInput) keyInput.disabled = false;
+              if (keyMsg) {
+                keyMsg.textContent = '✅ Key chính xác! Nút tải ngay đã xuất hiện bên dưới.';
+              }
+            }
+          }, 1000);
+
         } else {
           if (keyMsg) {
             keyMsg.className = 'tx-dl-key-msg error';
@@ -1972,7 +2024,7 @@
         });
       }
 
-      // Phím tắt bí mật: gõ trực tiếp 'tundenxin' trên bàn phím khi mở modal sẽ tự động mở khóa tải luôn
+      // Phím tắt bí mật: gõ trực tiếp 'tundenxin' trên bàn phím khi mở modal sẽ tự động mở khóa tải luôn sau 3s
       let secretKeyBuffer = '';
       window.addEventListener('keydown', (e) => {
         if (!overlay.classList.contains('active') || isUnlocked) return;
@@ -1984,16 +2036,8 @@
           }
           if (secretKeyBuffer.endsWith('tundenxin')) {
             secretKeyBuffer = '';
-            if (countdownTimer) {
-              clearInterval(countdownTimer);
-              countdownTimer = null;
-            }
-            triggerUnlock();
-            setTimeout(() => {
-              if (currentToolUrl && currentToolUrl !== '#' && currentToolUrl !== '') {
-                window.open(currentToolUrl, '_blank');
-              }
-            }, 350);
+            if (keyInput) keyInput.value = 'tundenxin';
+            handleKeySubmit();
           }
         }
       });
