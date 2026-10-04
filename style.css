@@ -564,7 +564,7 @@ box-shadow: ;
 
 .guide-title h1 span, h2 span {
   color: #38bdf8;
-  background: linear-gradient(110deg, #ffffff 0%, #67e8f9 35%, #38bdf8 70%, #c084fc 100%);
+  background: linear-gradient(110deg, #38bdf8 0%, #67e8f9 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none !important;
@@ -6066,6 +6066,7 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
   font-size: 11px;
   color: #38bdf8;
   font-weight: 600;
+  line-height: 1.45;
 }
 
 .tx-dl-compact-badge strong {
