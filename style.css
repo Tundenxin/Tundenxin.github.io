@@ -5399,9 +5399,33 @@ border: 1px solid rgba(255, 255, 255, 0.14);
   .letter {
     font-size: 19px;
   }
+  .tool-card-header-row {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .tool-header-left {
+    gap: 10px;
+  }
+
+  .tool-card-title-group {
+    min-width: 0;
+  }
+
+  .tool-card-title-group small {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .tool-card-title-group h3,
   .tool-copy h3 {
-    font-size: 15.5px;
+    font-size: 18px; /* Tăng cỡ chữ theo yêu cầu */
     margin: 2px 0 4px;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .tool-copy p {
     font-size: 11px;
