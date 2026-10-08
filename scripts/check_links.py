@@ -25,7 +25,7 @@ class Page(HTMLParser):
         attrs = dict(attrs)
         if attrs.get("id"):
             self.ids.add(attrs["id"])
-        for key in ("src", "href", "poster", "data-tool-url", "data-video"):
+        for key in ("src", "href", "poster", "data-src", "data-tool-url", "data-video"):
             if attrs.get(key):
                 self.urls.append(attrs[key])
         self.urls.extend(m.group(2) for m in URL_LITERAL.finditer(attrs.get("onerror", "")))

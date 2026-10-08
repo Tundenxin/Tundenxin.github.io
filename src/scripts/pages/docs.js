@@ -1,15 +1,18 @@
 function setupCopyBtn(btnId, link) {
   const btn = document.getElementById(btnId);
   if (!btn) return;
+  const originalHtml = btn.innerHTML;
+  const originalColor = btn.style.color;
+  let feedbackTimer = null;
   btn.addEventListener('click', () => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(link).then(() => {
-        const oldText = btn.innerHTML;
+        clearTimeout(feedbackTimer);
         btn.innerHTML = '✓ Đã chép link!';
         btn.style.color = '#38bdf8';
-        setTimeout(() => {
-          btn.innerHTML = oldText;
-          btn.style.color = '';
+        feedbackTimer = setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.style.color = originalColor;
         }, 2000);
       }).catch(() => {
         prompt('Sao chép liên kết:', link);

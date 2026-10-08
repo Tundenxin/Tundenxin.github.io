@@ -23,14 +23,27 @@
   let currentToolName = 'Tool Mobile';
   let currentToolUrl = '#';
   let countdownTimer = null;
+  let keyWaitTimer = null;
   let isUnlocked = false;
+  let secretKeyBuffer = '';
+
+  function stopTimers() {
+    clearInterval(countdownTimer);
+    clearInterval(keyWaitTimer);
+    countdownTimer = null;
+    keyWaitTimer = null;
+  }
+
+  function setDownloadState(state) {
+    if (!finalBtn) return;
+    finalBtn.classList.remove('is-locked', 'is-counting', 'is-ready');
+    finalBtn.classList.add(state);
+  }
 
   function resetModalState() {
-    if (countdownTimer) {
-      clearInterval(countdownTimer);
-      countdownTimer = null;
-    }
+    stopTimers();
     isUnlocked = false;
+    secretKeyBuffer = '';
 
     // Reset server cards
     serverCards.forEach(c => c.classList.remove('selected'));
@@ -60,7 +73,7 @@
 
     // Reset button
     if (finalBtn) {
-      finalBtn.className = 'tx-dl-final-btn is-locked';
+      setDownloadState('is-locked');
       finalBtn.setAttribute('aria-disabled', 'true');
       finalBtn.href = '#';
     }
@@ -81,17 +94,15 @@
     resetModalState();
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('tx-download-open');
   }
 
   function closeModal() {
-    if (countdownTimer) {
-      clearInterval(countdownTimer);
-      countdownTimer = null;
-    }
+    stopTimers();
+    secretKeyBuffer = '';
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.classList.remove('tx-download-open');
   }
 
   function triggerUnlock() {
@@ -102,7 +113,7 @@
     if (progressBar) progressBar.style.width = '100%';
 
     if (finalBtn) {
-      finalBtn.className = 'tx-dl-final-btn is-ready';
+      setDownloadState('is-ready');
       finalBtn.removeAttribute('aria-disabled');
       finalBtn.href = currentToolUrl;
     }
@@ -112,7 +123,7 @@
   }
 
   function handleKeySubmit() {
-    if (!keyInput || isUnlocked) return;
+    if (!keyInput || isUnlocked || keyWaitTimer !== null || !overlay.classList.contains('active')) return;
     const val = (keyInput.value || '').trim().toLowerCase();
     if (val === 'tundenxin') {
       if (keySubmitBtn) {
@@ -137,7 +148,7 @@
       if (statusSub) statusSub.textContent = 'Vui lòng đợi 3 giây để hệ thống tạo nút tải ngay.';
 
       if (finalBtn) {
-        finalBtn.className = 'tx-dl-final-btn is-counting';
+        setDownloadState('is-counting');
       }
       if (btnIcon) btnIcon.textContent = '⏳';
       if (btnText) btnText.textContent = 'Mở khóa tải ngay sau:';
@@ -149,7 +160,7 @@
         progressBar.style.width = '30%';
       }
 
-      const keyWaitTimer = setInterval(() => {
+      keyWaitTimer = setInterval(() => {
         waitSeconds--;
         if (progressBar) {
           progressBar.style.width = ((3 - waitSeconds) / 3 * 100) + '%';
@@ -163,6 +174,7 @@
 
         if (waitSeconds <= 0) {
           clearInterval(keyWaitTimer);
+          keyWaitTimer = null;
           triggerUnlock();
           if (keySubmitBtn) {
             keySubmitBtn.textContent = 'Đã Xác Nhận ✓';
@@ -198,7 +210,6 @@
   }
 
   // Phím tắt bí mật: gõ trực tiếp 'tundenxin' trên bàn phím khi mở modal sẽ tự động mở khóa tải luôn sau 3s
-  let secretKeyBuffer = '';
   window.addEventListener('keydown', (e) => {
     if (!overlay.classList.contains('active') || isUnlocked) return;
     if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') && e.target !== keyInput) return;
@@ -216,7 +227,7 @@
   });
 
   function startCountdown() {
-    if (isUnlocked || countdownTimer) return;
+    if (isUnlocked || countdownTimer !== null || keyWaitTimer !== null) return;
 
     let secondsLeft = 120;
     if (statusIcon) statusIcon.textContent = '⏳';
@@ -224,7 +235,7 @@
     if (statusSub) statusSub.textContent = 'Vui lòng đợi 120 giây để hệ thống mở khóa (hoặc nhập Key để tải luôn).';
 
     if (finalBtn) {
-      finalBtn.className = 'tx-dl-final-btn is-counting';
+      setDownloadState('is-counting');
     }
     if (btnIcon) btnIcon.textContent = '⏳';
     if (btnText) btnText.textContent = 'Đang mở khóa sau:';
@@ -278,6 +289,12 @@
 
   if (closeBtn) {
     closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (finalBtn) {
+    finalBtn.addEventListener('click', (e) => {
+      if (!isUnlocked) e.preventDefault();
+    });
   }
 
   overlay.addEventListener('click', (e) => {

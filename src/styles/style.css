@@ -45,6 +45,11 @@
   --line-hover: rgba(34, 211, 238, 0.65);
 }
 
+/* Author display rules must not override the HTML hidden attribute. */
+[hidden] {
+  display: none !important;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent !important;
@@ -4508,7 +4513,9 @@ border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Khóa cuộn trang khi menu đang mở */
-body.nav-drawer-open {
+body.nav-drawer-open,
+body.tx-download-open,
+body.tx-notice-open {
   overflow: hidden !important;
 }
 

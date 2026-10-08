@@ -8,9 +8,25 @@
 
   // Ẩn tất cả các panel
   function hideAllPanels() {
-    allPanels.forEach(p => { p.hidden = true; });
-    if (frame) frame.src = '';
+    allPanels.forEach(panel => {
+      panel.hidden = true;
+      panel.querySelectorAll('video, audio').forEach(media => media.pause());
+      panel.querySelectorAll('iframe').forEach(embed => {
+        if (embed.getAttribute('src') && embed.getAttribute('src') !== 'about:blank') {
+          embed.src = 'about:blank';
+        }
+      });
+    });
     cards.forEach(c => c.classList.remove('is-active-card'));
+  }
+
+  function showPanel(panel) {
+    if (!panel) return;
+    panel.hidden = false;
+    panel.querySelectorAll('iframe[data-src]').forEach(embed => {
+      embed.src = embed.dataset.src;
+    });
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // Xử lý bộ lọc tabs
@@ -19,6 +35,7 @@
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
+      hideAllPanels();
 
       cards.forEach(card => {
         const cat = card.dataset.category || 'pc';
@@ -34,12 +51,8 @@
 
       // Nếu chọn tab sửa lỗi Unicore, tự động mở panel sửa lỗi
       if (filter === 'troubleshoot') {
-        hideAllPanels();
         const fixPanel = document.getElementById('panel-unicore-fix');
-        if (fixPanel) {
-          fixPanel.hidden = false;
-          fixPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        showPanel(fixPanel);
       }
     });
   });
@@ -61,17 +74,15 @@
           videoIcon.src = cardImg.src;
           videoIcon.alt = card.dataset.toolId || 'Tool Icon';
         }
-        if (frame) frame.src = videoUrl + '?autoplay=1';
-        if (videoPanel) {
-          videoPanel.hidden = false;
-          videoPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (frame) {
+          const videoSource = new URL(videoUrl, window.location.href);
+          videoSource.searchParams.set('autoplay', '1');
+          frame.src = videoSource.href;
         }
+        showPanel(videoPanel);
       } else if (targetPanelId) {
         const targetPanel = document.getElementById(targetPanelId);
-        if (targetPanel) {
-          targetPanel.hidden = false;
-          targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        showPanel(targetPanel);
       }
     });
   });
@@ -86,10 +97,7 @@
     btn.addEventListener('click', () => {
       hideAllPanels();
       const fixPanel = document.getElementById('panel-unicore-fix');
-      if (fixPanel) {
-        fixPanel.hidden = false;
-        fixPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      showPanel(fixPanel);
     });
   });
 
@@ -99,7 +107,7 @@
   const targetQuery = (urlParams.get('tool') || window.location.hash.replace('#', '')).toLowerCase();
   if (targetQuery) {
     const allCards = Array.from(cards);
-    const matchCard = allCards.find(c => {
+    const matchCard = allCards.find(c => (c.dataset.toolId || '').toLowerCase() === targetQuery) || allCards.find(c => {
       const tid = (c.dataset.toolId || '').toLowerCase();
       const title = (c.dataset.title || '').toLowerCase();
       const strong = c.querySelector('strong') ? c.querySelector('strong').textContent.toLowerCase() : '';
