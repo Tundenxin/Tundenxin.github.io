@@ -105,7 +105,7 @@ main {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url('skirk-bg.jpg');
+  background-image: url('../assets/images/backgrounds/skirk-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 75% center;
@@ -2832,7 +2832,7 @@ display: flex;
   }
   /* Ảnh nền đứng Skirk trời sao mặt nước chuyên biệt cho điện thoại */
   .skirk-bg-fixed {
-    background-image: url('skirk-mobile-bg.jpg');
+    background-image: url('../assets/images/backgrounds/skirk-mobile-bg.jpg');
     background-position: center top;
     background-size: cover;
   }

@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="genshin-icon.png">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -32,7 +32,7 @@
       </span>
     </button>
     <a class="brand" href="index.html" aria-label="Tundenxin Trang chủ">
-      <img src="primogem.png" alt="Nguyên Thạch" class="primogem" width="48" height="48">
+      <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem" width="48" height="48">
       <span><strong>Tundenxin</strong><small>Genshin Mobile Free</small></span>
     </a>
 
@@ -303,7 +303,7 @@
   <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Menu điều hướng di động" aria-hidden="true">
     <div class="mobile-drawer-header">
       <div class="mobile-drawer-brand">
-        <img src="primogem.png" alt="Nguyên Thạch" class="primogem small" width="28" height="28">
+        <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem small" width="28" height="28">
         <div>
           <strong>Tundenxin</strong>
           <small>MENU ĐIỀU HƯỚNG</small>
@@ -363,7 +363,7 @@
   </aside>
 
   <footer>
-    <img src="primogem.png" alt="Nguyên Thạch" class="primogem small" width="26" height="26">
+    <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem small" width="26" height="26">
     <b>Tundenxin</b>
     <span>•</span>
     <span>Genshin Mobile Free</span>
@@ -373,64 +373,8 @@
     <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
-  <script src="snow.js" defer></script>
-  <script src="nav.js" defer></script>
-  <script>
-    const searchInput = document.getElementById('toolSearchInput');
-    const clearBtn = document.getElementById('clearSearchBtn');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.utility-card');
-    const noResults = document.getElementById('noResultsMsg');
-
-    let currentFilter = 'all';
-
-    function applyFilterAndSearch() {
-      const query = (searchInput.value || '').trim().toLowerCase();
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const categories = (card.dataset.category || '').toLowerCase().split(' ');
-        const text = (card.textContent || '').toLowerCase();
-
-        const matchesFilter = (currentFilter === 'all') || categories.includes(currentFilter);
-        const matchesSearch = !query || text.includes(query);
-
-        if (matchesFilter && matchesSearch) {
-          card.classList.remove('is-hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('is-hidden');
-        }
-      });
-
-      if (noResults) {
-        noResults.hidden = visibleCount > 0;
-      }
-      if (clearBtn) {
-        clearBtn.hidden = !query;
-      }
-    }
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        applyFilterAndSearch();
-      });
-    });
-
-    if (searchInput) {
-      searchInput.addEventListener('input', applyFilterAndSearch);
-    }
-
-    if (clearBtn) {
-      clearBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        applyFilterAndSearch();
-        searchInput.focus();
-      });
-    }
-  </script>
+  <script src="src/scripts/shared/snow.js" defer></script>
+  <script src="src/scripts/shared/nav.js" defer></script>
+  <script src="src/scripts/pages/tools.js" defer></script>
 </body>
 </html>
