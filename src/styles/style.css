@@ -45,6 +45,11 @@
   --line-hover: rgba(34, 211, 238, 0.65);
 }
 
+/* Author display rules must not override the HTML hidden attribute. */
+[hidden] {
+  display: none !important;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent !important;
@@ -105,7 +110,7 @@ main {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url('skirk-bg.jpg');
+  background-image: url('../assets/images/backgrounds/skirk-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 75% center;
@@ -2832,7 +2837,7 @@ display: flex;
   }
   /* Ảnh nền đứng Skirk trời sao mặt nước chuyên biệt cho điện thoại */
   .skirk-bg-fixed {
-    background-image: url('skirk-mobile-bg.jpg');
+    background-image: url('../assets/images/backgrounds/skirk-mobile-bg.jpg');
     background-position: center top;
     background-size: cover;
   }
@@ -4508,7 +4513,9 @@ border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Khóa cuộn trang khi menu đang mở */
-body.nav-drawer-open {
+body.nav-drawer-open,
+body.tx-download-open,
+body.tx-notice-open {
   overflow: hidden !important;
 }
 

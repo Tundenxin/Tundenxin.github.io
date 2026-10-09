@@ -10,6 +10,8 @@
 (function () {
   const SNOOZE_KEY = 'tx_banwave_notice_snooze_until';
   const SNOOZE_DURATION_MS = 60 * 60 * 1000; // 60 phút = 3,600,000 ms
+  let autoOpenTimer = null;
+  let toastTimer = null;
 
   const modalHtml = `
     <div id="txNoticeOverlay" class="tx-notice-overlay" aria-hidden="true">
@@ -102,25 +104,30 @@
     if (!toast) return;
     toast.textContent = message;
     toast.classList.add('active');
-    setTimeout(() => {
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
       toast.classList.remove('active');
     }, 3500);
   }
 
   function openNotice() {
+    clearTimeout(autoOpenTimer);
+    autoOpenTimer = null;
     const overlay = document.getElementById('txNoticeOverlay');
     if (!overlay) return;
     overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('tx-notice-open');
   }
 
   function closeNotice() {
+    clearTimeout(autoOpenTimer);
+    autoOpenTimer = null;
     const overlay = document.getElementById('txNoticeOverlay');
     if (!overlay) return;
     overlay.classList.remove('active');
     overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.classList.remove('tx-notice-open');
   }
 
   function snooze60Minutes() {
@@ -196,7 +203,9 @@
     // Kiểm tra xem có đang bị tắt 60 phút hay không
     if (!isSnoozed()) {
       // Hiển thị nhẹ nhàng sau khi trang tải xong
-      setTimeout(openNotice, 350);
+      autoOpenTimer = setTimeout(() => {
+        if (!isSnoozed()) openNotice();
+      }, 350);
     }
   }
 
@@ -212,7 +221,11 @@
     close: closeNotice,
     snooze: snooze60Minutes,
     resetSnooze: function () {
-      localStorage.removeItem(SNOOZE_KEY);
+      try {
+        localStorage.removeItem(SNOOZE_KEY);
+      } catch (e) {
+        console.warn('Cannot write to localStorage', e);
+      }
       showToast('✦ Đã khôi phục trạng thái thông báo');
     }
   };

@@ -9,7 +9,20 @@
 
 (function () {
   const STORAGE_KEY = 'tundenxin_snow_enabled';
-  let isSnowEnabled = localStorage.getItem(STORAGE_KEY) !== 'false'; // Mặc định: Bật
+  let isSnowEnabled = true; // Mặc định: Bật, kể cả khi trình duyệt chặn lưu tùy chọn.
+  try {
+    isSnowEnabled = localStorage.getItem(STORAGE_KEY) !== 'false';
+  } catch (e) {
+    // Storage may be disabled in private browsers or embedded pages.
+  }
+
+  function savePreference() {
+    try {
+      localStorage.setItem(STORAGE_KEY, isSnowEnabled ? 'true' : 'false');
+    } catch (e) {
+      // The toggle still works for this visit without persistent storage.
+    }
+  }
 
   let canvas, ctx;
   let width = 0, height = 0;
@@ -87,6 +100,8 @@
   }
 
   function update() {
+    animId = null;
+    if (!isSnowEnabled || document.hidden) return;
     if (!ctx) return;
     if (document.body.classList.contains('nav-drawer-open')) {
       animId = requestAnimationFrame(update);
@@ -105,7 +120,7 @@
       const dx = mouse.x - p.x;
       const dy = mouse.y - p.y;
       const distSq = dx * dx + dy * dy;
-      if (distSq < 8100) { // Trong bán kính 90px
+      if (distSq > 0 && distSq < 8100) { // Tránh chia cho 0 khi chuột ở đúng tâm hạt.
         const dist = Math.sqrt(distSq);
         const force = (90 - dist) / 90;
         p.x -= (dx / dist) * force * 1.6;
@@ -135,7 +150,7 @@
   }
 
   function start() {
-    if (!animId) {
+    if (!animId && ctx && !document.hidden) {
       animId = requestAnimationFrame(update);
     }
     if (canvas) canvas.style.display = 'block';
@@ -154,7 +169,7 @@
 
   function toggleSnow() {
     isSnowEnabled = !isSnowEnabled;
-    localStorage.setItem(STORAGE_KEY, isSnowEnabled ? 'true' : 'false');
+    savePreference();
     if (isSnowEnabled) {
       start();
     } else {
@@ -206,13 +221,13 @@
   window.TxSnow = {
     start: function () {
       isSnowEnabled = true;
-      localStorage.setItem(STORAGE_KEY, 'true');
+      savePreference();
       start();
       updateToggleButtons();
     },
     stop: function () {
       isSnowEnabled = false;
-      localStorage.setItem(STORAGE_KEY, 'false');
+      savePreference();
       stop();
       updateToggleButtons();
     },

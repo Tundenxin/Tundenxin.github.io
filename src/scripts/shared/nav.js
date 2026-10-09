@@ -13,6 +13,7 @@
       overlay.classList.add('open');
       drawer.setAttribute('aria-hidden', 'false');
       overlay.setAttribute('aria-hidden', 'false');
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
       document.body.classList.add('nav-drawer-open');
     }
 
@@ -22,10 +23,12 @@
       overlay.classList.remove('open');
       drawer.setAttribute('aria-hidden', 'true');
       overlay.setAttribute('aria-hidden', 'true');
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('nav-drawer-open');
     }
 
     if (toggleBtn) {
+      if (drawer) toggleBtn.setAttribute('aria-controls', drawer.id);
       toggleBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -64,6 +67,12 @@
       if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
         closeNav();
       }
+    });
+
+    // Drawer is hidden by CSS on desktop; release its scroll lock too.
+    const desktop = window.matchMedia('(min-width: 769px)');
+    desktop.addEventListener('change', (e) => {
+      if (e.matches) closeNav();
     });
   });
 })();

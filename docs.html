@@ -8,9 +8,9 @@
   <meta name="description" content="Tundenxin — Nơi lưu trữ và chia sẻ file TP Map, Config, Script và dữ liệu hỗ trợ Genshin.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="genshin-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -33,7 +33,7 @@
       </span>
     </button>
     <a class="brand" href="index.html" aria-label="Tundenxin Trang chủ">
-      <img src="primogem.png" alt="Nguyên Thạch" class="primogem" width="48" height="48">
+      <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem" width="48" height="48">
       <span><strong>Tundenxin</strong><small>Genshin Mobile Free</small></span>
     </a>
 
@@ -114,7 +114,7 @@
   <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Menu điều hướng di động" aria-hidden="true">
     <div class="mobile-drawer-header">
       <div class="mobile-drawer-brand">
-        <img src="primogem.png" alt="Nguyên Thạch" class="primogem small" width="28" height="28">
+        <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem small" width="28" height="28">
         <div>
           <strong>Tundenxin</strong>
           <small>MENU ĐIỀU HƯỚNG</small>
@@ -175,7 +175,7 @@
 
   <!-- Chân trang (Footer) -->
   <footer>
-    <img src="primogem.png" alt="Nguyên Thạch" class="primogem small" width="26" height="26">
+    <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem small" width="26" height="26">
     <b>Tundenxin</b>
     <span>•</span>
     <span>File TP</span>
@@ -183,33 +183,8 @@
     <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
-  <script src="snow.js" defer></script>
-  <script src="nav.js" defer></script>
-  <script>
-    function setupCopyBtn(btnId, link) {
-      const btn = document.getElementById(btnId);
-      if (!btn) return;
-      btn.addEventListener('click', () => {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(link).then(() => {
-            const oldText = btn.innerHTML;
-            btn.innerHTML = '✓ Đã chép link!';
-            btn.style.color = '#38bdf8';
-            setTimeout(() => {
-              btn.innerHTML = oldText;
-              btn.style.color = '';
-            }, 2000);
-          }).catch(() => {
-            prompt('Sao chép liên kết:', link);
-          });
-        } else {
-          prompt('Sao chép liên kết:', link);
-        }
-      });
-    }
-
-    setupCopyBtn('copyShikaBtn', 'https://mega.nz/file/OyIhxDaa#fmGdrM2K48qIpw1-ayGRuUh3HzITLWwcxtWRGlOY0BI');
-    setupCopyBtn('copyUnicoreBtn', 'https://mega.nz/file/36AEEbpC#fOe7rcsC7C8l338Haj-isYo_s0KG1WNTZIfvunbG4dk');
-  </script>
+  <script src="src/scripts/shared/snow.js" defer></script>
+  <script src="src/scripts/shared/nav.js" defer></script>
+  <script src="src/scripts/pages/docs.js" defer></script>
 </body>
 </html>
