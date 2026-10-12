@@ -22,6 +22,4 @@ function setupCopyBtn(btnId, link) {
     }
   });
 }
-
-setupCopyBtn('copyShikaBtn', 'https://mega.nz/file/OyIhxDaa#fmGdrM2K48qIpw1-ayGRuUh3HzITLWwcxtWRGlOY0BI');
-setupCopyBtn('copyUnicoreBtn', 'https://mega.nz/file/36AEEbpC#fOe7rcsC7C8l338Haj-isYo_s0KG1WNTZIfvunbG4dk');
+// Sẵn sàng gắn sự kiện copy link cho các files TP khi được cập nhật lại sau này
