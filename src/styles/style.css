@@ -1953,17 +1953,48 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1.6;
 }
 
-/* Cụm 3 nút hành động trên thẻ Tool Shika Mobile */
+/* Cụm 3 nút hành động trên thẻ Tool (Shika Mobile, Kuro...) */
 .tool-actions.has-3-btns {
   flex-wrap: wrap;
+  gap: 8px;
 }
 .tool-actions.has-3-btns .download {
   flex: 1 1 100%;
   width: 100%;
 }
 .tool-actions.has-3-btns .btn-guide,
-.tool-actions.has-3-btns .btn-buy-key-mini {
-  flex: 1 1 calc(50% - 5px);
+.tool-actions.has-3-btns .btn-buy-key-mini,
+.tool-actions.has-3-btns .btn-locked-version {
+  flex: 1 1 calc(50% - 4px);
+}
+
+/* Nút hiển thị phiên bản cũ đã bị khóa */
+.btn-locked-version {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px;
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #fca5a5 !important;
+  border: 1px dashed rgba(239, 68, 68, 0.38) !important;
+  border-radius: 14px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  cursor: not-allowed !important;
+  opacity: 0.85 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 8px !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.btn-locked-version:hover {
+  background: rgba(239, 68, 68, 0.14) !important;
+  border-color: rgba(239, 68, 68, 0.6) !important;
+  color: #f87171 !important;
 }
 
 /* =========================================================
@@ -5287,7 +5318,8 @@ border: 1px solid rgba(255, 255, 255, 0.14);
   .tool-actions .btn-guide,
   .tool-actions .btn-buy-key,
   .tool-actions .btn-free,
-  .tool-actions .btn-buy-key-mini {
+  .tool-actions .btn-buy-key-mini,
+  .tool-actions .btn-locked-version {
     flex: 1 1 0;
     min-width: 0;
     width: auto !important;
@@ -5306,6 +5338,19 @@ border: 1px solid rgba(255, 255, 255, 0.14);
     margin: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+  }
+
+  .tool-actions.has-3-btns {
+    flex-wrap: wrap !important;
+  }
+  .tool-actions.has-3-btns .download {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+  .tool-actions.has-3-btns .btn-guide,
+  .tool-actions.has-3-btns .btn-buy-key-mini,
+  .tool-actions.has-3-btns .btn-locked-version {
+    flex: 1 1 calc(50% - 3px) !important;
   }
 
   /* Bảng chú thích trạng thái tool gọn gàng */
