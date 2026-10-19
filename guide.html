@@ -60,7 +60,7 @@
       <button type="button" class="guide-tab-btn active" data-filter="all">
         <span class="game-tab-all-icon">ALL</span>
         <span class="tab-label">Tất Cả</span>
-        <span class="tab-badge">27</span>
+        <span class="tab-badge">29</span>
       </button>
       <button type="button" class="guide-tab-btn" data-filter="genshin" title="Genshin Impact (10 Tool)">
         <img src="src/assets/images/games/game-genshin.webp" alt="Genshin Impact" class="game-tab-img">
@@ -95,6 +95,11 @@
       <button type="button" class="guide-tab-btn" data-filter="dna" title="Duet Night Abyss (2 Tool)">
         <img src="src/assets/images/games/game-dna.jpg" alt="Duet Night Abyss" class="game-tab-img">
         <span class="tab-label">Duet Night Abyss</span>
+        <span class="tab-badge">2</span>
+      </button>
+      <button type="button" class="guide-tab-btn" data-filter="aniimo" title="Aniimo (2 Tool)">
+        <img src="src/assets/images/games/game-aniimo.png" alt="Aniimo" class="game-tab-img">
+        <span class="tab-label">Aniimo</span>
         <span class="tab-badge">2</span>
       </button>
       <button type="button" class="guide-tab-btn" data-filter="other" title="Game Khác (2 Tool)">
@@ -542,6 +547,38 @@
         </span>
         <b>📖</b>
       </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="aniimo" data-tool-id="uni-aniimo" data-target-panel="panel-unicore">
+        <div class="guide-card-icon-wrap">
+          <img src="src/assets/images/tools/tool-unianiimo.png" alt="Uni:Aniimo" class="tool-app-icon" onerror="this.onerror=null;this.src='src/assets/images/icons/genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="PC Máy Tính">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ANIIMO • PC INTERNAL</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Uni:Aniimo ( PC )</strong>
+          <em>Unicore Aniimo: F2 inject, phím INSERT &amp; bypass AC</em>
+        </span>
+        <b>📖</b>
+      </button>
+
+      <button class="guide-card doc-guide-card" data-category="pc" data-game="aniimo" data-tool-id="aniimi" data-target-panel="panel-aniimi">
+        <div class="guide-card-icon-wrap">
+          <img src="src/assets/images/tools/tool-aniimo.png" alt="Aniimi - Aniimo" class="tool-app-icon" onerror="this.onerror=null;this.src='src/assets/images/icons/genshin-icon.png'">
+          <span class="guide-icon-badge pc" title="Aniimo PC">💻</span>
+        </div>
+        <span>
+          <div class="guide-card-badges">
+            <small>ANIIMO • PC</small>
+            <span class="guide-type-pill pill-pc">💻 PC TOOL</span>
+          </div>
+          <strong>Aniimi - Aniimo ( PC )</strong>
+          <em>ShikaHub Loader, phím TAB &amp; danh mục tính năng</em>
+        </span>
+        <b>📖</b>
+      </button>
     </div>
 
     <!-- Panel Video (Kuro & DMSHBY) -->
@@ -667,40 +704,50 @@
             <!-- Accordion chức năng Shika Mobile -->
             <div class="doc-features-wrap">
               <div class="doc-features-title">📋 Danh Sách Chức Năng Shika Mobile:</div>
-              <details class="doc-features-accordion">
-                <summary>👤 Player (Nhân Vật)</summary>
+              <details class="doc-features-accordion" open>
+                <summary>👤 PLAYER (Nhân Vật &amp; Chiến Đấu)</summary>
                 <ul>
-                  <li>God Mode (Bất tử máu)</li>
-                  <li>No CD (Không hồi chiêu kỹ năng E và Q)</li>
-                  <li>Multi Hit (Đánh nhiều đòn cùng lúc)</li>
-                  <li>NoClip (Đi xuyên tường / vật cản)</li>
-                  <li>Player Speed (Tăng tốc độ di chuyển)</li>
-                  <li>Element Changer (Đổi nguyên tố)</li>
-                  <li>Infinite Stamina (Vô hạn thể lực chạy, bơi, leo trèo)</li>
-                  <li>No Sprint Cooldown (Lướt liên tục không khựng)</li>
+                  <li><strong>God Mode:</strong> Bất tử máu, miễn nhiễm mọi sát thương từ quái vật và môi trường.</li>
+                  <li><strong>Player Speed:</strong> Tùy chỉnh tăng tốc độ di chuyển chạy nước rút của nhân vật.</li>
+                  <li><strong>No CD:</strong> Không thời gian hồi chiêu kỹ năng nguyên tố (E) và chiêu nộ (Q).</li>
+                  <li><strong>Element Changer:</strong> Tùy chọn chuyển đổi nguyên tố đòn đánh / nhân vật.</li>
+                  <li><strong>Multi Hit:</strong> Tấn công nhân nhiều đòn đánh cùng lúc (Multi Hit), sát thương cực lớn.</li>
+                  <li><strong>Infinite Stamina:</strong> Vô hạn thể lực chạy, bơi lội, leo trèo không bao giờ cạn.</li>
+                  <li><strong>NoClip:</strong> Đi xuyên tường, vượt địa hình núi đá và mọi vật cản.</li>
+                  <li><strong>No Sprint Cooldown:</strong> Lướt / Chạy nước rút (Sprint) liên tục mượt mà, không bị khựng delay.</li>
                 </ul>
               </details>
+
               <details class="doc-features-accordion">
-                <summary>🌍 World (Thế Giới &amp; Khám Phá)</summary>
+                <summary>🌍 WORLD (Thế Giới &amp; Tự Động Hóa)</summary>
                 <ul>
-                  <li>Kill Aura (Tự diệt quái xung quanh)</li>
-                  <li>Freeze Enemies (Đóng băng quái vật)</li>
-                  <li>Mob Vacuum (Gom quái vật lại một điểm)</li>
-                  <li>Auto Loot (Tự động nhặt đồ, rương, nguyên liệu)</li>
-                  <li>Auto Challenge (Tự động hoàn thành khiêu chiến)</li>
-                  <li>Auto Seelie (Tự dẫn Tiên Linh về bệ)</li>
-                  <li>Auto Statues / Worship Statue (Tự dâng Thất Thiên Thần Tượng)</li>
-                  <li>Skip Cutscenes &amp; Auto Talk (Bỏ qua hội thoại &amp; tự chọn thoại)</li>
-                  <li>Auto Activate TP (Tự động kích hoạt điểm dịch chuyển)</li>
-                  <li>Open Team (Mở đổi đội hình mọi lúc)</li>
+                  <li><strong>No Red Zone:</strong> Xóa vùng ranh giới đỏ Paimon, tự do đi ra ngoài giới hạn bản đồ.</li>
+                  <li><strong>Auto Statues:</strong> Tự động tương tác với Thất Thiên Thần Tượng.</li>
+                  <li><strong>Time Speed:</strong> Tăng tốc độ thời gian trôi trong thế giới game theo ý muốn.</li>
+                  <li><strong>Auto Challenge:</strong> Tự động kích hoạt &amp; hoàn thành cột khiêu chiến thời gian.</li>
+                  <li><strong>Auto Particles:</strong> Tự động hút các hạt năng lượng / hạt nguyên tố nạp nộ tức thì.</li>
+                  <li><strong>Summon Entity:</strong> Triệu hồi / tạo các thực thể, vật thể trong thế giới game.</li>
+                  <li><strong>Freeze Enemies:</strong> Đóng băng quái vật đứng yên tại chỗ, không thể tấn công.</li>
+                  <li><strong>Auto Traveler:</strong> Tự động xử lý &amp; đồng bộ dữ liệu Nhà Lữ Hành (Traveler).</li>
+                  <li><strong>Kill Aura:</strong> Tự động tiêu diệt toàn bộ quái vật trong phạm vi xung quanh siêu tốc.</li>
+                  <li><strong>Auto Seelie:</strong> Tự dẫn Tiên Linh (Seelie) bay về bệ đá để nhận rương tức thì.</li>
+                  <li><strong>Mob Vacuum:</strong> Hút và gom toàn bộ quái vật lại một điểm duy nhất trước mặt.</li>
+                  <li><strong>Worship Statue:</strong> Tự động dâng Thần Đồng lên Thất Thiên Thần Tượng nhận thưởng.</li>
+                  <li><strong>Auto Loot:</strong> Tự động nhặt rương báu, mora, khoáng thạch và tài nguyên rơi từ xa.</li>
+                  <li><strong>Auto Activate TP:</strong> Tự động kích hoạt &amp; mở khóa điểm dịch chuyển khi đến gần.</li>
+                  <li><strong>Skip Cutscenes:</strong> Bỏ qua các đoạn phim cắt cảnh (Cutscenes).</li>
+                  <li><strong>Open Team:</strong> Mở giao diện đổi đội hình ngay lập tức mọi lúc mọi nơi.</li>
+                  <li><strong>Auto Talk:</strong> Tự động nói chuyện và tua nhanh chuỗi đối thoại của NPC.</li>
                 </ul>
               </details>
+
               <details class="doc-features-accordion">
-                <summary>🌀 Teleport (Dịch Chuyển)</summary>
+                <summary>🌀 TELEPORTS (Dịch Chuyển)</summary>
                 <ul>
-                  <li>Chest TP (Dịch chuyển tới rương báu)</li>
-                  <li>Oculi TP (Dịch chuyển nhặt Phong, Nham, Lôi, Thảo, Thuỷ, Hoả Thần Đồng)</li>
-                  <li>Quest TP (Dịch chuyển theo nhiệm vụ)</li>
+                  <li><strong>Chest TP:</strong> Dịch chuyển tức thời đến các rương báu trên toàn bản đồ.</li>
+                  <li><strong>Oculi TP:</strong> Dịch chuyển nhặt toàn bộ Thần Đồng (Phong, Nham, Lôi, Thảo, Thủy, Hỏa).</li>
+                  <li><strong>Quest TP:</strong> Dịch chuyển trực tiếp theo vị trí nhiệm vụ đang làm.</li>
+                  <li><strong>Auto Teleports:</strong> Tự động dịch chuyển liên hoàn theo chuỗi vị trí định sẵn.</li>
                 </ul>
               </details>
             </div>
@@ -1048,7 +1095,7 @@
           <div class="panel-head-titles">
             <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • UNI EMPIRE (UNICORE PC)</span>
             <h2>Hướng Dẫn Cài Đặt UNI EMPIRE / Unicore</h2>
-            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Credit: Adwin</small>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Credit: Adwin • Hỗ trợ hệ sinh thái: Unicore, Uniwaves, Unistar, Unizone, UniEndfield, UniNTE, UniDNA, Uni:Aniimo</small>
           </div>
         </div>
         <button class="panel-close-btn" aria-label="Đóng">×</button>
@@ -1192,6 +1239,7 @@
               <div>
                 <strong>Trước khi mở game, đảm bảo rằng game setting như dưới:</strong>
                 <ul style="margin: 6px 0 0 18px; padding: 0;">
+                  <li>Aniimo / Genshin / Honkai / ZZZ / Endfield / NTE: Mở game bình thường</li>
                   <li>Wuthering Waves: Launcher game click chọn <span style="color:#ef4444;font-weight:700;">Launch with DirectX 11</span></li>
                   <li>Duet Night Abyss: Đổi tên folder <span style="color:#ef4444;font-weight:700;">StreamlineCore</span> nằm ở <code>DuetNightAbyss\DNA Game\Engine\Plugins\Nvidia</code> (Ví dụ: <code>StreamlineCores</code>)</li>
                 </ul>
@@ -2148,6 +2196,155 @@
                   <li><strong>Auto Loot:</strong> Tự động nhặt tài nguyên và phần thưởng rơi.</li>
                 </ul>
               </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PANEL 16: ANIIMI (ANIIMO PC)
+         ========================================================= -->
+    <section class="video-panel doc-guide-panel" id="panel-aniimi" hidden>
+      <div class="video-head">
+        <div class="video-head-left">
+          <div class="panel-header-icon-wrap">
+            <img src="src/assets/images/tools/tool-aniimo.png" alt="Aniimi - Aniimo" class="panel-header-tool-icon">
+            <span class="panel-header-badge pc">💻</span>
+          </div>
+          <div class="panel-head-titles">
+            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • ANIIMI (ANIIMO PC)</span>
+            <h2>Hướng Dẫn Cài Đặt &amp; Phím Tắt Aniimi - Aniimo</h2>
+            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Aniimo PC • Nền tảng ShikaHub</small>
+          </div>
+        </div>
+        <button class="panel-close-btn" aria-label="Đóng">×</button>
+      </div>
+      <div class="doc-guide-body">
+        <div class="doc-quick-actions">
+          <a class="doc-action-btn buy" href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener">🛒 <span>Mua Key Aniimo</span></a>
+          <a class="doc-action-btn primary" href="https://shikahub.org/en/auth" target="_blank" rel="noopener">🌐 <span>Trang Chủ Shika Hub</span></a>
+          <a class="doc-action-btn download" href="https://shikahub.org/en/dashboard/downloads" target="_blank" rel="noopener">📥 <span>Tải Loader PC</span></a>
+          <a class="doc-action-btn key" href="https://shikahub.org/en/dashboard/licenses" target="_blank" rel="noopener">🔑 <span>Nhập Key Kích Hoạt</span></a>
+          <a class="doc-action-btn download" href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" target="_blank" rel="noopener">📦 <span>Tải vcredist AIO</span></a>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 1</div>
+          <div class="doc-step-content">
+            <h3>Bước 1: Đăng Ký / Đăng Nhập Shika Hub</h3>
+            <p>1. Truy cập vào trang chủ Shika Hub: <a href="https://shikahub.org/en/auth" target="_blank" rel="noopener" class="doc-link">https://shikahub.org/en/auth ↗</a></p>
+            <p style="margin-top:6px;">2. Đăng nhập tài khoản của bạn hoặc đăng ký nếu chưa có tài khoản.</p>
+            <p style="margin-top:6px;color:#f59e0b;"><em>Lưu ý: Nếu đăng ký tài khoản mà không thấy Shika gửi mã xác thực, hãy kiểm tra mục "Thư rác" (Spam) hoặc chọn "Tất cả thư".</em></p>
+            <div class="doc-step-image">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FM0uyUfzU9UOEIzWFavoY%2Fimage.png?alt=media&amp;token=be42a569-394b-413d-851c-23f51fbe4a22" alt="Shika Hub Login" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 2</div>
+          <div class="doc-step-content">
+            <h3>Bước 2: Nhập Key Kích Hoạt Bản Quyền</h3>
+            <p>1. Truy cập vào trang quản lý License: <a href="https://shikahub.org/en/dashboard/licenses" target="_blank" rel="noopener" class="doc-link">https://shikahub.org/en/dashboard/licenses ↗</a></p>
+            <p style="margin-top:6px;">2. Nhập mã key bạn đã mua (tại <a href="https://shop.wibuzstore.com/join/1505" target="_blank" rel="noopener" class="doc-link">WibuzStore ↗</a>) vào ô trống và click <span class="doc-highlight-btn">Activate</span>.</p>
+            <div class="doc-step-image">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2Fopjj8Hci0ljOR1rxohCQ%2Fimage.png?alt=media&amp;token=5e47807b-1312-4467-9702-e637506d122f" alt="Shika License Activate" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 3</div>
+          <div class="doc-step-content">
+            <h3>Bước 3: Tải Loader Tool &amp; Cài Đặt Môi Trường</h3>
+            <p>1. Tải Loader tool tại: <a href="https://shikahub.org/en/dashboard/downloads" target="_blank" rel="noopener" class="doc-link">https://shikahub.org/en/dashboard/downloads ↗</a></p>
+            <p style="margin-top:6px;">2. Nếu máy tính của bạn thiếu file hệ thống hoặc gặp sự cố khi mở Loader, hãy tải và cài đặt gói hỗ trợ Visual C++: <a href="https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/" target="_blank" rel="noopener" class="doc-link">Tải vcredist AIO ↗</a></p>
+            <div class="doc-step-image">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2F3Hbj6TDCPdqgdUYSvoE3%2Fimage.png?alt=media&amp;token=cfa5c1a5-2d25-4ab9-a215-8ce8a3f16233" alt="Tải loader ShikaHub" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-step-card">
+          <div class="doc-step-badge">BƯỚC 4</div>
+          <div class="doc-step-content">
+            <h3>Bước 4: Khởi Chạy Tool &amp; Vào Game</h3>
+            <p>1. Mở file Loader tool vừa tải về, tiến hành đăng nhập tài khoản ShikaHub của bạn.</p>
+            <p style="margin-top:6px;">2. Chọn mục <strong>Aniimi</strong> và click nút <span class="doc-highlight-btn">LAUNCH</span>.</p>
+            <p style="margin-top:6px;">3. Chờ Aniimi load xong và hiển thị dòng chữ <strong>RUN GAME</strong> thì <strong>bạn tự mở game Aniimo lên (lưu ý chọn DirectX 11 / Dx11 nhé)</strong>.</p>
+            <p style="margin-top:8px;">4. Phím tắt Ẩn / Hiện Menu Tool trong game: <span class="doc-hotkey-badge">TAB</span></p>
+
+            <!-- Bảng tính năng Aniimi - Aniimo -->
+            <div class="doc-features-wrap" style="margin-top:20px;">
+              <div class="doc-features-title">📋 Bảng Tính Năng Aniimi - Aniimo (Chi Tiết):</div>
+
+              <details class="doc-features-accordion" open>
+                <summary>👤 Player (Nhân Vật &amp; Chiến Đấu)</summary>
+                <ul>
+                  <li><strong>Disable Enemy AI:</strong> Vô hiệu hóa trí tuệ nhân tạo của quái, khiến quái vật đứng yên không phản ứng.</li>
+                  <li><strong>Freeze Aniimo:</strong> Đóng băng các sinh vật Aniimo tại chỗ giúp người chơi tiếp cận và bắt thú cực kỳ dễ dàng.</li>
+                  <li><strong>Instant Kill:</strong> Tiêu diệt kẻ địch và quái vật tức thì trong 1 đòn đánh.</li>
+                  <li><strong>God Mode:</strong> Bất tử lượng máu, không nhận sát thương từ bất kỳ nguồn nào.</li>
+                  <li><strong>No Skill Cooldown:</strong> Không thời gian hồi chiêu kỹ năng nhân vật, tung chiêu liên tục.</li>
+                  <li><strong>Infinite Skills:</strong> Vô hạn số lần sử dụng kỹ năng.</li>
+                  <li><strong>Infinite Ultimate:</strong> Vô hạn năng lượng nộ (chiêu cuối luôn sẵn sàng).</li>
+                  <li><strong>Infinite Stamina:</strong> Vô hạn thể lực cơ bản khi chạy, leo trèo, lướt không bao giờ mệt.</li>
+                  <li><strong>Infinite Breath:</strong> Vô hạn hơi thở lặn dưới nước không sợ chết đuối.</li>
+                  <li><strong>Instant Break:</strong> Phá vỡ ngay lập tức thanh giáp / phá vỡ phòng ngự của mục tiêu.</li>
+                  <li><strong>No Fall Damage:</strong> Không bao giờ mất máu khi tiếp đất từ trên độ cao bất kỳ.</li>
+                  <li><strong>Player Speed:</strong> Tùy chỉnh tốc độ di chuyển chạy nhảy của nhân vật.</li>
+                  <li><strong>No Clip:</strong> Đi xuyên tường, xuyên đá, vượt mọi công trình địa hình cản trở.</li>
+                  <li><strong>Gravity:</strong> Tùy chỉnh trọng lực (nhảy cao lơ lửng, rơi chậm theo ý thích).</li>
+                  <li><strong>Character Scale:</strong> Điều chỉnh kích thước to / nhỏ của nhân vật.</li>
+                  <li><strong>Auto Loot:</strong> Tự động nhặt vật phẩm, tiền và nguyên liệu rơi xung quanh.</li>
+                  <li><strong>Auto Loot Plus:</strong> Tự động nhặt đồ và tài nguyên với tầm quét mở rộng cực xa.</li>
+                  <li><strong>Multi Hit:</strong> Nhân thêm số lần đánh va chạm gây lượng sát thương đột biến.</li>
+                </ul>
+              </details>
+
+              <details class="doc-features-accordion">
+                <summary>🌍 World (Thế Giới &amp; Bắt Thú Tự Động)</summary>
+                <ul>
+                  <li><strong>Kill Aura:</strong> Tự động tiêu diệt toàn bộ quái vật trong bán kính xung quanh nhân vật.</li>
+                  <li><strong>Catch Aura:</strong> Tự động bắt tất cả các sinh vật Aniimo xung quanh siêu tốc mà không cần thao tác tay.</li>
+                  <li><strong>Auto Loot Plus:</strong> Quét và gom toàn bộ tài nguyên rơi trên thế giới.</li>
+                  <li><strong>Skip Dialog:</strong> Tự động bỏ qua nhanh các đoạn hội thoại NPC.</li>
+                  <li><strong>Skip Cutscene:</strong> Bỏ qua các đoạn cắt cảnh video cốt truyện trong game.</li>
+                </ul>
+              </details>
+
+              <details class="doc-features-accordion">
+                <summary>🌀 Teleport (Dịch Chuyển Tức Thời)</summary>
+                <ul>
+                  <li><strong>Quest Teleport:</strong> Dịch chuyển nhanh tới vị trí mục tiêu nhiệm vụ đang làm.</li>
+                  <li><strong>Chest Teleport:</strong> Dịch chuyển tức thời đến thẳng vị trí các rương báu trên toàn bản đồ.</li>
+                </ul>
+              </details>
+
+              <details class="doc-features-accordion">
+                <summary>👁️ Visuals (Hiển Thị &amp; Đồ Họa)</summary>
+                <ul>
+                  <li><strong>FPS Unlocker:</strong> Mở khóa giới hạn FPS màn hình lên cao (120 / 144 / 240 / Không giới hạn) trải nghiệm siêu mượt.</li>
+                </ul>
+              </details>
+            </div>
+
+            <!-- Ảnh giao diện thực tế Aniimi -->
+            <div class="doc-step-image" style="margin-top:20px;">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FoOiYpweQSH0gMfampEZY%2Fimage.png?alt=media&amp;token=d8d5731a-8fd4-4f82-95ce-2b6a962837f1" alt="Menu Aniimi - Aniimo" loading="lazy">
+            </div>
+            <div class="doc-step-image" style="margin-top:12px;">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FaB6DdR00NQbKJoya72Z7%2Fimage.png?alt=media&amp;token=a6c1a9c3-f545-4390-9438-851a243e64b4" alt="Aniimi Player Menu" loading="lazy">
+            </div>
+            <div class="doc-step-image" style="margin-top:12px;">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FVESltAKlAdxKB5fly30l%2Fimage.png?alt=media&amp;token=6ff5e360-9ba5-463b-b9b3-ae673b487064" alt="Aniimi World Menu" loading="lazy">
+            </div>
+            <div class="doc-step-image" style="margin-top:12px;">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2F90SmyjyeEQLRCBfDzqGz%2Fimage.png?alt=media&amp;token=1f5a5b63-6573-479d-a4ee-9a33b21ef6aa" alt="Aniimi Visuals Menu" loading="lazy">
+            </div>
+            <div class="doc-step-image" style="margin-top:12px;">
+              <img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2F9V4gA26NfQs68wG3Pmw0%2Fimage.png?alt=media&amp;token=26755864-c6a2-415b-a534-d58d88c836d0" alt="Aniimi Teleport Menu" loading="lazy">
             </div>
           </div>
         </div>
