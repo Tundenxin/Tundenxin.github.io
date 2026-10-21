@@ -57,7 +57,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  scroll-padding-top: 92px;
   -webkit-text-size-adjust: 100%;
   background-color: var(--bg-deep);
   touch-action: manipulation;
@@ -159,8 +159,8 @@ main {
   right: 0;
   width: 100%;
   z-index: 999;
-  min-height: 76px;
-  padding: 10px clamp(16px, 4vw, 60px);
+  min-height: 86px;
+  padding: 6px clamp(16px, 4vw, 60px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -204,6 +204,44 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Logo thương hiệu Tundenxin mới (Tundenxin.com Chibi Skirk Guitar) */
+.brand-logo-img {
+  height: 74px;
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.55));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.brand:hover .brand-logo-img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.95)) drop-shadow(0 0 28px rgba(168, 85, 247, 0.7));
+}
+
+.drawer-logo-img {
+  height: 54px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Biểu tượng Nguyên Thạch Genshin Impact */
@@ -385,6 +423,32 @@ box-shadow: ;
   margin-bottom: 6px;
   text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
   display: inline-block;
+}
+
+/* Banner đồ họa Chibi Skirk Guitar Tundenxin.com */
+.hero-banner-graphic {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65), 0 0 24px rgba(56, 189, 248, 0.35);
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  background: #050a1a;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  margin-top: 4px;
+}
+
+.hero-banner-graphic:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.75);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.75), 0 0 36px rgba(56, 189, 248, 0.55);
+}
+
+.hero-banner-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .hero-banner-left h1 {
@@ -2921,7 +2985,7 @@ display: flex;
     right: 0;
     width: 100%;
     z-index: 999;
-    min-height: 56px;
+    min-height: 64px;
     background: rgba(6, 10, 30, 0.85);
 
 box-sizing: border-box;
@@ -2934,6 +2998,10 @@ box-sizing: border-box;
   .brand { 
     flex: 1; 
     gap: 10px;
+  }
+  .brand-logo-img {
+    height: 52px;
+    max-width: 180px;
   }
   .brand strong { font-size: 18px; font-weight: 800; }
   .brand small { font-size: 9.5px; font-weight: 700; }
