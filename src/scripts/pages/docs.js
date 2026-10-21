@@ -24,4 +24,3 @@ function setupCopyBtn(btnId, link) {
 }
 setupCopyBtn('copyShikaBtn', 'https://www.mediafire.com/file/yf14j8shrcxcu4p/Full-Teyvat.zip/file');
 setupCopyBtn('copyUnicoreBtn', 'https://www.mediafire.com/file/zah5ffnopw5ltb0/TP-Unicore-Lotus-Shibal_%2528_Tundenxin_%2529.zip/file');
-setupCopyBtn('copyDmshbyBtn', 'https://www.mediafire.com/file/om9tbeww8f5j0j5/Full_teyvat-Dmshby.zip/file');

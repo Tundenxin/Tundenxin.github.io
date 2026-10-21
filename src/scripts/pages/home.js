@@ -1,4 +1,4 @@
-// Modal chọn nhóm Telegram / Discord & đếm ngược 120s mở khóa link tải Tool Mobile (hỗ trợ nhập Key tundenxin để tải luôn)
+// Modal chọn nhóm Telegram / Discord & đếm ngược 120s mở khóa link tải Tool Mobile (hỗ trợ nhập Key 'free' để tải luôn)
 (function () {
   const overlay = document.getElementById('txDownloadModalOverlay');
   const closeBtn = document.getElementById('txDlModalCloseBtn');
@@ -125,7 +125,7 @@
   function handleKeySubmit() {
     if (!keyInput || isUnlocked || keyWaitTimer !== null || !overlay.classList.contains('active')) return;
     const val = (keyInput.value || '').trim().toLowerCase();
-    if (val === 'tundenxin') {
+    if (val === 'free') {
       if (keySubmitBtn) {
         keySubmitBtn.textContent = 'Đang xử lý...';
         keySubmitBtn.disabled = true;
@@ -209,7 +209,7 @@
     });
   }
 
-  // Phím tắt bí mật: gõ trực tiếp 'tundenxin' trên bàn phím khi mở modal sẽ tự động mở khóa tải luôn sau 3s
+  // Phím tắt bí mật: gõ trực tiếp 'free' trên bàn phím khi mở modal sẽ tự động mở khóa tải luôn sau 3s
   window.addEventListener('keydown', (e) => {
     if (!overlay.classList.contains('active') || isUnlocked) return;
     if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') && e.target !== keyInput) return;
@@ -218,9 +218,9 @@
       if (secretKeyBuffer.length > 25) {
         secretKeyBuffer = secretKeyBuffer.slice(-25);
       }
-      if (secretKeyBuffer.endsWith('tundenxin')) {
+      if (secretKeyBuffer.endsWith('free')) {
         secretKeyBuffer = '';
-        if (keyInput) keyInput.value = 'tundenxin';
+        if (keyInput) keyInput.value = 'free';
         handleKeySubmit();
       }
     }
