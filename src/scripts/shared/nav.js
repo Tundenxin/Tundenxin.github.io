@@ -74,5 +74,45 @@
     desktop.addEventListener('change', (e) => {
       if (e.matches) closeNav();
     });
+
+    // ═══ QUẢN LÝ WIDGET HỖ TRỢ NỔI (BẤM ĐỂ HIỆN TELEGRAM & DISCORD) ═══
+    const supportWidget = document.getElementById('floatingSupportWidget');
+    const supportBtn = document.getElementById('floatingSupportBtn');
+    const supportMenu = document.getElementById('floatingSupportMenu');
+
+    if (supportWidget && supportBtn) {
+      function toggleSupport(forceState) {
+        const isOpen = forceState !== undefined ? forceState : !supportWidget.classList.contains('active');
+        if (isOpen) {
+          supportWidget.classList.add('active');
+          supportBtn.setAttribute('aria-expanded', 'true');
+          if (supportMenu) supportMenu.setAttribute('aria-hidden', 'false');
+        } else {
+          supportWidget.classList.remove('active');
+          supportBtn.setAttribute('aria-expanded', 'false');
+          if (supportMenu) supportMenu.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      supportBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleSupport();
+      });
+
+      // Tự động đóng khi click ra ngoài widget
+      document.addEventListener('click', (e) => {
+        if (supportWidget.classList.contains('active') && !supportWidget.contains(e.target)) {
+          toggleSupport(false);
+        }
+      });
+
+      // Hỗ trợ phím Escape đóng menu
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && supportWidget.classList.contains('active')) {
+          toggleSupport(false);
+        }
+      });
+    }
   });
 })();

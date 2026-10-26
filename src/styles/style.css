@@ -270,11 +270,16 @@ main {
 
 /* Menu chính — Liquid Glass Pills */
 .main-nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   gap: 8px;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .main-nav a {
@@ -6600,4 +6605,295 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 @keyframes safeBadgePulse {
   0%, 100% { box-shadow: 0 0 6px rgba(34, 197, 94, 0.2); }
   50% { box-shadow: 0 0 14px rgba(34, 197, 94, 0.45); }
+}
+
+/* =========================================================
+   FLOATING SUPPORT WIDGET (NÚT HỖ TRỢ BẤM BUNG TELEGRAM & DISCORD)
+   ========================================================= */
+.floating-support-widget {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  z-index: 990;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.floating-support-widget * {
+  pointer-events: auto;
+}
+
+/* Nút trigger Hỗ Trợ chính */
+.floating-support-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2.5px solid #ef4444;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.45), 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 28px rgba(239, 68, 68, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  padding: 0;
+}
+
+.floating-support-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 0 0 4.5px rgba(255, 68, 68, 0.75), 0 14px 36px rgba(239, 68, 68, 0.8), 0 0 35px rgba(239, 68, 68, 0.95);
+  border-color: #ff3b30;
+}
+
+/* Biểu tượng Open (Headset) & Close (×) */
+.support-icon-open,
+.support-icon-close {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.support-icon-open svg,
+.support-icon-close svg {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+}
+
+.support-icon-open {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.support-icon-close {
+  transform: scale(0.3) rotate(90deg);
+  opacity: 0;
+}
+
+/* Khi Widget được kích hoạt (Active / Opened) */
+.floating-support-widget.active .floating-support-btn {
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+  box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.6), 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 28px rgba(239, 68, 68, 0.65);
+  border-color: #ffffff;
+}
+
+.floating-support-widget.active .support-icon-open {
+  transform: scale(0.3) rotate(-90deg);
+  opacity: 0;
+}
+
+.floating-support-widget.active .support-icon-close {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+/* Menu bung ra phía trên */
+.floating-support-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.floating-support-widget.active .floating-support-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Từng nút trong menu (Telegram & Discord) */
+.support-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.support-item-btn:hover {
+  transform: translateX(-4px);
+}
+
+/* Nhãn chữ (Label Pill) */
+.support-item-label {
+  background: rgba(10, 16, 40, 0.94);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.support-item-btn.telegram:hover .support-item-label {
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 14px rgba(56, 189, 248, 0.3);
+}
+
+.support-item-btn.discord:hover .support-item-label {
+  color: #c7d2fe;
+  border-color: rgba(129, 140, 248, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 14px rgba(129, 140, 248, 0.3);
+}
+
+/* Khối biểu tượng tròn (to 60px bằng nút Hỗ Trợ) */
+.support-item-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.support-item-icon svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+}
+
+.support-item-btn.telegram .support-item-icon {
+  background: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 24px rgba(34, 158, 217, 0.55), 0 0 16px rgba(42, 171, 238, 0.4);
+}
+
+.support-item-btn.discord .support-item-icon {
+  background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 24px rgba(88, 101, 242, 0.55), 0 0 16px rgba(88, 101, 242, 0.4);
+}
+
+.support-item-btn:hover .support-item-icon {
+  transform: scale(1.08);
+  border-color: #ffffff;
+}
+
+.support-item-btn.telegram:hover .support-item-icon {
+  box-shadow: 0 10px 28px rgba(34, 158, 217, 0.75), 0 0 24px rgba(42, 171, 238, 0.65);
+}
+
+.support-item-btn.discord:hover .support-item-icon {
+  box-shadow: 0 10px 28px rgba(88, 101, 242, 0.8), 0 0 24px rgba(88, 101, 242, 0.65);
+}
+
+/* Tooltip trên nút Hỗ Trợ khi chưa mở */
+.floating-support-btn .support-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: rgba(10, 16, 40, 0.94);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.22s ease;
+  backdrop-filter: blur(8px);
+}
+
+.floating-support-btn .support-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(10, 16, 40, 0.94);
+}
+
+.floating-support-btn:hover .support-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+.floating-support-widget.active .floating-support-btn .support-tooltip {
+  display: none !important;
+}
+
+/* Hiệu ứng pulse sóng nhẹ nhàng của nút chính */
+.support-pulse-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2.5px solid #ef4444;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.75);
+  opacity: 0;
+  animation: supportPulse 2.6s infinite cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.floating-support-widget.active .support-pulse-ring {
+  display: none !important;
+}
+
+@keyframes supportPulse {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  50% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* Responsive trên Mobile */
+@media (max-width: 640px) {
+  .floating-support-widget {
+    right: 16px;
+    bottom: 18px;
+    gap: 10px;
+  }
+  .floating-support-btn {
+    width: 54px;
+    height: 54px;
+  }
+  .floating-support-btn svg {
+    transform: scale(0.95);
+  }
+  .support-item-icon {
+    width: 54px;
+    height: 54px;
+  }
+  .support-item-icon svg {
+    transform: scale(0.9);
+  }
+  .support-item-label {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .floating-support-btn .support-tooltip {
+    display: none;
+  }
 }
