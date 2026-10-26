@@ -2,6 +2,9 @@
 
 Website tĩnh dùng HTML, CSS và JavaScript thuần, không cần bước build.
 
+Triển khai tự động lên Vercel bằng GitHub Actions: xem [DEPLOYMENT.md](DEPLOYMENT.md).
+Luồng deploy đóng gói các file public vào `dist/`, không thay đổi code ứng dụng.
+
 ## Cấu trúc source
 
 ```text
