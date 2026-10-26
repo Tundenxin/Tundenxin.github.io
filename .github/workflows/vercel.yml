@@ -66,17 +66,19 @@ jobs:
         run: npm install --global vercel@65.3.1
 
       - name: Pull production config
-        run: vercel pull --yes --environment=production --scope="$VERCEL_ORG_ID" --token="$VERCEL_TOKEN"
+        # --scope performs account lookups unavailable to project-scoped tokens.
+        # VERCEL_ORG_ID and VERCEL_PROJECT_ID already select the destination.
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
 
       - name: Build production
-        run: vercel build --prod --scope="$VERCEL_ORG_ID" --token="$VERCEL_TOKEN"
+        run: vercel build --prod --token="$VERCEL_TOKEN"
 
       - name: Deploy production
         id: deploy
         shell: bash
         run: |
           vercel deploy --prebuilt --prod --yes --json \
-            --scope="$VERCEL_ORG_ID" --token="$VERCEL_TOKEN" \
+            --token="$VERCEL_TOKEN" \
             > "$RUNNER_TEMP/vercel-deployment.json"
           deployment_url=$(jq -er '.deployment.productionUrl // .deployment.url // .url' \
             "$RUNNER_TEMP/vercel-deployment.json")

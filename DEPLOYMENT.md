@@ -82,6 +82,10 @@ log workflow hoặc tin nhắn chat.
 Nếu CLI báo `Cannot create tokens for this app`, dùng trang Tokens ở trên để tạo
 thủ công; phiên CLI hiện tại không có quyền cấp token mới. Chọn scope
 **TAKESHI's projects** (`takeshis-projects-24f593d8`), không chọn scope Pro khác.
+Token có thể giới hạn riêng cho project `tundenxin-web`. Trong CI, workflow dùng
+hai biến `VERCEL_ORG_ID` và `VERCEL_PROJECT_ID` để chọn đích, không truyền
+`--scope`: cờ này thực hiện lookup tài khoản mà token theo project không có quyền
+đọc, dẫn đến lỗi `User not found (404)` dù token vẫn có quyền với project.
 
 Trong repo của A, mở
 [Settings → Secrets and variables → Actions](https://github.com/Tundenxin/Tundenxin.github.io/settings/secrets/actions),
@@ -162,6 +166,10 @@ giữ run đang chạy và thay run đang chờ bằng push mới nhất.
 - **Missing repository secret:** kiểm tra đúng tên và lưu trong Repository Secrets.
 - **Unauthorized / invalid token:** token phải còn hạn, thuộc B và có quyền với
   scope của project; cập nhật secret, không in token để debug.
+- **User not found (404) với token theo project:** kiểm tra workflow không truyền
+  `--scope` hoặc gọi `whoami`/`link`; dùng hai ID đã lưu để xác định project.
+  Lỗi lookup tài khoản không đủ để kết luận token sai. Xem
+  [báo cáo trên repository Vercel CLI](https://github.com/vercel/vercel/issues/17506).
 - **Project not found / scope mismatch:** đối chiếu cả hai ID từ cùng project B.
 - **Git author / quyền truy cập bị từ chối:** kiểm tra quyền và điều kiện gói
   theo lỗi Vercel; không sửa giả tác giả commit hoặc gỡ metadata để né kiểm tra.
