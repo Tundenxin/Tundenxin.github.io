@@ -1,0 +1,99 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Finish a production upload before starting another one.
+# GitHub keeps at most one pending run, replacing it with the newest push.
+concurrency:
+  group: vercel-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TELEMETRY_DISABLED: '1'
+      NO_COLOR: '1'
+
+    steps:
+      - name: Check deployment secrets
+        shell: bash
+        run: |
+          missing=0
+          for name in VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
+            if [[ -z "${!name}" ]]; then
+              echo "::error::Missing repository secret: $name. See DEPLOYMENT.md."
+              missing=1
+            fi
+          done
+          exit "$missing"
+
+      - name: Checkout source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+
+      - name: Check local links and JavaScript syntax
+        shell: bash
+        run: |
+          python scripts/check_links.py
+          while IFS= read -r -d '' file; do
+            node --check "$file"
+          done < <(find src/scripts scripts -type f \( -name '*.js' -o -name '*.mjs' \) -print0)
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@65.3.1
+
+      - name: Pull production config
+        # --scope performs account lookups unavailable to project-scoped tokens.
+        # VERCEL_ORG_ID and VERCEL_PROJECT_ID already select the destination.
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build production
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy production
+        id: deploy
+        shell: bash
+        run: |
+          vercel deploy --prebuilt --prod --yes --json \
+            --token="$VERCEL_TOKEN" \
+            > "$RUNNER_TEMP/vercel-deployment.json"
+          deployment_url=$(jq -er '.deployment.productionUrl // .deployment.url // .url' \
+            "$RUNNER_TEMP/vercel-deployment.json")
+          printf 'url=%s\n' "$deployment_url" >> "$GITHUB_OUTPUT"
+          printf '### Vercel production deployment\n\nURL: %s\n\nCommit: `%s`\n' \
+            "$deployment_url" "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify production pages
+        env:
+          PRODUCTION_URL: ${{ steps.deploy.outputs.url }}
+        shell: bash
+        run: |
+          for path in / /tools.html '/guide.html?tool=shika-pc' /docs.html \
+            /src/styles/style.css /src/scripts/pages/home.js; do
+            curl --fail --silent --show-error --retry 3 --retry-all-errors \
+              --retry-delay 2 --max-time 30 --output /dev/null "$PRODUCTION_URL$path"
+          done
+          printf '\nHTTP checks passed for 4 pages, CSS and JavaScript.\n' >> "$GITHUB_STEP_SUMMARY"
