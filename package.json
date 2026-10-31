@@ -1,0 +1,12 @@
+{
+  "name": "tundenxin-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tundenxin — Tool Genshin Impact Mobile và PC",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node scripts/build-static.mjs"
+  }
+}

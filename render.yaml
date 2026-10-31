@@ -1,0 +1,7 @@
+services:
+  # Cấu hình tối ưu cho Render: Static Site (Miễn phí 100%, không bị ngủ đông sau 15 phút)
+  - type: web
+    name: tundenxin-web
+    runtime: static
+    buildCommand: "node scripts/build-static.mjs"
+    staticPublishPath: "./dist"
