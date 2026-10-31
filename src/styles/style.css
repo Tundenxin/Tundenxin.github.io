@@ -6897,3 +6897,478 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
     display: none;
   }
 }
+
+
+/* =========================================================
+   HALLOWEEN 2026 THEME — TUNDENXIN SPOOKY NIGHT EDITION
+   - Mạng nhện 2 góc & Nhện đung đưa tương tác
+   - Nón phù thủy tím viền cam trên Logo Chibi Skirk
+   - Quả bí ngô Jack-o'-lantern trên Nút Hỗ Trợ
+   - Viền dạ quang & hiệu ứng Hover ma mị ma quái
+   - Nền tối nguyên bản (Dark Void) giữ trọn vẹn
+   ========================================================= */
+
+/* 1. Nón phù thủy trên Logo Thương hiệu */
+.brand {
+  position: relative !important;
+}
+
+.brand-witch-hat {
+  position: absolute;
+  top: -12px;
+  left: 6px;
+  width: 42px;
+  height: 38px;
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 10px rgba(249, 115, 22, 0.7));
+  animation: witchHatFloat 3.2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.mobile-drawer-brand {
+  position: relative !important;
+}
+
+.mobile-drawer-brand .brand-witch-hat {
+  top: -8px;
+  left: 4px;
+  width: 34px;
+  height: 30px;
+}
+
+@keyframes witchHatFloat {
+  0% { transform: translateY(0) rotate(-14deg); }
+  50% { transform: translateY(-3px) rotate(-11deg) scale(1.03); }
+  100% { transform: translateY(0) rotate(-14deg); }
+}
+
+.brand:hover .brand-witch-hat {
+  animation: witchHatWiggle 0.65s ease;
+}
+
+@keyframes witchHatWiggle {
+  0%, 100% { transform: rotate(-14deg) scale(1); }
+  25% { transform: rotate(-22deg) scale(1.12); }
+  50% { transform: rotate(-6deg) scale(1.1); }
+  75% { transform: rotate(-18deg) scale(1.05); }
+}
+
+/* 2. Mạng nhện 2 góc màn hình (Cobwebs) */
+.halloween-decorations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 995;
+  overflow: hidden;
+}
+
+.halloween-cobweb {
+  position: fixed;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+}
+
+.halloween-cobweb.cobweb-left {
+  left: 0;
+}
+
+.halloween-cobweb.cobweb-right {
+  right: 0;
+}
+
+.cobweb-svg {
+  filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.35));
+  opacity: 0.78;
+  transition: opacity 0.3s ease;
+}
+
+/* 3. Sợi tơ & Con nhện treo đung đưa */
+.spider-thread {
+  position: absolute;
+  top: 0;
+  left: 52px;
+  width: 1px;
+  height: 70px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(192, 132, 252, 0.35) 100%);
+  transform-origin: top center;
+  animation: threadSwing 4s ease-in-out infinite alternate;
+}
+
+.hanging-spider {
+  position: absolute;
+  top: 68px;
+  left: 42px;
+  width: 22px;
+  height: 22px;
+  pointer-events: auto;
+  cursor: pointer;
+  transform-origin: 10px -68px;
+  animation: spiderSwing 4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
+  transition: transform 0.25s ease;
+}
+
+.hanging-spider:hover {
+  transform: scale(1.3) rotate(15deg);
+  filter: drop-shadow(0 0 14px rgba(249, 115, 22, 0.95)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
+}
+
+.hanging-spider.spooked {
+  animation: spiderJump 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes threadSwing {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+@keyframes spiderSwing {
+  0% { transform: rotate(-6deg); }
+  100% { transform: rotate(6deg); }
+}
+
+@keyframes spiderJump {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-32px) scale(1.3) rotate(360deg); }
+  75% { transform: translateY(14px) scale(0.95); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* 4. Bí ngô trên Nút Hỗ Trợ & Pulse ma mị */
+.support-halloween-badge {
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  font-size: 22px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 12;
+  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.95)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  animation: pumpkinBob 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes pumpkinBob {
+  0% { transform: translateY(0) rotate(-6deg) scale(1); }
+  50% { transform: translateY(-3px) rotate(4deg) scale(1.08); filter: drop-shadow(0 0 14px rgba(249, 115, 22, 1)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.9)); }
+  100% { transform: translateY(0) rotate(-6deg) scale(1); }
+}
+
+body:not(.halloween-off) .support-pulse-ring {
+  border-color: #f97316 !important;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.85), 0 0 28px rgba(239, 68, 68, 0.5) !important;
+}
+
+/* 5. Spooky Halloween Glow trên Cards khi Hover */
+body:not(.halloween-off) .tool-card:hover {
+  border-color: rgba(249, 115, 22, 0.5) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 24px rgba(249, 115, 22, 0.25), 0 0 40px rgba(147, 51, 234, 0.18) !important;
+}
+
+/* 6. Nút Bật/Tắt Halloween ở Footer */
+.footer-snow-btn {
+  background: rgba(249, 115, 22, 0.14) !important;
+  border: 1px solid rgba(249, 115, 22, 0.45) !important;
+  color: #fed7aa !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  transition: all 0.25s ease !important;
+}
+
+.footer-snow-btn:hover,
+.footer-snow-btn.active {
+  background: rgba(249, 115, 22, 0.28) !important;
+  border-color: rgba(251, 146, 60, 0.85) !important;
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.45) !important;
+  color: #ffffff !important;
+}
+
+/* 7. Dòng Thông báo Halloween lấp lánh & Eyebrow */
+.halloween-sparkle {
+  animation: hwSparkle 3s ease-in-out infinite;
+}
+
+@keyframes hwSparkle {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.45)); }
+  50% { filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.9)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.65)); }
+}
+
+/* 8. Ẩn trang trí khi tắt chế độ Halloween */
+body.halloween-off .halloween-decorations,
+body.halloween-off .brand-witch-hat,
+body.halloween-off .support-halloween-badge {
+  display: none !important;
+}
+
+/* Responsive Halloween trên thiết bị nhỏ */
+@media (max-width: 768px) {
+  .halloween-cobweb {
+    width: 80px;
+    height: 80px;
+  }
+  .halloween-cobweb svg {
+    width: 80px;
+    height: 80px;
+  }
+  .spider-thread {
+    left: 36px;
+    height: 48px;
+  }
+  .hanging-spider {
+    top: 46px;
+    left: 28px;
+    transform-origin: 8px -46px;
+  }
+  .hanging-spider svg {
+    width: 18px;
+    height: 18px;
+  }
+  .brand-witch-hat {
+    top: -8px;
+    left: 2px;
+    width: 32px;
+    height: 28px;
+  }
+  .support-halloween-badge {
+    top: -6px;
+    right: -4px;
+    font-size: 19px;
+  }
+}
+
+
+/* 9. Ảnh nền Halloween huyền bí (Halloween Background) */
+body:not(.halloween-off) .skirk-bg-fixed {
+  background-image: url('../assets/images/backgrounds/halloween-bg.jpg') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+body:not(.halloween-off) .skirk-bg-overlay {
+  background: 
+    radial-gradient(ellipse at 50% 40%, transparent 0%, rgba(5, 7, 24, 0.15) 50%, rgba(4, 6, 20, 0.45) 100%),
+    linear-gradient(180deg, rgba(5, 7, 20, 0.1) 0%, rgba(5, 7, 20, 0.25) 50%, rgba(4, 6, 20, 0.5) 100%) !important;
+}
+
+/* Đốm bụi sao chuyển sang màu bí ngô & tím phù thủy */
+body:not(.halloween-off) .gold-dust {
+  opacity: 0.35;
+  background-image: 
+    radial-gradient(circle, rgba(249, 115, 22, 0.85) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle, rgba(168, 85, 247, 0.8) 0 1.2px, transparent 1.8px) !important;
+}
+
+@media (max-width: 768px) {
+  body:not(.halloween-off) .skirk-bg-fixed {
+    background-image: url('../assets/images/backgrounds/halloween-mobile-bg.jpg') !important;
+    background-position: center top !important;
+  }
+}
+
+
+/* =========================================================
+   10. GIAO DIỆN HALLOWEEN TOÀN DIỆN CHO CÁC THẺ TOOL & NÚT BẤM
+   - Thẻ Tool, Card Hướng Dẫn & Card File TP mang tông ma mị
+   - Nút Tải Ngay chuyển thành dải màu Cam Bí Ngô rực rỡ
+   - Khung Lưu Ý / Miễn Phí viền dạ quang ánh lửa Halloween
+   - Khung tìm kiếm & Bộ lọc trò chơi đồng bộ phong cách
+   ========================================================= */
+
+/* Nền thẻ Tool ma mị gothic */
+body:not(.halloween-off) .tool-card,
+body:not(.halloween-off) .utility-card,
+body:not(.halloween-off) .guide-card,
+body:not(.halloween-off) .file-card {
+  background: linear-gradient(160deg, rgba(22, 13, 38, 0.94) 0%, rgba(13, 9, 26, 0.96) 60%, rgba(24, 12, 38, 0.94) 100%) !important;
+  border: 1.5px solid rgba(249, 115, 22, 0.35) !important;
+  border-top: 1.5px solid rgba(251, 146, 60, 0.65) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 18px rgba(249, 115, 22, 0.12), 0 0 28px rgba(168, 85, 247, 0.1) !important;
+}
+
+body:not(.halloween-off) .tool-card:hover,
+body:not(.halloween-off) .utility-card:hover,
+body:not(.halloween-off) .guide-card:hover,
+body:not(.halloween-off) .file-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(160deg, rgba(32, 18, 54, 0.96) 0%, rgba(18, 12, 36, 0.98) 60%, rgba(36, 16, 56, 0.96) 100%) !important;
+  border-color: rgba(251, 146, 60, 0.85) !important;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.8), 0 0 28px rgba(249, 115, 22, 0.38), 0 0 45px rgba(168, 85, 247, 0.25) !important;
+}
+
+/* Hiệu ứng mạng nhện phát sáng góc thẻ Tool */
+body:not(.halloween-off) .tool-card::before,
+body:not(.halloween-off) .utility-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background-image: radial-gradient(circle at top right, rgba(249, 115, 22, 0.22), transparent 70%);
+  pointer-events: none;
+  border-radius: 0 20px 0 0;
+}
+
+/* Icon App phát sáng viền cam lửa */
+body:not(.halloween-off) .tool-app-icon {
+  border: 1.5px solid rgba(249, 115, 22, 0.6) !important;
+  border-top: 1.5px solid #fed7aa !important;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.35), 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+}
+
+body:not(.halloween-off) .tool-card:hover .tool-app-icon {
+  border-color: rgba(251, 146, 60, 0.9) !important;
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.6), 0 0 35px rgba(168, 85, 247, 0.4) !important;
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Khối chữ cái máy ảo VPhone */
+body:not(.halloween-off) .letter {
+  border-color: rgba(249, 115, 22, 0.6) !important;
+  background: linear-gradient(145deg, rgba(88, 28, 135, 0.85) 0%, rgba(194, 65, 12, 0.85) 100%) !important;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.35) !important;
+}
+
+/* Nút Tải Ngay / Mua Key — Lửa Cam Halloween rực rỡ */
+body:not(.halloween-off) .btn-buy.download,
+body:not(.halloween-off) .js-mobile-dl-btn,
+body:not(.halloween-off) .tool-actions .download,
+body:not(.halloween-off) .utility-card > .download,
+body:not(.halloween-off) .btn-buy-key {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%) !important;
+  border: 1px solid rgba(254, 215, 170, 0.6) !important;
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.45) !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+  font-weight: 700 !important;
+}
+
+body:not(.halloween-off) .btn-buy.download:hover,
+body:not(.halloween-off) .js-mobile-dl-btn:hover,
+body:not(.halloween-off) .tool-actions .download:hover,
+body:not(.halloween-off) .utility-card > .download:hover,
+body:not(.halloween-off) .btn-buy-key:hover {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fde047 100%) !important;
+  box-shadow: 0 6px 26px rgba(249, 115, 22, 0.75), 0 0 20px rgba(251, 146, 60, 0.6) !important;
+  transform: translateY(-2px);
+}
+
+/* Nút Bản Cũ / Bản Tiêu Chuẩn */
+body:not(.halloween-off) .btn-old-ver {
+  background: rgba(28, 16, 44, 0.8) !important;
+  border: 1px dashed rgba(249, 115, 22, 0.5) !important;
+  color: #fed7aa !important;
+}
+
+body:not(.halloween-off) .btn-old-ver:hover {
+  background: rgba(45, 24, 70, 0.95) !important;
+  border-color: rgba(251, 146, 60, 0.85) !important;
+  color: #ffffff !important;
+}
+
+/* Nút Xem Hướng Dẫn chi tiết */
+body:not(.halloween-off) .btn-guide {
+  background: rgba(36, 20, 58, 0.85) !important;
+  border: 1px solid rgba(168, 85, 247, 0.45) !important;
+  color: #e9d5ff !important;
+}
+
+body:not(.halloween-off) .btn-guide:hover {
+  background: rgba(56, 28, 92, 0.95) !important;
+  border-color: rgba(192, 132, 252, 0.8) !important;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.5) !important;
+  color: #ffffff !important;
+}
+
+/* Khung Lưu Ý / Miễn Phí trong thẻ Tool */
+body:not(.halloween-off) .tool-paid-notice {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.22) 0%, rgba(147, 51, 234, 0.18) 100%) !important;
+  border: 1.5px solid rgba(251, 146, 60, 0.7) !important;
+  border-top: 1.5px solid rgba(254, 240, 138, 0.95) !important;
+  color: #fef08a !important;
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.35) !important;
+}
+
+/* Các nhãn tính năng (Tags) */
+body:not(.halloween-off) .feature-tags .tag {
+  background: rgba(36, 18, 58, 0.75) !important;
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  color: #fed7aa !important;
+}
+
+/* Bảng giá Key */
+body:not(.halloween-off) .tool-pricing-box {
+  background: rgba(22, 13, 38, 0.7) !important;
+  border-color: rgba(249, 115, 22, 0.35) !important;
+}
+
+body:not(.halloween-off) .price-item {
+  background: rgba(36, 20, 58, 0.65) !important;
+  border-color: rgba(249, 115, 22, 0.25) !important;
+}
+
+body:not(.halloween-off) .price-val {
+  color: #fde047 !important;
+  text-shadow: 0 0 8px rgba(253, 224, 71, 0.5) !important;
+}
+
+/* Khung Bộ Lọc & Tìm Kiếm Game */
+body:not(.halloween-off) .hero-content {
+  background: linear-gradient(160deg, rgba(18, 11, 34, 0.94) 0%, rgba(10, 8, 22, 0.96) 100%) !important;
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 24px rgba(249, 115, 22, 0.15) !important;
+}
+
+body:not(.halloween-off) .shop-filter-controls,
+body:not(.halloween-off) .utility-filter-bar {
+  background: rgba(18, 11, 34, 0.88) !important;
+  border: 1px solid rgba(249, 115, 22, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(249, 115, 22, 0.12) !important;
+}
+
+body:not(.halloween-off) .shop-search-input,
+body:not(.halloween-off) #toolSearchInput {
+  background: rgba(26, 15, 46, 0.85) !important;
+  border-color: rgba(249, 115, 22, 0.35) !important;
+  color: #ffffff !important;
+}
+
+body:not(.halloween-off) .shop-search-input:focus,
+body:not(.halloween-off) #toolSearchInput:focus {
+  border-color: rgba(251, 146, 60, 0.85) !important;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.35) !important;
+}
+
+body:not(.halloween-off) .shop-filter-btn,
+body:not(.halloween-off) .filter-btn {
+  background: rgba(24, 14, 42, 0.85) !important;
+  border: 1px solid rgba(249, 115, 22, 0.28) !important;
+  color: #fed7aa !important;
+}
+
+body:not(.halloween-off) .shop-filter-btn.active,
+body:not(.halloween-off) .filter-btn.active {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.45) 0%, rgba(147, 51, 234, 0.45) 100%) !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.45) !important;
+  color: #ffffff !important;
+}
+
+/* Đèn tín hiệu trạng thái xanh -> cam ấm Halloween */
+body:not(.halloween-off) .status-indicator-dot.green {
+  background: #f97316 !important;
+  box-shadow: 0 0 10px #f97316 !important;
+}
+
+
+/* =========================================================
+   11. LOGO BANNER TUNDENXIN
+   - Giữ nguyên Logo mặc định nguyên bản của website
+   - Ẩn nón phù thủy phụ trợ
+   ========================================================= */
+.brand-witch-hat {
+  display: none !important;
+}
