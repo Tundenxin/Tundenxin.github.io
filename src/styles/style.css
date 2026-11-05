@@ -1249,12 +1249,15 @@ padding: 7px 16px;
   border-radius: 14px !important;
 }
 
-.tool-actions .download {
-  flex: 1.25;
-  width: auto;
+.tool-actions .download,
+.tool-actions .btn-buy,
+.tool-actions .btn-buy-key,
+.tool-actions .btn-buy-key-mini {
+  flex: 1 1 100% !important;
+  width: 100% !important;
   white-space: nowrap;
-  font-size: 13px;
-  padding: 0 12px !important;
+  font-size: 13.5px;
+  padding: 0 14px !important;
 }
 
 .tool-card > .download,
@@ -2023,18 +2026,19 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Cụm 3 nút hành động trên thẻ Tool (Shika Mobile, Kuro...) */
+.tool-actions.has-old-version,
 .tool-actions.has-3-btns {
-  flex-wrap: wrap;
-  gap: 8px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
 }
-.tool-actions.has-3-btns .download {
-  flex: 1 1 100%;
-  width: 100%;
-}
-.tool-actions.has-3-btns .btn-guide,
-.tool-actions.has-3-btns .btn-buy-key-mini,
+.tool-actions.has-old-version .download,
+.tool-actions.has-old-version .btn-locked-version,
+.tool-actions.has-3-btns .download,
 .tool-actions.has-3-btns .btn-locked-version {
-  flex: 1 1 calc(50% - 4px);
+  flex: 1 1 100% !important;
+  width: 100% !important;
 }
 
 /* Nút hiển thị phiên bản cũ đã bị khóa */
@@ -5482,17 +5486,18 @@ border: 1px solid rgba(255, 255, 255, 0.14);
     margin-bottom: 0 !important;
   }
 
+  .tool-actions.has-old-version,
   .tool-actions.has-3-btns {
-    flex-wrap: wrap !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
   }
-  .tool-actions.has-3-btns .download {
+  .tool-actions.has-old-version .download,
+  .tool-actions.has-old-version .btn-locked-version,
+  .tool-actions.has-3-btns .download,
+  .tool-actions.has-3-btns .btn-locked-version {
     flex: 1 1 100% !important;
     width: 100% !important;
-  }
-  .tool-actions.has-3-btns .btn-guide,
-  .tool-actions.has-3-btns .btn-buy-key-mini,
-  .tool-actions.has-3-btns .btn-locked-version {
-    flex: 1 1 calc(50% - 3px) !important;
   }
 
   /* Bảng chú thích trạng thái tool gọn gàng */
