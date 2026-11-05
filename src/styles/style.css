@@ -862,12 +862,29 @@ padding: 7px 16px;
    ========================================================= */
 .tool-card-header-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 14px;
-  margin-bottom: 14px;
-  width: 100%;
+  margin: -24px -24px 16px -24px;
+  padding: 16px 20px;
+  background: #08080a !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
   box-sizing: border-box;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.tool-card:hover .tool-card-header-row {
+  background: #111116 !important;
+  border-bottom-color: rgba(56, 189, 248, 0.25) !important;
+}
+
+.tool-card-header-row .tool-card-title-group h3 {
+  color: #ffffff !important;
+}
+
+.tool-card-header-row .tool-card-title-group small {
+  color: var(--skirk-cyan-bright) !important;
+  font-weight: 700;
 }
 
 .tool-header-left {
@@ -913,19 +930,19 @@ padding: 7px 16px;
   width: 100%;
   min-height: 260px;
   padding: 24px;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: 20px;
-  background: rgba(8, 14, 38, 0.72);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  background: #20222a !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55) !important;
   overflow: hidden;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tool-card:hover {
   transform: translateY(-4px);
-  background: rgba(14, 24, 60, 0.85);
-  border-color: rgba(56, 189, 248, 0.65);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55), 0 0 20px rgba(56, 189, 248, 0.2);
+  background: #272a33 !important;
+  border-color: rgba(56, 189, 248, 0.55) !important;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65), 0 0 20px rgba(56, 189, 248, 0.25) !important;
 }
 
 
@@ -1415,6 +1432,7 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .guide-icon-badge {
+  display: none !important;
   position: absolute;
   bottom: -4px;
   right: -4px;
@@ -1433,6 +1451,7 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .guide-card:not(.locked):hover .guide-icon-badge {
+  display: none !important;
   transform: scale(1.18);
 }
 
@@ -1546,7 +1565,9 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
 /* Khung Video YouTube Liquid Glass */
 .video-panel {
-  margin-top: 40px;
+  
+  scroll-margin-top: 100px;
+margin-top: 40px;
   padding: 24px;
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 22px;
@@ -1588,6 +1609,7 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .panel-header-badge {
+  display: none !important;
   position: absolute;
   bottom: -4px;
   right: -4px;
@@ -1642,6 +1664,7 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     border-radius: 13px;
   }
   .panel-header-badge {
+  display: none !important;
     width: 18px;
     height: 18px;
     font-size: 9px;
@@ -2070,126 +2093,123 @@ transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   color: #f87171 !important;
 }
 
-/* =========================================================
-   BỘ LỌC TABS & CHI TIẾT TÀI LIỆU HƯỚNG DẪN WIBUZ STORE
+
+   KHỐI THU GỌN / MỞ RỘNG: CÁCH CÀI TOOL
    ========================================================= */
-.guide-filter-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+.guide-collapsible-wrapper {
   margin: 0 auto 36px;
   max-width: 1040px;
-  padding: 10px 14px;
-  background: rgba(6, 10, 28, 0.85);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-
-box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 30px rgba(56, 189, 248, 0.15), ;
+  border-radius: 20px;
+  background: rgba(10, 15, 38, 0.88);
+  border: 1.5px solid rgba(56, 189, 248, 0.32);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 30px rgba(56, 189, 248, 0.15);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.guide-tab-btn {
-  display: inline-flex;
+.guide-collapsible-trigger {
+  width: 100%;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  font-family: inherit;
-  font-size: 13.5px;
-  font-weight: 700;
-  padding: 10px 20px;
-  border-radius: 999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.09);
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, rgba(20, 30, 70, 0.85) 0%, rgba(12, 18, 48, 0.95) 100%);
+  border: none;
+  border-bottom: 1.5px solid rgba(56, 189, 248, 0.25);
   color: #ffffff;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  user-select: none;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), ;
-}
-
-.guide-tab-btn .tab-icon {
+  font-family: inherit;
   font-size: 16px;
-  line-height: 1;
-  display: inline-flex;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  user-select: none;
 }
 
-.guide-tab-btn .tab-label {
-  letter-spacing: 0.3px;
-  font-weight: 800;
+.guide-collapsible-trigger:hover {
+  background: linear-gradient(135deg, rgba(30, 48, 105, 0.95) 0%, rgba(16, 24, 60, 0.98) 100%);
+  border-bottom-color: rgba(56, 189, 248, 0.5);
 }
 
-.guide-tab-btn .tab-badge {
-  display: inline-flex;
+.guide-collapsible-title {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 11.5px;
+  gap: 12px;
+}
+
+.guide-collapsible-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.guide-collapsible-text {
+  font-size: 17px;
   font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.45);
-  color: #67e8f9;
-  border: 1px solid rgba(103, 232, 249, 0.35);
-  line-height: 1.2;
-}
-
-.guide-tab-btn .tab-badge.badge-warn {
-  background: rgba(239, 68, 68, 0.3);
-  color: #fca5a5;
-  border-color: rgba(239, 68, 68, 0.6);
-}
-
-.guide-tab-btn:hover {
+  letter-spacing: 0.3px;
   color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.8);
-  background: rgba(56, 189, 248, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.35);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-.guide-tab-btn:hover .tab-badge {
-  background: #38bdf8;
-  color: #040816;
-  border-color: #38bdf8;
+.guide-collapsible-count {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #67e8f9;
+  border: 1px solid rgba(103, 232, 249, 0.4);
 }
 
-.guide-tab-btn.active {
-  color: #030712;
-  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
-  border-color: #bae6fd;
-  font-weight: 900;
-  text-shadow: none;
-  box-shadow: 0 0 28px rgba(56, 189, 248, 0.8), 0 6px 18px rgba(0, 0, 0, 0.5);
-  transform: translateY(-1px);
+.guide-collapsible-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 13.5px;
+  font-weight: 700;
 }
 
-.guide-tab-btn.active .tab-icon {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
-}
-
-.guide-tab-btn.active .tab-badge {
-  background: #030712;
+.guide-chevron {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   color: #38bdf8;
-  border-color: rgba(0, 0, 0, 0.5);
+  display: block;
 }
 
-.guide-tab-btn.active .tab-badge.badge-warn {
-  background: #7f1d1d;
-  color: #fecaca;
-  border-color: #ef4444;
+.guide-collapsible-trigger[aria-expanded="false"] .guide-chevron {
+  transform: rotate(-90deg);
+}
+
+.guide-collapsible-trigger[aria-expanded="false"] {
+  border-bottom: none;
+}
+
+.guide-collapsible-body {
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.guide-collapsible-body.is-collapsed {
+  display: none;
 }
 
 @media (max-width: 680px) {
-  .guide-filter-tabs {
-    border-radius: 24px;
-    padding: 10px;
-    gap: 8px;
+  .guide-collapsible-wrapper {
+    border-radius: 14px;
+    margin-bottom: 24px;
   }
-  .guide-tab-btn {
-    font-size: 12.5px;
-    padding: 8px 14px;
+  .guide-collapsible-trigger {
+    padding: 13px 16px;
+  }
+  .guide-collapsible-text {
+    font-size: 15px;
+  }
+  .guide-collapsible-icon {
+    font-size: 18px;
+  }
+  .guide-collapsible-body {
+    padding: 12px;
   }
 }
+
 
 .guide-card.is-hidden {
   display: none !important;
@@ -2270,6 +2290,87 @@ details.doc-features-accordion ul {
 details.doc-features-accordion ul li {
   margin-bottom: 4px;
 }
+
+/* =========================================================
+   KHOI CHUC NANG TOOL (FEATURES GRID & CARDS)
+   ========================================================= */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.feature-tool-card {
+  background: rgba(14, 20, 48, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.feature-tool-card:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  background: rgba(18, 26, 60, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2);
+  transform: translateY(-2px);
+}
+
+.feature-tool-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-tool-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.feature-tool-title h4 {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.feature-tool-title small {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.feature-accordions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 680px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .feature-tool-card {
+    padding: 13px;
+    border-radius: 14px;
+  }
+}
+
 
 
 /* Thẻ lỗi Unicore */
@@ -2551,7 +2652,7 @@ footer b {
 .tools-search-box input {
   width: 100%;
   padding: 12px 42px 12px 46px;
-  border-radius: 999px;
+  border-radius: 14px;
   background: rgba(12, 18, 48, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1.5px solid rgba(255, 255, 255, 0.4);
@@ -2605,7 +2706,7 @@ box-shadow:  0 6px 20px rgba(0, 0, 0, 0.25);
   font-size: 12.5px;
   font-weight: 600;
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
 
@@ -3167,10 +3268,14 @@ box-sizing: border-box;
     min-height: auto;
     padding: 13px 12px;
     border-radius: 16px;
-    background: linear-gradient(145deg, rgba(14, 20, 52, 0.92) 0%, rgba(8, 12, 34, 0.9) 100%);
-
-border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #20222a !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+
+  .tool-card-header-row {
+    margin: -13px -12px 12px -12px;
+    padding: 11px 12px;
   }
 
   .cta, .download { 
@@ -3261,7 +3366,9 @@ border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
   .video-panel { 
-    padding: 14px; 
+    
+  scroll-margin-top: 100px;
+padding: 14px; 
     margin-top: 18px;
     border-radius: 16px;
     background: rgba(8, 12, 32, 0.25);
@@ -4977,7 +5084,7 @@ z-index: 1000;
   margin-top: 14px;
   padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(6, 10, 28, 0.65);
+  background: rgba(0, 0, 0, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: ;
@@ -5022,7 +5129,7 @@ z-index: 1000;
   min-height: 44px;
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   transition: all 0.2s ease;
 }
 
@@ -5057,22 +5164,22 @@ z-index: 1000;
 }
 
 .btn-buy-key {
-  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 40%, #10b981 100%) !important;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
   color: #ffffff !important;
-  border-color: rgba(56, 189, 248, 0.6) !important;
-  box-shadow: 
-    
-    0 8px 25px rgba(6, 182, 212, 0.45) !important;
+  border: 1px solid rgba(251, 146, 60, 0.6) !important;
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.45) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
   font-weight: 800;
   letter-spacing: 0.5px;
 }
 
 .btn-buy-key:hover {
-  filter: brightness(1.15) !important;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%) !important;
+  filter: brightness(1.1) !important;
   box-shadow: 
-    inset 0 2px 3px rgba(255, 255, 255, 0.6),
-    0 12px 30px rgba(6, 182, 212, 0.65),
-    0 0 20px rgba(16, 185, 129, 0.5) !important;
+    inset 0 2px 3px rgba(255, 255, 255, 0.5),
+    0 10px 28px rgba(249, 115, 22, 0.7),
+    0 0 16px rgba(251, 146, 60, 0.5) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -5243,6 +5350,103 @@ border: 1px solid rgba(255, 255, 255, 0.14);
 /* =========================================================
    CHÚ THÍCH RÕ VÀ TO CHO TOOL CÓ PHÍ (CẦN MUA KEY)
    ========================================================= */
+
+/* =========================================================
+   KHOI LUU Y & QUY DINH MUA KEY (3 DONG HIEN + 3 DONG THU GON LIEN MACH)
+   ========================================================= */
+.tool-policy-box {
+  margin: 8px 0 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.tool-policy-box:hover {
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.tool-policy-list {
+  margin: 0;
+  padding: 8px 14px 0 28px;
+  list-style-type: disc;
+  box-sizing: border-box;
+}
+
+.tool-policy-list li {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin-bottom: 4px;
+}
+
+/* Nut thu gon / mo rong 3 dong con lai (Lien mach 1 dai khong bi dut doan) */
+.tool-policy-more {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 4px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.09);
+  transition: all 0.25s ease;
+}
+
+.tool-policy-more[open] {
+  margin-top: 0 !important;
+  border-top: none !important;
+}
+
+.tool-policy-more .tool-policy-list-extra {
+  order: 1 !important;
+  margin: 0 !important;
+  padding: 0 14px 6px 28px !important;
+  background: transparent !important;
+  border: none !important;
+  border-top: none !important;
+}
+
+.tool-policy-more-btn {
+  order: 2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  list-style: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tool-policy-more-btn::-webkit-details-marker,
+.tool-policy-more-btn::marker {
+  display: none !important;
+}
+
+.tool-policy-more-btn:hover {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.tool-policy-more-btn .toggle-text::after {
+  content: "Xem th\00eam l\01b0u \00fd  \25be";
+}
+
+.tool-policy-more[open] .tool-policy-more-btn {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.tool-policy-more[open] .tool-policy-more-btn .toggle-text::after {
+  content: "Thu g\1ecdn  \25b4";
+}
+
 .tool-paid-notice {
   display: flex;
   align-items: center;
@@ -5288,17 +5492,22 @@ border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .btn-buy-key-mini {
-  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 40%, #10b981 100%) !important;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
   color: #ffffff !important;
-  border-color: rgba(56, 189, 248, 0.6) !important;
-  box-shadow:  0 4px 16px rgba(6, 182, 212, 0.4) !important;
+  border: 1px solid rgba(251, 146, 60, 0.6) !important;
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.45) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) !important;
   font-weight: 800 !important;
   letter-spacing: 0.3px;
 }
 
 .btn-buy-key-mini:hover {
-  filter: brightness(1.15) !important;
-  box-shadow:  0 8px 22px rgba(6, 182, 212, 0.6) !important;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%) !important;
+  filter: brightness(1.1) !important;
+  box-shadow: 
+    inset 0 2px 3px rgba(255, 255, 255, 0.5),
+    0 10px 28px rgba(249, 115, 22, 0.7),
+    0 0 16px rgba(251, 146, 60, 0.5) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -5600,7 +5809,8 @@ border: 1px solid rgba(255, 255, 255, 0.14);
   }
   .tool-card-header-row {
     gap: 10px;
-    margin-bottom: 10px;
+    margin: -12px -10px 10px -10px;
+    padding: 10px 10px;
   }
 
   .tool-header-left {
@@ -5764,7 +5974,7 @@ border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 12px 42px 12px 44px;
   background: rgba(6, 10, 28, 0.75);
   border: 1.5px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
+  border-radius: 14px;
   color: #ffffff;
   font-family: inherit;
   font-size: 14px;
@@ -5820,7 +6030,7 @@ transition: all 0.25s ease;
   padding: 8px 12px;
   background: rgba(6, 10, 28, 0.7);
   border: 1.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 999px;
+  border-radius: 14px;
 
 box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 }
@@ -5833,7 +6043,7 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
   font-size: 13px;
   font-weight: 700;
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.06);
   color: #e2e8f0;
@@ -5854,7 +6064,7 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
   font-size: 11px;
   font-weight: 800;
   padding: 2px 7px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: rgba(0, 0, 0, 0.4);
   color: #67e8f9;
   border: 1px solid rgba(103, 232, 249, 0.3);
@@ -6017,7 +6227,7 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
     overflow-x: hidden;
   }
   .game-filter-tabs {
-    border-radius: 18px;
+    border-radius: 14px;
     gap: 8px;
     padding: 10px;
     width: 100%;
@@ -6471,13 +6681,13 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
 }
 
 .tool-card {
-  background: #0c1429 !important;
-  border: 1px solid rgba(56, 189, 248, 0.22) !important;
+  background: #20222a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
 }
 
 .tool-card:hover {
-  background: #121e3a !important;
+  background: #272a33 !important;
   border-color: rgba(56, 189, 248, 0.55) !important;
 }
 
@@ -6901,479 +7111,4 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
   .floating-support-btn .support-tooltip {
     display: none;
   }
-}
-
-
-/* =========================================================
-   HALLOWEEN 2026 THEME — TUNDENXIN SPOOKY NIGHT EDITION
-   - Mạng nhện 2 góc & Nhện đung đưa tương tác
-   - Nón phù thủy tím viền cam trên Logo Chibi Skirk
-   - Quả bí ngô Jack-o'-lantern trên Nút Hỗ Trợ
-   - Viền dạ quang & hiệu ứng Hover ma mị ma quái
-   - Nền tối nguyên bản (Dark Void) giữ trọn vẹn
-   ========================================================= */
-
-/* 1. Nón phù thủy trên Logo Thương hiệu */
-.brand {
-  position: relative !important;
-}
-
-.brand-witch-hat {
-  position: absolute;
-  top: -12px;
-  left: 6px;
-  width: 42px;
-  height: 38px;
-  z-index: 5;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 10px rgba(249, 115, 22, 0.7));
-  animation: witchHatFloat 3.2s ease-in-out infinite alternate;
-  transform-origin: bottom center;
-}
-
-.mobile-drawer-brand {
-  position: relative !important;
-}
-
-.mobile-drawer-brand .brand-witch-hat {
-  top: -8px;
-  left: 4px;
-  width: 34px;
-  height: 30px;
-}
-
-@keyframes witchHatFloat {
-  0% { transform: translateY(0) rotate(-14deg); }
-  50% { transform: translateY(-3px) rotate(-11deg) scale(1.03); }
-  100% { transform: translateY(0) rotate(-14deg); }
-}
-
-.brand:hover .brand-witch-hat {
-  animation: witchHatWiggle 0.65s ease;
-}
-
-@keyframes witchHatWiggle {
-  0%, 100% { transform: rotate(-14deg) scale(1); }
-  25% { transform: rotate(-22deg) scale(1.12); }
-  50% { transform: rotate(-6deg) scale(1.1); }
-  75% { transform: rotate(-18deg) scale(1.05); }
-}
-
-/* 2. Mạng nhện 2 góc màn hình (Cobwebs) */
-.halloween-decorations {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 995;
-  overflow: hidden;
-}
-
-.halloween-cobweb {
-  position: fixed;
-  top: 0;
-  width: 120px;
-  height: 120px;
-  pointer-events: none;
-}
-
-.halloween-cobweb.cobweb-left {
-  left: 0;
-}
-
-.halloween-cobweb.cobweb-right {
-  right: 0;
-}
-
-.cobweb-svg {
-  filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.35));
-  opacity: 0.78;
-  transition: opacity 0.3s ease;
-}
-
-/* 3. Sợi tơ & Con nhện treo đung đưa */
-.spider-thread {
-  position: absolute;
-  top: 0;
-  left: 52px;
-  width: 1px;
-  height: 70px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(192, 132, 252, 0.35) 100%);
-  transform-origin: top center;
-  animation: threadSwing 4s ease-in-out infinite alternate;
-}
-
-.hanging-spider {
-  position: absolute;
-  top: 68px;
-  left: 42px;
-  width: 22px;
-  height: 22px;
-  pointer-events: auto;
-  cursor: pointer;
-  transform-origin: 10px -68px;
-  animation: spiderSwing 4s ease-in-out infinite alternate;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
-  transition: transform 0.25s ease;
-}
-
-.hanging-spider:hover {
-  transform: scale(1.3) rotate(15deg);
-  filter: drop-shadow(0 0 14px rgba(249, 115, 22, 0.95)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
-}
-
-.hanging-spider.spooked {
-  animation: spiderJump 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes threadSwing {
-  0% { transform: rotate(-5deg); }
-  100% { transform: rotate(5deg); }
-}
-
-@keyframes spiderSwing {
-  0% { transform: rotate(-6deg); }
-  100% { transform: rotate(6deg); }
-}
-
-@keyframes spiderJump {
-  0% { transform: translateY(0) scale(1); }
-  40% { transform: translateY(-32px) scale(1.3) rotate(360deg); }
-  75% { transform: translateY(14px) scale(0.95); }
-  100% { transform: translateY(0) scale(1); }
-}
-
-/* 4. Bí ngô trên Nút Hỗ Trợ & Pulse ma mị */
-.support-halloween-badge {
-  position: absolute;
-  top: -8px;
-  right: -5px;
-  font-size: 22px;
-  line-height: 1;
-  pointer-events: none;
-  z-index: 12;
-  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.95)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
-  animation: pumpkinBob 2.6s ease-in-out infinite alternate;
-}
-
-@keyframes pumpkinBob {
-  0% { transform: translateY(0) rotate(-6deg) scale(1); }
-  50% { transform: translateY(-3px) rotate(4deg) scale(1.08); filter: drop-shadow(0 0 14px rgba(249, 115, 22, 1)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.9)); }
-  100% { transform: translateY(0) rotate(-6deg) scale(1); }
-}
-
-body:not(.halloween-off) .support-pulse-ring {
-  border-color: #f97316 !important;
-  box-shadow: 0 0 16px rgba(249, 115, 22, 0.85), 0 0 28px rgba(239, 68, 68, 0.5) !important;
-}
-
-/* 5. Spooky Halloween Glow trên Cards khi Hover */
-body:not(.halloween-off) .tool-card:hover {
-  border-color: rgba(249, 115, 22, 0.5) !important;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 24px rgba(249, 115, 22, 0.25), 0 0 40px rgba(147, 51, 234, 0.18) !important;
-}
-
-/* 6. Nút Bật/Tắt Halloween ở Footer */
-.footer-snow-btn {
-  background: rgba(249, 115, 22, 0.14) !important;
-  border: 1px solid rgba(249, 115, 22, 0.45) !important;
-  color: #fed7aa !important;
-  border-radius: 999px !important;
-  font-weight: 600 !important;
-  transition: all 0.25s ease !important;
-}
-
-.footer-snow-btn:hover,
-.footer-snow-btn.active {
-  background: rgba(249, 115, 22, 0.28) !important;
-  border-color: rgba(251, 146, 60, 0.85) !important;
-  box-shadow: 0 0 14px rgba(249, 115, 22, 0.45) !important;
-  color: #ffffff !important;
-}
-
-/* 7. Dòng Thông báo Halloween lấp lánh & Eyebrow */
-.halloween-sparkle {
-  animation: hwSparkle 3s ease-in-out infinite;
-}
-
-@keyframes hwSparkle {
-  0%, 100% { filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.45)); }
-  50% { filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.9)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.65)); }
-}
-
-/* 8. Ẩn trang trí khi tắt chế độ Halloween */
-body.halloween-off .halloween-decorations,
-body.halloween-off .brand-witch-hat,
-body.halloween-off .support-halloween-badge {
-  display: none !important;
-}
-
-/* Responsive Halloween trên thiết bị nhỏ */
-@media (max-width: 768px) {
-  .halloween-cobweb {
-    width: 80px;
-    height: 80px;
-  }
-  .halloween-cobweb svg {
-    width: 80px;
-    height: 80px;
-  }
-  .spider-thread {
-    left: 36px;
-    height: 48px;
-  }
-  .hanging-spider {
-    top: 46px;
-    left: 28px;
-    transform-origin: 8px -46px;
-  }
-  .hanging-spider svg {
-    width: 18px;
-    height: 18px;
-  }
-  .brand-witch-hat {
-    top: -8px;
-    left: 2px;
-    width: 32px;
-    height: 28px;
-  }
-  .support-halloween-badge {
-    top: -6px;
-    right: -4px;
-    font-size: 19px;
-  }
-}
-
-
-/* 9. Ảnh nền Halloween huyền bí (Halloween Background) */
-body:not(.halloween-off) .skirk-bg-fixed {
-  background-image: url('../assets/images/backgrounds/halloween-bg.jpg') !important;
-  background-position: center center !important;
-  background-size: cover !important;
-}
-
-body:not(.halloween-off) .skirk-bg-overlay {
-  background: 
-    radial-gradient(ellipse at 50% 40%, transparent 0%, rgba(5, 7, 24, 0.15) 50%, rgba(4, 6, 20, 0.45) 100%),
-    linear-gradient(180deg, rgba(5, 7, 20, 0.1) 0%, rgba(5, 7, 20, 0.25) 50%, rgba(4, 6, 20, 0.5) 100%) !important;
-}
-
-/* Đốm bụi sao chuyển sang màu bí ngô & tím phù thủy */
-body:not(.halloween-off) .gold-dust {
-  opacity: 0.35;
-  background-image: 
-    radial-gradient(circle, rgba(249, 115, 22, 0.85) 0 1.2px, transparent 1.8px),
-    radial-gradient(circle, rgba(168, 85, 247, 0.8) 0 1.2px, transparent 1.8px) !important;
-}
-
-@media (max-width: 768px) {
-  body:not(.halloween-off) .skirk-bg-fixed {
-    background-image: url('../assets/images/backgrounds/halloween-mobile-bg.jpg') !important;
-    background-position: center top !important;
-  }
-}
-
-
-/* =========================================================
-   10. GIAO DIỆN HALLOWEEN TOÀN DIỆN CHO CÁC THẺ TOOL & NÚT BẤM
-   - Thẻ Tool, Card Hướng Dẫn & Card File TP mang tông ma mị
-   - Nút Tải Ngay chuyển thành dải màu Cam Bí Ngô rực rỡ
-   - Khung Lưu Ý / Miễn Phí viền dạ quang ánh lửa Halloween
-   - Khung tìm kiếm & Bộ lọc trò chơi đồng bộ phong cách
-   ========================================================= */
-
-/* Nền thẻ Tool ma mị gothic */
-body:not(.halloween-off) .tool-card,
-body:not(.halloween-off) .utility-card,
-body:not(.halloween-off) .guide-card,
-body:not(.halloween-off) .file-card {
-  background: linear-gradient(160deg, rgba(22, 13, 38, 0.94) 0%, rgba(13, 9, 26, 0.96) 60%, rgba(24, 12, 38, 0.94) 100%) !important;
-  border: 1.5px solid rgba(249, 115, 22, 0.35) !important;
-  border-top: 1.5px solid rgba(251, 146, 60, 0.65) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 18px rgba(249, 115, 22, 0.12), 0 0 28px rgba(168, 85, 247, 0.1) !important;
-}
-
-body:not(.halloween-off) .tool-card:hover,
-body:not(.halloween-off) .utility-card:hover,
-body:not(.halloween-off) .guide-card:hover,
-body:not(.halloween-off) .file-card:hover {
-  transform: translateY(-5px);
-  background: linear-gradient(160deg, rgba(32, 18, 54, 0.96) 0%, rgba(18, 12, 36, 0.98) 60%, rgba(36, 16, 56, 0.96) 100%) !important;
-  border-color: rgba(251, 146, 60, 0.85) !important;
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.8), 0 0 28px rgba(249, 115, 22, 0.38), 0 0 45px rgba(168, 85, 247, 0.25) !important;
-}
-
-/* Hiệu ứng mạng nhện phát sáng góc thẻ Tool */
-body:not(.halloween-off) .tool-card::before,
-body:not(.halloween-off) .utility-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 70px;
-  height: 70px;
-  background-image: radial-gradient(circle at top right, rgba(249, 115, 22, 0.22), transparent 70%);
-  pointer-events: none;
-  border-radius: 0 20px 0 0;
-}
-
-/* Icon App phát sáng viền cam lửa */
-body:not(.halloween-off) .tool-app-icon {
-  border: 1.5px solid rgba(249, 115, 22, 0.6) !important;
-  border-top: 1.5px solid #fed7aa !important;
-  box-shadow: 0 0 18px rgba(249, 115, 22, 0.35), 0 4px 12px rgba(0, 0, 0, 0.6) !important;
-}
-
-body:not(.halloween-off) .tool-card:hover .tool-app-icon {
-  border-color: rgba(251, 146, 60, 0.9) !important;
-  box-shadow: 0 0 24px rgba(249, 115, 22, 0.6), 0 0 35px rgba(168, 85, 247, 0.4) !important;
-  transform: scale(1.05) rotate(2deg);
-}
-
-/* Khối chữ cái máy ảo VPhone */
-body:not(.halloween-off) .letter {
-  border-color: rgba(249, 115, 22, 0.6) !important;
-  background: linear-gradient(145deg, rgba(88, 28, 135, 0.85) 0%, rgba(194, 65, 12, 0.85) 100%) !important;
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.35) !important;
-}
-
-/* Nút Tải Ngay / Mua Key — Lửa Cam Halloween rực rỡ */
-body:not(.halloween-off) .btn-buy.download,
-body:not(.halloween-off) .js-mobile-dl-btn,
-body:not(.halloween-off) .tool-actions .download,
-body:not(.halloween-off) .utility-card > .download,
-body:not(.halloween-off) .btn-buy-key {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%) !important;
-  border: 1px solid rgba(254, 215, 170, 0.6) !important;
-  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.45) !important;
-  color: #ffffff !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
-  font-weight: 700 !important;
-}
-
-body:not(.halloween-off) .btn-buy.download:hover,
-body:not(.halloween-off) .js-mobile-dl-btn:hover,
-body:not(.halloween-off) .tool-actions .download:hover,
-body:not(.halloween-off) .utility-card > .download:hover,
-body:not(.halloween-off) .btn-buy-key:hover {
-  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fde047 100%) !important;
-  box-shadow: 0 6px 26px rgba(249, 115, 22, 0.75), 0 0 20px rgba(251, 146, 60, 0.6) !important;
-  transform: translateY(-2px);
-}
-
-/* Nút Bản Cũ / Bản Tiêu Chuẩn */
-body:not(.halloween-off) .btn-old-ver {
-  background: rgba(28, 16, 44, 0.8) !important;
-  border: 1px dashed rgba(249, 115, 22, 0.5) !important;
-  color: #fed7aa !important;
-}
-
-body:not(.halloween-off) .btn-old-ver:hover {
-  background: rgba(45, 24, 70, 0.95) !important;
-  border-color: rgba(251, 146, 60, 0.85) !important;
-  color: #ffffff !important;
-}
-
-/* Nút Xem Hướng Dẫn chi tiết */
-body:not(.halloween-off) .btn-guide {
-  background: rgba(36, 20, 58, 0.85) !important;
-  border: 1px solid rgba(168, 85, 247, 0.45) !important;
-  color: #e9d5ff !important;
-}
-
-body:not(.halloween-off) .btn-guide:hover {
-  background: rgba(56, 28, 92, 0.95) !important;
-  border-color: rgba(192, 132, 252, 0.8) !important;
-  box-shadow: 0 0 16px rgba(168, 85, 247, 0.5) !important;
-  color: #ffffff !important;
-}
-
-/* Khung Lưu Ý / Miễn Phí trong thẻ Tool */
-body:not(.halloween-off) .tool-paid-notice {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.22) 0%, rgba(147, 51, 234, 0.18) 100%) !important;
-  border: 1.5px solid rgba(251, 146, 60, 0.7) !important;
-  border-top: 1.5px solid rgba(254, 240, 138, 0.95) !important;
-  color: #fef08a !important;
-  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.35) !important;
-}
-
-/* Các nhãn tính năng (Tags) */
-body:not(.halloween-off) .feature-tags .tag {
-  background: rgba(36, 18, 58, 0.75) !important;
-  border: 1px solid rgba(249, 115, 22, 0.35) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
-  color: #fed7aa !important;
-}
-
-/* Bảng giá Key */
-body:not(.halloween-off) .tool-pricing-box {
-  background: rgba(22, 13, 38, 0.7) !important;
-  border-color: rgba(249, 115, 22, 0.35) !important;
-}
-
-body:not(.halloween-off) .price-item {
-  background: rgba(36, 20, 58, 0.65) !important;
-  border-color: rgba(249, 115, 22, 0.25) !important;
-}
-
-body:not(.halloween-off) .price-val {
-  color: #fde047 !important;
-  text-shadow: 0 0 8px rgba(253, 224, 71, 0.5) !important;
-}
-
-/* Khung Bộ Lọc & Tìm Kiếm Game */
-body:not(.halloween-off) .hero-content {
-  background: linear-gradient(160deg, rgba(18, 11, 34, 0.94) 0%, rgba(10, 8, 22, 0.96) 100%) !important;
-  border: 1px solid rgba(249, 115, 22, 0.35) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 24px rgba(249, 115, 22, 0.15) !important;
-}
-
-body:not(.halloween-off) .shop-filter-controls,
-body:not(.halloween-off) .utility-filter-bar {
-  background: rgba(18, 11, 34, 0.88) !important;
-  border: 1px solid rgba(249, 115, 22, 0.3) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(249, 115, 22, 0.12) !important;
-}
-
-body:not(.halloween-off) .shop-search-input,
-body:not(.halloween-off) #toolSearchInput {
-  background: rgba(26, 15, 46, 0.85) !important;
-  border-color: rgba(249, 115, 22, 0.35) !important;
-  color: #ffffff !important;
-}
-
-body:not(.halloween-off) .shop-search-input:focus,
-body:not(.halloween-off) #toolSearchInput:focus {
-  border-color: rgba(251, 146, 60, 0.85) !important;
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.35) !important;
-}
-
-body:not(.halloween-off) .shop-filter-btn,
-body:not(.halloween-off) .filter-btn {
-  background: rgba(24, 14, 42, 0.85) !important;
-  border: 1px solid rgba(249, 115, 22, 0.28) !important;
-  color: #fed7aa !important;
-}
-
-body:not(.halloween-off) .shop-filter-btn.active,
-body:not(.halloween-off) .filter-btn.active {
-  background: linear-gradient(135deg, rgba(234, 88, 12, 0.45) 0%, rgba(147, 51, 234, 0.45) 100%) !important;
-  border-color: #f97316 !important;
-  box-shadow: 0 0 16px rgba(249, 115, 22, 0.45) !important;
-  color: #ffffff !important;
-}
-
-/* Đèn tín hiệu trạng thái xanh -> cam ấm Halloween */
-body:not(.halloween-off) .status-indicator-dot.green {
-  background: #f97316 !important;
-  box-shadow: 0 0 10px #f97316 !important;
-}
-
-
-/* =========================================================
-   11. LOGO BANNER TUNDENXIN
-   - Giữ nguyên Logo mặc định nguyên bản của website
-   - Ẩn nón phù thủy phụ trợ
-   ========================================================= */
-.brand-witch-hat {
-  display: none !important;
 }

@@ -1,10 +1,49 @@
 (function () {
-  const tabBtns = document.querySelectorAll('.guide-tab-btn');
   const cards = document.querySelectorAll('.guide-card');
   const allPanels = document.querySelectorAll('.video-panel, .doc-guide-panel');
   const videoPanel = document.getElementById('videoPanel');
   const frame = document.getElementById('videoFrame');
   const videoTitle = document.getElementById('videoTitle');
+
+  const collapseBtn = document.getElementById('guideCollapseBtn');
+  const collapseBody = document.getElementById('guideCollapseBody');
+  const collapseStateText = document.getElementById('guideCollapseStateText');
+
+  const featCollapseBtn = document.getElementById('featuresCollapseBtn');
+  const featCollapseBody = document.getElementById('featuresCollapseBody');
+  const featCollapseStateText = document.getElementById('featuresCollapseStateText');
+
+  // Xử lý thu gọn / mở rộng khối "Chức năng Tool"
+  if (featCollapseBtn && featCollapseBody) {
+    featCollapseBtn.addEventListener('click', () => {
+      const isExpanded = featCollapseBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        featCollapseBtn.setAttribute('aria-expanded', 'false');
+        featCollapseBody.classList.add('is-collapsed');
+        if (featCollapseStateText) featCollapseStateText.textContent = 'Mở rộng';
+      } else {
+        featCollapseBtn.setAttribute('aria-expanded', 'true');
+        featCollapseBody.classList.remove('is-collapsed');
+        if (featCollapseStateText) featCollapseStateText.textContent = 'Thu gọn';
+      }
+    });
+  }
+
+  // Xử lý thu gọn / mở rộng khối "Cách cài tool"
+  if (collapseBtn && collapseBody) {
+    collapseBtn.addEventListener('click', () => {
+      const isExpanded = collapseBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        collapseBtn.setAttribute('aria-expanded', 'false');
+        collapseBody.classList.add('is-collapsed');
+        if (collapseStateText) collapseStateText.textContent = 'Mở rộng';
+      } else {
+        collapseBtn.setAttribute('aria-expanded', 'true');
+        collapseBody.classList.remove('is-collapsed');
+        if (collapseStateText) collapseStateText.textContent = 'Thu gọn';
+      }
+    });
+  }
 
   // Ẩn tất cả các panel
   function hideAllPanels() {
@@ -20,42 +59,24 @@
     cards.forEach(c => c.classList.remove('is-active-card'));
   }
 
+  // Hiển thị panel và cuộn mượt đưa vào phần hướng dẫn
   function showPanel(panel) {
     if (!panel) return;
     panel.hidden = false;
     panel.querySelectorAll('iframe[data-src]').forEach(embed => {
       embed.src = embed.dataset.src;
     });
-    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
 
-  // Xử lý bộ lọc tabs
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      hideAllPanels();
-
-      cards.forEach(card => {
-        const cat = card.dataset.category || 'pc';
-        const catList = cat.split(' ');
-        const game = card.dataset.game || '';
-        const gameList = game.split(' ');
-        if (filter === 'all' || gameList.includes(filter) || catList.includes(filter)) {
-          card.classList.remove('is-hidden');
-        } else {
-          card.classList.add('is-hidden');
-        }
+    setTimeout(() => {
+      const navOffset = 90;
+      const elementPosition = panel.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
       });
-
-      // Nếu chọn tab sửa lỗi Unicore, tự động mở panel sửa lỗi
-      if (filter === 'troubleshoot') {
-        const fixPanel = document.getElementById('panel-unicore-fix');
-        showPanel(fixPanel);
-      }
-    });
-  });
+    }, 50);
+  }
 
   // Xử lý click từng thẻ tool
   cards.forEach(card => {
@@ -97,10 +118,11 @@
     btn.addEventListener('click', () => {
       hideAllPanels();
       const fixPanel = document.getElementById('panel-unicore-fix');
+      const fixCard = document.querySelector('[data-tool-id="unicore-fix"]');
+      if (fixCard) fixCard.classList.add('is-active-card');
       showPanel(fixPanel);
     });
   });
-
 
   // Tự động mở đúng tool khi có URL query ?tool=... hoặc hash
   const urlParams = new URLSearchParams(window.location.search);
@@ -114,6 +136,9 @@
       return tid === targetQuery || tid.includes(targetQuery) || title.includes(targetQuery) || strong.includes(targetQuery);
     });
     if (matchCard) {
+      if (collapseBtn && collapseBody && collapseBtn.getAttribute('aria-expanded') === 'false') {
+        collapseBtn.click();
+      }
       setTimeout(() => matchCard.click(), 250);
     }
   }
