@@ -141,14 +141,19 @@
     showToast('⏱ Đã tắt thông báo trong 60 phút');
   }
 
-  function isHomePage() {
+  function isLandingPage() {
     const path = window.location.pathname.toLowerCase().split(/[?#]/)[0];
-    return path.endsWith('/index.html') || path.endsWith('/') || path === '' || (!path.endsWith('.html') && !path.includes('guide') && !path.includes('tools'));
+    return (
+      (document.body && document.body.classList.contains('landing-page')) ||
+      path.endsWith('/index.html') ||
+      path.endsWith('/') ||
+      path === ''
+    );
   }
 
   function initNotice() {
-    // Chỉ kích hoạt bảng thông báo cảnh báo ở Trang chủ
-    if (!isHomePage()) return;
+    // Tắt hoàn toàn trên Trang chủ (landing-page)
+    if (isLandingPage()) return;
 
     // Inject modal nếu chưa có trong DOM
     if (!document.getElementById('txNoticeOverlay')) {

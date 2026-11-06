@@ -388,4 +388,37 @@
       });
     }
   })();
+
+  // ==========================================
+  // CUỘN MƯỢT XUỐNG KHO TOOL GAME (GO TO STORE)
+  // ==========================================
+  (function initGoToStoreScroll() {
+    function scrollToTools(e) {
+      const target = document.getElementById('tools');
+      if (!target) return;
+      if (e) e.preventDefault();
+      const navPadding = parseInt(window.getComputedStyle(document.body).paddingTop, 10) || 76;
+      const targetTop = target.getBoundingClientRect().top + window.pageYOffset - (navPadding + 10);
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+      if (history.pushState) {
+        history.pushState(null, '', '#tools');
+      }
+    }
+
+    const storeBtn = document.getElementById('heroGoStoreBtn') || document.querySelector('.shika-btn-store');
+    if (storeBtn) {
+      storeBtn.addEventListener('click', scrollToTools);
+    }
+
+    // Hỗ trợ các liên kết trỏ đến #tools trên trang chủ
+    const toolLinks = document.querySelectorAll('a[href="#tools"], a[href="#tools-pc"]');
+    toolLinks.forEach(link => {
+      if (link !== storeBtn) {
+        link.addEventListener('click', scrollToTools);
+      }
+    });
+  })();
 })();

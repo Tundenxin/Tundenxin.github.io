@@ -13,37 +13,69 @@
   const featCollapseBody = document.getElementById('featuresCollapseBody');
   const featCollapseStateText = document.getElementById('featuresCollapseStateText');
 
-  // Xử lý thu gọn / mở rộng khối "Chức năng Tool"
-  if (featCollapseBtn && featCollapseBody) {
-    featCollapseBtn.addEventListener('click', () => {
-      const isExpanded = featCollapseBtn.getAttribute('aria-expanded') === 'true';
+  // Xử lý hiệu ứng thu gọn / mở rộng mượt mà (Smooth Accordion Animation)
+  function setupCollapsible(btn, body, stateText) {
+    if (!btn || !body) return;
+
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
       if (isExpanded) {
-        featCollapseBtn.setAttribute('aria-expanded', 'false');
-        featCollapseBody.classList.add('is-collapsed');
-        if (featCollapseStateText) featCollapseStateText.textContent = 'Mở rộng';
+        // ĐANG MỞ -> THU GỌN LẠI
+        btn.setAttribute('aria-expanded', 'false');
+        if (stateText) stateText.textContent = 'Mở rộng';
+
+        // 1. Cố định chiều cao hiện tại của body để CSS transition nhận mốc bắt đầu
+        const currentHeight = body.scrollHeight;
+        body.style.maxHeight = currentHeight + 'px';
+        body.offsetHeight; // Kích hoạt reflow trình duyệt
+
+        // 2. Chuyển về trạng thái đóng (animate về 0px và mờ dần)
+        requestAnimationFrame(() => {
+          body.classList.add('is-collapsed');
+          body.style.maxHeight = '0px';
+        });
+
+        const onCollapseEnd = (e) => {
+          if (e.target === body && (e.propertyName === 'max-height' || e.propertyName === 'opacity')) {
+            body.style.maxHeight = '';
+            body.removeEventListener('transitionend', onCollapseEnd);
+          }
+        };
+        body.addEventListener('transitionend', onCollapseEnd);
       } else {
-        featCollapseBtn.setAttribute('aria-expanded', 'true');
-        featCollapseBody.classList.remove('is-collapsed');
-        if (featCollapseStateText) featCollapseStateText.textContent = 'Thu gọn';
+        // ĐANG ĐÓNG -> MỞ RỘNG RA
+        btn.setAttribute('aria-expanded', 'true');
+        if (stateText) stateText.textContent = 'Thu gọn';
+
+        body.classList.remove('is-collapsed');
+        // Tính toán toàn bộ chiều cao thực tế cần mở
+        body.style.maxHeight = 'none';
+        const targetHeight = body.scrollHeight;
+        body.style.maxHeight = '0px';
+        body.offsetHeight; // Kích hoạt reflow trình duyệt
+
+        // Animate mượt mà từ 0px đến targetHeight px
+        requestAnimationFrame(() => {
+          body.style.maxHeight = targetHeight + 'px';
+        });
+
+        const onExpandEnd = (e) => {
+          if (e.target === body && e.propertyName === 'max-height') {
+            if (btn.getAttribute('aria-expanded') === 'true') {
+              body.style.maxHeight = 'none'; // Tháo bỏ cố định chiều cao để nội dung co giãn tự nhiên
+            }
+            body.removeEventListener('transitionend', onExpandEnd);
+          }
+        };
+        body.addEventListener('transitionend', onExpandEnd);
       }
     });
   }
 
-  // Xử lý thu gọn / mở rộng khối "Cách cài tool"
-  if (collapseBtn && collapseBody) {
-    collapseBtn.addEventListener('click', () => {
-      const isExpanded = collapseBtn.getAttribute('aria-expanded') === 'true';
-      if (isExpanded) {
-        collapseBtn.setAttribute('aria-expanded', 'false');
-        collapseBody.classList.add('is-collapsed');
-        if (collapseStateText) collapseStateText.textContent = 'Mở rộng';
-      } else {
-        collapseBtn.setAttribute('aria-expanded', 'true');
-        collapseBody.classList.remove('is-collapsed');
-        if (collapseStateText) collapseStateText.textContent = 'Thu gọn';
-      }
-    });
-  }
+  // Khởi tạo cho 2 khối "Cách cài tool" & "Chức năng Tool"
+  setupCollapsible(collapseBtn, collapseBody, collapseStateText);
+  setupCollapsible(featCollapseBtn, featCollapseBody, featCollapseStateText);
 
   // Ẩn tất cả các panel
   function hideAllPanels() {

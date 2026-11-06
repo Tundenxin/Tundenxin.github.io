@@ -80,7 +80,7 @@ a:focus-visible {
 
 body {
   margin: 0;
-  padding-top: 76px;
+  padding-top: 86px;
   background: transparent;
   color: var(--skirk-silver-soft);
   font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -2099,10 +2099,12 @@ margin-top: 40px;
 .guide-collapsible-wrapper {
   margin: 0 auto 36px;
   max-width: 1040px;
-  border-radius: 20px;
-  background: rgba(10, 15, 38, 0.88);
-  border: 1.5px solid rgba(56, 189, 248, 0.32);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 30px rgba(56, 189, 248, 0.15);
+  border-radius: 10px;
+  background: rgba(26, 32, 44, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -2112,11 +2114,11 @@ margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  background: linear-gradient(135deg, rgba(20, 30, 70, 0.85) 0%, rgba(12, 18, 48, 0.95) 100%);
+  padding: 15px 22px;
+  background: linear-gradient(135deg, rgba(42, 49, 64, 0.9) 0%, rgba(28, 33, 45, 0.96) 100%);
   border: none;
-  border-bottom: 1.5px solid rgba(56, 189, 248, 0.25);
-  color: #ffffff;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  color: #f1f5f9;
   cursor: pointer;
   font-family: inherit;
   font-size: 16px;
@@ -2126,8 +2128,8 @@ margin-top: 40px;
 }
 
 .guide-collapsible-trigger:hover {
-  background: linear-gradient(135deg, rgba(30, 48, 105, 0.95) 0%, rgba(16, 24, 60, 0.98) 100%);
-  border-bottom-color: rgba(56, 189, 248, 0.5);
+  background: linear-gradient(135deg, rgba(54, 62, 80, 0.95) 0%, rgba(38, 44, 58, 0.98) 100%);
+  border-bottom-color: rgba(148, 163, 184, 0.35);
 }
 
 .guide-collapsible-title {
@@ -2137,67 +2139,95 @@ margin-top: 40px;
 }
 
 .guide-collapsible-icon {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
 }
 
 .guide-collapsible-text {
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 800;
-  letter-spacing: 0.3px;
-  color: #ffffff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.2px;
+  color: #f1f5f9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .guide-collapsible-count {
   font-size: 12px;
   font-weight: 800;
   padding: 3px 10px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, 0.15);
-  color: #67e8f9;
-  border: 1px solid rgba(103, 232, 249, 0.4);
+  border-radius: 6px;
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
 .guide-collapsible-action {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: #94a3b8;
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .guide-chevron {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  color: #38bdf8;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+  color: #94a3b8;
   display: block;
+}
+
+.guide-collapsible-trigger:hover .guide-collapsible-action,
+.guide-collapsible-trigger:hover .guide-chevron {
+  color: #e2e8f0;
 }
 
 .guide-collapsible-trigger[aria-expanded="false"] .guide-chevron {
   transform: rotate(-90deg);
 }
 
+.guide-collapsible-trigger[aria-expanded="true"] .guide-chevron {
+  transform: rotate(0deg);
+}
+
+.guide-collapsible-trigger {
+  transition: all 0.25s ease, border-bottom-color 0.35s ease;
+}
+
 .guide-collapsible-trigger[aria-expanded="false"] {
-  border-bottom: none;
+  border-bottom-color: transparent;
 }
 
 .guide-collapsible-body {
+  display: block;
   padding: 20px;
-  transition: all 0.3s ease;
+  background: rgba(18, 22, 32, 0.7);
+  overflow: hidden;
+  box-sizing: border-box;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
 }
 
 .guide-collapsible-body.is-collapsed {
-  display: none;
+  display: block;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, padding 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
 }
 
 @media (max-width: 680px) {
   .guide-collapsible-wrapper {
-    border-radius: 14px;
-    margin-bottom: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
   }
   .guide-collapsible-trigger {
-    padding: 13px 16px;
+    padding: 12px 16px;
   }
   .guide-collapsible-text {
     font-size: 15px;
@@ -3423,7 +3453,7 @@ padding: 14px;
     padding: 5px 5px;
   }
 
-  .hero h1 { 
+  .hero:not(.shika-hero) h1 { 
     font-size: 22px; 
     line-height: 1.25;
     margin: 6px 0 10px;
@@ -3471,7 +3501,7 @@ padding: 14px;
 @media (max-width: 360px) {
   body { padding-top: 50px; }
   .nav { padding: 6px 8px; min-height: 50px; }
-  .hero h1 { font-size: 19px; }
+  .hero:not(.shika-hero) h1 { font-size: 19px; }
   .hero-actions-group { flex-direction: column !important; }
   .main-nav a span { display: inline-block; }
   .guide-card strong { font-size: 15px; }
@@ -7110,5 +7140,532 @@ box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
   }
   .floating-support-btn .support-tooltip {
     display: none;
+  }
+}
+
+
+/* =========================================================
+   SHIKAHUB-INSPIRED MODERN LANDING HERO SECTION (TUNDENXIN)
+   - Äá»’NG MÃ€U Vá»šI THANH ÄIá»€U HÆ¯á»šNG TRÃŠN (SKIRK COSMIC CYAN / NAVY #090e1f)
+   ========================================================= */
+.hero.shika-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 86px);
+  min-height: calc(100dvh - 86px);
+  padding: 40px 24px 36px;
+  background: radial-gradient(ellipse at 50% 32%, rgba(34, 211, 238, 0.16) 0%, rgba(10, 16, 40, 0.65) 48%, transparent 75%), #090e1f;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.shika-hero-bg-glow {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  width: 780px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.22) 0%, rgba(168, 85, 247, 0.12) 48%, transparent 72%);
+  filter: blur(75px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shika-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  transform: translateY(-20px);
+}
+
+/* AVATAR SQUIRCLE */
+.shika-avatar-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.shika-avatar-glow {
+  position: absolute;
+  inset: -22px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.6) 0%, rgba(168, 85, 247, 0.3) 55%, transparent 75%);
+  filter: blur(26px);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  animation: shikaGlowPulse 4s infinite ease-in-out;
+}
+
+@keyframes shikaGlowPulse {
+  0%, 100% { opacity: 0.75; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+.shika-avatar-box {
+  position: relative;
+  z-index: 2;
+  width: 176px;
+  height: 176px;
+  border-radius: 44px;
+  overflow: hidden;
+  border: 2.5px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 
+    0 22px 54px rgba(0, 0, 0, 0.85),
+    0 12px 38px rgba(34, 211, 238, 0.5),
+    0 0 24px rgba(168, 85, 247, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: #0d152b;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  margin: 0 auto;
+}
+
+.shika-avatar-box:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 
+    0 28px 64px rgba(0, 0, 0, 0.95),
+    0 16px 48px rgba(34, 211, 238, 0.75),
+    0 0 32px rgba(168, 85, 247, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.shika-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TOP WELCOME HEADING */
+.shika-welcome-heading {
+  font-family: 'Montserrat', 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(30px, 4.4vw, 46px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 
+    0 2px 14px rgba(0, 0, 0, 0.95),
+    0 0 24px rgba(34, 211, 238, 0.75),
+    0 0 48px rgba(168, 85, 247, 0.45);
+  margin: -36px auto 28px;
+  line-height: 1;
+  text-align: center;
+  user-select: none;
+}
+
+/* HERO TITLE */
+.hero.shika-hero h1.shika-hero-title,
+.hero.shika-hero .shika-hero-title,
+.shika-hero-title {
+  margin: 18px 0 14px;
+  font-family: 'Montserrat', 'Outfit', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(72px, 9.5vw, 136px);
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  line-height: 0.98;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.shika-hero-title .title-white {
+  color: #ffffff;
+  text-shadow: 
+    0 0 32px rgba(255, 255, 255, 0.55),
+    0 0 60px rgba(56, 189, 248, 0.3),
+    0 6px 28px rgba(0, 0, 0, 0.95);
+}
+
+.shika-hero-title .title-accent {
+  display: inline-block;
+  color: #00f0ff;
+  text-shadow: 
+    0 0 18px rgba(0, 240, 255, 0.95),
+    0 0 42px rgba(34, 211, 238, 0.85),
+    0 0 80px rgba(168, 85, 247, 0.6),
+    0 6px 28px rgba(0, 0, 0, 0.9);
+}
+
+/* HERO SUBTITLE */
+.shika-hero-desc {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(14.5px, 1.3vw, 17px);
+  font-weight: 500;
+  color: #7dd3fc;
+  letter-spacing: 0.3px;
+  max-width: 640px;
+  margin: 0 auto 30px;
+  line-height: 1.55;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+}
+
+/* HERO ACTIONS */
+.shika-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.shika-btn-store {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13.5px 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 55%, #7c3aed 100%);
+  color: #ffffff !important;
+  font-family: 'Montserrat', 'Be Vietnam Pro', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 26px rgba(14, 165, 233, 0.5), 0 0 20px rgba(34, 211, 238, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+}
+
+.shika-btn-store:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(14, 165, 233, 0.75), 0 0 28px rgba(34, 211, 238, 0.6), 0 0 20px rgba(168, 85, 247, 0.45);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff !important;
+}
+
+.shika-btn-arrow {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  transition: transform 0.25s ease;
+}
+
+.shika-btn-store:hover .shika-btn-arrow {
+  transform: translateX(3px);
+}
+
+.shika-btn-community {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13.5px 34px;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #e2e8f0 !important;
+  font-family: 'Montserrat', 'Be Vietnam Pro', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.shika-btn-community:hover {
+  transform: translateY(-2px);
+  background: rgba(14, 165, 233, 0.16);
+  border-color: rgba(34, 211, 238, 0.6);
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.35);
+}
+
+/* QUICK META BAR (DISCORD / TELEGRAM / GUIDE / SAFETY) */
+.shika-hero-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: rgba(10, 16, 38, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(34, 211, 238, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: fit-content;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 9999px;
+  font-size: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  background: rgba(14, 22, 50, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  transition: all 0.2s ease;
+}
+
+.meta-pill:hover {
+  color: #ffffff;
+  background: rgba(34, 211, 238, 0.15);
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.3);
+  transform: translateY(-1px);
+}
+
+.meta-pill.info {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  cursor: default;
+}
+
+.meta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.meta-dot.purple { background: #c084fc; box-shadow: 0 0 6px #c084fc; }
+.meta-dot.cyan { background: #38bdf8; box-shadow: 0 0 6px #38bdf8; }
+.meta-dot.orange { background: #fb923c; box-shadow: 0 0 6px #fb923c; }
+.meta-dot.red { background: #f87171; box-shadow: 0 0 6px #f87171; }
+
+/* KHO TOOL GAME SCROLL TARGET SPACING */
+#tools,
+.tools.tools-pc {
+  scroll-margin-top: 86px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero.shika-hero {
+    min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
+    padding: 36px 16px 30px;
+  }
+  #tools,
+  .tools.tools-pc {
+    scroll-margin-top: 66px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero.shika-hero {
+    min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
+    padding: 30px 18px 24px;
+    justify-content: center;
+  }
+  .shika-hero-inner {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-24px);
+  }
+  .shika-avatar-wrapper {
+    margin: 0 auto 16px;
+  }
+  .shika-avatar-box {
+    width: 148px;
+    height: 148px;
+    border-radius: 38px;
+    margin: 0 auto;
+  }
+  .shika-welcome-heading {
+    font-size: clamp(24px, 6vw, 32px);
+    letter-spacing: 4px;
+    margin: -24px auto 24px;
+  }
+  .hero.shika-hero h1.shika-hero-title,
+  .hero.shika-hero .shika-hero-title,
+  .shika-hero-title {
+    margin: 16px 0 10px !important;
+    font-size: clamp(54px, 13.5vw, 72px) !important;
+    letter-spacing: -0.8px !important;
+    line-height: 0.98 !important;
+    white-space: nowrap !important;
+  }
+  .shika-hero-desc {
+    font-size: 14px;
+    max-width: 320px;
+    margin: 0 auto 28px;
+    line-height: 1.45;
+  }
+  /* STACKED BUTTONS - EXACTLY LIKE SHIKAHUB MOBILE SCREENSHOT */
+  .shika-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    gap: 12px;
+    margin: 0 auto;
+  }
+  .shika-btn-store {
+    width: 100%;
+    padding: 14.5px 24px;
+    font-size: 13.5px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  .shika-btn-community {
+    width: 100%;
+    padding: 13.5px 24px;
+    font-size: 13.5px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    justify-content: center;
+    background: rgba(14, 22, 50, 0.7);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+  }
+  .shika-hero-meta-bar {
+    margin-top: 24px;
+    border-radius: 18px;
+    padding: 8px 10px;
+    gap: 6px;
+    max-width: 310px;
+    justify-content: center;
+  }
+  .meta-pill {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero.shika-hero {
+    min-height: calc(100vh - 50px);
+    min-height: calc(100dvh - 50px);
+    padding: 24px 14px 20px;
+    justify-content: center;
+  }
+  .shika-hero-inner {
+    transform: translateY(-28px);
+  }
+  .shika-avatar-box {
+    width: 138px;
+    height: 138px;
+    border-radius: 36px;
+  }
+  .shika-welcome-heading {
+    font-size: clamp(22px, 6vw, 28px);
+    letter-spacing: 3.5px;
+    margin: -20px auto 20px;
+  }
+  .hero.shika-hero h1.shika-hero-title,
+  .hero.shika-hero .shika-hero-title,
+  .shika-hero-title {
+    margin: 14px 0 8px !important;
+    font-size: clamp(48px, 13.8vw, 62px) !important;
+    letter-spacing: -0.8px !important;
+    line-height: 0.98 !important;
+    white-space: nowrap !important;
+  }
+  .shika-hero-desc {
+    font-size: 13px;
+    max-width: 290px;
+    margin-bottom: 24px;
+  }
+  .shika-hero-actions {
+    max-width: 280px;
+  }
+  .shika-hero-meta-bar {
+    max-width: 280px;
+  }
+  #tools,
+  .tools.tools-pc {
+    scroll-margin-top: 58px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero.shika-hero h1.shika-hero-title,
+  .hero.shika-hero .shika-hero-title,
+  .shika-hero-title {
+    font-size: clamp(38px, 12.5vw, 46px) !important;
+    letter-spacing: -0.6px !important;
+  }
+}
+
+
+/* =========================================================
+   TRANG CHá»¦ LANDING Cá» Äá»ŠNH THUáº¦N SHIKAHUB (INDEX.HTML)
+   ========================================================= */
+body.landing-page {
+  overflow: hidden;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.landing-page main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+body.landing-page .hero.shika-hero {
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 86px);
+  min-height: calc(100vh - 86px);
+  max-height: calc(100vh - 86px);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+body.landing-page footer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.landing-page {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100dvh;
+  }
+  body.landing-page main {
+    justify-content: center;
+  }
+  body.landing-page .hero.shika-hero {
+    height: auto;
+    min-height: calc(100dvh - 56px);
+    max-height: none;
+    padding: 24px 14px;
+    justify-content: center;
   }
 }
