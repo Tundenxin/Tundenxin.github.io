@@ -4634,6 +4634,60 @@ border: 1px solid rgba(255, 255, 255, 0.18);
   opacity: 0.85;
 }
 
+/* Khung hiển thị Key tải tệp */
+.file-key-alert {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(234, 179, 8, 0.12);
+}
+
+.file-key-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fde047;
+}
+
+.file-key-code {
+  font-family: 'Space Grotesk', -apple-system, monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px dashed rgba(250, 204, 21, 0.5);
+  letter-spacing: 0.5px;
+  user-select: all;
+}
+
+.file-key-copy-btn {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  color: #0f172a;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.file-key-copy-btn:hover {
+  background: #fde047;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+}
+
 /* Nút hành động của file */
 .file-actions {
   display: flex;

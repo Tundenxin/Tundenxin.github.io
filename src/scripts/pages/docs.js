@@ -1,4 +1,4 @@
-function setupCopyBtn(btnId, link) {
+function setupCopyBtn(btnId, link, feedbackText = '✓ Đã chép link!') {
   const btn = document.getElementById(btnId);
   if (!btn) return;
   const originalHtml = btn.innerHTML;
@@ -8,19 +8,20 @@ function setupCopyBtn(btnId, link) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(link).then(() => {
         clearTimeout(feedbackTimer);
-        btn.innerHTML = '✓ Đã chép link!';
+        btn.innerHTML = feedbackText;
         btn.style.color = '#38bdf8';
         feedbackTimer = setTimeout(() => {
           btn.innerHTML = originalHtml;
           btn.style.color = originalColor;
         }, 2000);
       }).catch(() => {
-        prompt('Sao chép liên kết:', link);
+        prompt('Sao chép:', link);
       });
     } else {
-      prompt('Sao chép liên kết:', link);
+      prompt('Sao chép:', link);
     }
   });
 }
-setupCopyBtn('copyShikaBtn', 'https://www.mediafire.com/file/yf14j8shrcxcu4p/Full-Teyvat.zip/file');
-setupCopyBtn('copyUnicoreBtn', 'https://www.mediafire.com/file/zah5ffnopw5ltb0/TP-Unicore-Lotus-Shibal_%2528_Tundenxin_%2529.zip/file');
+setupCopyBtn('copyShikaBtn', 'https://www.mediafire.com/file/agltz9ar19zb9rs/Shika-Tundenxin.zip/file');
+setupCopyBtn('copyUnicoreBtn', 'https://www.mediafire.com/file/h1pqgd4skv5nd67/Unicore-Lotus-Shibal.zip/file');
+setupCopyBtn('copyDmshbyBtn', 'https://www.mediafire.com/file/j3rozcq518qzojo/Dmsby-Tundenxin.zip/file');
