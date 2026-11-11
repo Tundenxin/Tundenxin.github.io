@@ -3,8 +3,5 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "node scripts/build-static.mjs",
-  "outputDirectory": "dist",
-  "git": {
-    "deploymentEnabled": false
-  }
+  "outputDirectory": "dist"
 }
