@@ -18,6 +18,7 @@
   const breadcrumbGame = document.getElementById('docsBreadcrumbGame');
   const breadcrumbCurrent = document.getElementById('docsBreadcrumbCurrent');
   const mainContent = document.getElementById('docsMainContent');
+  const articleView = document.getElementById('docsArticleView');
   const tocContainer = document.getElementById('docsTocContainer');
   const tocList = document.getElementById('docsTocList');
   let activeTocEntries = [];
@@ -57,14 +58,17 @@
         top: Math.max(0, topOffset),
         behavior: 'smooth'
       });
-    } else if (mainContent) {
-      const containerRect = mainContent.getBoundingClientRect();
-      const targetRect = targetEl.getBoundingClientRect();
-      const relativeTop = targetRect.top - containerRect.top + mainContent.scrollTop - 24;
-      mainContent.scrollTo({
-        top: Math.max(0, relativeTop),
-        behavior: 'smooth'
-      });
+    } else {
+      const scrollEl = document.getElementById('docsArticleView') || mainContent;
+      if (scrollEl) {
+        const containerRect = scrollEl.getBoundingClientRect();
+        const targetRect = targetEl.getBoundingClientRect();
+        const relativeTop = targetRect.top - containerRect.top + scrollEl.scrollTop - 14;
+        scrollEl.scrollTo({
+          top: Math.max(0, relativeTop),
+          behavior: 'smooth'
+        });
+      }
     }
   }
 
@@ -106,22 +110,6 @@
           id: card.id,
           el: card,
           title: displayLabel,
-          isNested: false
-        });
-      });
-    } else if (targetPanel.id === 'panel-files-tp') {
-      // TH2: Kho File TP - Quét các thẻ file-card
-      const fileCards = targetPanel.querySelectorAll('.file-card');
-      fileCards.forEach((card, idx) => {
-        if (!card.id) {
-          card.id = `tp-file-card-${idx + 1}`;
-        }
-        const titleEl = card.querySelector('.file-name');
-        const title = titleEl ? titleEl.textContent.trim() : `File TP ${idx + 1}`;
-        items.push({
-          id: card.id,
-          el: card,
-          title: title,
           isNested: false
         });
       });
@@ -204,8 +192,9 @@
   function updateActiveTocOnScroll() {
     if (!activeTocEntries || activeTocEntries.length === 0) return;
     const isDesktop = window.innerWidth > 992;
-    const containerTop = (isDesktop && mainContent) ? mainContent.getBoundingClientRect().top : 0;
-    const offset = 90;
+    const scrollEl = (isDesktop && (document.getElementById('docsArticleView') || mainContent)) ? (document.getElementById('docsArticleView') || mainContent) : null;
+    const containerTop = (isDesktop && scrollEl) ? scrollEl.getBoundingClientRect().top : 0;
+    const offset = 80;
 
     let currentItem = activeTocEntries[0];
     for (let i = 0; i < activeTocEntries.length; i++) {
@@ -238,6 +227,10 @@
     }
   }
 
+  const articleViewEl = document.getElementById('docsArticleView');
+  if (articleViewEl) {
+    articleViewEl.addEventListener('scroll', handleScrollSpy, { passive: true });
+  }
   if (mainContent) {
     mainContent.addEventListener('scroll', handleScrollSpy, { passive: true });
   }
@@ -303,6 +296,18 @@
       if (matchingBtn) matchingBtn.classList.add('is-active');
     }
 
+    // Đảm bảo nhóm cha không bị thu gọn khi chọn bài
+    const currentActiveBtn = navBtn || document.querySelector(`.docs-nav-btn[data-target="${targetId}"]`);
+    if (currentActiveBtn) {
+      const parentCollapsible = currentActiveBtn.closest('.docs-nav-group.is-collapsible');
+      if (parentCollapsible && parentCollapsible.classList.contains('is-collapsed')) {
+        parentCollapsible.classList.remove('is-collapsed');
+        const parentLabel = parentCollapsible.querySelector('.docs-group-label');
+        if (parentLabel) parentLabel.setAttribute('aria-expanded', 'true');
+        if (typeof saveCollapsedGroups === 'function') saveCollapsedGroups();
+      }
+    }
+
     // 5. Cập nhật Breadcrumbs
     const activeBtn = document.querySelector('.docs-nav-btn.is-active');
     if (activeBtn) {
@@ -311,7 +316,9 @@
         : activeBtn.textContent.trim();
       const parentGroup = activeBtn.closest('.docs-nav-group');
       const groupLabel = parentGroup ? parentGroup.querySelector('.docs-group-label') : null;
-      const gameTitle = groupLabel ? groupLabel.textContent.replace(/[📌🎮🌊🚂⚡🌌📁🛠️🗺️]/g, '').trim() : 'Genshin Impact';
+      const labelTextEl = groupLabel ? groupLabel.querySelector('.docs-group-label-text') : null;
+      const rawText = labelTextEl ? labelTextEl.textContent : (groupLabel ? groupLabel.textContent : '');
+      const gameTitle = rawText.replace(/[📌🎮🌊🚂⚡🌌📁🛠️🗺️]/g, '').trim() || 'Genshin Impact';
 
       if (breadcrumbGame) {
         breadcrumbGame.textContent = gameTitle;
@@ -328,8 +335,13 @@
       // Cập nhật URL Hash / Query để dễ lưu bookmark hoặc chia sẻ link
       const toolId = activeBtn.dataset.tool || targetId.replace('panel-', '');
       if (toolId && history.replaceState) {
-        const newUrl = `${window.location.pathname}?tool=${encodeURIComponent(toolId)}`;
-        history.replaceState({ tool: toolId }, '', newUrl);
+        if (toolId === 'faq') {
+          // Khi ở trang FAQ mặc định, giữ URL sạch
+          history.replaceState({ tool: 'faq' }, '', window.location.pathname);
+        } else {
+          const newUrl = `${window.location.pathname}?tool=${encodeURIComponent(toolId)}`;
+          history.replaceState({ tool: toolId }, '', newUrl);
+        }
       }
     }
 
@@ -337,16 +349,20 @@
     closeMobileDrawer();
 
     // 7. Cuộn lên đầu bài viết
-    if (mainContent) {
+    const scrollEl = document.getElementById('docsArticleView') || mainContent;
+    if (scrollEl) {
       if (window.innerWidth <= 992) {
-        const topOffset = mainContent.getBoundingClientRect().top + window.pageYOffset - 85;
+        const topOffset = scrollEl.getBoundingClientRect().top + window.pageYOffset - 85;
         window.scrollTo({
           top: Math.max(0, topOffset),
           behavior: 'smooth'
         });
       } else {
-        // Trên Desktop: Cuộn mượt nội dung bài viết về đầu, không cuộn window làm lệch bảng
-        mainContent.scrollTop = 0;
+        // Trên Desktop: Cuộn mượt nội dung bài viết về đầu, không làm trượt TOC
+        scrollEl.scrollTop = 0;
+        if (mainContent && mainContent !== scrollEl) {
+          mainContent.scrollTop = 0;
+        }
       }
       handleScrollSpy();
     }
@@ -372,11 +388,11 @@
     });
   });
 
-  // Nút đóng Panel (quay về tool mặc định hoặc đóng video)
+  // Nút đóng Panel (quay về trang FAQ mặc định hoặc đóng video)
   document.querySelectorAll('.panel-close-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       stopActiveVideo();
-      const defaultTargetBtn = document.querySelector('.docs-nav-btn[data-target="panel-kuro"]') ||
+      const defaultTargetBtn = document.querySelector('.docs-nav-btn[data-target="panel-faq"]') ||
                                document.querySelector('.docs-nav-btn');
       if (defaultTargetBtn) {
         switchDoc(defaultTargetBtn.dataset.target, defaultTargetBtn);
@@ -417,6 +433,13 @@
         }
       });
 
+      // Nếu đang tìm kiếm và có item khớp, tự động mở rộng nhóm
+      if (q && visibleInGroup > 0 && group.classList.contains('is-collapsible')) {
+        group.classList.remove('is-collapsed');
+        const lbl = group.querySelector('.docs-group-label');
+        if (lbl) lbl.setAttribute('aria-expanded', 'true');
+      }
+
       // Nếu không có item nào khớp trong group, ẩn luôn tiêu đề group
       if (!q || visibleInGroup > 0) {
         group.style.display = 'block';
@@ -449,6 +472,54 @@
       }
     }
   });
+
+  // ------------------------------------------------------------------------
+  // THU GỌN / MỞ RỘNG CÁC NHÓM GAME TRONG SIDEBAR (COLLAPSIBLE GROUPS)
+  // ------------------------------------------------------------------------
+  const collapsibleGroups = document.querySelectorAll('.docs-nav-group.is-collapsible');
+
+  function initCollapsibleGroups() {
+    collapsibleGroups.forEach(group => {
+      const label = group.querySelector('.docs-group-label');
+      if (!label) return;
+
+      const hasActive = group.querySelector('.docs-nav-btn.is-active');
+
+      // Mặc định: Tất cả các nhóm đều đóng, chỉ mở nếu nhóm chứa nút đang active
+      if (hasActive) {
+        group.classList.remove('is-collapsed');
+        label.setAttribute('aria-expanded', 'true');
+      } else {
+        group.classList.add('is-collapsed');
+        label.setAttribute('aria-expanded', 'false');
+      }
+
+      function toggle() {
+        const willCollapse = !group.classList.contains('is-collapsed');
+        if (willCollapse) {
+          group.classList.add('is-collapsed');
+          label.setAttribute('aria-expanded', 'false');
+        } else {
+          group.classList.remove('is-collapsed');
+          label.setAttribute('aria-expanded', 'true');
+        }
+      }
+
+      label.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggle();
+      });
+
+      label.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+  }
+
+  initCollapsibleGroups();
 
   // ------------------------------------------------------------------------
   // DEEP LINKING (Tự động mở bài khi truy cập có ?tool=... hoặc #hash)
@@ -486,9 +557,9 @@
       }
     }
 
-    // Mặc định mở tool đầu tiên (Kuro Mobile) hoặc panel có class is-active
-    const defaultBtn = document.querySelector('.docs-nav-btn.is-active') ||
-                       document.querySelector('.docs-nav-btn[data-target="panel-kuro"]') ||
+    // Mặc định mở trang Câu hỏi thường gặp (FAQ)
+    const defaultBtn = document.querySelector('.docs-nav-btn[data-target="panel-faq"]') ||
+                       document.querySelector('.docs-nav-btn.is-active') ||
                        document.querySelector('.docs-nav-btn');
     if (defaultBtn) {
       switchDoc(defaultBtn.dataset.target, defaultBtn);

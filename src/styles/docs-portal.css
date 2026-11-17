@@ -4,77 +4,8 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   THANH BANNER DÀI: HƯỚNG DẪN CÀI TOOL (MATCHING WIBUZ STORE)
+   DOCS PORTAL WRAPPER & LAYOUT
    -------------------------------------------------------------------------- */
-.wibuz-guide-strip {
-  display: block;
-  width: 100%;
-  background: #855858;
-  border-top: 1px solid rgba(28, 31, 34, 0.7);
-  border-bottom: 1px solid rgba(11, 12, 16, 0.8);
-  color: #ffffff;
-  text-decoration: none;
-  box-sizing: border-box;
-  margin-top: -34px;
-  position: relative;
-  z-index: 60;
-  transition: background 0.18s ease, filter 0.18s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.wibuz-guide-strip:hover {
-  background: #966464;
-  color: #ffffff;
-  filter: brightness(1.06);
-}
-
-.wibuz-guide-strip-inner {
-  width: 100%;
-  min-height: 34px;
-  padding: 4px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.wibuz-guide-strip-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #ffffff;
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-
-.wibuz-guide-strip-icon {
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-}
-
-.wibuz-guide-strip-title {
-  color: #ffffff;
-  font-weight: 700;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-.wibuz-guide-strip-arrow {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 2px;
-  color: #ffffff;
-  opacity: 0.9;
-}
-
-.wibuz-guide-strip-right {
-  display: flex;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 13px;
-}
-
 .docs-portal-wrapper {
   width: 100%;
   max-width: 100%;
@@ -97,10 +28,11 @@
 .docs-sidebar {
   width: 265px;
   flex-shrink: 0;
-  background: rgba(10, 15, 30, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: linear-gradient(180deg, rgba(14, 18, 30, 0.95) 0%, rgba(8, 11, 19, 0.97) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 14px;
   padding: 12px 10px;
   position: sticky;
@@ -111,28 +43,65 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   z-index: 50;
 }
 
-/* Custom scrollbar cho Sidebar & Main Content */
+/* Custom scrollbar cho Sidebar, Main Content, Article View & TOC */
 .docs-sidebar::-webkit-scrollbar,
-.docs-main-content::-webkit-scrollbar {
+.docs-main-content::-webkit-scrollbar,
+.docs-article-view::-webkit-scrollbar,
+.docs-toc-nav::-webkit-scrollbar {
   width: 5px;
 }
 .docs-sidebar::-webkit-scrollbar-track,
-.docs-main-content::-webkit-scrollbar-track {
+.docs-main-content::-webkit-scrollbar-track,
+.docs-article-view::-webkit-scrollbar-track,
+.docs-toc-nav::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 4px;
 }
 .docs-sidebar::-webkit-scrollbar-thumb,
-.docs-main-content::-webkit-scrollbar-thumb {
+.docs-main-content::-webkit-scrollbar-thumb,
+.docs-article-view::-webkit-scrollbar-thumb,
+.docs-toc-nav::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 .docs-sidebar::-webkit-scrollbar-thumb:hover,
-.docs-main-content::-webkit-scrollbar-thumb:hover {
+.docs-main-content::-webkit-scrollbar-thumb:hover,
+.docs-article-view::-webkit-scrollbar-thumb:hover,
+.docs-toc-nav::-webkit-scrollbar-thumb:hover {
   background: rgba(56, 189, 248, 0.4);
+}
+
+/* Tiêu đề đầu Sidebar */
+.docs-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px 10px 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.docs-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.docs-sidebar-brand-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.docs-sidebar-brand-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /* Khối tìm kiếm trong Sidebar */
@@ -188,25 +157,93 @@
 
 /* Nhóm các mục trong Sidebar */
 .docs-nav-group {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .docs-group-label {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
-  color: #64748b;
-  letter-spacing: 0.8px;
-  padding: 4px 10px 6px;
+  color: #ffffff;
+  letter-spacing: 0.7px;
+  padding: 6px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Nhóm có thể thu gọn / mở rộng (Collapsible Accordion) */
+.docs-nav-group.is-collapsible .docs-group-label {
+  cursor: pointer;
+  user-select: none;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease, text-shadow 0.15s ease;
+}
+
+.docs-nav-group.is-collapsible .docs-group-label:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.docs-nav-group.is-collapsible .docs-group-label:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 1px;
+}
+
+.docs-group-label-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.docs-group-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  flex-shrink: 0;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s ease;
+}
+
+.docs-nav-group.is-collapsible .docs-group-label:hover .docs-group-chevron {
+  color: #38bdf8;
+}
+
+/* Khi thu gọn: xoay mũi tên 90 độ chỉ sang phải */
+.docs-nav-group.is-collapsible.is-collapsed .docs-group-chevron {
+  transform: rotate(-90deg);
 }
 
 .docs-group-items {
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+
+@keyframes docGroupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.docs-nav-group.is-collapsible:not(.is-collapsed) .docs-group-items {
+  animation: docGroupFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.docs-nav-group.is-collapsible.is-collapsed .docs-group-items,
+.docs-nav-group.is-collapsible.is-collapsed .docs-nav-btn {
+  display: none !important;
 }
 
 /* Item điều hướng */
@@ -349,15 +386,18 @@
   min-width: 0;
   height: calc(100vh - 120px);
   max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  background: rgba(10, 15, 30, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(15, 20, 32, 0.96) 0%, rgba(8, 11, 19, 0.98) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 14px;
-  padding: 24px 30px 40px;
+  padding: 20px 24px 20px 28px;
   box-sizing: border-box;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 /* Header bar bên trên bài viết */
@@ -367,9 +407,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  padding-bottom: 16px;
-  margin-bottom: 24px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  width: 100%;
 }
 
 .docs-breadcrumbs {
@@ -599,6 +641,23 @@
    RESPONSIVE (MOBILE & TABLET)
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
+  body.guide-page {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    display: block !important;
+    padding-top: 64px !important;
+  }
+
+  body.guide-page .nav {
+    min-height: 64px !important;
+    height: 64px !important;
+  }
+
+  body.guide-page footer {
+    display: flex !important;
+  }
+
   .docs-portal-wrapper {
     margin-top: 0;
     padding: 10px 10px 30px;
@@ -657,10 +716,24 @@
   .docs-main-content {
     height: auto;
     max-height: none;
-    overflow-y: visible;
+    overflow: visible;
     min-height: auto;
     padding: 18px 16px 30px;
     border-radius: 12px;
+    display: block;
+  }
+
+  .docs-content-body-wrap {
+    display: block;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .docs-article-view {
+    height: auto;
+    overflow: visible;
+    padding-right: 0;
+    padding-bottom: 0;
   }
 
   .docs-welcome-header h1 {
@@ -1004,39 +1077,41 @@
    -------------------------------------------------------------------------- */
 .docs-content-body-wrap {
   display: flex;
-  align-items: flex-start;
-  gap: 28px;
+  align-items: stretch;
+  gap: 24px;
   width: 100%;
+  flex: 1;
+  min-height: 0;
   position: relative;
+  overflow: hidden;
 }
 
 .docs-article-view {
   flex: 1 1 0%;
   min-width: 0;
-  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 18px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
 
 .docs-toc-container {
   width: 230px;
   flex-shrink: 0;
-  position: sticky;
-  top: 0;
-  max-height: calc(100vh - 180px);
-  overflow-y: auto;
-  padding-right: 4px;
-  margin-top: 4px;
-}
-
-/* Custom scrollbar cho TOC nếu mục lục dài */
-.docs-toc-container::-webkit-scrollbar {
-  width: 3px;
-}
-.docs-toc-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 3px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .docs-toc-sticky {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
 }
 
@@ -1051,6 +1126,7 @@
   margin-bottom: 14px;
   padding-left: 2px;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .docs-toc-header svg {
@@ -1059,7 +1135,12 @@
 }
 
 .docs-toc-nav {
-  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
 
 .docs-toc-list {
@@ -1123,6 +1204,175 @@
   }
   .docs-content-body-wrap {
     gap: 0;
+  }
+  .docs-article-view {
+    padding-right: 0;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP FIXED APP LAYOUT (CỐ ĐỊNH NHƯ ẢNH 1, KHÔNG CUỘN WINDOW, KHÔNG THỪA FOOTER)
+   ========================================================================== */
+@media (min-width: 993px) {
+  html,
+  body.guide-page {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  body.guide-page {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Header trên cùng gọn gàng */
+  body.guide-page .nav {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    min-height: 52px !important;
+    height: 52px !important;
+    padding: 2px clamp(14px, 3vw, 36px) !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.16) !important;
+  }
+
+  /* Khung Docs portal ôm trọn 100% phần chiều cao còn lại của màn hình */
+  body.guide-page .docs-portal-wrapper {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 8px 0 0 0 !important;
+    padding: 0 14px 10px 8px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  body.guide-page .docs-portal-layout {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    display: flex !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Sidebar bên trái cao 100%, cuộn độc lập bên trong, nền đen nhám */
+  body.guide-page .docs-sidebar {
+    height: 100% !important;
+    max-height: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    box-sizing: border-box !important;
+    background: linear-gradient(180deg, rgba(14, 18, 30, 0.95) 0%, rgba(8, 11, 19, 0.97) 100%) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  }
+
+  /* Khung nội dung chính cao 100%, nền đen nhám sang trọng, breadcrumbs và TOC ghim cố định */
+  body.guide-page .docs-main-content {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    padding: 16px 20px 16px 24px !important;
+    box-sizing: border-box !important;
+    background: linear-gradient(180deg, rgba(15, 20, 32, 0.96) 0%, rgba(8, 11, 19, 0.98) 100%) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  }
+
+  body.guide-page .docs-content-topbar {
+    flex-shrink: 0 !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 14px !important;
+  }
+
+  body.guide-page .docs-content-body-wrap {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    display: flex !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  /* Vùng cuộn bài viết duy nhất: chỉ bài viết cuộn, không cuộn window */
+  body.guide-page .docs-article-view {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    padding-right: 16px !important;
+    padding-bottom: 40px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Bảng mục lục On this page: cố định 100% bên phải, không trượt */
+  body.guide-page .docs-toc-container {
+    width: 230px !important;
+    flex-shrink: 0 !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  body.guide-page .docs-toc-sticky {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+  }
+
+  body.guide-page .docs-toc-header {
+    flex-shrink: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  body.guide-page .docs-toc-nav {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    padding-right: 4px !important;
+  }
+
+  /* Ẩn footer trên desktop để giao diện cố định 100% như ảnh 1 */
+  body.guide-page footer {
+    display: none !important;
   }
 }
 
