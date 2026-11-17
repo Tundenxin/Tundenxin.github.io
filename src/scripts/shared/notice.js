@@ -24,22 +24,21 @@
         </button>
         
         <div class="tx-notice-badge">
-          <span class="tx-notice-pulse"></span>
-          <span class="tx-notice-badge-text">✦ CẢNH BÁO QUAN TRỌNG ✦</span>
+          <span class="tx-notice-dot"></span>
+          <span class="tx-notice-badge-text">Thông báo quan trọng</span>
         </div>
 
-        <h2 id="txNoticeTitle" class="tx-notice-title">Lưu ý khi sử dụng Tool</h2>
+        <h2 id="txNoticeTitle" class="tx-notice-title">Lưu ý khi <span class="tx-title-accent">sử dụng Tool</span></h2>
 
         <div class="tx-notice-warning-box">
-          <div class="tx-notice-warn-icon">⚠</div>
-          <div class="tx-notice-warn-text">
-            <strong>Dùng tool luôn có rủi ro!</strong>
-            <p>Lưu ý khi sử dụng vào những đợt <strong>Ban Wave</strong> của game để tránh rủi ro khóa tài khoản.</p>
-          </div>
+          <ul class="tx-notice-list">
+            <li>Tool Genshin <span class="tx-danger-tag">KHÔNG AN TOÀN</span>, nên mua <strong class="tx-tool-highlight">Unicore</strong> <em>(AMD là lựa chọn ngon nhất)</em></li>
+            <li>Xem hướng dẫn tải tool <a href="guide.html" class="tx-guide-link">tại đây ↗</a></li>
+          </ul>
         </div>
 
         <p class="tx-notice-desc">
-          Để biết rõ chi tiết, cập nhật tình hình an toàn mới nhất và được hỗ trợ, hãy tham gia nhóm của chúng tôi:
+          Để nhận cảnh báo an toàn mới nhất, hướng dẫn chống quét và được hỗ trợ kịp thời, hãy tham gia nhóm cộng đồng:
         </p>
 
         <div class="tx-notice-socials">
@@ -58,13 +57,18 @@
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .26z"/>
               </svg>
             </div>
-            <span class="tx-social-title">Nhóm Telegram ↗</span>
+            <span class="tx-social-title">Kênh Telegram ↗</span>
           </a>
         </div>
 
         <div class="tx-notice-actions">
           <button type="button" class="tx-btn-snooze" id="txNoticeSnoozeBtn">
-            <span class="tx-btn-icon">⏱</span>
+            <span class="tx-btn-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
             <span>Tắt 60 phút</span>
           </button>
           <button type="button" class="tx-btn-dismiss" id="txNoticeCloseBtn">
@@ -74,7 +78,7 @@
                 <line x1="13" y1="1" x2="1" y2="13"></line>
               </svg>
             </span>
-            <span>Tắt thông báo</span>
+            <span>Đã hiểu &amp; Đóng</span>
           </button>
         </div>
       </div>
