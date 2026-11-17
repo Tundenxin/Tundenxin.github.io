@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta name="theme-color" content="#050713">
-  <title>Tài Liệu Hướng Dẫn — Tundenxin (Void Realm)</title>
-  <meta name="description" content="Tài liệu hướng dẫn sử dụng dịch vụ, cài đặt tool, kích hoạt key, phím tắt và sửa lỗi cho toàn bộ tool game.">
+  <title>Kho File TP Map, Config & Script — Tundenxin</title>
+  <meta name="description" content="Tundenxin — Nơi lưu trữ và chia sẻ file TP Map, Config, Script và dữ liệu hỗ trợ Genshin Impact tối ưu nhất.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap">
   <link rel="stylesheet" href="src/styles/style.css?v=8.6">
-  <link rel="stylesheet" href="src/styles/docs-portal.css?v=3.3">
   <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
@@ -18,12 +17,62 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    .files-page-wrap {
+      max-width: 1040px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .files-page-header {
+      margin-bottom: 26px;
+    }
+    .files-page-crumbs {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.6px;
+      margin-bottom: 8px;
+    }
+    .files-page-title {
+      font-family: 'Space Grotesk', 'Be Vietnam Pro', sans-serif;
+      font-size: clamp(26px, 4.5vw, 36px);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 12px;
+      letter-spacing: -0.3px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    }
+    .files-page-desc {
+      font-size: 15px;
+      color: #94a3b8;
+      margin: 0;
+      line-height: 1.6;
+      max-width: 820px;
+    }
+    .file-stack-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .files-page-wrap {
+        margin: 24px auto 60px;
+        padding: 0 16px;
+      }
+      .files-page-title {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
-<body class="guide-page">
+<body class="docs-page">
   <div class="skirk-bg-fixed" aria-hidden="true"></div>
   <div class="skirk-bg-overlay" aria-hidden="true"></div>
   <div class="gold-dust" aria-hidden="true"></div>
 
+  <!-- Header / Navigation Bar -->
   <header class="nav">
     <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu điều hướng" aria-expanded="false">
       <span class="hamburger-box" aria-hidden="true">
@@ -45,877 +94,108 @@
     </nav>
   </header>
 
-  <main class="docs-portal-wrapper">
-    <div class="docs-sidebar-backdrop" id="docsSidebarBackdrop"></div>
+  <!-- Main Content -->
+  <main class="files-page-wrap">
+    <header class="files-page-header">
+      <div class="files-page-crumbs">Tundenxin File Repository</div>
+      <h1 class="files-page-title">Kho File TP Map, Config &amp; Script</h1>
+      <p class="files-page-desc">Tổng hợp toàn bộ file cấu hình Teleport (TP) all map Teyvat và script tối ưu do Tundenxin trực tiếp custom và duy trì.</p>
+    </header>
 
-    <div class="docs-portal-layout">
-      <!-- SIDEBAR CÂY ĐIỀU HƯỚNG TÀI LIỆU (TREE NAVIGATION) -->
-      <aside class="docs-sidebar" id="docsSidebar">
-        <div class="docs-sidebar-header">
-          <div class="docs-sidebar-brand">
-            <span class="docs-sidebar-brand-icon">📚</span>
-            <span class="docs-sidebar-brand-title">Tài Liệu Hướng Dẫn</span>
+    <!-- Danh sách tệp tải -->
+    <div class="file-stack-list" id="fileGrid">
+      <!-- 1. Files TP Tool Shika -->
+      <article class="file-card" data-category="cfg">
+        <div class="file-card-top">
+          <div class="file-type-icon cfg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+              <line x1="8" y1="2" x2="8" y2="18"></line>
+              <line x1="16" y1="6" x2="16" y2="22"></line>
+            </svg>
           </div>
-        </div>
-
-        <div class="docs-search-container">
-          <span class="docs-search-icon">🔍</span>
-          <input type="search" class="docs-search-input" id="docsSearchInput" placeholder="Tìm kiếm tài liệu tool, sửa lỗi..." autocomplete="off">
-          <span class="docs-search-kbd">Ctrl+K</span>
-        </div>
-
-        <!-- 1. Bắt đầu -->
-        <div class="docs-nav-group">
-          <div class="docs-group-label">📌 Bắt đầu</div>
-          <button type="button" class="docs-nav-btn is-active" data-target="panel-faq" data-tool="faq">
-            <span class="docs-nav-icon-text">❓</span>
-            <span class="docs-nav-text">Câu hỏi thường gặp (FAQ)</span>
-          </button>
-        </div>
-
-        <!-- 2. Genshin Impact -->
-        <div class="docs-nav-group is-collapsible is-collapsed" data-group="genshin">
-          <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
-            <span class="docs-group-label-text">🎮 Genshin Impact</span>
-            <span class="docs-group-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </div>
-          <div class="docs-group-items">
-            <button type="button" class="docs-nav-btn" data-target="panel-kuro" data-tool="kuro">
-              <img src="src/assets/images/tools/tool-kuro.png" alt="Kuro" class="docs-nav-icon">
-              <span class="docs-nav-text">Kuro Mobile</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-eleutheria" data-tool="eleutheria">
-              <img src="src/assets/images/tools/tool-eleutheria.png" alt="Eleutheria" class="docs-nav-icon">
-              <span class="docs-nav-text">Eleutheria Mobile</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="videoPanel" data-tool="dmshby" data-title="DMSHBY Mobile — Hướng dẫn cài đặt &amp; Chạy Script" data-video="https://www.youtube.com/embed/D0v4Izh_cfY?si=3xiRxPQulUeqx-4i">
-              <img src="src/assets/images/tools/tool-dmshby.png" alt="DMSHBY" class="docs-nav-icon">
-              <span class="docs-nav-text">DMSHBY Mobile</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-unicore" data-tool="unicore">
-              <img src="src/assets/images/tools/tool-unicore.png" alt="Unicore" class="docs-nav-icon">
-              <span class="docs-nav-text">Unicore</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-shika-pc" data-tool="shika-beta-or-alpha">
-              <img src="src/assets/images/tools/tool-shika.png" alt="Shika Beta | Alpha" class="docs-nav-icon">
-              <span class="docs-nav-text">Shika Beta | Alpha</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-shika-mobile" data-tool="shika-mobile">
-              <img src="src/assets/images/tools/tool-shika-mobile.png" alt="Shika Mobile" class="docs-nav-icon">
-              <span class="docs-nav-text">Shika Mobile</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-lotus" data-tool="lotus">
-              <img src="src/assets/images/tools/tool-lotus.png" alt="Lotus" class="docs-nav-icon">
-              <span class="docs-nav-text">Lotus</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-antiaddict" data-tool="antiaddict">
-              <img src="src/assets/images/tools/tool-antiaddict.png" alt="Antiaddict" class="docs-nav-icon">
-              <span class="docs-nav-text">Antiaddict</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-shibal" data-tool="shibal">
-              <img src="src/assets/images/tools/tool-shibal.png" alt="Shibal" class="docs-nav-icon">
-              <span class="docs-nav-text">Shibal</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-mgi" data-tool="mgi">
-              <img src="src/assets/images/tools/tool-minty-gi-mobile-android.png" alt="Minty-GI-Mobile" class="docs-nav-icon">
-              <span class="docs-nav-text">Minty-GI-Mobile</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 3. Honkai: Star Rail -->
-        <div class="docs-nav-group is-collapsible is-collapsed" data-group="hsr">
-          <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
-            <span class="docs-group-label-text">🚂 Honkai: Star Rail</span>
-            <span class="docs-group-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </div>
-          <div class="docs-group-items">
-            <button type="button" class="docs-nav-btn" data-target="panel-slash" data-tool="slash">
-              <img src="src/assets/images/tools/tool-slash.png" alt="Slash HSR" class="docs-nav-icon">
-              <span class="docs-nav-text">Slash PC (HSR)</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-unistar" data-tool="unistar">
-              <img src="src/assets/images/tools/tool-unistar.png" alt="Unistar" class="docs-nav-icon">
-              <span class="docs-nav-text">Unistar (HSR)</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 4. Wuthering Waves -->
-        <div class="docs-nav-group is-collapsible is-collapsed" data-group="wuwa">
-          <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
-            <span class="docs-group-label-text">🌊 Wuthering Waves</span>
-            <span class="docs-group-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </div>
-          <div class="docs-group-items">
-            <button type="button" class="docs-nav-btn" data-target="panel-kittenwaves" data-tool="kittenwaves">
-              <img src="src/assets/images/tools/tool-kittenwaves.png" alt="KittenWaves" class="docs-nav-icon">
-              <span class="docs-nav-text">Kittenwaves (WuWa)</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-slash-wuwa" data-tool="slash-wuwa">
-              <img src="src/assets/images/tools/tool-slash.png" alt="Slash WuWa" class="docs-nav-icon">
-              <span class="docs-nav-text">Slash WuWa</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-minty-pc" data-tool="minty-pc">
-              <img src="src/assets/images/tools/tool-minty-sr.png" alt="Minty-SR" class="docs-nav-icon">
-              <span class="docs-nav-text">Minty-SR</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-minty-mobile" data-tool="minty-mobile">
-              <img src="src/assets/images/tools/tool-torako-mobile.png" alt="Torako Mobile" class="docs-nav-icon">
-              <span class="docs-nav-text">Torako Mobile</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 5. Zenless Zone Zero -->
-        <div class="docs-nav-group is-collapsible is-collapsed" data-group="zzz">
-          <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
-            <span class="docs-group-label-text">⚡ Zenless Zone Zero</span>
-            <span class="docs-group-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </div>
-          <div class="docs-group-items">
-            <button type="button" class="docs-nav-btn" data-target="panel-unizone" data-tool="unizone">
-              <img src="src/assets/images/tools/tool-unizone.png" alt="Unizone" class="docs-nav-icon">
-              <span class="docs-nav-text">Unizone (ZZZ)</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-kinu" data-tool="kinu">
-              <img src="src/assets/images/tools/tool-kinu.png" alt="Minty ZZZ" class="docs-nav-icon">
-              <span class="docs-nav-text">Minty-ZZZ</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 6. Game khác -->
-        <div class="docs-nav-group is-collapsible is-collapsed" data-group="other-games">
-          <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
-            <span class="docs-group-label-text">🌌 Game khác</span>
-            <span class="docs-group-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </div>
-          <div class="docs-group-items">
-            <button type="button" class="docs-nav-btn" data-target="panel-aniimi" data-tool="aniimi">
-              <img src="src/assets/images/tools/tool-aniimo.png" alt="Slash - Aniimo &amp; Ukai" class="docs-nav-icon">
-              <span class="docs-nav-text">Slash - Aniimo &amp; Ukai</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 8. Khắc phục sự cố (Troubleshooting) -->
-        <div class="docs-nav-group is-collapsible is-collapsed" data-group="troubleshooting">
-          <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
-            <span class="docs-group-label-text">🛠️ Khắc phục sự cố</span>
-            <span class="docs-group-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </div>
-          <div class="docs-group-items">
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-overview" data-tool="troubleshooting">
-              <span class="docs-nav-icon-text">🔧</span>
-              <span class="docs-nav-text">Tổng quan sự cố</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-antivirus" data-tool="antivirus-detection">
-              <span class="docs-nav-icon-text">🛡️</span>
-              <span class="docs-nav-text">Bị Antivirus gắn cờ</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-menu" data-tool="f2-not-responding">
-              <span class="docs-nav-icon-text">⌨️</span>
-              <span class="docs-nav-text">Không hiện menu tool (F1/F2)</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-bsod" data-tool="blue-screen-bsod">
-              <span class="docs-nav-icon-text">💻</span>
-              <span class="docs-nav-text">Màn hình xanh / BSOD</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-driver" data-tool="loader-startup-issues">
-              <span class="docs-nav-icon-text">⚙️</span>
-              <span class="docs-nav-text">Loader không chạy / Driver</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-connection" data-tool="connection-error">
-              <span class="docs-nav-icon-text">🌐</span>
-              <span class="docs-nav-text">FATAL ERROR / Lỗi mạng</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-hwid" data-tool="hardware-mismatch">
-              <span class="docs-nav-icon-text">🔑</span>
-              <span class="docs-nav-text">Hardware Mismatch (Lệch HWID)</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-          </div>
-        </div>
-      </aside>
-
-      <!-- KHU VỰC NỘI DUNG CHÍNH (MAIN CONTENT) -->
-      <section class="docs-main-content" id="docsMainContent">
-        <div class="docs-content-topbar">
-          <div class="docs-breadcrumbs">
-            <button type="button" class="docs-mobile-drawer-btn" id="docsMobileDrawerBtn" aria-label="Mở danh mục tài liệu">
-              <span>☰</span> Mục lục
-            </button>
-            <a href="index.html">Trang chủ</a>
-            <span class="sep">/</span>
-            <a href="guide.html">Tài Liệu Hướng Dẫn</a>
-            <span class="sep">/</span>
-            <span id="docsBreadcrumbGame">Bắt đầu</span>
-            <span class="sep">/</span>
-            <span id="docsBreadcrumbCurrent" class="active-crumb">Câu hỏi thường gặp (FAQ)</span>
-          </div>
-        </div>
-
-        <div class="docs-content-body-wrap">
-          <div class="docs-article-view" id="docsArticleView">
-
-        <!-- PANEL 1: FAQ -->
-        <div class="docs-article-panel is-active" id="panel-faq">
-          <div class="video-head" style="padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 24px;">
-            <div class="video-head-left">
-              <div class="panel-header-icon-wrap"><span style="font-size: 26px;">❓</span></div>
-              <div class="panel-head-titles">
-                <span class="kicker">✦ HỎI ĐÁP &amp; SỬA LỖI</span>
-                <h2>Câu Hỏi Thường Gặp &amp; Xử Lý Nhanh (FAQ)</h2>
-                <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Tổng hợp giải đáp các vấn đề hay gặp nhất khi mới bắt đầu cài đặt và sử dụng tool</small>
-              </div>
+          <div class="file-info">
+            <div class="file-meta-tags">
+              <span class="file-badge cfg">TP SHIKA</span>
+              <span class="file-date">✦ Full Teyvat</span>
+              <span class="file-date">✦ Tundenxin Custom</span>
             </div>
-            <button class="panel-close-btn" aria-label="Đóng">×</button>
+            <h3 class="file-name">Files TP Tool Shika (Tundenxin) — Full Teyvat</h3>
+            <p class="file-desc">Trọn bộ Files cấu hình Teleport (TP) Full Map Teyvat dành cho Tool Shika.<br><strong style="color: #ff4d4f; text-shadow: 0 0 10px rgba(255, 77, 79, 0.35);">(Đây là Files TP Shika được Tundenxin Custom)</strong><br><span style="color: #6ee7b7; font-weight: 600;">(Định dạng: Shika-Tundenxin.zip)</span></p>
           </div>
-          <div class="doc-guide-body">
-            <div class="doc-step-card">
-              <div class="doc-step-badge">FAQ 1</div>
-              <div class="doc-step-content">
-                <h3>1. Bị Windows Defender hoặc Trình diệt Virus chặn không cho tải / mở tool?</h3>
-                <p>Do tool can thiệp vào bộ nhớ game để đọc tọa độ và mở menu nên Windows Defender sẽ nhận diện nhầm là phần mềm lạ (False Positive).</p>
-                <a href="#antivirus-detection" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-antivirus" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem chi tiết cách thêm Exclusion</a>
-              </div>
+        </div>
+        <div class="file-actions">
+          <a class="file-download-btn" href="https://www.mediafire.com/file/agltz9ar19zb9rs/Shika-Tundenxin.zip/file" target="_blank" rel="noopener">
+            <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>TẢI XUỐNG NGAY</span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <button type="button" class="file-copy-link-btn" id="copyShikaBtn" title="Sao chép link tải">📋 Sao chép link</button>
+        </div>
+      </article>
+
+      <!-- 2. Files TP Unicore - Lotus - Shibal -->
+      <article class="file-card" data-category="cfg">
+        <div class="file-card-top">
+          <div class="file-type-icon cfg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+              <line x1="8" y1="2" x2="8" y2="18"></line>
+              <line x1="16" y1="6" x2="16" y2="22"></line>
+            </svg>
+          </div>
+          <div class="file-info">
+            <div class="file-meta-tags">
+              <span class="file-badge cfg">TP UNICORE • LOTUS • SHIBAL</span>
+              <span class="file-date">✦ Tundenxin Custom</span>
             </div>
-            <div class="doc-step-card">
-              <div class="doc-step-badge">FAQ 2</div>
-              <div class="doc-step-content">
-                <h3>2. Không hiện Menu Tool khi vào game (Bấm F1 / F2 / Insert không phản hồi)?</h3>
-                <p>Có 4 nguyên nhân: Quyền Administrator, chế độ hiển thị game chưa ở Borderless/Windowed, tính năng Smooth Motion NVIDIA đang bật, hoặc app khác chiếm Overlay.</p>
-                <a href="#f2-not-responding" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-menu" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem 4 bước sửa lỗi Menu không hiện</a>
-              </div>
+            <h3 class="file-name">Files TP Unicore - Lotus - Shibal (Tundenxin)</h3>
+            <p class="file-desc">Tổng hợp Files cấu hình Teleport (TP) all map dành cho các Tool PC Unicore, Lotus và Shibal.<br><strong style="color: #ff4d4f; text-shadow: 0 0 10px rgba(255, 77, 79, 0.35);">(Lưu ý: TP Unicore - Lotus - Shibal được làm giống như Files TP của Shika 100%, chỉ thay đổi Json để phù hợp với Tool)</strong><br><span style="color: #6ee7b7; font-weight: 600;">(Định dạng: Unicore-Lotus-Shibal.zip)</span></p>
+          </div>
+        </div>
+        <div class="file-actions">
+          <a class="file-download-btn" href="https://www.mediafire.com/file/h1pqgd4skv5nd67/Unicore-Lotus-Shibal.zip/file" target="_blank" rel="noopener">
+            <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>TẢI XUỐNG NGAY</span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <button type="button" class="file-copy-link-btn" id="copyUnicoreBtn" title="Sao chép link tải">📋 Sao chép link</button>
+        </div>
+      </article>
+
+      <!-- 3. Files TP Dmshby Mobile -->
+      <article class="file-card" data-category="cfg">
+        <div class="file-card-top">
+          <div class="file-type-icon cfg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+              <line x1="8" y1="2" x2="8" y2="18"></line>
+              <line x1="16" y1="6" x2="16" y2="22"></line>
+            </svg>
+          </div>
+          <div class="file-info">
+            <div class="file-meta-tags">
+              <span class="file-badge cfg">TP DMSHBY MOBILE</span>
+              <span class="file-date">✦ Android</span>
+              <span class="file-date">✦ Tundenxin Custom</span>
             </div>
-            <div class="doc-step-card">
-              <div class="doc-step-badge">FAQ 3</div>
-              <div class="doc-step-content">
-                <h3>3. Màn hình xanh BSOD hoặc máy tính bị treo khi vừa bật tool?</h3>
-                <p>Thường do xung đột driver bảo mật với Vanguard, Armory Crate, Roblox hoặc antivirus bên thứ 3.</p>
-                <a href="#blue-screen-bsod" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-bsod" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem cách khắc phục màn hình xanh BSOD</a>
-              </div>
-            </div>
+            <h3 class="file-name">Files TP Tool Dmshby Mobile (Tundenxin)</h3>
+            <p class="file-desc">Trọn bộ Files cấu hình Teleport (TP) all map dành cho Tool DMSHBY Mobile (Android).<br><strong style="color: #ff4d4f; text-shadow: 0 0 10px rgba(255, 77, 79, 0.35);">(Đây là Files TP DMSHBY được Tundenxin Custom)</strong><br><span style="color: #6ee7b7; font-weight: 600;">(Định dạng: Dmshby-tundenxin.zip)</span></p>
           </div>
         </div>
-
-        <!-- ------------------------------------------------------------------
-             PANELS GENSHIN IMPACT (EXACT WIBUZ CONTENT & TUNDENXIN EXCLUSIVE)
-             ------------------------------------------------------------------ -->
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-kuro">
-
-      <div class="video-head">
-        <div class="video-head-left">
-          <div class="panel-header-icon-wrap">
-            <img src="src/assets/images/tools/tool-kuro.png" alt="Kuro" class="panel-header-tool-icon">
-          </div>
-          <div class="panel-head-titles">
-            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • KURO MOBILE (ANDROID) • ĐÃ UPDATE 7.2</span>
-            <h2>Hướng Dẫn Tải &amp; Cài Đặt Tool Kuro.apk (v2.7.0)</h2>
-            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Tool Genshin Impact Mobile • Miễn Phí 100% Không Cần Mua Key</small>
-          </div>
+        <div class="file-actions">
+          <a class="file-download-btn" href="https://www.mediafire.com/file/45jkc9yokxtia5f/Dmshby-tundenxin.zip/file" target="_blank" rel="noopener">
+            <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>TẢI XUỐNG NGAY</span>
+            <span class="dl-arrow">→</span>
+          </a>
+          <button type="button" class="file-copy-link-btn" id="copyDmshbyBtn" title="Sao chép link tải">📋 Sao chép link</button>
         </div>
-        <button class="panel-close-btn" aria-label="Đóng">×</button>
-      </div>
-      <div class="doc-guide-body">
-        <div class="doc-info-tip" style="border-left-color: #10b981; background: rgba(16, 185, 129, 0.12); margin-bottom: 16px;">
-          <span class="tip-icon">🎁</span>
-          <span><strong>TOOL MIỄN PHÍ:</strong> Kuro.apk là bản mod Genshin Impact Android miễn phí 100%, tải trực tiếp không cần mua key bản quyền. Mã key mở khóa nhanh được chia sẻ công khai hoàn toàn miễn phí trong nhóm cộng đồng!</span>
-        </div>
-
-        <div class="doc-quick-actions">
-          <a class="doc-action-btn download" href="https://github.com/4firas/Kuro-GI/releases/download/v2.7.0/KURO-v2.7.0.apk" target="_blank" rel="noopener">📥 <span>Tải Kuro v2.7.0 APK</span></a>
-          <a class="doc-action-btn primary" href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener">➤ <span>Lấy Key Free Tại Telegram</span></a>
-          <a class="doc-action-btn primary" href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener">◉ <span>Lấy Key Free Tại Discord</span></a>
-        </div>
-
-        <!-- BƯỚC 1 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 1</div>
-          <div class="doc-step-content">
-            <h3>Bấm nút "TẢI NGAY V2.7.0" trên trang chủ</h3>
-            <p>Tại trang chủ website, cuộn đến mục game <strong>Genshin Impact</strong>, tìm thẻ công cụ <strong>Kuro.apk (Android)</strong> và nhấn vào nút màu xanh <span class="doc-hotkey-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.15);">TẢI NGAY V2.7.0</span>.</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step1.jpg" alt="Bước 1: Bấm nút Tải Ngay V2.7.0 trên thẻ Tool Kuro" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 2 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 2</div>
-          <div class="doc-step-content">
-            <h3>Nhập Key mở khóa hoặc tham gia nhóm để lấy link tải Free 100%</h3>
-            <p>Hộp thoại tải nhanh sẽ xuất hiện với 2 cách để bạn nhận file:</p>
-            <ul style="margin: 8px 0; padding-left: 20px; color: #cbd5e1; line-height: 1.65;">
-              <li><strong>Cách 1 (Nhanh nhất):</strong> Nhập Key mở khóa vào ô và nhấn <span class="doc-highlight-btn">Xác Nhận</span> để tải ngay lập tức. <em>(Mã key tải được cấp <strong>công khai 100% miễn phí</strong> bên trong nhóm Telegram &amp; Discord).</em></li>
-              <li><strong>Cách 2:</strong> Bấm vào nút <strong>Kênh Telegram</strong> hoặc <strong>Server Discord</strong> để đợi đếm ngược 120 giây hoặc lấy link tải trực tiếp trong nhóm không cần phải đợi.</li>
-            </ul>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step2.jpg" alt="Bước 2: Nhập key mở khóa hoặc tham gia nhóm nhận link tải" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 3 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 3</div>
-          <div class="doc-step-content">
-            <h3>Sau khi xác nhận Key hoàn tất, đợi 3s rồi bấm "TẢI XUỐNG NGAY"</h3>
-            <p>Sau khi hệ thống kiểm tra key hoàn tất hoặc kết thúc thời gian đếm ngược, vui lòng chờ khoảng 3 giây. Lúc này nút xanh <span class="doc-hotkey-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.15);">📥 TẢI XUỐNG NGAY (Kuro.apk v2.7.0)</span> sẽ sáng lên, bạn click vào để bắt đầu quá trình tải tệp.</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step3.jpg" alt="Bước 3: Bấm nút TẢI XUỐNG NGAY Kuro.apk v2.7.0" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 4 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 4</div>
-          <div class="doc-step-content">
-            <h3>Tải xuống tệp KURO-v2.7.0.apk và mở để cài đặt</h3>
-            <p>Trình duyệt / điện thoại sẽ tải về tệp tin cài đặt có tên <strong>KURO-v2.7.0.apk</strong>. Khi tải xong, hãy nhấn trực tiếp vào tệp trong thanh thông báo hoặc mục <em>Tải xuống (Downloads)</em> của máy.</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step4.jpg" alt="Bước 4: Tệp KURO-v2.7.0.apk tải về máy" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 5 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 5</div>
-          <div class="doc-step-content">
-            <h3>Tiến hành "Cài đặt" ứng dụng và mở game trải nghiệm</h3>
-            <p>Khi màn hình cài đặt gói ứng dụng của Android hiển thị, nhấn vào nút <span class="doc-highlight-btn" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%);">Cài đặt</span> (Install) ở phía dưới và đợi thiết bị cài đặt xong.</p>
-            <p>Sau khi hoàn tất, mở game lên, đăng nhập tài khoản và bắt đầu trải nghiệm các tính năng hỗ trợ khám phá miễn phí của Tool Kuro!</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step5.jpg" alt="Bước 5: Nhấn Cài đặt trên điện thoại Android" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-eleutheria">
-
-      <div class="video-head">
-        <div class="video-head-left">
-          <div class="panel-header-icon-wrap">
-            <img src="src/assets/images/tools/tool-eleutheria.png" alt="Eleutheria" class="panel-header-tool-icon">
-          </div>
-          <div class="panel-head-titles">
-            <span class="kicker">✦ TÀI LIỆU HƯỚNG DẪN • ELEUTHERIA MOBILE (ANDROID)</span>
-            <h2>Hướng Dẫn Tải &amp; Cài Đặt Tool Eleutheria.apk (v1.72)</h2>
-            <small style="color:#94a3b8;font-size:12.5px;display:block;margin-top:2px;">Tool Genshin Impact Mobile • Miễn Phí 100% Không Cần Mua Key</small>
-          </div>
-        </div>
-        <button class="panel-close-btn" aria-label="Đóng">×</button>
-      </div>
-      <div class="doc-guide-body">
-        <div class="doc-info-tip" style="border-left-color: #10b981; background: rgba(16, 185, 129, 0.12); margin-bottom: 16px;">
-          <span class="tip-icon">🎁</span>
-          <span><strong>TOOL MIỄN PHÍ:</strong> Eleutheria.apk là bản mod Genshin Impact Android miễn phí 100% (phiên bản v1.72 hỗ trợ Buff Dame, Tăng Dame). Tải trực tiếp không cần mua key bản quyền, mã key mở khóa nhanh được chia sẻ công khai hoàn toàn miễn phí trong nhóm cộng đồng!</span>
-        </div>
-
-        <div class="doc-quick-actions">
-          <a class="doc-action-btn download" href="https://www.mediafire.com/file/t4d21itecwbswae/GI_Eleutheria_7.2_v1.72.apk/file" target="_blank" rel="noopener">📥 <span>Tải Eleutheria v1.72 APK</span></a>
-          <a class="doc-action-btn primary" href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener">➤ <span>Lấy Key Free Tại Telegram</span></a>
-          <a class="doc-action-btn primary" href="https://discord.gg/xa83TbAw6n" target="_blank" rel="noopener">◉ <span>Lấy Key Free Tại Discord</span></a>
-        </div>
-
-        <!-- BƯỚC 1 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 1</div>
-          <div class="doc-step-content">
-            <h3>Bấm nút "TẢI NGAY V1.72" trên trang chủ</h3>
-            <p>Tại trang chủ website, cuộn đến mục game <strong>Genshin Impact</strong>, tìm thẻ công cụ <strong>Eleutheria.apk (Android)</strong> và nhấn vào nút màu xanh <span class="doc-hotkey-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.15);">TẢI NGAY V1.72</span>.</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step1.jpg" alt="Bước 1: Bấm nút Tải Ngay trên thẻ Tool Eleutheria" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 2 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 2</div>
-          <div class="doc-step-content">
-            <h3>Nhập Key mở khóa hoặc tham gia nhóm để lấy link tải Free 100%</h3>
-            <p>Hộp thoại tải nhanh sẽ xuất hiện với 2 cách để bạn nhận file:</p>
-            <ul style="margin: 8px 0; padding-left: 20px; color: #cbd5e1; line-height: 1.65;">
-              <li><strong>Cách 1 (Nhanh nhất):</strong> Nhập Key mở khóa vào ô và nhấn <span class="doc-highlight-btn">Xác Nhận</span> để tải ngay lập tức. <em>(Mã key tải được cấp <strong>công khai 100% miễn phí</strong> bên trong nhóm Telegram &amp; Discord).</em></li>
-              <li><strong>Cách 2:</strong> Bấm vào nút <strong>Kênh Telegram</strong> hoặc <strong>Server Discord</strong> để đợi đếm ngược 120 giây hoặc lấy link tải trực tiếp trong nhóm không cần phải đợi.</li>
-            </ul>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step2.jpg" alt="Bước 2: Nhập key mở khóa hoặc tham gia nhóm nhận link tải" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 3 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 3</div>
-          <div class="doc-step-content">
-            <h3>Sau khi xác nhận Key hoàn tất, đợi 3s rồi bấm "TẢI XUỐNG NGAY"</h3>
-            <p>Sau khi hệ thống kiểm tra key hoàn tất hoặc kết thúc thời gian đếm ngược, vui lòng chờ khoảng 3 giây. Lúc này nút xanh <span class="doc-hotkey-badge" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,0.15);">📥 TẢI XUỐNG NGAY</span> sẽ sáng lên, bạn click vào để bắt đầu quá trình tải tệp.</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step3.jpg" alt="Bước 3: Bấm nút TẢI XUỐNG NGAY Eleutheria.apk" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 4 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 4</div>
-          <div class="doc-step-content">
-            <h3>Tải xuống tệp GI_Eleutheria_7.2_v1.72.apk và mở để cài đặt</h3>
-            <p>Trình duyệt / điện thoại sẽ tải về tệp tin cài đặt có tên <strong>GI_Eleutheria_7.2_v1.72.apk</strong>. Khi tải xong, hãy nhấn trực tiếp vào tệp trong thanh thông báo hoặc mục <em>Tải xuống (Downloads)</em> của máy.</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step4.jpg" alt="Bước 4: Tệp APK tải về máy" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <!-- BƯỚC 5 -->
-        <div class="doc-step-card">
-          <div class="doc-step-badge">BƯỚC 5</div>
-          <div class="doc-step-content">
-            <h3>Tiến hành "Cài đặt" ứng dụng và mở game trải nghiệm</h3>
-            <p>Khi màn hình cài đặt gói ứng dụng của Android hiển thị, nhấn vào nút <span class="doc-highlight-btn" style="background:linear-gradient(135deg, #10b981 0%, #059669 100%);">Cài đặt</span> (Install) ở phía dưới và đợi thiết bị cài đặt xong.</p>
-            <p>Sau khi hoàn tất, mở game lên, đăng nhập tài khoản và bắt đầu trải nghiệm các tính năng Buff Dame, Tăng Dame miễn phí của Tool Eleutheria!</p>
-            <div class="doc-step-image">
-              <img src="src/assets/images/guides/guide-kuro-step5.jpg" alt="Bước 5: Nhấn Cài đặt trên điện thoại Android" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    
-        </section>
-
-        <section class="video-panel docs-article-panel" id="videoPanel">
-
-      <div class="video-head">
-        <div class="video-head-left">
-          <div class="panel-header-icon-wrap">
-            <img id="videoToolIcon" src="src/assets/images/tools/tool-dmshby.png" alt="Tool Icon" class="panel-header-tool-icon">
-          </div>
-          <div class="panel-head-titles">
-            <span class="kicker">✦ VIDEO HƯỚNG DẪN</span>
-            <h2 id="videoTitle"></h2>
-          </div>
-        </div>
-        <button class="panel-close-btn" aria-label="Đóng">×</button>
-      </div>
-      <div class="video-frame">
-        <iframe id="videoFrame" title="Video hướng dẫn" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-unicore">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Unicore</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><div class="embed-frame"><iframe src="https://www.youtube-nocookie.com/embed/KN9blU8bGOc" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></figure><p>Hướng dẫn bằng video bởi: bubiskewl</p><p>Làm theo các bước sau để kích hoạt key, tải launcher và khởi chạy Unicore cho <strong>Genshin Impact</strong>.</p><h2 id="trước-khi-bắt-đầu" class="heading"><a href="#trước-khi-bắt-đầu" class="heading-anchor" aria-label="Link to Trước khi bắt đầu">#</a>Trước khi bắt đầu</h2><p>Nếu cần trợ giúp về Unicore, hãy xem hướng dẫn này trước hoặc tham gia máy chủ <a href="https://discord.gg/unicore" class="link" target="_blank" rel="noopener noreferrer">Unicore Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="bước-0-chuẩn-bị-môi-trường-cho-unicore-quan-trọng" class="heading"><a href="#bước-0-chuẩn-bị-môi-trường-cho-unicore-quan-trọng" class="heading-anchor" aria-label="Link to Bước 0: Chuẩn bị môi trường cho Unicore (Quan Trọng)">#</a>Bước 0: Chuẩn bị môi trường cho Unicore (Quan Trọng)</h2><ul><li>Tắt <strong>Windows Defender</strong> (Real-time protection) hoặc dùng tool này: <a href="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2F9yeaGHK0EnCdixsr1HwX%2FDefender%20Control.zip?alt=media&amp;token=2bb7c85d-4ff1-4e5b-ad44-3de92860afe8" class="link" target="_blank" rel="noopener noreferrer">Click tải<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li><li>Dùng tool này để scan và setup môi trường: <a href="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2Fzz6ImKLo0OKSnm7D2H1E%2FAdwin.zip?alt=media&amp;token=d30869b0-3c43-4342-a4a7-0cb9f53f48d2" class="link" target="_blank" rel="noopener noreferrer">Adwin.zip<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><ul><li>Tải về giải nén và <strong>chạy với quyền Admin</strong> (chuột phải -&gt; Run As Administrator)</li><li>Cửa sổ cmd hỏi yes/no để scan -&gt; <strong>gõ &quot;Y&quot; và Enter</strong></li><li>Sau đó chọn option <strong><code class="inline-code">2. Unicore</code></strong> để tool tự động setup môi trường tương thích với Unicore</li><li>Sau khi tool chạy xong gõ <strong><code class="inline-code">Y</code></strong> và Enter để restart máy.</li></ul></li></ul><h2 id="bước-1-tạo-tài-khoản" class="heading"><a href="#bước-1-tạo-tài-khoản" class="heading-anchor" aria-label="Link to Bước 1: Tạo tài khoản">#</a>Bước 1: Tạo tài khoản</h2><p>Mở <a href="https://unicore.cloud/" class="link" target="_blank" rel="noopener noreferrer">unicore.cloud<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tạo tài khoản.</p><h2 id="bước-2-thêm-key" class="heading"><a href="#bước-2-thêm-key" class="heading-anchor" aria-label="Link to Bước 2: Thêm key">#</a>Bước 2: Thêm key</h2><p>Mở <strong>Dashboard</strong> của bạn và nhấp <strong>Add Key</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(10).png" alt="" loading="lazy"/></figure><h2 id="bước-3-kích-hoạt-key" class="heading"><a href="#bước-3-kích-hoạt-key" class="heading-anchor" aria-label="Link to Bước 3: Kích hoạt key">#</a>Bước 3: Kích hoạt key</h2><p>Nhập key của bạn, sau đó nhấp <strong>Activate</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(11).png" alt="" loading="lazy"/></figure><h2 id="bước-4-tải-launcher" class="heading"><a href="#bước-4-tải-launcher" class="heading-anchor" aria-label="Link to Bước 4: Tải launcher">#</a>Bước 4: Tải launcher</h2><p>Sau khi key được kích hoạt, nhấp <strong>Download</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(12).png" alt="" loading="lazy"/></figure><h2 id="bước-5-chọn-trò-chơi" class="heading"><a href="#bước-5-chọn-trò-chơi" class="heading-anchor" aria-label="Link to Bước 5: Chọn trò chơi">#</a>Bước 5: Chọn trò chơi</h2><p>Mở launcher và chọn <strong>Genshin Impact</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(13).png" alt="" loading="lazy"/></figure><h2 id="bước-6-khởi-chạy-launcher" class="heading"><a href="#bước-6-khởi-chạy-launcher" class="heading-anchor" aria-label="Link to Bước 6: Khởi chạy launcher">#</a>Bước 6: Khởi chạy launcher</h2><p>Nhấp biểu tượng khởi chạy và chờ quá trình tải xuống hoàn tất. Giữ launcher mở trong suốt quá trình này.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(14).png" alt="" loading="lazy"/></figure><h2 id="bước-7-tải-unicore" class="heading"><a href="#bước-7-tải-unicore" class="heading-anchor" aria-label="Link to Bước 7: Tải Unicore">#</a>Bước 7: Tải Unicore</h2><p>Sau khi launcher hoàn tất tất cả giai đoạn khởi động, hãy mở <strong>Genshin Impact</strong>.</p><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Tại menu chính của trò chơi, nhấn <strong>F2</strong> để tải Unicore.</p></div></div><p>Để xem các lỗi thường gặp, hãy xem <a class="link" href="/vi-VN/genshin-impact/unicore/troubleshot">Khắc phục sự cố</a>.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Interactive Map</span></summary><div class="expandable-body"><p><em><strong>Map</strong></em></p><ul><li>Settings<ul><li><strong>Fast Teleport</strong></li><li>Image Scale</li><li>Config<ul><li>Load Items</li><li>Save Items</li></ul></li><li>Filters List<ul><li>Landmarks</li><li>Waypoints</li><li>Puzzle Chest</li><li>Animals</li><li>Local Specialities</li><li>Ores</li><li>Wood</li><li>Chests</li><li>Fishing</li><li>Special Items</li><li>Enemies</li><li>Experience</li><li>Inventory / Materials</li></ul></li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Combat</span></summary><div class="expandable-body"><p><em><strong>Attack Modifiers</strong></em></p><ul><li>Kill Aura<ul><li>Damage Multiplayer (0-30)</li><li>Max Distance (0-20)</li></ul></li><li>Rapid-Fire<ul><li>Attack Multiplayer (0-100)</li><li>Monsters / Animals / Ores</li></ul></li><li>Aoe-Damage<ul><li>Damage Multiplayer (0-30)</li><li>Max Distance (0-20)</li><li>Monters / Animals</li></ul></li></ul><p><em><strong>Ability Modifiers</strong></em></p><ul><li>C/D Reducer<ul><li>Value (0,1 - 0,9)</li></ul></li><li>Infinite Ultimate</li></ul><p><em><strong>Enemy Modifiers</strong></em></p><ul><li>Magnetizer<ul><li>Visible Only</li><li>Max Distance (0-20)</li><li>Monters / Animals / Ores</li></ul></li><li>Freeze Enemy</li><li>Enemy Won&#x27;t Attack</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><p><em><strong>Movement</strong></em></p><ul><li>Infinite Stamina<ul><li>Mode: Override / Lock</li></ul></li><li>Noclip<ul><li>Speed (0 - 2.0)</li></ul></li></ul><p><em><strong>Defence</strong></em></p><ul><li>Godmode</li><li>No Fall Damage</li></ul><p><em><strong>Effects</strong></em></p><ul><li>Character Transperancy</li></ul><p><em><strong>Auto Loot</strong></em></p><ul><li>Settings<ul><li>Visible Only</li><li>Max Distance (29m)</li></ul></li><li>Filters List<ul><li>Local Specialities</li><li>Ores</li><li>Chests</li><li>Inventory / Materials</li><li>Tree / Other</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleports</span></summary><div class="expandable-body"><p><em><strong>Main</strong></em></p><ul><li>Mouse Teleport<ul><li>Draw Circle</li><li>Max Distance (1000m)</li></ul></li><li>Quest Teleport</li></ul><p><em><strong>Entities</strong></em></p><ul><li>Draw Targer to TP<ul><li>Target Selection<ul><li>Field of View</li><li>Distance (0-500)</li></ul></li></ul></li><li>Filters List<ul><li>Waypoints</li><li>Puzzle Chest</li><li>Animals</li><li>Local Specialities</li><li>Ores</li><li>Chests</li><li>Special Items</li><li>Enemies</li><li>Experience</li><li>Inventory / Materials</li></ul></li></ul><p><em><strong>Custom</strong></em></p><ul><li>Settings<ul><li>Draw Points</li><li>Loop Mode (auto TP)</li><li>Delay Between TP (0-60)</li><li>Start TP from <em>First object</em></li><li>Start TP from <em>Selected object</em></li><li>Config<ul><li>Load Items</li><li>Save Items</li></ul></li><li>Points List<ul><li>Create New</li><li>Teleport</li></ul></li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Utility</span></summary><div class="expandable-body"><p><em><strong>Dialogs</strong></em></p><ul><li>Auto Dialogs<ul><li>Auto-Skip</li><li>Auto-Choise</li></ul></li><li>Speedup Dialogs</li><li>Skip Cutscenes</li></ul><p><em><strong>Visual Tweaks</strong></em></p><ul><li>FPS Unlocker</li></ul><p><em><strong>Envorio</strong></em></p><ul><li>Custom Time</li><li>Remove Fog</li></ul><p><em><strong>Automation</strong></em></p><ul><li>Auto Seelies<ul><li>Max Distance (29m)</li></ul></li></ul><p><em><strong>Profile Changer</strong></em></p><ul><li>UID</li><li>Name</li><li>Adventure Level</li><li>World Level</li><li>Birthday</li><li>Signature</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Config</span></summary><div class="expandable-body"><ul><li>Create New</li><li>Create From Clipboard</li><li>Refresh</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-shika-pc">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Shika Beta | Alpha</h1>
-        </header>
-        <div class="markdown">
-<p>Làm theo các bước sau để liên kết key, tải loader và khởi chạy Shika cho <strong>Genshin Impact</strong>.</p><h2 id="bước-1-tạo-tài-khoản" class="heading"><a href="#bước-1-tạo-tài-khoản" class="heading-anchor" aria-label="Link to Bước 1: Tạo tài khoản tại ShikaHub">#</a>Bước 1: Tạo tài khoản tại ShikaHub</h2><p>Truy cập vào trang chủ: <a href="https://shikahub.org/en/auth" class="link" target="_blank" rel="noopener noreferrer">https://shikahub.org/en/auth<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></p><p>Đăng nhập hoặc đăng ký nếu chưa có tài khoản. <em>(Kiểm tra thư rác nếu không thấy mã gửi về).</em></p><figure class="figure"><img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FM0uyUfzU9UOEIzWFavoY%2Fimage.png?alt=media&amp;token=be42a569-394b-413d-851c-23f51fbe4a22" alt="ShikaHub Create Account" loading="lazy"/><figcaption style="font-size:12px;color:#94a3b8;margin-top:6px;text-align:center;">Giao diện đăng ký / đăng nhập tài khoản ShikaHub</figcaption></figure><h2 id="bước-2-nhập-key" class="heading"><a href="#bước-2-nhập-key" class="heading-anchor" aria-label="Link to Bước 2: Nhập Key Kích Hoạt">#</a>Bước 2: Nhập Key Kích Hoạt</h2><p>Nhập key bản quyền tại: <a href="https://shikahub.org/en/dashboard/licenses" class="link" target="_blank" rel="noopener noreferrer">https://shikahub.org/en/dashboard/licenses<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></p><p>Dán mã key đã mua vào ô <strong>ACTIVATE KEY</strong> rồi nhấp nút <strong>+ ACTIVATE</strong>.</p><figure class="figure"><img src="src/assets/images/guides/shika-activate-key.png" alt="ShikaHub Activate Key" loading="lazy"/><figcaption style="font-size:12px;color:#94a3b8;margin-top:6px;text-align:center;">Giao diện nhập key kích hoạt ShikaHub Licenses</figcaption></figure><h2 id="bước-3-tải-loader" class="heading"><a href="#bước-3-tải-loader" class="heading-anchor" aria-label="Link to Bước 3: Tải loader">#</a>Bước 3: Tải loader</h2><p>Mở <a href="https://shikahub.org/en/dashboard/downloads" class="link" target="_blank" rel="noopener noreferrer">trang Downloads<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> từ dashboard của bạn và tải loader.</p><h2 id="bước-4-chọn-và-khởi-chạy-trò-chơi" class="heading"><a href="#bước-4-chọn-và-khởi-chạy-trò-chơi" class="heading-anchor" aria-label="Link to Bước 4: Chọn và khởi chạy trò chơi">#</a>Bước 4: Chọn và khởi chạy trò chơi</h2><p>Mở loader, chọn trò chơi bạn muốn sử dụng và nhấp <strong>Launch</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(3).png" alt="" loading="lazy"/></figure><h2 id="bước-5-mở-trò-chơi" class="heading"><a href="#bước-5-mở-trò-chơi" class="heading-anchor" aria-label="Link to Bước 5: Mở trò chơi">#</a>Bước 5: Mở trò chơi</h2><p>Mở trò chơi thủ công và chờ menu xuất hiện. Giữ loader mở trong khi trò chơi khởi động.</p>
-          <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);">
-            <h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Tính năng Shika Beta | Alpha</h2>
-<h2 id="tính-năng-shika-beta" class="heading"><a href="#tính-năng-shika-beta" class="heading-anchor" aria-label="Link to Tính năng Shika Beta">#</a>Tính năng Shika Beta</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Attack Effects<ul><li>Extra Hit</li><li>Custom Element</li></ul></li><li>Cooldown Effects<ul><li>No Skill Cooldown</li><li>No Avatar Change Cooldown</li><li>No Nightsoul Transmission Cooldown</li><li>No Avatar Combat</li><li>No Hide Weapon</li><li>Instant Bow Charge</li><li>No Sprint Cooldown</li><li>No Vehicle Cooldown</li></ul></li><li>God Mode</li><li>Infinite Modifiers<ul><li>Infinite Energy</li><li>Infinite Stamina</li><li>Infinite Wanderer Stamina</li><li>Infinite Phlogiston</li><li>Infinite Nightsoul</li><li>Infinite Mavuika Stamina</li></ul></li><li>No Clip</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Auto Challenge</li><li>Auto Destroy</li><li>Auto Loot</li><li>Auto Seelie</li><li>Auto Talk<ul><li>Skip Movie Cutscene</li><li>Fast Game Cutscene</li><li>Skip Get Character</li><li>Skip Chapter Dialog</li><li>Skip Tutorials</li><li>Skip Newbie Hints</li></ul></li><li>Dumb Enemies</li><li>Permanent Elemental Sight</li><li>Fake Time</li><li>Fast Combine</li><li>Freeze Enemies</li><li>Kill Aura</li><li>Mob Vacuum</li><li>Music Game</li><li>Spawn Object</li><li>Open Team Immediately</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleport</span></summary><div class="expandable-body"><ul><li>Chest Teleport</li><li>Map Teleport</li><li>Oculi Teleport</li><li>Quest Teleport</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>ESP<ul><li>Draw Icon (vẽ biểu tượng cho vật thể)</li></ul></li><li>Camera Zoom</li><li>No Censorship</li><li>Custom Weather</li><li>FOV Changer</li><li>GM Icon</li><li>Graphics Changer</li><li>Hide Damage</li><li>Hide Reaction</li><li>Hide UI</li><li>No Fog</li><li>No Grass</li><li>No Map Fog</li><li>Paimon Follow</li><li>Profile Changer</li><li>Unlock FPS</li><li>No Burst Animation</li><li>Map Zoom</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Settings</span></summary><div class="expandable-body"><ul><li>Profile<ul><li>Tạo, nhân bản, đổi tên và xóa profile</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Misc</span></summary><div class="expandable-body"><p>Hiện chưa có tính năng lặt vặt nào chỉ dành riêng cho Beta.</p></div></details><h2 id="tính-năng-shika-alpha" class="heading"><a href="#tính-năng-shika-alpha" class="heading-anchor" aria-label="Link to Tính năng Shika Alpha">#</a>Tính năng Shika Alpha</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Tất cả tính năng trong Beta và:</li><li>Attack Effects<ul><li>Crit Chance Modifier / Critical Hit</li></ul></li><li>Enhanced Movement<ul><li>Run on Water</li><li>Run Boost</li><li>Jump Boost</li><li>Fly Boost</li><li>Swim Boost</li><li>Dive Boost</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Tất cả tính năng trong Beta và:</li><li>Auto Activate Teleport<ul><li>Extra Features<ul><li>Unlock Statues of The Seven</li><li>Unlock Teleport Waypoint</li></ul></li></ul></li><li>Auto Create Traveler</li><li>Auto Fish</li><li>Auto Puzzle</li><li>Claim Achievements<ul><li>Unlock All (mở khóa một số thành tựu)</li></ul></li><li>Element Resonance</li><li>Game Speed</li><li>Worship Statue (làm lại — nút Worship giờ trao toàn bộ oculi có thể cho tất cả tượng)</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleport</span></summary><div class="expandable-body"><ul><li>Tất cả tính năng trong Beta và:</li><li>Auto Teleport (tự động dịch chuyển tới điểm nhiệm vụ đang theo dõi)</li><li>Custom Teleport (dùng cho auto-farm)<ul><li>Freeze Position</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Map</span></summary><div class="expandable-body"><ul><li>Interactive Map<ul><li>Hiển thị điểm tương tác từ bản đồ cộng đồng trên bản đồ trong game và bản đồ nhỏ</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>Tất cả tính năng từ Beta</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Misc</span></summary><div class="expandable-body"><ul><li>Tất cả tính năng từ Beta</li></ul></div></details>
-          </div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-shika-mobile">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Shika Mobile</h1>
-        </header>
-        <div class="markdown">
-<p>Hướng dẫn này chỉ cách cài đặt và sử dụng Shika Mobile cho <strong>Genshin Impact</strong> trên điện thoại.</p><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Làm theo các bước theo đúng thứ tự. Bạn chỉ cần thực hiện việc này <strong>một lần</strong>.</p></div></div><h2 id="trước-khi-bắt-đầu" class="heading"><a href="#trước-khi-bắt-đầu" class="heading-anchor" aria-label="Link to Trước khi bắt đầu">#</a>Trước khi bắt đầu</h2><ul><li>Tạo tài khoản tại <a href="https://shikahub.org/en" class="link" target="_blank" rel="noopener noreferrer">shikahub.org<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> nếu chưa có.</li><li>Bạn cần một key đang hoạt động.</li><li>Gỡ cài đặt <strong>phiên bản gốc</strong> của Genshin Impact trước — phiên bản của chúng tôi không thể cài song song.</li><li>Chuẩn bị sẵn thông tin đăng nhập tài khoản.</li></ul><h2 id="bước-1-tải-launcher" class="heading"><a href="#bước-1-tải-launcher" class="heading-anchor" aria-label="Link to Bước 1: Tải launcher">#</a>Bước 1: Tải launcher</h2><ol><li>Mở tài khoản cá nhân tại <a href="https://shikahub.org/en" class="link" target="_blank" rel="noopener noreferrer">shikahub.org<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</li><li>Truy cập <a href="https://shikahub.org/en/dashboard/downloads" class="link" target="_blank" rel="noopener noreferrer">trang Downloads<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</li><li>Tải launcher dành cho di động.</li><li>Cài đặt launcher trên thiết bị.</li></ol><h2 id="bước-2-đăng-nhập-và-kích-hoạt-key" class="heading"><a href="#bước-2-đăng-nhập-và-kích-hoạt-key" class="heading-anchor" aria-label="Link to Bước 2: Đăng nhập và kích hoạt key">#</a>Bước 2: Đăng nhập và kích hoạt key</h2><ol><li>Mở launcher.</li><li>Đăng nhập tài khoản.</li><li>Kích hoạt key của bạn (hoặc nhập key kích hoạt trước tại <a href="https://shikahub.org/en/dashboard/licenses" class="link" target="_blank" rel="noopener noreferrer">shikahub.org Licenses<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>).</li></ol><p>Nếu bạn đã kích hoạt key trên trang web, có thể bỏ qua bước kích hoạt.</p><h2 id="bước-3-gỡ-trò-chơi-gốc" class="heading"><a href="#bước-3-gỡ-trò-chơi-gốc" class="heading-anchor" aria-label="Link to Bước 3: Gỡ trò chơi gốc">#</a>Bước 3: Gỡ trò chơi gốc</h2><p>Gỡ cài đặt phiên bản Genshin Impact hiện tại khỏi thiết bị.</p><p>Phiên bản của chúng tôi thay thế phiên bản đó nên không thể cài đồng thời cả hai. Bạn chỉ cần làm việc này một lần.</p><h2 id="bước-4-tải-phiên-bản-trò-chơi-của-chúng-tôi" class="heading"><a href="#bước-4-tải-phiên-bản-trò-chơi-của-chúng-tôi" class="heading-anchor" aria-label="Link to Bước 4: Tải phiên bản trò chơi của chúng tôi">#</a>Bước 4: Tải phiên bản trò chơi của chúng tôi</h2><ol><li>Trong launcher, tải phiên bản Genshin Impact của chúng tôi.</li><li>Chờ quá trình tải hoàn tất.</li></ol><p>Phiên bản của chúng tôi có một vài thay đổi cần thiết để Shika hoạt động.</p><h2 id="bước-5-khởi-chạy-và-chơi" class="heading"><a href="#bước-5-khởi-chạy-và-chơi" class="heading-anchor" aria-label="Link to Bước 5: Khởi chạy và chơi">#</a>Bước 5: Khởi chạy và chơi</h2><ol><li>Khởi chạy trò chơi.</li><li>Đăng nhập tài khoản trò chơi.</li></ol><p>Vậy là xong — menu sẽ tự động xuất hiện.</p><h2 id="thông-tin-hữu-ích" class="heading"><a href="#thông-tin-hữu-ích" class="heading-anchor" aria-label="Link to Thông tin hữu ích">#</a>Thông tin hữu ích</h2><ul><li>Bạn có thể tải các bản cập nhật trò chơi trong tương lai trực tiếp qua launcher — không cần đăng ký trả phí.</li><li>Bạn cũng có thể tải lại hình ảnh trò chơi gốc bất cứ lúc nào nếu muốn quay lại.</li></ul><h2 id="menu-không-xuất-hiện" class="heading"><a href="#menu-không-xuất-hiện" class="heading-anchor" aria-label="Link to Menu không xuất hiện?">#</a>Menu không xuất hiện?</h2><ol><li>Đóng hoàn toàn trò chơi.</li><li>Khởi chạy lại trò chơi qua launcher.</li><li>Vẫn bị kẹt? Liên hệ đội ngũ hỗ trợ, chúng tôi sẽ giúp bạn sớm nhất có thể.</li></ol>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Tính năng Shika Mobile</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>God Mode</li><li>No CD</li><li>Multi Hit</li><li>NoClip</li><li>Player Speed</li><li>Element Changer</li><li>Infinite Stamina</li><li>No Sprint Cooldown</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>No Red Zone</li><li>Time Speed</li><li>Auto Particles</li><li>Freeze Enemies</li><li>Kill Aura</li><li>Mob Vacuum</li><li>Auto Loot</li><li>Skip Cutscenes</li><li>Auto Talk</li><li>Auto Statues</li><li>Auto Challenge</li><li>Summon Entity</li><li>Auto Traveler</li><li>Auto Seelie</li><li>Worship Statue</li><li>Auto Activate TP</li><li>Open Team</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleports</span></summary><div class="expandable-body"><ul><li>Chest TP</li><li>Quest TP</li><li>Oculi TP</li><li>Auto Teleports</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>FPS Unlock</li><li>Hide Damage</li><li>Hide Reaction</li><li>Uncensor</li><li>Custom Weather</li><li>No Burst Animation</li><li>No Fog</li><li>No Grass</li><li>Paimon Follow</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-lotus">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Lotus</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><video class="embed-video" src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FJeXAzFsNoNzDipAlbiX6%2Fuploads%2FDDwtTh1fAk5imKtBksDv%2F2026-07-19%2016-50-07.mp4?alt=media&amp;token=c25ed5de-6173-4baa-b575-366e75ab5e08" controls="" preload="metadata"></video></figure><p>Thực hiện theo các bước sau để cài đặt và khởi chạy Lotus cho <strong>Genshin Impact</strong>.</p><h2 id="bước-1-tải-và-cài-đặt-lotus" class="heading"><a href="#bước-1-tải-và-cài-đặt-lotus" class="heading-anchor" aria-label="Link to Bước 1: Tải và cài đặt Lotus">#</a>Bước 1: Tải và cài đặt Lotus</h2><p>Tham gia <a href="https://discord.gg/G87hMj2SbB" class="link" target="_blank" rel="noopener noreferrer">máy chủ Discord của Lotus<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>, sau đó mở kênh <a href="https://discord.com/channels/1482775819217797192/1509936420184264785" class="link" target="_blank" rel="noopener noreferrer">#releases<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><p>Tải trình cài đặt mới nhất và hoàn tất quá trình cài đặt.</p><h2 id="bước-2-nhập-key" class="heading"><a href="#bước-2-nhập-key" class="heading-anchor" aria-label="Link to Bước 2: Nhập key">#</a>Bước 2: Nhập key</h2><p>Nhập key của bạn khi trình cài đặt hoặc launcher yêu cầu.</p><h2 id="bước-3-chọn-tệp-thực-thi-của-trò-chơi" class="heading"><a href="#bước-3-chọn-tệp-thực-thi-của-trò-chơi" class="heading-anchor" aria-label="Link to Bước 3: Chọn tệp thực thi của trò chơi">#</a>Bước 3: Chọn tệp thực thi của trò chơi</h2><p>Chọn tệp <strong>GenshinImpact.exe</strong> khi được yêu cầu.</p><h2 id="bước-4-khởi-chạy-trò-chơi" class="heading"><a href="#bước-4-khởi-chạy-trò-chơi" class="heading-anchor" aria-label="Link to Bước 4: Khởi chạy trò chơi">#</a>Bước 4: Khởi chạy trò chơi</h2><p>Đặt Genshin Impact ở chế độ <strong>Borderless</strong> hoặc <strong>Windowed</strong>, sau đó nhấp <strong>Start Game</strong>.</p><p>Chờ trò chơi mở và tải xong.</p><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Nhấn <strong>Insert</strong> để mở hoặc đóng menu.</p></div></div>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Remote Utility<ul><li>Claim Daily Rewards</li><li>Combine Resin</li><li>Open Alchemy</li><li>Open Forge</li><li>Open Expeditions</li><li>Open Cooking</li></ul></li><li>God Mode<ul><li>No Fall Damage</li></ul></li><li>No Clip</li><li>Extra Movement<ul><li>Run on Water</li></ul></li><li>Weapon Infusion</li><li>No Cooldown<ul><li>Max Burst Energy</li><li>No Skill Cooldown</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Auto Quest</li><li>Auto Talk</li><li>Open Team Immediately</li><li>Unlock Statues</li><li>Unlock Teleports</li><li>Kill Aura</li><li>Auto Destroy</li><li>Claim Achievement</li><li>Skip Cutscene</li><li>Auto Music</li><li>Auto Loot</li><li>Auto Seelie</li><li>Dumb Enemies</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleport</span></summary><div class="expandable-body"><ul><li>Quest Teleport</li><li>Map Teleport</li><li>Custom Teleport<ul><li>Freeze Character</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>ESP</li><li>In-Game Browser</li><li>FPS Unlocker</li><li>Skip Clock Animation</li><li>Chest Indicator</li><li>Peeking</li><li>No Fog</li><li>FOV Changer</li><li>UID Changer</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Misc</span></summary><div class="expandable-body"><ul><li>Reconnect</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-antiaddict">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Antiaddict</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><div class="embed-frame"><iframe src="https://www.youtube-nocookie.com/embed/uEygpr1YO4o" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></figure><p>Dùng hướng dẫn này để kích hoạt key Antiaddict và tải phần mềm.</p><h2 id="kích-hoạt-key" class="heading"><a href="#kích-hoạt-key" class="heading-anchor" aria-label="Link to Kích hoạt key">#</a>Kích hoạt key</h2><h3 id="bước-1-liên-kết-tài-khoản-discord" class="heading"><a href="#bước-1-liên-kết-tài-khoản-discord" class="heading-anchor" aria-label="Link to Bước 1: Liên kết tài khoản Discord">#</a>Bước 1: Liên kết tài khoản Discord</h3><p>Tham gia <a href="https://discord.gg/2F5KjJu7Vg" class="link" target="_blank" rel="noopener noreferrer">máy chủ Discord của Antiaddict<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><p>Sau khi mua key, mở <a href="https://antiaddict.dpdns.org/register" class="link" target="_blank" rel="noopener noreferrer">trang đăng ký<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>. Liên kết tài khoản Discord và nhập key của bạn.</p><h3 id="bước-2-tải-phần-mềm" class="heading"><a href="#bước-2-tải-phần-mềm" class="heading-anchor" aria-label="Link to Bước 2: Tải phần mềm">#</a>Bước 2: Tải phần mềm</h3><p>Sau khi key được liên kết, mở <a href="https://antiaddict.dpdns.org/download" class="link" target="_blank" rel="noopener noreferrer">trang tải xuống<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tải phần mềm.</p><p>Mở phần mềm đã tải để bắt đầu sử dụng Antiaddict.</p><h2 id="overlay" class="heading"><a href="#overlay" class="heading-anchor" aria-label="Link to Overlay">#</a>Overlay</h2><p>Antiaddict hiện chạy bên ngoài nên không có overlay trong trò chơi. Giao diện mở trong một cửa sổ riêng.</p><p>Phím tắt overlay trong trò chơi bằng <strong>F1</strong> có thể được thêm trong bản cập nhật sau.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Infinite Energy</li><li>Inifinite Nightsoul</li><li>Instant Bow Charge</li><li>Skill Cooldown</li><li>Speed</li><li>Infinite Stamina</li><li>God Mode</li><li>Kill Aura</li><li>Attack Multiplier</li><li>Always Crit</li><li>Element Changer</li><li>Map Teleport</li><li>No Clip</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Material Gatherer</li><li>Auto Loot</li><li>Auto Destroy</li><li>Tree Farmer</li><li>Auto Quest</li><li>Skip Talk</li><li>Auto Puzzle</li><li>Auto Domain</li><li>Auto Fish</li><li>Auto Seelie</li><li>Game Speed</li><li>Skip time</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Game</span></summary><div class="expandable-body"><ul><li>Perfect Cook</li><li>Claim Achievements</li><li>Claim Dailies</li><li>Skip Opening</li><li>Skip Cutscenes</li><li>Chat Tweaks</li><li>Teleport Mode</li><li>Open Team Inmediatelly</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Misc</span></summary><div class="expandable-body"><ul><li>FPS Unlocker</li><li>Disable World Barrier</li><li>Enable Chat</li><li>Always Glide</li><li>UID Changer</li><li>Global Chat</li><li>Interactive Map</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-shibal">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Shibal</h1>
-        </header>
-        <div class="markdown">
-<h2 id="bước-1" class="heading"><a href="#bước-1" class="heading-anchor" aria-label="Link to Bước 1:">#</a>Bước 1:</h2><p>Làm theo các bước sau để thiết lập Shibal cho <strong>Genshin Impact</strong>. Hoàn thành từng bước theo đúng thứ tự.</p><h2 id="bước-1-tham-gia-discord-và-mở-khóa-quyền-truy-cập" class="heading"><a href="#bước-1-tham-gia-discord-và-mở-khóa-quyền-truy-cập" class="heading-anchor" aria-label="Link to Bước 1: Tham gia Discord và mở khóa quyền truy cập">#</a>Bước 1: Tham gia Discord và mở khóa quyền truy cập</h2><p>Tham gia <a href="https://discord.gg/shibal" class="link" target="_blank" rel="noopener noreferrer">máy chủ Discord của Shibal<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và dùng <strong>access code</strong> của bạn để mở khóa quyền truy cập phần mềm.</p><h2 id="bước-2-tải-bản-phát-hành-mới-nhất" class="heading"><a href="#bước-2-tải-bản-phát-hành-mới-nhất" class="heading-anchor" aria-label="Link to Bước 2: Tải bản phát hành mới nhất">#</a>Bước 2: Tải bản phát hành mới nhất</h2><p>Sau khi dùng access code, mở kênh <a href="https://discord.com/channels/1458390014508404759/1458509234407739465" class="link" target="_blank" rel="noopener noreferrer">#update-ɢɪ<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tải bản phát hành mới nhất.</p><h2 id="bước-3-thêm-loại-trừ-cho-phần-mềm-diệt-virus" class="heading"><a href="#bước-3-thêm-loại-trừ-cho-phần-mềm-diệt-virus" class="heading-anchor" aria-label="Link to Bước 3: Thêm loại trừ cho phần mềm diệt virus">#</a>Bước 3: Thêm loại trừ cho phần mềm diệt virus</h2><div class="hint hint--warning" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span><div class="hint-body"><p>Thêm <strong>ShibalYS.exe</strong> vào danh sách loại trừ của phần mềm diệt virus trước khi mở. Phần mềm diệt virus có thể chặn hoặc xóa tệp.</p></div></div><h2 id="bước-4-khởi-chạy-shibal-và-mở-trò-chơi" class="heading"><a href="#bước-4-khởi-chạy-shibal-và-mở-trò-chơi" class="heading-anchor" aria-label="Link to Bước 4: Khởi chạy Shibal và mở trò chơi">#</a>Bước 4: Khởi chạy Shibal và mở trò chơi</h2><p>Chạy <strong>ShibalYS.exe</strong> và chờ đến khi chương trình hiển thị <code class="inline-code">Waiting for process</code>. Sau đó mở <strong>Genshin Impact</strong> thủ công.</p><h2 id="bước-5-mở-menu" class="heading"><a href="#bước-5-mở-menu" class="heading-anchor" aria-label="Link to Bước 5: Mở menu">#</a>Bước 5: Mở menu</h2><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Nhấn <strong>Insert</strong> để mở hoặc đóng menu.</p></div></div>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Infinite Stamina</li><li>Extra Movement<ul><li>Run Boost</li><li>Fly Boost</li><li>Swim Boost</li><li>Run on Water</li></ul></li><li>No Cooldown</li><li>No Vehicle Cooldown</li><li>Bunny Hop</li><li>Instant Bow Charge</li><li>Game Speed</li><li>Player Speed</li><li>No Clip</li><li>God Mode</li><li>Attack Modifier<ul><li>Attack Multiplier</li><li>Always Crit</li><li>Custom Element</li></ul></li><li>Stats Modifier</li><li>Interactive Map</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Auto Talk<ul><li>Skip Cutscenes</li><li>Skip Tutorial Dialogue</li><li>Claim Achievements</li></ul></li><li>Dumb Enemies</li><li>Open Team Immediately</li><li>Kill Aura</li><li>Auto Loot</li><li>Auto Puzzle</li><li>Vacuum</li><li>Remote Utility<ul><li>Spawner</li><li>Alchemy</li><li>Quest</li><li>Claim Daily Commission</li></ul></li><li>Auto Break</li><li>Tree Farm</li><li>Custom Weather</li><li>Avatar Scale</li><li>Unlock Teleports</li><li>Unlock Statues</li><li>Auto Music</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleports</span></summary><div class="expandable-body"><ul><li>Map Teleport</li><li>Quest Teleport</li><li>Chest Teleport</li><li>Oculi Teleport</li><li>Custom Teleport</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>UID Changer</li><li>ESP</li><li>Camera Zoom</li><li>Peeking</li><li>Hide UI</li><li>FOV Changer</li><li>Map Zoom</li><li>No Fog</li><li>Constellation Modifier</li><li>Glider Modifier</li><li>Skin Changer</li><li>Paimon Follow</li><li>No Burst Animation</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Misc</span></summary><div class="expandable-body"><ul><li>FPS Unlocker</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-mgi">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Minty-GI-Mobile</h1>
-        </header>
-        <div class="markdown">
-<p>Dùng hướng dẫn này để cài đặt và khởi chạy Minty-GI-Mobile trên Android.</p><h2 id="tải-loader" class="heading"><a href="#tải-loader" class="heading-anchor" aria-label="Link to Tải loader">#</a>Tải loader</h2><p>Tải <a href="https://apk.kindawindy.today/" class="link" target="_blank" rel="noopener noreferrer">M-Loader.apk<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><p>Nếu trình duyệt chặn tải xuống, hãy cho phép thủ công. Tùy chọn <strong>Download anyway</strong> thường xuất hiện.</p><h2 id="install" class="heading"><a href="#install" class="heading-anchor" aria-label="Link to Cài đặt loader">#</a>Cài đặt loader</h2><ol><li>Mở <strong>M-Loader.apk</strong> đã tải.</li><li>Nếu Android cảnh báo về nguồn không xác định, nhấn <strong>Settings</strong>, bật <strong>Allow from this source</strong>, sau đó quay lại trình cài đặt.</li><li>Nếu <strong>Play Protect</strong> chặn cài đặt, nhấn <strong>Install anyway</strong>.</li></ol><p>Loader tự động cập nhật. Nếu bản cập nhật xuất hiện trên màn hình tải, hãy để quá trình hoàn tất. Loader sẽ tự cài lại và mở lại.</p><h2 id="first-launch" class="heading"><a href="#first-launch" class="heading-anchor" aria-label="Link to Lần khởi chạy đầu tiên">#</a>Lần khởi chạy đầu tiên</h2><p><img src="https://docs.kindawindy.today/~gitbook/image?url=https%3A%2F%2F3666085382-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FHx5hCPxHXIDNaBqIPsrV%252Fuploads%252FGsMxgkpFukV74SDVBFfW%252Fimage.png%3Falt%3Dmedia%26token%3D420c3b60-33cc-4caa-a89c-2a1358a7c19c&amp;width=768&amp;dpr=3&amp;quality=100&amp;sign=e3703bfa&amp;sv=2" alt="" loading="lazy" class="inline-image"/></p><ol><li>Mở loader và chờ màn hình tải hoàn tất.</li></ol><p>Nếu màn hình tải bị kẹt, hãy thử các cách sau:</p><ul><li>Tắt rồi bật lại Wi-Fi hoặc dữ liệu di động.</li><li>Tắt mọi ứng dụng VPN hoặc chặn quảng cáo có lọc lưu lượng.</li></ul><p><strong>Khuyến nghị:</strong> Thử dùng VPN nếu nhà cung cấp internet của bạn đang chặn máy chủ.</p><ol start="2"><li>Vuốt sang tab <strong>Game Manager</strong>.</li></ol><h2 id="install-the-modded-game" class="heading"><a href="#install-the-modded-game" class="heading-anchor" aria-label="Link to Cài đặt trò chơi đã mod">#</a>Cài đặt trò chơi đã mod</h2><p><img src="https://docs.kindawindy.today/~gitbook/image?url=https%3A%2F%2F3666085382-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FHx5hCPxHXIDNaBqIPsrV%252Fuploads%252FzrPgh5zjmWIZPrgxXUVb%252Fimage.png%3Falt%3Dmedia%26token%3D27c61c65-a9c4-4351-891a-7f6e9f7f30ef&amp;width=768&amp;dpr=3&amp;quality=100&amp;sign=f8451caf&amp;sv=2" alt="" loading="lazy" class="inline-image"/></p><ol><li>Trên thẻ dự án, nhấn <strong>Authenticate</strong>, sau đó dán key của bạn.</li><li>Nhấn <strong>Not Installed</strong>, xác nhận cài đặt và chờ.</li><li>Trạng thái sẽ lần lượt chuyển qua <strong>Uninstalling → Downloading → Unpacking → Installing</strong>.</li><li>Khi trạng thái hiển thị <strong>Installed</strong>, trò chơi đã mod đã sẵn sàng.</li></ol><p>Quá trình này chỉ cần thực hiện một lần. Trò chơi giữ lại tài nguyên đã tải nên không cần tải lại toàn bộ.</p><h2 id="inject" class="heading"><a href="#inject" class="heading-anchor" aria-label="Link to Khởi chạy và kích hoạt">#</a>Khởi chạy và kích hoạt</h2><ol><li>Mở dự án và nhấn <strong>Start</strong>.</li><li>Nếu xuất hiện <strong>Close the game first</strong>, hãy đóng hoàn toàn trò chơi và nhấn <strong>Start</strong> lại.</li><li>Chờ thông báo <strong>Loaded!</strong>, sau đó mở trò chơi.</li></ol><p>Chờ sản phẩm kích hoạt xong trước khi sử dụng.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>God Mode</li><li>Multi Hit</li><li>Element Changer</li><li>Infinite Stamina</li><li>Player Speed</li><li>No Clip</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Auto Talk</li><li>Kill Aura</li><li>Auto Loot</li><li>Freeze Enemies</li><li>Summon Entity</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleports</span></summary><div class="expandable-body"><ul><li>Map TP</li><li>Quest TP</li><li>Oculi TP</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>Uncensor</li><li>UUID Changer</li><li>FOV Changer</li><li>Chest Indicator</li><li>ESP</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <!-- ------------------------------------------------------------------
-             PANELS HONKAI: STAR RAIL
-             ------------------------------------------------------------------ -->
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-slash">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Genshin Impact</div>
-          <h1 class="docs-gitbook-title">Slash Bypass</h1>
-        </header>
-        <div class="markdown">
-<h2 id="để-sử-dụng-bạn-cần-có-quyền-truy-cập-vào-menu-tool-khác" class="heading"><a href="#để-sử-dụng-bạn-cần-có-quyền-truy-cập-vào-menu-tool-khác" class="heading-anchor" aria-label="Link to Để sử dụng, bạn cần có quyền truy cập vào menu tool khác.">#</a>Để sử dụng, bạn cần có quyền truy cập vào menu tool khác.</h2><figure class="embed embed--video"><video class="embed-video" src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FJeXAzFsNoNzDipAlbiX6%2Fuploads%2F94hjx88qMsWtozXdnLDo%2FDise%C3%B1o%20sin%20t%C3%ADtulo.mp4?alt=media&amp;token=7d76c56a-083e-45d7-805f-99f105d81320" controls="" preload="metadata"></video></figure><p>Máy chủ Slash: <a href="https://discord.gg/PxcTHBjHem" class="link" target="_blank" rel="noopener noreferrer">Máy chủ Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br/>Máy chủ Yokai: <a href="https://discord.gg/dmXGGdMtdn" class="link" target="_blank" rel="noopener noreferrer">Máy chủ Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br/>Máy chủ Jawir: <a href="https://discord.gg/UK4qUDNZ" class="link" target="_blank" rel="noopener noreferrer">Máy chủ Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br/>Máy chủ Lotus: <a href="https://discord.gg/G87hMj2SbB" class="link" target="_blank" rel="noopener noreferrer">Máy chủ Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br/>Máy chủ Shika: <a href="https://discord.gg/shika-hub" class="link" target="_blank" rel="noopener noreferrer">Máy chủ Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br/><a href="https://discord.com/channels/1265657372563607574/1419414535294681189" class="link" target="_blank" rel="noopener noreferrer">Tải Bypass<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> (Chỉ thành viên trả phí mới truy cập được)</p>
-
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-unistar">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Honkai: Star Rail</div>
-          <h1 class="docs-gitbook-title">Unistar</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><div class="embed-frame"><iframe src="https://www.youtube-nocookie.com/embed/KN9blU8bGOc" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></figure><p>Hướng dẫn bằng video bởi: bubiskewl</p><p>Làm theo các bước sau để kích hoạt key, tải launcher và khởi chạy Unistar cho <strong>Honkai: Star Rail</strong>.</p><h2 id="trước-khi-bắt-đầu" class="heading"><a href="#trước-khi-bắt-đầu" class="heading-anchor" aria-label="Link to Trước khi bắt đầu">#</a>Trước khi bắt đầu</h2><p>Nếu cần trợ giúp về Unistar, hãy xem hướng dẫn này trước hoặc tham gia máy chủ <a href="https://discord.gg/unicore" class="link" target="_blank" rel="noopener noreferrer">Unicore Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="bước-1-tạo-tài-khoản" class="heading"><a href="#bước-1-tạo-tài-khoản" class="heading-anchor" aria-label="Link to Bước 1: Tạo tài khoản">#</a>Bước 1: Tạo tài khoản</h2><p>Mở <a href="https://unicore.cloud/" class="link" target="_blank" rel="noopener noreferrer">unicore.cloud<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tạo tài khoản.</p><h2 id="bước-2-thêm-key" class="heading"><a href="#bước-2-thêm-key" class="heading-anchor" aria-label="Link to Bước 2: Thêm key">#</a>Bước 2: Thêm key</h2><p>Mở <strong>Dashboard</strong> của bạn và nhấp <strong>Add Key</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(10).png" alt="" loading="lazy"/></figure><h2 id="bước-3-kích-hoạt-key" class="heading"><a href="#bước-3-kích-hoạt-key" class="heading-anchor" aria-label="Link to Bước 3: Kích hoạt key">#</a>Bước 3: Kích hoạt key</h2><p>Nhập key của bạn, sau đó nhấp <strong>Activate</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(11).png" alt="" loading="lazy"/></figure><h2 id="bước-4-tải-launcher" class="heading"><a href="#bước-4-tải-launcher" class="heading-anchor" aria-label="Link to Bước 4: Tải launcher">#</a>Bước 4: Tải launcher</h2><p>Sau khi key được kích hoạt, nhấp <strong>Download</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(12).png" alt="" loading="lazy"/></figure><h2 id="bước-5-chọn-trò-chơi" class="heading"><a href="#bước-5-chọn-trò-chơi" class="heading-anchor" aria-label="Link to Bước 5: Chọn trò chơi">#</a>Bước 5: Chọn trò chơi</h2><p>Mở launcher và chọn <strong>Honkai: Star Rail</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(13).png" alt="" loading="lazy"/></figure><h2 id="bước-6-khởi-chạy-launcher" class="heading"><a href="#bước-6-khởi-chạy-launcher" class="heading-anchor" aria-label="Link to Bước 6: Khởi chạy launcher">#</a>Bước 6: Khởi chạy launcher</h2><p>Nhấp biểu tượng khởi chạy và chờ quá trình tải xuống hoàn tất. Giữ launcher mở trong suốt quá trình này.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(14).png" alt="" loading="lazy"/></figure><h2 id="bước-7-tải-unistar" class="heading"><a href="#bước-7-tải-unistar" class="heading-anchor" aria-label="Link to Bước 7: Tải Unistar">#</a>Bước 7: Tải Unistar</h2><p>Sau khi launcher hoàn tất tất cả giai đoạn khởi động, hãy mở <strong>Honkai: Star Rail</strong>.</p><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Tại menu chính của trò chơi, nhấn <strong>F2</strong> để tải Unistar.</p></div></div><p>Để xem các lỗi thường gặp, hãy xem <a class="link" href="/vi-VN/genshin-impact/unicore/troubleshot">Khắc phục sự cố</a>.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>Settings<ul><li>Show Offscreen</li><li>Max Distance (500m)</li><li>Box</li><li>Name</li><li>Distance</li><li>Snap Line</li></ul></li><li>Filters<ul><li>Treasure Chest</li><li>Space Anchor</li><li>Book</li><li>Monster</li></ul></li><li>Settings<ul><li>Show Offscreen</li><li>Show Debug Names</li><li>Max Distance (1000m)</li><li>Box</li><li>Name</li><li>Distance</li><li>Config System</li><li>Load Items</li><li>Save Items</li></ul></li><li>Filters<ul><li>List</li><li>Create New</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Combat</span></summary><div class="expandable-body"><ul><li>Battle Modifiers<ul><li>Unlock Auto Battle</li><li>Unlock Exit Button</li><li>Speedup Battle</li></ul></li><li>World Modifiers<ul><li>Magnetizer<ul><li>Visible Only</li><li>Max Distance (49m)</li></ul></li><li>Won&#x27;t Attack</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Movement<ul><li>Noclip</li><li>Walk Speed</li></ul></li><li>Teleports<ul><li>Teleport to Mouse Cursor</li><li>Teleport to Nearest Chest</li><li>Entities Teleport</li></ul></li><li>Custom Teleport</li><li>Effects<ul><li>No Dither</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Utility</span></summary><div class="expandable-body"><ul><li>Dialogs<ul><li>Auto Dialog<ul><li>Auto Skip</li><li>Auto Choise</li></ul></li><li>Speedup Dialogs</li><li>Skip Cutscenes<ul><li>Enable Skip Button</li><li>Auto Skip</li></ul></li></ul></li><li>Visual Tweaks<ul><li>Fps Unlocker</li><li>FOV Changer</li></ul></li><li>Automation<ul><li>Auto Loot<ul><li>Visible Only</li><li>Max Distance (29m)</li></ul></li></ul></li><li>Profile Changer<ul><li>UID</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Config</span></summary><div class="expandable-body"><ul><li>Create New</li><li>Create From Clipboard</li><li>Refresh</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <!-- ------------------------------------------------------------------
-             PANELS WUTHERING WAVES
-             ------------------------------------------------------------------ -->
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-kittenwaves">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Wuthering Waves</div>
-          <h1 class="docs-gitbook-title">Kittenwaves</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><div class="embed-frame"><iframe src="https://www.youtube-nocookie.com/embed/t-va-O6NE5E" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></figure><p>Làm theo các bước sau để chuẩn bị và khởi chạy Kittenwaves cho <strong>Wuthering Waves</strong>. Hoàn thành từng bước theo đúng thứ tự.</p><h2 id="bước-1-mở-thư-mục-plugin-nvidia" class="heading"><a href="#bước-1-mở-thư-mục-plugin-nvidia" class="heading-anchor" aria-label="Link to Bước 1: Mở thư mục plugin Nvidia">#</a>Bước 1: Mở thư mục plugin Nvidia</h2><p>Mở thư mục này trong bản cài đặt Wuthering Waves:</p><p><code class="inline-code">\Wuthering Waves Game\Engine\Plugins\Runtime\Nvidia\</code></p><h2 id="bước-2-xóa-streamline" class="heading"><a href="#bước-2-xóa-streamline" class="heading-anchor" aria-label="Link to Bước 2: Xóa Streamline">#</a>Bước 2: Xóa Streamline</h2><div class="hint hint--warning" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span><div class="hint-body"><p>Chỉ xóa thư mục <code class="inline-code">Streamline</code> trong thư mục plugin Nvidia đã chỉ định.</p></div></div><h2 id="bước-3-đặt-tệp-dll" class="heading"><a href="#bước-3-đặt-tệp-dll" class="heading-anchor" aria-label="Link to Bước 3: Đặt tệp DLL">#</a>Bước 3: Đặt tệp DLL</h2><p>Đặt tệp DLL được cung cấp vào cùng thư mục với loader.</p><h2 id="bước-4-khởi-động-loader" class="heading"><a href="#bước-4-khởi-động-loader" class="heading-anchor" aria-label="Link to Bước 4: Khởi động loader">#</a>Bước 4: Khởi động loader</h2><p>Mở loader.</p><h2 id="bước-5-chọn-tệp-trò-chơi" class="heading"><a href="#bước-5-chọn-tệp-trò-chơi" class="heading-anchor" aria-label="Link to Bước 5: Chọn tệp trò chơi">#</a>Bước 5: Chọn tệp trò chơi</h2><p>Chọn tệp thực thi của trò chơi:</p><p><code class="inline-code">\Wuthering Waves Game\Client\Binaries\Win64\Client-Win64-Shipping.exe</code></p><h2 id="bước-6-mở-menu" class="heading"><a href="#bước-6-mở-menu" class="heading-anchor" aria-label="Link to Bước 6: Mở menu">#</a>Bước 6: Mở menu</h2><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Nhấn <strong>Insert</strong> trong trò chơi để mở menu.</p></div></div><h3 id="khắc-phục-sự-cố" class="heading"><a href="#khắc-phục-sự-cố" class="heading-anchor" aria-label="Link to Khắc phục sự cố">#</a>Khắc phục sự cố</h3><ul><li><strong>Trò chơi không khởi động:</strong> Đóng cả trò chơi và loader trong Task Manager, sau đó thử lại.</li><li><strong>Không có menu sau khi tải:</strong> Tắt tất cả overlay, chẳng hạn như RivaTuner hoặc NVIDIA ShadowPlay, rồi khởi động lại trò chơi.</li><li><strong>Trò chơi bị crash hoặc không hoạt động:</strong> Đóng mọi thứ và lặp lại các bước thiết lập.</li><li><strong>Loader vẫn yêu cầu xóa Streamline:</strong> Thêm <code class="inline-code">-dx11</code> vào <code class="inline-code">gamepath.txt</code>, sau đó thử lại.</li></ul>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>Godmode</li><li>Multihit</li><li>No Cooldown</li><li>Force Critical</li><li>Infinite Stamina</li><li>Infinite Forte</li><li>Infinite Ultimate Energy</li><li>Infinite Concerto Energy</li><li>Max Resonance Chain (tất cả nhân vật R6)</li><li>Player buffs (buff chỉ số cộng dồn)</li><li>+50% Echo Drop Rate</li><li>+50% Shell Credits</li><li>+50% Material Drops</li><li>No Fall</li><li>Noclip</li><li>Walk Speed</li><li>Spider</li><li>Enter Restricted Areas</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>World</span></summary><div class="expandable-body"><ul><li>Speedhack</li><li>Killaura</li><li>Entity Vacuum</li><li>Dumb Enemies</li><li>Force Skip Button</li><li>Skip Dialog</li><li>No Cooking Animation</li><li>Auto Mutterfly</li><li>Auto Destroy</li><li>Auto Loot</li><li>Auto Absorb</li><li>Custom Interaction Range</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li>ESP (nhiều bộ lọc)</li><li>Boxes</li><li>Tracers</li><li>Distance</li><li>Ascention Material filters</li><li>Cooking &amp; Synthesis filters</li><li>Ore filters</li><li>Monster filters</li><li>Puzzle filters</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleport</span></summary><div class="expandable-body"><ul><li>Map Teleport</li><li>Chest Teleport</li><li>Custom Teleport</li><li>Large selection of TP lists</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Miscellaneous</span></summary><div class="expandable-body"><ul><li>Peeking</li><li>Hide UI</li><li>Freecam</li><li>UID Changer</li><li>Player Scale</li><li>FOV Changer</li><li>FPS Unlocker</li><li>FPS Display</li><li>CPU Saver</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Settings</span></summary><div class="expandable-body"><ul><li>Themes</li><li>Hotkeys</li><li>Multi-language Support<ul><li>Russian, Chinese, Turkish, German, Indonesian, Thai, Vietnamese, Japanese, Italian, Spanish, French, etc...</li></ul></li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-slash-wuwa">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Wuthering Waves</div>
-          <h1 class="docs-gitbook-title">Slash WuWa</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><div class="embed-frame"><iframe src="https://www.youtube-nocookie.com/embed/BjaES2dB-_U" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></figure><p>Hướng dẫn bằng video bởi: bubiskewl</p><p>Làm theo các bước sau để nhận key, liên kết HWID và khởi chạy Slash cho <strong>Wuthering Waves</strong>. Hoàn thành từng bước theo đúng thứ tự.</p><h2 id="bước-1-nhận-key" class="heading"><a href="#bước-1-nhận-key" class="heading-anchor" aria-label="Link to Bước 1: Nhận key">#</a>Bước 1: Nhận key</h2><p>Tham gia <a href="https://discord.gg/FGxYS6TrBH" class="link" target="_blank" rel="noopener noreferrer">máy chủ Discord của Slash<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>, sau đó mở các kênh <a href="https://discord.com/channels/1265657372563607574/1265657373406793843" class="link" target="_blank" rel="noopener noreferrer">#claim-key<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và <a href="https://discord.com/channels/1265657372563607574/1266227631620100119" class="link" target="_blank" rel="noopener noreferrer">#hwid-check-tools<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><p>Tải <strong>Wuthering_Waves_HWID_Tools.exe</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(16).png" alt="" loading="lazy"/></figure><h2 id="bước-2-nhập-key" class="heading"><a href="#bước-2-nhập-key" class="heading-anchor" aria-label="Link to Bước 2: Nhập key">#</a>Bước 2: Nhập key</h2><p>Mở bảng <strong>Wuthering Waves</strong>, nhấp <strong>Claim Key</strong> và nhập key của bạn.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(15).png" alt="" loading="lazy"/></figure><h2 id="bước-3-liên-kết-hwid" class="heading"><a href="#bước-3-liên-kết-hwid" class="heading-anchor" aria-label="Link to Bước 3: Liên kết HWID">#</a>Bước 3: Liên kết HWID</h2><p>Mở <strong>Wuthering_Waves_HWID_Tools.exe</strong>. Sao chép <strong>HWID</strong> hiển thị trong console, sau đó liên kết với key của bạn.</p><h2 id="bước-4-tải-loader" class="heading"><a href="#bước-4-tải-loader" class="heading-anchor" aria-label="Link to Bước 4: Tải loader">#</a>Bước 4: Tải loader</h2><p>Sau khi kích hoạt key và liên kết HWID, mở kênh <a href="https://discord.com/channels/1265657372563607574/1472840321712001131" class="link" target="_blank" rel="noopener noreferrer">#📂-slash-loader-download<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tải phiên bản loader mới nhất.</p><p>Giải nén tệp lưu trữ đã tải trước khi mở loader. Nếu cần, tải <a href="https://www.win-rar.com" class="link" target="_blank" rel="noopener noreferrer">WinRAR<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> để giải nén.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(17).png" alt="" loading="lazy"/></figure><h2 id="bước-5-chọn-tệp-trò-chơi-và-khởi-chạy-slash" class="heading"><a href="#bước-5-chọn-tệp-trò-chơi-và-khởi-chạy-slash" class="heading-anchor" aria-label="Link to Bước 5: Chọn tệp trò chơi và khởi chạy Slash">#</a>Bước 5: Chọn tệp trò chơi và khởi chạy Slash</h2><p>Sau khi giải nén các tệp, mở <strong>SLASH HUB.exe</strong>.</p><ol><li>Nhấp <strong>Browse</strong> và chọn tệp thực thi của trò chơi Wuthering Waves. <strong>Không</strong> chọn launcher của trò chơi.</li><li>Nhấp <strong>Save</strong>.</li><li>Nhấp <strong>Start</strong>.</li></ol><p>Chờ Slash tải xong, sau đó mở Wuthering Waves khi được nhắc.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(18).png" alt="" loading="lazy"/></figure>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><ul><li>God Mode</li><li>Auto Revive</li><li>No Cooldown</li><li>Infinite Stamina</li><li>Infinite Special Energy</li><li>Infinite Ultimate</li><li>infinite Intro Other</li><li>No Fall Damage</li><li>Auto Dodge Dash</li><li>Dodge Jump Cars</li><li>Auto Parry Basic Attack</li><li>Auto Parry Intro Skill</li><li>Reduce Stamina While Dodge or Parry</li><li>Fly</li><li>No Clip</li><li>Fly Speed</li><li>Player Speed</li><li>Weapon and Skin Changer</li><li>Resonator Swap</li><li>Unlock All Resonators</li><li>Fast Switch Formation</li><li>Infinite Morph</li><li>Infinite Ultimate Energy</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>Character Attributes</strong></span></summary><div class="expandable-body"><ul><li>Character Resonance Chain 6 Unlock</li><li>Signature weapon rank 5 replicate</li><li>Flight Everywhere</li><li>100% Critical</li><li>High Echo Attack</li><li>Increase Coin, Material and Echo Rate</li><li>Weapon Adder</li><li>Weapon Skin</li><li>Switch Terminal Skin</li><li>Motor Skin</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>Stats Editor</strong></span></summary><div class="expandable-body"><ul><li>Attack Edit</li><li>Defend Edit</li><li>HP Edit</li><li>Crit Rate Edit</li><li>Crit Damage Edit</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>Enemy</strong></span></summary><div class="expandable-body"><ul><li>Enemy Vacuum</li><li>Kill Aura 1</li><li>Kill Aura 2</li><li>Exclude Quest Monster</li><li>Kill Aura Animal</li><li>Kill Aura Counter Attack</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>World</strong></span></summary><div class="expandable-body"><ul><li>Auto Loot Collect</li><li>Auto Loot Chest</li><li>Auto Absorb Echo</li><li>Auto Destroy</li><li>Auto Puzzle</li><li>No Restrict Area</li><li>World Speed</li><li>Fishing Boat Speed</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>Dungeon &amp; Farm</strong></span></summary><div class="expandable-body"><ul><li>Farm Tracked Enemy</li><li>Auto Restart Dungeon</li><li>Auto Challenge Boss / Tacet</li><li>Auto Claim Reward</li><li>Multi Farm Echo</li><li>Semi Auto Quest</li><li>Auto Restart Dungeon</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>ESP</strong></span></summary><div class="expandable-body"><ul><li>Monster</li><li>Collect</li><li>Chest</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>Teleport</strong></span></summary><div class="expandable-body"><ul><li>JSON File Custom Teleport</li><li>Track Icon To Teleport</li><li>Quest Teleport</li><li>Map Mark Teleport</li><li>Ornament Teleport</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span><strong>Miscellaneous</strong></span></summary><div class="expandable-body"><ul><li>FOV</li><li>Pause In Game Time</li><li>Unlock FPS</li><li>Auto Claim Trophies</li><li>Cook &amp; Craft No Animation</li><li>Plot Skip</li><li>Auto Plot Skip</li><li>Skip Video</li><li>Hide UID</li><li>Show FPS</li><li>Change UID</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-minty-pc">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Honkai: Star Rail</div>
-          <h1 class="docs-gitbook-title">Minty-SR</h1>
-        </header>
-        <div class="markdown">
-<p>Trang này hướng dẫn cách tải Minty cho <strong>Honkai: Star Rail</strong>. Làm theo các bước theo đúng thứ tự và chờ từng bước hoàn tất trước khi tiếp tục.</p><h2 id="khắc-phục-sự-cố" class="heading"><a href="#khắc-phục-sự-cố" class="heading-anchor" aria-label="Link to Khắc phục sự cố">#</a>Khắc phục sự cố</h2><p>Nếu gặp sự cố, hãy xem hướng dẫn này trước hoặc tham gia máy chủ <a href="https://discord.gg/wME46mt5Pf" class="link" target="_blank" rel="noopener noreferrer">Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="bước-1-tải-loader" class="heading"><a href="#bước-1-tải-loader" class="heading-anchor" aria-label="Link to Bước 1: Tải loader">#</a>Bước 1: Tải loader</h2><p>Tải loader từ <a href="https://loader.kindawindy.today/" class="link" target="_blank" rel="noopener noreferrer">liên kết tải xuống<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><div class="hint hint--warning" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span><div class="hint-body"><p>Thêm thư mục loader vào danh sách loại trừ của phần mềm diệt virus trước khi mở. Phần mềm diệt virus có thể chặn hoặc xóa loader.</p></div></div><h2 id="bước-2-mở-loader-và-nhập-key" class="heading"><a href="#bước-2-mở-loader-và-nhập-key" class="heading-anchor" aria-label="Link to Bước 2: Mở loader và nhập key">#</a>Bước 2: Mở loader và nhập key</h2><ol><li>Mở loader.</li><li>Chọn <strong>Honkai: Star Rail</strong>.</li><li>Nhập key của bạn.</li></ol><h2 id="bước-3-khởi-động-từ-loader" class="heading"><a href="#bước-3-khởi-động-từ-loader" class="heading-anchor" aria-label="Link to Bước 3: Khởi động từ loader">#</a>Bước 3: Khởi động từ loader</h2><p>Nhấp <strong>Start Game</strong> trong loader.</p><h2 id="bước-4-mở-trò-chơi" class="heading"><a href="#bước-4-mở-trò-chơi" class="heading-anchor" aria-label="Link to Bước 4: Mở trò chơi">#</a>Bước 4: Mở trò chơi</h2><p>Mở <strong>Honkai: Star Rail</strong> thủ công và chờ Minty inject.</p><h2 id="bước-5-mở-menu" class="heading"><a href="#bước-5-mở-menu" class="heading-anchor" aria-label="Link to Bước 5: Mở menu">#</a>Bước 5: Mở menu</h2><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Nhấn <strong>Insert</strong> để mở hoặc đóng menu.</p></div></div>
-
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-minty-mobile">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Wuthering Waves</div>
-          <h1 class="docs-gitbook-title">Torako Mobile</h1>
-        </header>
-        <div class="markdown">
-<p>Hướng dẫn này chỉ cách cài đặt và sử dụng Torako Mobile cho <strong>Wuthering Waves</strong> trên điện thoại.</p><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Làm theo các bước theo đúng thứ tự. Bạn chỉ cần thực hiện việc này <strong>một lần</strong>.</p></div></div><h2 id="trước-khi-bắt-đầu" class="heading"><a href="#trước-khi-bắt-đầu" class="heading-anchor" aria-label="Link to Trước khi bắt đầu">#</a>Trước khi bắt đầu</h2><ul><li>Tạo tài khoản tại <a href="https://shikahub.org/en" class="link" target="_blank" rel="noopener noreferrer">shikahub.org<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> nếu chưa có.</li><li>Bạn cần một key đang hoạt động.</li><li>Gỡ cài đặt <strong>phiên bản gốc</strong> của Wuthering Waves trước — phiên bản của chúng tôi không thể cài song song.</li><li>Chuẩn bị sẵn thông tin đăng nhập tài khoản.</li></ul><h2 id="bước-1-tải-launcher" class="heading"><a href="#bước-1-tải-launcher" class="heading-anchor" aria-label="Link to Bước 1: Tải launcher">#</a>Bước 1: Tải launcher</h2><ol><li>Mở tài khoản cá nhân tại <a href="https://shikahub.org/en" class="link" target="_blank" rel="noopener noreferrer">shikahub.org<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</li><li>Truy cập <a href="https://shikahub.org/en/dashboard/downloads" class="link" target="_blank" rel="noopener noreferrer">trang Downloads<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</li><li>Tải launcher dành cho di động.</li><li>Cài đặt launcher trên thiết bị.</li></ol><h2 id="bước-2-đăng-nhập-và-kích-hoạt-key" class="heading"><a href="#bước-2-đăng-nhập-và-kích-hoạt-key" class="heading-anchor" aria-label="Link to Bước 2: Đăng nhập và kích hoạt key">#</a>Bước 2: Đăng nhập và kích hoạt key</h2><ol><li>Mở launcher.</li><li>Đăng nhập tài khoản.</li><li>Kích hoạt key của bạn (hoặc nhập key kích hoạt trước tại <a href="https://shikahub.org/en/dashboard/licenses" class="link" target="_blank" rel="noopener noreferrer">shikahub.org Licenses<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>).</li></ol><p>Nếu bạn đã kích hoạt key trên trang web, có thể bỏ qua bước kích hoạt.</p><h2 id="bước-3-gỡ-trò-chơi-gốc" class="heading"><a href="#bước-3-gỡ-trò-chơi-gốc" class="heading-anchor" aria-label="Link to Bước 3: Gỡ trò chơi gốc">#</a>Bước 3: Gỡ trò chơi gốc</h2><p>Gỡ cài đặt phiên bản Wuthering Waves hiện tại khỏi thiết bị.</p><p>Phiên bản của chúng tôi thay thế phiên bản đó nên không thể cài đồng thời cả hai. Bạn chỉ cần làm việc này một lần.</p><h2 id="bước-4-tải-phiên-bản-trò-chơi-của-chúng-tôi" class="heading"><a href="#bước-4-tải-phiên-bản-trò-chơi-của-chúng-tôi" class="heading-anchor" aria-label="Link to Bước 4: Tải phiên bản trò chơi của chúng tôi">#</a>Bước 4: Tải phiên bản trò chơi của chúng tôi</h2><ol><li>Trong launcher, tải phiên bản Wuthering Waves của chúng tôi.</li><li>Chờ quá trình tải hoàn tất.</li></ol><p>Phiên bản của chúng tôi có một vài thay đổi cần thiết để Shika hoạt động.</p><h2 id="bước-5-khởi-chạy-và-chơi" class="heading"><a href="#bước-5-khởi-chạy-và-chơi" class="heading-anchor" aria-label="Link to Bước 5: Khởi chạy và chơi">#</a>Bước 5: Khởi chạy và chơi</h2><ol><li>Khởi chạy trò chơi.</li><li>Đăng nhập tài khoản trò chơi.</li></ol><p>Vậy là xong — menu sẽ tự động xuất hiện.</p><h2 id="thông-tin-hữu-ích" class="heading"><a href="#thông-tin-hữu-ích" class="heading-anchor" aria-label="Link to Thông tin hữu ích">#</a>Thông tin hữu ích</h2><ul><li>Bạn có thể tải các bản cập nhật trò chơi trong tương lai trực tiếp qua launcher — không cần đăng ký trả phí.</li><li>Bạn cũng có thể tải lại hình ảnh trò chơi gốc bất cứ lúc nào nếu muốn quay lại.</li></ul><h2 id="menu-không-xuất-hiện" class="heading"><a href="#menu-không-xuất-hiện" class="heading-anchor" aria-label="Link to Menu không xuất hiện?">#</a>Menu không xuất hiện?</h2><ol><li>Đóng hoàn toàn trò chơi.</li><li>Khởi chạy lại trò chơi qua launcher.</li><li>Vẫn bị kẹt? Liên hệ đội ngũ hỗ trợ, chúng tôi sẽ giúp bạn sớm nhất có thể.</li></ol>
-
-        </div>
-      </div>
-        </section>
-
-        <!-- ------------------------------------------------------------------
-             PANELS ZENLESS ZONE ZERO
-             ------------------------------------------------------------------ -->
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-unizone">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Zenless: Zone Zero</div>
-          <h1 class="docs-gitbook-title">Unizone</h1>
-        </header>
-        <div class="markdown">
-<figure class="embed embed--video"><div class="embed-frame"><iframe src="https://www.youtube-nocookie.com/embed/KN9blU8bGOc" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen=""></iframe></div></figure><p>Hướng dẫn bằng video bởi: bubiskewl</p><p>Làm theo các bước sau để kích hoạt key, tải launcher và khởi chạy Unizone cho <strong>Zenless Zone Zero</strong>.</p><h2 id="trước-khi-bắt-đầu" class="heading"><a href="#trước-khi-bắt-đầu" class="heading-anchor" aria-label="Link to Trước khi bắt đầu">#</a>Trước khi bắt đầu</h2><p>Nếu cần trợ giúp về Unizone, hãy xem hướng dẫn này trước hoặc tham gia máy chủ <a href="https://discord.gg/unicore" class="link" target="_blank" rel="noopener noreferrer">Unicore Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="bước-1-tạo-tài-khoản" class="heading"><a href="#bước-1-tạo-tài-khoản" class="heading-anchor" aria-label="Link to Bước 1: Tạo tài khoản">#</a>Bước 1: Tạo tài khoản</h2><p>Mở <a href="https://unicore.cloud/" class="link" target="_blank" rel="noopener noreferrer">unicore.cloud<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tạo tài khoản.</p><h2 id="bước-2-thêm-key" class="heading"><a href="#bước-2-thêm-key" class="heading-anchor" aria-label="Link to Bước 2: Thêm key">#</a>Bước 2: Thêm key</h2><p>Mở <strong>Dashboard</strong> của bạn và nhấp <strong>Add Key</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(10).png" alt="" loading="lazy"/></figure><h2 id="bước-3-kích-hoạt-key" class="heading"><a href="#bước-3-kích-hoạt-key" class="heading-anchor" aria-label="Link to Bước 3: Kích hoạt key">#</a>Bước 3: Kích hoạt key</h2><p>Nhập key của bạn, sau đó nhấp <strong>Activate</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(11).png" alt="" loading="lazy"/></figure><h2 id="bước-4-tải-launcher" class="heading"><a href="#bước-4-tải-launcher" class="heading-anchor" aria-label="Link to Bước 4: Tải launcher">#</a>Bước 4: Tải launcher</h2><p>Sau khi key được kích hoạt, nhấp <strong>Download</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(12).png" alt="" loading="lazy"/></figure><h2 id="bước-5-chọn-trò-chơi" class="heading"><a href="#bước-5-chọn-trò-chơi" class="heading-anchor" aria-label="Link to Bước 5: Chọn trò chơi">#</a>Bước 5: Chọn trò chơi</h2><p>Mở launcher và chọn <strong>Zenless Zone Zero</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(13).png" alt="" loading="lazy"/></figure><h2 id="bước-6-khởi-chạy-launcher" class="heading"><a href="#bước-6-khởi-chạy-launcher" class="heading-anchor" aria-label="Link to Bước 6: Khởi chạy launcher">#</a>Bước 6: Khởi chạy launcher</h2><p>Nhấp biểu tượng khởi chạy và chờ quá trình tải xuống hoàn tất. Giữ launcher mở trong suốt quá trình này.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(14).png" alt="" loading="lazy"/></figure><h2 id="bước-7-tải-unizone" class="heading"><a href="#bước-7-tải-unizone" class="heading-anchor" aria-label="Link to Bước 7: Tải Unizone">#</a>Bước 7: Tải Unizone</h2><p>Sau khi launcher hoàn tất tất cả giai đoạn khởi động, hãy mở <strong>Zenless Zone Zero</strong>.</p><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Tại menu chính của trò chơi, nhấn <strong>F2</strong> để tải Unizone.</p></div></div><p>Để xem các lỗi thường gặp, hãy xem <a class="link" href="/vi-VN/genshin-impact/unicore/troubleshot">Khắc phục sự cố</a>.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Danh sách tính năng</h2><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Visuals</span></summary><div class="expandable-body"><ul><li><em><strong>Main</strong></em><ul><li>Settings<ul><li>Show Offscreen</li><li>Max Distance (1000m)</li><li>Box</li><li>Name</li><li>Distance</li><li>Radar</li><li>Range</li></ul></li><li>Filters<ul><li>Monster</li></ul></li></ul></li><li><em><strong>Builder</strong></em><ul><li>Settings<ul><li>Show Offscreen</li><li>Show Debug Names</li><li>Max Distance (1000m)</li><li>Box</li><li>Name</li><li>Distance</li><li>Config System</li><li>Load Items</li><li>Save Items</li></ul></li><li>Filters<ul><li>List</li><li>Create New</li></ul></li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Combat</span></summary><div class="expandable-body"><ul><li><em><strong>Attack Modifiers</strong></em><ul><li>Rapid Fire</li><li>Kill Aura</li><li>Auto Attack</li><li>Damage Multiplier (reworked)</li></ul></li><li><em><strong>Enemy Modifiers</strong></em><ul><li>Harmless Enemies</li><li>Always Stun</li><li>Magnetizer<ul><li>Type (NPC / Monster / Animal / Item)</li><li>Max Distance (300m)</li></ul></li></ul></li></ul><p><em><strong>Ability Modifiers</strong></em></p><ul><li>Infinite Special Attack</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Player</span></summary><div class="expandable-body"><p><em><strong>Self</strong></em></p><ul><li>Noclip</li><li>GodMode (reworked)</li><li>Instant Heal</li><li>Unlock All Skins</li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Teleports</span></summary><div class="expandable-body"><ul><li><em><strong>Main</strong></em><ul><li>Mouse Teleport (Alt+LMB)</li><li>Draw Circle</li><li>Max Distance (1000m)</li></ul></li><li><em><strong>Entities</strong></em><ul><li>Draw Target</li><li>Target Selection<ul><li>Fiel of View</li><li>Distance</li></ul></li><li>Max Distance (1000m)</li><li>Filters</li></ul></li><li><em><strong>Custom</strong></em><ul><li>General<ul><li>Show All</li></ul></li><li>Config<ul><li>Save Items</li><li>Load Items</li></ul></li><li>Loop<ul><li>Start</li><li>Delay Between</li></ul></li><li>Filters<ul><li>Create new json. TP file</li><li>Teleport</li></ul></li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Utility</span></summary><div class="expandable-body"><ul><li><em><strong>Visuals Tweaks</strong></em><ul><li>Cmera fov</li><li>Hide UI</li><li>UID Changer</li></ul></li><li><em><strong>Game Adjustments</strong></em><ul><li>Speedup Dialogs</li><li>Speedup Battle TV</li><li>Speedup Interface</li></ul></li></ul></div></details><details class="expandable"><summary><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="expandable-chevron"><path d="m9 18 6-6-6-6"></path></svg><span>Config</span></summary><div class="expandable-body"><ul><li>Create New</li><li>Create From Clipboard</li><li>Refresh</li></ul></div></details></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-kinu">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Zenless: Zone Zero</div>
-          <h1 class="docs-gitbook-title">Minty-ZZZ</h1>
-        </header>
-        <div class="markdown">
-<p>Trang này hướng dẫn cách tải Minty cho <strong>Zenless Zone Zero</strong>. Làm theo các bước theo đúng thứ tự và chờ từng bước hoàn tất trước khi tiếp tục.</p><h2 id="khắc-phục-sự-cố" class="heading"><a href="#khắc-phục-sự-cố" class="heading-anchor" aria-label="Link to Khắc phục sự cố">#</a>Khắc phục sự cố</h2><p>Nếu gặp sự cố, hãy xem hướng dẫn này trước hoặc tham gia máy chủ <a href="https://discord.gg/wME46mt5Pf" class="link" target="_blank" rel="noopener noreferrer">Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="bước-1-tải-loader" class="heading"><a href="#bước-1-tải-loader" class="heading-anchor" aria-label="Link to Bước 1: Tải loader">#</a>Bước 1: Tải loader</h2><p>Tải loader từ <a href="https://loader.kindawindy.today/" class="link" target="_blank" rel="noopener noreferrer">liên kết tải xuống<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><div class="hint hint--warning" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span><div class="hint-body"><p>Thêm thư mục loader vào danh sách loại trừ của phần mềm diệt virus trước khi mở. Phần mềm diệt virus có thể chặn hoặc xóa loader.</p></div></div><h2 id="bước-2-mở-loader-và-nhập-key" class="heading"><a href="#bước-2-mở-loader-và-nhập-key" class="heading-anchor" aria-label="Link to Bước 2: Mở loader và nhập key">#</a>Bước 2: Mở loader và nhập key</h2><ol><li>Mở loader.</li><li>Chọn <strong>Zenless Zone Zero</strong>.</li><li>Nhập key của bạn.</li></ol><h2 id="bước-3-khởi-động-từ-loader" class="heading"><a href="#bước-3-khởi-động-từ-loader" class="heading-anchor" aria-label="Link to Bước 3: Khởi động từ loader">#</a>Bước 3: Khởi động từ loader</h2><p>Nhấp <strong>Start Game</strong> trong loader.</p><h2 id="bước-4-mở-trò-chơi" class="heading"><a href="#bước-4-mở-trò-chơi" class="heading-anchor" aria-label="Link to Bước 4: Mở trò chơi">#</a>Bước 4: Mở trò chơi</h2><p>Mở <strong>Zenless Zone Zero</strong> thủ công và chờ Minty inject.</p><h2 id="bước-5-mở-menu" class="heading"><a href="#bước-5-mở-menu" class="heading-anchor" aria-label="Link to Bước 5: Mở menu">#</a>Bước 5: Mở menu</h2><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Nhấn <strong>Insert</strong> để mở hoặc đóng menu.</p></div></div>
-
-        </div>
-      </div>
-        </section>
-
-        <!-- ------------------------------------------------------------------
-             PANELS GAME KHÁC (ANIIMO / DNA)
-             ------------------------------------------------------------------ -->
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-aniimi">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Aniimo</div>
-          <h1 class="docs-gitbook-title">Slash - Aniimo</h1>
-        </header>
-        <div class="markdown">
-<p>Làm theo các bước sau để nhận key, liên kết HWID và khởi chạy Slash cho <strong>Aniimo</strong>. Hoàn thành từng bước theo đúng thứ tự.</p><h2 id="bước-1-nhận-key" class="heading"><a href="#bước-1-nhận-key" class="heading-anchor" aria-label="Link to Bước 1: Nhận key">#</a>Bước 1: Nhận key</h2><p>Tham gia <a href="https://discord.gg/FGxYS6TrBH" class="link" target="_blank" rel="noopener noreferrer">máy chủ Discord của Slash<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>, sau đó mở các kênh <a href="https://discord.com/channels/1265657372563607574/1265657373406793843" class="link" target="_blank" rel="noopener noreferrer">#claim-key<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và <a href="https://discord.com/channels/1265657372563607574/1266227631620100119" class="link" target="_blank" rel="noopener noreferrer">#hwid-check-tools<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><p>Tải công cụ HWID cho trò chơi đầu tiên bạn dự định sử dụng. Bạn có thể dùng <strong>Wuthering_Waves_HWID_Tools.exe</strong> hoặc <strong>Solo_Leveling_HWID_Tools.exe</strong>.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(19).png" alt="" loading="lazy" style="width:294px"/></figure><h2 id="bước-2-nhập-key" class="heading"><a href="#bước-2-nhập-key" class="heading-anchor" aria-label="Link to Bước 2: Nhập key">#</a>Bước 2: Nhập key</h2><p>Trong bảng <strong>Wuthering Waves</strong> hoặc <strong>Solo Leveling: ARISE</strong>, nhấp <strong>Claim Key</strong> và nhập key của bạn.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(21).png" alt="" loading="lazy"/></figure><h2 id="bước-3-liên-kết-hwid" class="heading"><a href="#bước-3-liên-kết-hwid" class="heading-anchor" aria-label="Link to Bước 3: Liên kết HWID">#</a>Bước 3: Liên kết HWID</h2><p>Mở công cụ HWID đã tải ở Bước 1. Sao chép <strong>HWID</strong> hiển thị trong console, sau đó liên kết với key của bạn.</p><h2 id="bước-4-tải-loader" class="heading"><a href="#bước-4-tải-loader" class="heading-anchor" aria-label="Link to Bước 4: Tải loader">#</a>Bước 4: Tải loader</h2><p>Sau khi kích hoạt key và liên kết HWID, mở kênh <a href="https://discord.com/channels/1265657372563607574/1472840321712001131" class="link" target="_blank" rel="noopener noreferrer">#📂-slash-loader-download<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tải phiên bản loader mới nhất.</p><p>Giải nén tệp lưu trữ đã tải trước khi mở. Nếu cần, tải <a href="https://www.win-rar.com" class="link" target="_blank" rel="noopener noreferrer">WinRAR<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> để giải nén các tệp.</p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(17).png" alt="" loading="lazy"/></figure><h2 id="bước-5-khởi-chạy-slash" class="heading"><a href="#bước-5-khởi-chạy-slash" class="heading-anchor" aria-label="Link to Bước 5: Khởi chạy Slash">#</a>Bước 5: Khởi chạy Slash</h2><p>Mở loader, tìm <strong>Aniimo</strong> trong danh sách trò chơi và nhấp <strong>Start</strong>.</p><p><br/></p><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(23).png" alt="" loading="lazy"/></figure><h2 id="bước-6-mở-trò-chơi" class="heading"><a href="#bước-6-mở-trò-chơi" class="heading-anchor" aria-label="Link to Bước 6: Mở trò chơi">#</a>Bước 6: Mở trò chơi</h2><p>Chờ cửa sổ console tải xong. Mở <strong>Aniimo</strong> khi loader nhắc bạn.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Ukai</h2><p>Làm theo các bước sau để thiết lập Ukai và mở Ukai trong Aniimo.</p><h2 id="1-tạo-tài-khoản-và-liên-kết-key" class="heading"><a href="#1-tạo-tài-khoản-và-liên-kết-key" class="heading-anchor" aria-label="Link to 1. Tạo tài khoản và liên kết key">#</a>1. Tạo tài khoản và liên kết key</h2><ol><li>Truy cập <a href="https://shikahub.org/en" class="link" target="_blank" rel="noopener noreferrer"><a href="https://shikahub.org/en" class="link" target="_blank" rel="noopener noreferrer">https://shikahub.org/en<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tạo tài khoản.</li><li>Đăng nhập, sau đó liên kết key của bạn với tài khoản đó.</li></ol><p>Bạn cần liên kết key trước khi có thể tải loader.</p><h2 id="2-tải-loader" class="heading"><a href="#2-tải-loader" class="heading-anchor" aria-label="Link to 2. Tải loader">#</a>2. Tải loader</h2><ol><li>Mở <a href="https://shikahub.org/en/dashboard/downloads" class="link" target="_blank" rel="noopener noreferrer">trang tải xuống<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> trong dashboard của bạn.</li><li>Tải loader và lưu ở nơi dễ tìm.</li><li>Mở loader sau khi quá trình tải hoàn tất.</li></ol><h2 id="3-khởi-chạy-ukai-từ-loader" class="heading"><a href="#3-khởi-chạy-ukai-từ-loader" class="heading-anchor" aria-label="Link to 3. Khởi chạy Ukai từ loader">#</a>3. Khởi chạy Ukai từ loader</h2><ol><li>Trong loader, chọn <strong>Ukai</strong>.</li><li>Nhấp <strong>Launch</strong>.</li></ol><figure class="figure"><img src="https://docs.wibuzstore.com/assets/en/.gitbook/assets/image%20(3).png" alt="Loader window with Aniimo selected and the Launch button highlighted" loading="lazy"/><figcaption>Chọn trò chơi trong loader, sau đó nhấp Launch.</figcaption></figure><p>Thao tác này chỉ khởi động Ukai. Trò chơi sẽ không tự mở.</p><h2 id="4-mở-trò-chơi-và-chờ-menu" class="heading"><a href="#4-mở-trò-chơi-và-chờ-menu" class="heading-anchor" aria-label="Link to 4. Mở trò chơi và chờ menu">#</a>4. Mở trò chơi và chờ menu</h2><ol><li>Tự khởi động <strong>Aniimo</strong>.</li><li>Ở trong trò chơi cho đến khi menu Ukai xuất hiện.</li></ol><div class="hint hint--info" role="note"><span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span><div class="hint-body"><p>Menu có thể mất một chút thời gian để xuất hiện. Hãy giữ trò chơi mở và chờ.</p></div></div></div>
-        </div>
-      </div>
-        </section>
-
-        <!-- ------------------------------------------------------------------
-             PANELS TROUBLESHOOTING (EXACT WIBUZ CONTENT)
-             ------------------------------------------------------------------ -->
-        <div class="docs-article-panel" id="panel-trouble-overview">
-          <div class="docs-gitbook-page">
-            <header class="docs-gitbook-header">
-              <div class="docs-gitbook-crumbs">Troubleshooting</div>
-              <h1 class="docs-gitbook-title">Khắc phục sự cố</h1>
-            </header>
-            <div class="markdown">
-              <p>Bạn có thể tìm thấy một số lỗi thường gặp và cách khắc phục bên dưới.</p>
-              <div class="docs-troubleshoot-grid">
-                <a href="#antivirus-detection" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-antivirus">
-                  <div class="docs-troubleshoot-icon">🛡️</div>
-                  <div class="docs-troubleshoot-title">Bị Phần Mềm Diệt Virus Gắn Cờ</div>
-                  <p class="docs-troubleshoot-desc">Giải thích vì sao chương trình bị antivirus gắn cờ và cách loại trừ.</p>
-                </a>
-                <a href="#f2-not-responding" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-menu">
-                  <div class="docs-troubleshoot-icon">⌨️</div>
-                  <div class="docs-troubleshoot-title">Không Hiển Thị Menu Tool (F1/F2)</div>
-                  <p class="docs-troubleshoot-desc">Core Isolation, độ phân giải Borderless, Smooth Motion NVIDIA và Overlay.</p>
-                </a>
-                <a href="#blue-screen-bsod" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-bsod">
-                  <div class="docs-troubleshoot-icon">💻</div>
-                  <div class="docs-troubleshoot-title">Màn Hình Xanh (BSOD) / Treo Máy</div>
-                  <p class="docs-troubleshoot-desc">Xử lý xung đột driver bảo mật với Vanguard, Armory Crate, Roblox hoặc antivirus.</p>
-                </a>
-                <a href="#loader-startup-issues" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-driver">
-                  <div class="docs-troubleshoot-icon">⚙️</div>
-                  <div class="docs-troubleshoot-title">Loader Không Chạy / Lỗi Driver</div>
-                  <p class="docs-troubleshoot-desc">Quyền Administrator, Visual C++ All-in-One và exploit driver installation.</p>
-                </a>
-                <a href="#connection-error" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-connection">
-                  <div class="docs-troubleshoot-icon">🌐</div>
-                  <div class="docs-troubleshoot-title">FATAL ERROR! Connection Error</div>
-                  <p class="docs-troubleshoot-desc">Khắc phục sự cố mạng, máy chủ gián đoạn, tắt VPN/Proxy và đổi DNS 1.1.1.1.</p>
-                </a>
-                <a href="#hardware-mismatch" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-hwid">
-                  <div class="docs-troubleshoot-icon">🔑</div>
-                  <div class="docs-troubleshoot-title">Hardware Mismatch (Lệch HWID)</div>
-                  <p class="docs-troubleshoot-desc">Cách tạo ticket yêu cầu Reset HWID khi đổi linh kiện hoặc chuyển sang máy tính khác.</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-antivirus">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Vì sao chương trình bị phần mềm diệt virus gắn cờ?</h1>
-        </header>
-        <div class="markdown">
-<p>Giải thích về việc bị phần mềm diệt virus phát hiện</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FNuBS0wH7cfx0Tw5yp1h2%2Fimage.png?alt=media&amp;token=d377ebb6-9b09-411a-9b5b-f49ec8de7820" alt="Vì sao chương trình bị phần mềm diệt virus gắn cờ?" loading="lazy" class="inline-image"/></p><p>Đây là kết quả dương tính giả. Mọi phần mềm riêng tư chất lượng cao được thiết kế để vượt qua anti-cheat đều sử dụng các kỹ thuật bị phần mềm diệt virus coi là đáng ngờ — đơn giản vì đây cũng là những kỹ thuật mà mã độc thực sự sử dụng. Cảnh báo của phần mềm diệt virus là dấu hiệu cho thấy phần mềm đang hoạt động ở cấp độ hệ thống thấp.</p><p><strong>H: Một cheat không kích hoạt phát hiện của phần mềm diệt virus có tốt hơn không?</strong></p><p>Không. Phần mềm riêng tư không kích hoạt phần mềm diệt virus hoặc là thiếu các thao tác cấp thấp cần thiết (nhiều khả năng sẽ thất bại trước các anti-cheat nghiêm ngặt) hoặc đã nằm trong cơ sở dữ liệu chữ ký của anti-cheat.</p><p><strong>H: 40/72 phát hiện trên VirusTotal có bình thường không?</strong></p><p>Có, hoàn toàn bình thường. Đây không phải là phát hiện một loại virus cụ thể — mà là phát hiện trình bảo vệ Themida dùng để che mã. Themida là phần mềm thương mại hợp pháp dùng để bảo vệ chương trình khỏi bị dịch ngược.</p><div class="code-block"><div class="code-header"><span class="code-title"></span><button type="button" class="copy-button" aria-label="Copy code" title="Copy code"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div><pre class="code-pre"><code><span class="code-line"><span class="code-line-content">W64/Themida.WN<!-- --> </span></span><span class="code-line"><span class="code-line-content">Win64/Packed.Themida.Q<!-- --> </span></span><span class="code-line"><span class="code-line-content">Suspicious App<!-- --> </span></span><span class="code-line"><span class="code-line-content">Generic.Packed<!-- --> </span></span><span class="code-line"><span class="code-line-content">Unsafe</span></span></code></pre></div><p><strong>H: Nhưng 40 phát hiện không phải là quá nhiều sao?</strong></p><p>Nghịch lý là virus thực sự thường có 0–5 phát hiện trên VirusTotal, không phải 40. Nhà phát triển mã độc kiểm tra tệp trên VT trước khi phát tán và dùng cryptor riêng. Chúng tôi dùng Themida — một protector thương mại công khai. Chúng tôi không cần trốn tránh phần mềm diệt virus; chúng tôi cần bảo vệ mã khỏi bị anti-cheat phân tích.</p><p>Số lượng phát hiện cao trên VT với nhãn như &quot;Themida/Packed/Suspicious&quot; là dấu hiệu của phần mềm được bảo vệ hợp pháp, không phải virus. Việc bị phần mềm diệt virus phát hiện là tác dụng phụ của các công nghệ cần thiết để hoạt động ở cấp kernel.</p>
-
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-menu">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Không hiển thị menu tool</h1>
-        </header>
-        <div class="markdown">
-<h2 id="1-tắt-core-isolationmemory-integrity" class="heading"><a href="#1-tắt-core-isolationmemory-integrity" class="heading-anchor" aria-label="Link to 1. Tắt Core Isolation/Memory Integrity">#</a>1. Tắt Core Isolation/Memory Integrity</h2><figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2FI8Uu98bkdZJP72UD8tKI%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=f9a7356e655b11db9db0378834a3b347&amp;sv=3" alt="" loading="lazy"/></figure><figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2F76GtdoG9FBjnsTXMm4ll%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=732d3029ff4eeecac8e65a9e6b79106b&amp;sv=3" alt="" loading="lazy"/></figure><h2 id="2-sửa-độ-phân-giải-của-game" class="heading"><a href="#2-sửa-độ-phân-giải-của-game" class="heading-anchor" aria-label="Link to 2. Sửa độ phân giải của game">#</a>2. Sửa độ phân giải của game</h2><ul><li>Chỉnh về Borderless (Không viền) hoặc Cửa sổ (Windowed)</li></ul><figure class="figure"><img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FWdP15jHbTBdjFgLxHed0%2Fimage.png?alt=media&amp;token=e38b08fe-77b4-4fd1-a2ca-2712b48576dc" alt="" loading="lazy"/></figure><h2 id="3-tắt-smooth-motion-card-nvidia-4000-và-5000-series" class="heading"><a href="#3-tắt-smooth-motion-card-nvidia-4000-và-5000-series" class="heading-anchor" aria-label="Link to 3. Tắt Smooth Motion (Card NVIDIA 4000 và 5000 Series)">#</a>3. Tắt Smooth Motion (Card NVIDIA 4000 và 5000 Series)</h2><ul><li><strong>Mở NVIDIA APP -&gt; Graphics -&gt; Game tương ứng / Global Settings</strong></li><li>Tắt Smooth Motion như trong ảnh dưới:</li></ul><figure class="figure"><img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FmByPnt5Pggws6bMMK0ZH%2Fimage.png?alt=media&amp;token=52ad480a-0d19-4d2f-8068-1acbc79c2186" alt="" loading="lazy"/></figure><h2 id="4-tắt-các-app-khác-đang-chiếm-dụng-overlay-nếu-có" class="heading"><a href="#4-tắt-các-app-khác-đang-chiếm-dụng-overlay-nếu-có" class="heading-anchor" aria-label="Link to 4. Tắt các app khác đang chiếm dụng Overlay (nếu có)">#</a>4. Tắt các app khác đang chiếm dụng Overlay (nếu có)</h2><ul><li>MSI Afterburner (Riva Tunner)</li><li>Discord Game Overlay</li></ul>
-
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-bsod">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Màn hình xanh/đen / BSOD / PC bị treo</h1>
-        </header>
-        <div class="markdown">
-<p>Cách khắc phục sự cố màn hình xanh</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FJd4ZsEgpX1JSUhs54TIX%2Fimage.png?alt=media&amp;token=db91be32-4daa-48a9-9e0b-9f73afdb9674" alt="Màn hình xanh/đen / BSOD / PC bị treo" loading="lazy" class="inline-image"/></p><p>Nguyên nhân chính là lỗi trong quá trình khởi tạo trình điều khiển. Trong hầu hết trường hợp, nguyên nhân là xung đột với phần mềm bảo mật hoặc các tính năng bảo mật đang hoạt động.</p><blockquote><p><strong>Cảnh báo bảo mật:</strong> BSOD có thể cho thấy vấn đề nghiêm trọng về trình điều khiển hoặc phần cứng. Hãy tạo điểm khôi phục và sao lưu dữ liệu quan trọng trước. Việc xóa phần mềm bảo mật hoặc tắt dịch vụ sẽ làm giảm mức bảo vệ hệ thống. Chỉ sử dụng phần mềm đáng tin cậy, chỉ tắt các dịch vụ bên thứ ba không thiết yếu và khôi phục cài đặt sau khi kiểm tra.</p></blockquote><h2 id="1-gỡ-phần-mềm-diệt-virus-gây-xung-đột" class="heading"><a href="#1-gỡ-phần-mềm-diệt-virus-gây-xung-đột" class="heading-anchor" aria-label="Link to 1. Gỡ phần mềm diệt virus gây xung đột">#</a>1. Gỡ phần mềm diệt virus gây xung đột</h2><p>Quét máy tính bằng <a href="https://antivirus-removal-tool.com/" class="link" target="_blank" rel="noopener noreferrer">Antivirus Removal Tool<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và gỡ các phần mềm diệt virus bên thứ ba gây xung đột, chẳng hạn như Kaspersky, Avast, Avira hoặc 360 Total Security.</p><h2 id="2-tắt-phần-mềm-chơi-game-gây-xung-đột" class="heading"><a href="#2-tắt-phần-mềm-chơi-game-gây-xung-đột" class="heading-anchor" aria-label="Link to 2. Tắt phần mềm chơi game gây xung đột">#</a>2. Tắt phần mềm chơi game gây xung đột</h2><p>Tắt hoàn toàn hoặc gỡ cài đặt phần mềm chơi game liên quan đến chuột và bàn phím, chẳng hạn như:</p><ul><li>Armory Crate Service (bắt buộc phải xóa)</li><li>Roblox (bắt buộc phải tắt)</li><li>Vanguard (nếu làm các bước trên vẫn bị BSOD thì gỡ)</li><li>Razer Cortex</li><li>Razer Synapse</li><li>Corsair RGB control</li></ul><h2 id="3-gỡ-các-bản-vá-windows-update-mới-nhất" class="heading"><a href="#3-gỡ-các-bản-vá-windows-update-mới-nhất" class="heading-anchor" aria-label="Link to 3. Gỡ các bản vá Windows Update mới nhất">#</a>3. Gỡ các bản vá Windows Update mới nhất</h2><p><img src="https://wibuz.gitbook.io/docs/~gitbook/image?url=https%3A%2F%2F2186736524-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8kVmtYXcpH6UvBGGvd0F%252Fuploads%252FxO2yNMBJaM2e7fEaRcGX%252Fimage.png%3Falt%3Dmedia%26token%3D23e1b0c4-4e5d-4852-9c48-9f092b2987c4&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=5acc136b33732b871b6eb2068d7f61c0&amp;sv=3" alt="Bước 3" loading="lazy" class="inline-image"/></p><ul><li><p>Một số update win mới có thể chưa được Unicore hỗ trợ, hãy tạm thời downgrade và chặn update windows để trải nghiệm dùng tool được ổn định.</p></li><li><p>Unicore chạy ổn định nhất ở Win 10 và winver build 24H2 trở xuống</p></li><li><p>CPU Intel hỗ trợ kém hơn AMD.</p></li></ul><h2 id="4-mở-system-configuration" class="heading"><a href="#4-mở-system-configuration" class="heading-anchor" aria-label="Link to 4. Mở System Configuration">#</a>4. Mở System Configuration</h2><p>Nhấn <strong>Win + R</strong>, nhập <code class="inline-code">msconfig</code> và nhấn <strong>Enter</strong>.</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FADe0AT21aKPegMAeZ91V%2Fimage.png?alt=media&amp;token=94b34fd6-d75f-471f-bed3-5461e16cb888" alt="Bước 4" loading="lazy" class="inline-image"/></p><h2 id="5-tắt-các-service-bên-thứ-ba-để-kiểm-tra" class="heading"><a href="#5-tắt-các-service-bên-thứ-ba-để-kiểm-tra" class="heading-anchor" aria-label="Link to 5. Tắt các service bên thứ ba để kiểm tra">#</a>5. Tắt các service bên thứ ba để kiểm tra</h2><p>Mở tab <strong>Services</strong>, đánh dấu <strong>Hide all Microsoft services</strong>, sau đó nhấp <strong>Disable all</strong>. Khởi động lại hệ thống sau khi tắt các dịch vụ không phải của Microsoft.</p><ul><li>Lưu ý cách này có thể làm một số app khác trên máy bạn không hoạt động được vì đã tắt service của nó.</li><li>Chỉ làm nếu như bạn thực sự hiểu rõ mình đang làm gì.</li></ul><p><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2F507893989-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FAUqQpgiGDHh8mkxv6WXu%252Fuploads%252F8RYJzayR6Ci0frDDElAS%252Fimage.png%3Falt%3Dmedia%26token%3De2818a59-1168-4523-9468-a011a5f0b955&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=7c21280b0da34617b682f066f82040e4&amp;sv=3" alt="Bước 5" loading="lazy" class="inline-image"/></p><p>Sau khi kiểm tra, quay lại <code class="inline-code">msconfig</code> và bật lại các service cần thiết. Nếu sự cố vẫn tiếp diễn, hãy liên hệ <a href="https://discord.gg/qenmhy3Y3t" class="link" target="_blank" rel="noopener noreferrer">Support<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="6-cài-lại-windows-trong-trường-hợp-hết-cứu" class="heading"><a href="#6-cài-lại-windows-trong-trường-hợp-hết-cứu" class="heading-anchor" aria-label="Link to 6. Cài lại Windows (trong trường hợp hết cứu)">#</a>6. Cài lại Windows (trong trường hợp hết cứu)</h2><ul><li>Nếu cài lại Win -&gt; hãy chọn các phiên bản win 24H2 trở về trước vì ổn định cao.</li></ul>
-
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-driver">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Loader không chạy khi khởi động</h1>
-        </header>
-        <div class="markdown">
-<p>Cách khắc phục sự cố khởi động loader</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FOkI2G42uzyPYEdAV2iEx%2Fimage.png?alt=media&amp;token=acdd2ee1-bdbf-4148-b8b7-f6900a90a61d" alt="Loader không chạy khi khởi động" loading="lazy" class="inline-image"/></p><p>Không có phản hồi từ loader / Loader biến mất khỏi Task Manager sau 3–4 giây. Trước tiên, hãy xác định vấn đề:</p><ul><li>Tiến trình <code class="inline-code">launcher.exe</code> biến mất khỏi Task Manager sau 3–4 giây.</li><li>Tiến trình <code class="inline-code">launcher.exe</code> bị kẹt trong Task Manager; loader không mở.</li></ul><blockquote><p><strong>Cảnh báo bảo mật:</strong> Việc dùng VPN và thay đổi tường lửa có thể ảnh hưởng đến quyền riêng tư và bảo mật hệ thống. Chỉ sử dụng phần mềm đáng tin cậy. Tránh tắt bảo vệ tường lửa vĩnh viễn; ưu tiên chỉ cho phép các ứng dụng đáng tin cậy đi qua Windows Firewall, sau đó khôi phục bảo vệ khi kiểm tra xong.</p></blockquote><h2 id="tiến-trình-biến-mất-khỏi-task-manager-sau-34-giây" class="heading"><a href="#tiến-trình-biến-mất-khỏi-task-manager-sau-34-giây" class="heading-anchor" aria-label="Link to Tiến trình biến mất khỏi Task Manager sau 3–4 giây">#</a>Tiến trình biến mất khỏi Task Manager sau 3–4 giây</h2><ol><li>Khởi động lại PC và thử lại. Trong một số ít trường hợp, khởi động lại đơn giản sẽ khắc phục sự cố.</li><li>Cài đặt thư viện DirectX mới nhất: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35" class="link" target="_blank" rel="noopener noreferrer">Tải DirectX<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li><li>Dùng VPN đáng tin cậy trước khi khởi chạy loader.</li><li>Nếu nghi ngờ tường lửa đang chặn, hãy làm theo <a href="https://remontka.pro/disable-firewall-windows/" class="link" target="_blank" rel="noopener noreferrer">hướng dẫn khắc phục tường lửa<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và dùng tùy chọn ít ảnh hưởng nhất hiện có.</li></ol><h2 id="tiến-trình-bị-kẹt-trong-task-manager-trong-thời-gian-dài" class="heading"><a href="#tiến-trình-bị-kẹt-trong-task-manager-trong-thời-gian-dài" class="heading-anchor" aria-label="Link to Tiến trình bị kẹt trong Task Manager trong thời gian dài">#</a>Tiến trình bị kẹt trong Task Manager trong thời gian dài</h2><ol><li>Nếu tiến trình có vẻ bị treo trong Task Manager, hãy để yên 5–10 phút. Đây là hiện tượng bình thường và thường do tải tệp từ máy chủ chậm.</li><li>Để tăng tốc quá trình tải xuống, hãy dùng VPN đáng tin cậy hoặc làm theo hướng dẫn bằng video để chuyển máy chủ.</li><li>Nếu nghi ngờ tường lửa đang chặn, hãy làm theo <a href="https://remontka.pro/disable-firewall-windows/" class="link" target="_blank" rel="noopener noreferrer">hướng dẫn khắc phục tường lửa<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và dùng tùy chọn ít ảnh hưởng nhất hiện có.</li></ol><p>Đôi khi việc khởi động chế độ chẩn đoán cũng mất thời gian. Không đóng hoặc khởi động lại loader — mỗi lần khởi động lại sẽ làm gián đoạn quá trình tải và bắt đầu lại từ đầu.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Unable to install exploit driver</h2><p>Cách khắc phục lỗi cài đặt trình điều khiển</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FiipADacnYy8maVM0MKLW%2Fimage.png?alt=media&amp;token=69daf320-7435-4d5d-929e-1e874b05a056" alt="Unable to install exploit driver" loading="lazy" class="inline-image"/></p><p>Lỗi <strong>Unable to install exploit driver</strong> có thể xảy ra khi Exploit Protection của Windows chặn thao tác của trình điều khiển cần thiết.</p><blockquote><p><strong>Cảnh báo bảo mật:</strong> Exploit Protection giúp bảo vệ Windows khỏi mã độc. Không tắt tính năng này trừ khi bạn tin tưởng phần mềm và hiểu rõ rủi ro. Ưu tiên chỉ thay đổi cài đặt của một chương trình cụ thể, nếu được hỗ trợ, và khôi phục bảo vệ sau khi khắc phục sự cố.</p></blockquote><h2 id="1-mở-exploit-protection" class="heading"><a href="#1-mở-exploit-protection" class="heading-anchor" aria-label="Link to 1. Mở Exploit Protection">#</a>1. Mở Exploit Protection</h2><p>Mở <strong>Windows Security</strong> và truy cập <strong>Exploit protection</strong>.</p><h2 id="2-xem-lại-cài-đặt-exploit-protection" class="heading"><a href="#2-xem-lại-cài-đặt-exploit-protection" class="heading-anchor" aria-label="Link to 2. Xem lại cài đặt Exploit Protection">#</a>2. Xem lại cài đặt Exploit Protection</h2><p>Xem lại các cài đặt đang chặn ứng dụng hoặc trình điều khiển đáng tin cậy. Tránh tắt bảo vệ toàn hệ thống khi có thể thêm ngoại lệ cho từng ứng dụng.</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FJ2tH4aj9UiGp7lM2KO9K%2Fimage.png?alt=media&amp;token=76893089-64c9-402a-80a0-b7a1eeb2d893" alt="Bước 2" loading="lazy" class="inline-image"/></p><p>Khởi động lại Windows và thử lại. Bật lại mọi biện pháp bảo vệ đã tạm tắt trong quá trình khắc phục sự cố.</p></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-connection">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">FATAL ERROR! Connection error</h1>
-        </header>
-        <div class="markdown">
-<p>Cách khắc phục lỗi kết nối</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2F1Eg5Fu7GhFbL2qHpKvdP%2Fimage.png?alt=media&amp;token=1803492d-280c-4dde-8ed3-2b036a89abb2" alt="FATAL ERROR! Connection error" loading="lazy" class="inline-image"/></p><p>Sự cố có thể xảy ra nếu cả tám máy chủ đều không xử lý được yêu cầu hoặc nếu thời gian trên Windows không được đồng bộ.</p><h3 id="lỗi-này-do-sai-lệch-thời-gian-của-máy-chỉ-cần-đồng-bộ-lại-thời-gian" class="heading"><a href="#lỗi-này-do-sai-lệch-thời-gian-của-máy-chỉ-cần-đồng-bộ-lại-thời-gian" class="heading-anchor" aria-label="Link to Lỗi này do sai lệch thời gian của máy, chỉ cần đồng bộ lại thời gian:">#</a>Lỗi này do sai lệch thời gian của máy, chỉ cần đồng bộ lại thời gian:</h3><p><img src="https://wibuz.gitbook.io/docs/~gitbook/image?url=https%3A%2F%2F2186736524-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8kVmtYXcpH6UvBGGvd0F%252Fuploads%252FdQgQIaFwlsJCwPjGdrGI%252Fimage.png%3Falt%3Dmedia%26token%3D150ca9c6-3532-4702-82e0-f6cde80f1be5&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=afd30fdc115fd726b826c2d7bba09a6e&amp;sv=3" alt="Sync time" loading="lazy" class="inline-image"/></p><p>Nếu sự cố vẫn tiếp diễn sau khi đồng bộ thời gian, hãy thử kết nối qua một dịch vụ VPN đáng tin cậy. Kết nối internet hoặc nhà mạng của bạn có thể đang chặn truy cập đến máy chủ.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Internal Server Error</h2><p>Cách khắc phục lỗi máy chủ</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FDqzs656lHryTScKn09Xz%2Fimage.png?alt=media&amp;token=1a4353f4-6058-4923-b172-bacddeceb09c" alt="Internal Server Error" loading="lazy" class="inline-image"/></p><p>Sự cố có thể xảy ra do lỗi tạm thời từ phía máy chủ.</p><blockquote><p><strong>Cảnh báo bảo mật:</strong> Không tắt tường lửa vĩnh viễn. Hãy dùng VPN đáng tin cậy và chỉ cho phép các ứng dụng đáng tin cậy đi qua Windows Firewall khi có thể. Khôi phục bảo vệ sau khi kiểm tra.</p></blockquote><h2 id="1-thử-kết-nối-vpn" class="heading"><a href="#1-thử-kết-nối-vpn" class="heading-anchor" aria-label="Link to 1. Thử kết nối VPN">#</a>1. Thử kết nối VPN</h2><p>Thử dùng kết nối VPN đáng tin cậy để kiểm tra xem sự cố có được giải quyết không.</p><h2 id="2-kiểm-tra-quyền-truy-cập-tường-lửa" class="heading"><a href="#2-kiểm-tra-quyền-truy-cập-tường-lửa" class="heading-anchor" aria-label="Link to 2. Kiểm tra quyền truy cập tường lửa">#</a>2. Kiểm tra quyền truy cập tường lửa</h2><p>Nếu nghi ngờ tường lửa đang chặn, hãy cho phép loader đáng tin cậy đi qua Windows Firewall hoặc tạm tắt bảo vệ tường lửa chỉ để kiểm tra. Bật lại ngay sau đó.</p><h2 id="3-liên-hệ-hỗ-trợ" class="heading"><a href="#3-liên-hệ-hỗ-trợ" class="heading-anchor" aria-label="Link to 3. Liên hệ hỗ trợ">#</a>3. Liên hệ hỗ trợ</h2><p>Nếu sự cố vẫn tiếp diễn, hãy liên hệ <a href="https://discord.gg/qenmhy3Y3t" class="link" target="_blank" rel="noopener noreferrer">Support<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p></div>
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-hwid">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Hardware Mismatch</h1>
-        </header>
-        <div class="markdown">
-<p>Lỗi không khớp Hardware ID</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FzChzIiEOlwOJFpOY2Sbx%2Fimage.png?alt=media&amp;token=3475d6d5-f8ed-40e1-bffe-60ce7d70f9e6" alt="Hardware Mismatch" loading="lazy" class="inline-image"/></p><p>Khi khởi chạy loader từ một thiết bị khác, cần đặt lại HWID (Hardware ID).</p><p>Để đặt lại HWID, hãy vào server <a href="https://discord.gg/qenmhy3Y3t" class="link" target="_blank" rel="noopener noreferrer">Discord Unicore<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tạo ticket support Reset HWID.</p>
-
-        </div>
-      </div>
-        </section>
-
-          </div><!-- /.docs-article-view -->
-
-          <!-- BẢNG MỤC LỤC BÊN PHẢI (ON THIS PAGE / TOC) -->
-          <aside class="docs-toc-container" id="docsTocContainer" aria-label="Mục lục bài viết">
-            <div class="docs-toc-sticky">
-              <div class="docs-toc-header">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="12" x2="16" y2="12"></line>
-                  <line x1="3" y1="18" x2="20" y2="18"></line>
-                </svg>
-                <span>On this page</span>
-              </div>
-              <nav class="docs-toc-nav" aria-label="Mục lục nội dung">
-                <ul class="docs-toc-list" id="docsTocList">
-                  <!-- Tự động sinh danh sách các bước theo bài viết được chọn -->
-                </ul>
-              </nav>
-            </div>
-          </aside>
-        </div><!-- /.docs-content-body-wrap -->
-
-      </section>
+      </article>
     </div>
   </main>
 
+  <!-- Mobile Navigation Drawer -->
   <div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true"></div>
   <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Menu điều hướng di động" aria-hidden="true">
     <div class="mobile-drawer-header">
@@ -975,15 +255,19 @@
     </div>
   </aside>
 
+  <!-- Chân trang (Footer) -->
   <footer>
     <img src="src/assets/images/icons/primogem.png" alt="Nguyên Thạch" class="primogem small" width="26" height="26">
     <b>Tundenxin</b>
     <span>•</span>
-    <span>Tài Liệu Hướng Dẫn</span>
+    <span>Kho File TP Map, Config &amp; Script</span>
+    <span>•</span>
+    <span>Cùng bạn khám phá thế giới Teyvat</span>
     <span>•</span>
     <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
+  <!-- Floating Support Widget (Nút Hỗ Trợ bấm bung Kênh Telegram & Server Discord) -->
   <div class="floating-support-widget" id="floatingSupportWidget">
     <div class="floating-support-menu" id="floatingSupportMenu" aria-hidden="true">
       <a href="https://t.me/BoxToolGS_VN" target="_blank" rel="noopener" class="support-item-btn telegram" aria-label="Kênh Telegram" title="Tham gia Kênh Telegram">
@@ -1023,6 +307,6 @@
 
   <script src="src/scripts/shared/snow.js" defer></script>
   <script src="src/scripts/shared/nav.js" defer></script>
-  <script src="src/scripts/pages/guide.js?v=9.13" defer></script>
+  <script src="src/scripts/pages/docs.js?v=8.2" defer></script>
 </body>
 </html>
