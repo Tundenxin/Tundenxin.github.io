@@ -23,8 +23,8 @@ function setupCopyBtn(btnId, link, feedbackText = '✓ Đã chép link!') {
   });
 }
 function initDocsCopy() {
-  setupCopyBtn('copyShikaBtn', 'https://www.mediafire.com/file/agltz9ar19zb9rs/Shika-Tundenxin.zip/file');
-  setupCopyBtn('copyUnicoreBtn', 'https://www.mediafire.com/file/h1pqgd4skv5nd67/Unicore-Lotus-Shibal.zip/file');
+  setupCopyBtn('copyShikaBtn', 'https://gofile.io/d/2tPMUx67');
+  setupCopyBtn('copyUnicoreBtn', 'https://gofile.io/d/uCpNZVbJ');
   setupCopyBtn('copyDmshbyBtn', 'https://www.mediafire.com/file/45jkc9yokxtia5f/Dmshby-tundenxin.zip/file');
 }
 
