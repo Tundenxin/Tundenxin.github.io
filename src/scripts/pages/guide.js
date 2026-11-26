@@ -51,24 +51,15 @@
   // ------------------------------------------------------------------------
   function scrollToElement(targetEl) {
     if (!targetEl) return;
-    const isDesktop = window.innerWidth > 992;
-    if (!isDesktop) {
-      const topOffset = targetEl.getBoundingClientRect().top + window.pageYOffset - 85;
-      window.scrollTo({
-        top: Math.max(0, topOffset),
+    const scrollEl = document.getElementById('docsArticleView') || mainContent;
+    if (scrollEl) {
+      const containerRect = scrollEl.getBoundingClientRect();
+      const targetRect = targetEl.getBoundingClientRect();
+      const relativeTop = targetRect.top - containerRect.top + scrollEl.scrollTop - 14;
+      scrollEl.scrollTo({
+        top: Math.max(0, relativeTop),
         behavior: 'smooth'
       });
-    } else {
-      const scrollEl = document.getElementById('docsArticleView') || mainContent;
-      if (scrollEl) {
-        const containerRect = scrollEl.getBoundingClientRect();
-        const targetRect = targetEl.getBoundingClientRect();
-        const relativeTop = targetRect.top - containerRect.top + scrollEl.scrollTop - 14;
-        scrollEl.scrollTo({
-          top: Math.max(0, relativeTop),
-          behavior: 'smooth'
-        });
-      }
     }
   }
 
@@ -348,21 +339,12 @@
     // 6. Đóng mobile drawer nếu đang mở
     closeMobileDrawer();
 
-    // 7. Cuộn lên đầu bài viết
+    // 7. Cuộn lên đầu bài viết bên trong khung tài liệu cố định
     const scrollEl = document.getElementById('docsArticleView') || mainContent;
     if (scrollEl) {
-      if (window.innerWidth <= 992) {
-        const topOffset = scrollEl.getBoundingClientRect().top + window.pageYOffset - 85;
-        window.scrollTo({
-          top: Math.max(0, topOffset),
-          behavior: 'smooth'
-        });
-      } else {
-        // Trên Desktop: Cuộn mượt nội dung bài viết về đầu, không làm trượt TOC
-        scrollEl.scrollTop = 0;
-        if (mainContent && mainContent !== scrollEl) {
-          mainContent.scrollTop = 0;
-        }
+      scrollEl.scrollTop = 0;
+      if (mainContent && mainContent !== scrollEl) {
+        mainContent.scrollTop = 0;
       }
       handleScrollSpy();
     }
@@ -404,8 +386,38 @@
   document.querySelectorAll('.js-switch-to-fix').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const fixBtn = document.querySelector('.docs-nav-btn[data-target="panel-unicore-fix"]');
-      switchDoc('panel-unicore-fix', fixBtn);
+      const fixBtn = document.querySelector('.docs-nav-btn[data-target="panel-trouble-overview"]');
+      switchDoc('panel-trouble-overview', fixBtn);
+    });
+  });
+
+  // Cuộn mượt cho các liên kết neo nội bộ trong cùng bài viết (vd: #phan-2)
+  document.querySelectorAll('.js-panel-anchor').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = (anchor.getAttribute('href') || '').replace('#', '');
+      const el = targetId ? document.getElementById(targetId) : null;
+      if (el) {
+        e.preventDefault();
+        scrollToElement(el);
+      }
+    });
+  });
+
+  // Hỗ trợ nút Copy trong khối lệnh (.code-block .copy-button)
+  document.querySelectorAll('.code-block .copy-button').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const block = btn.closest('.code-block');
+      const codeEl = block ? block.querySelector('pre code, pre') : null;
+      const text = codeEl ? codeEl.textContent.trim() : '';
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        const origHtml = btn.innerHTML;
+        btn.textContent = '✓ Đã chép';
+        setTimeout(() => { btn.innerHTML = origHtml; }, 1600);
+      } catch (err) {
+        // Fallback silently if clipboard permission is unavailable
+      }
     });
   });
 

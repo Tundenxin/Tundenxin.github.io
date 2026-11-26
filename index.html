@@ -15,7 +15,7 @@
     (function () { try { if (localStorage.getItem('tundenxin_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {} })();
   </script>
   <link rel="stylesheet" href="src/styles/style.css?v=8.1">
-  <link rel="stylesheet" href="src/styles/theme-light.css?v=2.2">
+  <link rel="stylesheet" href="src/styles/theme-light.css?v=3.1">
   <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
@@ -52,13 +52,12 @@
     <nav class="main-nav">
       <a class="active" href="index.html"><span class="nav-emoji" aria-hidden="true">🏠</span> <span>Trang chủ</span></a>
       <a href="store.html"><span class="nav-emoji" aria-hidden="true">🛒</span> <span>Kho Tool Game</span></a>
-      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Công cụ</span></a>
+      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Máy Ảo</span></a>
       <a href="guide.html"><span class="nav-emoji" aria-hidden="true">📖</span> <span>Hướng dẫn</span></a>
       <a href="docs.html"><span class="nav-emoji" aria-hidden="true">📁</span> <span>File TP</span></a>
     </nav>
 
     <div class="nav-actions">
-      <a href="store.html" class="nav-cta-pill">Xem ngay</a>
       <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Chuyển sang giao diện Sáng" aria-pressed="true" title="Chuyển sang giao diện Sáng (Kiểu 5)">
         <span class="theme-toggle-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -99,29 +98,8 @@
           </div>
         </div>
 
-        <!-- FEATURED 3 TOOL CARDS (STYLE 5 LIGHT MODE SHOWCASE) -->
+        <!-- FEATURED 3 TOOL CARDS (SHIKA TRÁI • UNICORE GIỮA • KURO PHẢI) -->
         <div class="featured-tools-grid" aria-label="Tool nổi bật">
-          <article class="featured-tool-card">
-            <div class="featured-card-top">
-              <div class="featured-icon-wrap">
-                <img src="src/assets/images/tools/tool-unicore.png" alt="Unicore" onerror="this.src='src/assets/images/icons/genshin-icon.png'">
-              </div>
-              <div class="featured-card-head-text">
-                <h3>Unicore</h3>
-                <span class="featured-status-badge safe">An toàn / Updated</span>
-              </div>
-            </div>
-            <div class="featured-price-row">
-              <span class="featured-price-pill">Từ 120.000đ</span>
-            </div>
-            <ul class="featured-feature-list">
-              <li>Hỗ trợ đa dạng game PC</li>
-              <li>Cài đặt nhanh chóng, ổn định</li>
-              <li>Hỗ trợ kỹ thuật 24/7</li>
-            </ul>
-            <a href="store.html#tools" class="featured-cta-btn">Mua ngay</a>
-          </article>
-
           <article class="featured-tool-card">
             <div class="featured-card-top">
               <div class="featured-icon-wrap">
@@ -129,17 +107,54 @@
               </div>
               <div class="featured-card-head-text">
                 <h3>Shika</h3>
-                <span class="featured-status-badge safe">An toàn / Updated</span>
+                <span class="featured-status-badge safe">Updated</span>
               </div>
             </div>
-            <div class="featured-price-row">
-              <span class="featured-price-pill">Từ 210.000đ</span>
+            <div class="featured-pricing-grid" aria-label="Bảng giá Shika">
+              <div class="featured-mini-price">
+                <span>Alpha 7 Ngày</span>
+                <strong>210.000đ</strong>
+              </div>
+              <div class="featured-mini-price is-highlight">
+                <span>Alpha 30 Ngày</span>
+                <strong>470.000đ</strong>
+              </div>
+              <div class="featured-mini-price is-highlight">
+                <span>Beta Vĩnh Viễn</span>
+                <strong>470.000đ</strong>
+              </div>
+              <div class="featured-mini-price is-highlight">
+                <span>Alpha Vĩnh Viễn</span>
+                <strong>2.600.000đ</strong>
+              </div>
             </div>
-            <ul class="featured-feature-list">
-              <li>Tối ưu hiệu năng cao</li>
-              <li>Giao diện dễ sử dụng</li>
-              <li>Cập nhật tự động</li>
-            </ul>
+            <a href="store.html#tools" class="featured-cta-btn">Mua ngay</a>
+          </article>
+
+          <article class="featured-tool-card">
+            <div class="featured-card-top">
+              <div class="featured-icon-wrap">
+                <img src="src/assets/images/tools/tool-unicore.png" alt="Unicore" onerror="this.src='src/assets/images/icons/genshin-icon.png'">
+              </div>
+              <div class="featured-card-head-text">
+                <h3>Unicore</h3>
+                <span class="featured-status-badge safe">Updated</span>
+              </div>
+            </div>
+            <div class="featured-pricing-grid" aria-label="Bảng giá Unicore">
+              <div class="featured-mini-price">
+                <span>1 Ngày</span>
+                <strong>120.000đ</strong>
+              </div>
+              <div class="featured-mini-price">
+                <span>7 Ngày</span>
+                <strong>225.000đ</strong>
+              </div>
+              <div class="featured-mini-price is-highlight is-wide">
+                <span>30 Ngày</span>
+                <strong>500.000đ</strong>
+              </div>
+            </div>
             <a href="store.html#tools" class="featured-cta-btn">Mua ngay</a>
           </article>
 
@@ -150,7 +165,7 @@
               </div>
               <div class="featured-card-head-text">
                 <h3>Kuro</h3>
-                <span class="featured-status-badge safe">An toàn / Updated</span>
+                <span class="featured-status-badge safe">Updated</span>
               </div>
             </div>
             <div class="featured-price-row">
@@ -159,7 +174,7 @@
             <ul class="featured-feature-list">
               <li>Tool Genshin Mobile miễn phí</li>
               <li>Hoạt động ổn định v2.7.1</li>
-              <li>Có sẵn kho File TP hỗ trợ</li>
+              <li>Nhiều tính năng để trải nghiệm</li>
             </ul>
             <a href="store.html#tools" class="featured-cta-btn">Xem ngay</a>
           </article>
@@ -168,7 +183,7 @@
         <!-- CTA BUTTONS -->
         <div class="shika-hero-actions">
           <a href="store.html" class="shika-btn-store" title="Đến Kho Tool Game">
-            <span>Mua Sản Phẩm</span>
+            <span>Xem Sản Phẩm</span>
             <svg class="shika-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -233,7 +248,7 @@
           </a>
           <a class="drawer-nav-item" href="tools.html">
             <span class="drawer-item-icon">🛠️</span>
-            <span class="drawer-item-text">Công cụ</span>
+            <span class="drawer-item-text">Máy Ảo</span>
           </a>
           <a class="drawer-nav-item" href="guide.html">
             <span class="drawer-item-icon">📖</span>
@@ -273,9 +288,6 @@
     <span>Cùng bạn khám phá thế giới Teyvat</span>
     <span>•</span>
     <button type="button" class="footer-notice-btn" id="openNoticeBtn">⚠ Cảnh báo Rủi ro</button>
-    <span>•</span>
-    <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết:
-      Bật</button>
   </footer>
 
   <!-- Floating Support Widget (Nút Hỗ Trợ bấm bung Kênh Telegram & Server Discord) -->
@@ -324,7 +336,6 @@
   </div>
 
   <script src="src/scripts/shared/theme.js?v=2" defer></script>
-  <script src="src/scripts/shared/snow.js" defer></script>
   <script src="src/scripts/shared/nav.js" defer></script>
 </body>
 

@@ -642,11 +642,15 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   body.guide-page {
-    overflow-y: auto !important;
-    height: auto !important;
-    min-height: 100dvh !important;
-    display: block !important;
+    overflow: hidden !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
     padding-top: 64px !important;
+    box-sizing: border-box !important;
   }
 
   body.guide-page .nav {
@@ -655,17 +659,30 @@
   }
 
   body.guide-page footer {
-    display: flex !important;
+    display: none !important;
   }
 
   .docs-portal-wrapper {
+    flex: 1 1 0%;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
     margin-top: 0;
-    padding: 10px 10px 30px;
+    padding: 8px 10px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .docs-portal-layout {
+    flex: 1 1 0%;
+    min-height: 0;
+    height: 100%;
+    display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
+    overflow: hidden;
   }
 
   .docs-mobile-drawer-btn {
@@ -699,7 +716,9 @@
     left: -320px;
     width: 290px;
     height: 100vh;
+    height: 100dvh;
     max-height: 100vh;
+    max-height: 100dvh;
     border-radius: 0;
     border-right: 1px solid rgba(255, 255, 255, 0.12);
     border-top: none;
@@ -714,26 +733,50 @@
   }
 
   .docs-main-content {
-    height: auto;
-    max-height: none;
-    overflow: visible;
-    min-height: auto;
-    padding: 18px 16px 30px;
+    flex: 1 1 0%;
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    padding: 14px 14px 0;
     border-radius: 12px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .docs-content-topbar {
+    flex-shrink: 0;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    gap: 8px;
   }
 
   .docs-content-body-wrap {
-    display: block;
-    min-height: auto;
-    overflow: visible;
+    flex: 1 1 0%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .docs-article-view {
-    height: auto;
-    overflow: visible;
-    padding-right: 0;
-    padding-bottom: 0;
+    flex: 1 1 0%;
+    min-height: 0;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-right: 4px;
+    padding-bottom: 80px;
+  }
+
+  .docs-article-view::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .docs-article-view::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
   }
 
   .docs-welcome-header h1 {

@@ -13,8 +13,8 @@
     (function () { try { if (localStorage.getItem('tundenxin_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {} })();
   </script>
   <link rel="stylesheet" href="src/styles/style.css?v=8.6">
-  <link rel="stylesheet" href="src/styles/docs-portal.css?v=3.3">
-  <link rel="stylesheet" href="src/styles/theme-light.css?v=2.2">
+  <link rel="stylesheet" href="src/styles/docs-portal.css?v=3.4">
+  <link rel="stylesheet" href="src/styles/theme-light.css?v=3.2">
   <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
@@ -49,13 +49,12 @@
     <nav class="main-nav">
       <a href="index.html"><span class="nav-emoji" aria-hidden="true">🏠</span> <span>Trang chủ</span></a>
       <a href="store.html"><span class="nav-emoji" aria-hidden="true">🛒</span> <span>Kho Tool Game</span></a>
-      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Công cụ</span></a>
+      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Máy Ảo</span></a>
       <a class="active" href="guide.html"><span class="nav-emoji" aria-hidden="true">📖</span> <span>Hướng dẫn</span></a>
       <a href="docs.html"><span class="nav-emoji" aria-hidden="true">📁</span> <span>File TP</span></a>
     </nav>
 
     <div class="nav-actions">
-      <a href="store.html" class="nav-cta-pill">Xem ngay</a>
       <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Chuyển sang giao diện Sáng" aria-pressed="true" title="Chuyển sang giao diện Sáng (Kiểu 5)">
         <span class="theme-toggle-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -239,7 +238,7 @@
           </div>
         </div>
 
-        <!-- 7. Khắc phục sự cố (Troubleshooting) -->
+        <!-- 7. Khắc phục sự cố (FIX ERRORS — gachatool.com/docs) -->
         <div class="docs-nav-group is-collapsible is-collapsed" data-group="troubleshooting">
           <div class="docs-group-label" role="button" tabindex="0" aria-expanded="false">
             <span class="docs-group-label-text">🛠️ Khắc phục sự cố</span>
@@ -252,36 +251,56 @@
           <div class="docs-group-items">
             <button type="button" class="docs-nav-btn" data-target="panel-trouble-overview" data-tool="troubleshooting">
               <span class="docs-nav-icon-text">🔧</span>
-              <span class="docs-nav-text">Tổng quan sự cố</span>
+              <span class="docs-nav-text">Tổng quan sự cố (Fix Errors)</span>
             </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-antivirus" data-tool="antivirus-detection">
-              <span class="docs-nav-icon-text">🛡️</span>
-              <span class="docs-nav-text">Bị Antivirus gắn cờ</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-menu" data-tool="f2-not-responding">
-              <span class="docs-nav-icon-text">⌨️</span>
-              <span class="docs-nav-text">Không hiện menu tool (F1/F2)</span>
-              <span class="docs-badge badge-fix">FIX</span>
-            </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-bsod" data-tool="blue-screen-bsod">
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-bsod" data-tool="man-xanh-crash">
               <span class="docs-nav-icon-text">💻</span>
-              <span class="docs-nav-text">Màn hình xanh / BSOD</span>
+              <span class="docs-nav-text">Màn xanh / Màn đen / Crash / Lag / Restart</span>
               <span class="docs-badge badge-fix">FIX</span>
             </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-driver" data-tool="loader-startup-issues">
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-driver" data-tool="file-khong-chay">
               <span class="docs-nav-icon-text">⚙️</span>
-              <span class="docs-nav-text">Loader không chạy / Driver</span>
+              <span class="docs-nav-text">File không chạy khi khởi động</span>
               <span class="docs-badge badge-fix">FIX</span>
             </button>
-            <button type="button" class="docs-nav-btn" data-target="panel-trouble-connection" data-tool="connection-error">
-              <span class="docs-nav-icon-text">🌐</span>
-              <span class="docs-nav-text">FATAL ERROR / Lỗi mạng</span>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-menu" data-tool="khong-hien-thi-menu">
+              <span class="docs-nav-icon-text">⌨️</span>
+              <span class="docs-nav-text">Không hiển thị Menu</span>
+              <span class="docs-badge badge-fix">FIX</span>
+            </button>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-exploit" data-tool="inpoutx64-driver">
+              <span class="docs-nav-icon-text">🔌</span>
+              <span class="docs-nav-text">inpoutx64 / Unable to install exploit driver</span>
               <span class="docs-badge badge-fix">FIX</span>
             </button>
             <button type="button" class="docs-nav-btn" data-target="panel-trouble-hwid" data-tool="hardware-mismatch">
               <span class="docs-nav-icon-text">🔑</span>
-              <span class="docs-nav-text">Hardware Mismatch (Lệch HWID)</span>
+              <span class="docs-nav-text">Hardware mismatch</span>
+              <span class="docs-badge badge-fix">FIX</span>
+            </button>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-hyperv" data-tool="tat-hyper-v-vbs">
+              <span class="docs-nav-icon-text">🧩</span>
+              <span class="docs-nav-text">Tắt Hyper-V và VBS</span>
+              <span class="docs-badge badge-fix">FIX</span>
+            </button>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-defender" data-tool="vo-hieu-hoa-window-security">
+              <span class="docs-nav-icon-text">🛡️</span>
+              <span class="docs-nav-text">Vô hiệu hóa Window Security</span>
+              <span class="docs-badge badge-fix">FIX</span>
+            </button>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-connection" data-tool="connection-error">
+              <span class="docs-nav-icon-text">🌐</span>
+              <span class="docs-nav-text">FATAL ERROR! Connection error</span>
+              <span class="docs-badge badge-fix">FIX</span>
+            </button>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-win10" data-tool="ha-windows-10">
+              <span class="docs-nav-icon-text">🪟</span>
+              <span class="docs-nav-text">Hạ Windows 10</span>
+              <span class="docs-badge badge-fix">FIX</span>
+            </button>
+            <button type="button" class="docs-nav-btn" data-target="panel-trouble-kva" data-tool="loi-kva-shadow">
+              <span class="docs-nav-icon-text">⚡</span>
+              <span class="docs-nav-text">Lỗi KVA Shadow (KPTI)</span>
               <span class="docs-badge badge-fix">FIX</span>
             </button>
           </div>
@@ -327,7 +346,7 @@
               <div class="doc-step-content">
                 <h3>1. Bị Windows Defender hoặc Trình diệt Virus chặn không cho tải / mở tool?</h3>
                 <p>Do tool can thiệp vào bộ nhớ game để đọc tọa độ và mở menu nên Windows Defender sẽ nhận diện nhầm là phần mềm lạ (False Positive).</p>
-                <a href="#antivirus-detection" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-antivirus" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem chi tiết cách thêm Exclusion</a>
+                <a href="#vo-hieu-hoa-window-security" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-defender" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem hướng dẫn Vô hiệu hóa Window Security</a>
               </div>
             </div>
             <div class="doc-step-card">
@@ -335,7 +354,7 @@
               <div class="doc-step-content">
                 <h3>2. Không hiện Menu Tool khi vào game (Bấm F1 / F2 / Insert không phản hồi)?</h3>
                 <p>Có 4 nguyên nhân: Quyền Administrator, chế độ hiển thị game chưa ở Borderless/Windowed, tính năng Smooth Motion NVIDIA đang bật, hoặc app khác chiếm Overlay.</p>
-                <a href="#f2-not-responding" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-menu" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem 4 bước sửa lỗi Menu không hiện</a>
+                <a href="#khong-hien-thi-menu" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-menu" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem các bước sửa lỗi Không hiển thị Menu</a>
               </div>
             </div>
             <div class="doc-step-card">
@@ -343,7 +362,7 @@
               <div class="doc-step-content">
                 <h3>3. Màn hình xanh BSOD hoặc máy tính bị treo khi vừa bật tool?</h3>
                 <p>Thường do xung đột driver bảo mật với Vanguard, Armory Crate, Roblox hoặc antivirus bên thứ 3.</p>
-                <a href="#blue-screen-bsod" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-bsod" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem cách khắc phục màn hình xanh BSOD</a>
+                <a href="#man-xanh-crash" class="doc-hotkey-badge js-quick-doc-link" data-target="panel-trouble-bsod" style="margin-top:8px;display:inline-block;color:#38bdf8;border-color:#38bdf8;">👉 Xem cách khắc phục Màn xanh / Màn đen / Crash</a>
               </div>
             </div>
           </div>
@@ -786,128 +805,447 @@
         </section>
 
         <!-- ------------------------------------------------------------------
-             PANELS TROUBLESHOOTING (EXACT WIBUZ CONTENT)
+             PANELS TROUBLESHOOTING (FIX ERRORS — gachatool.com/docs)
              ------------------------------------------------------------------ -->
         <div class="docs-article-panel" id="panel-trouble-overview">
           <div class="docs-gitbook-page">
             <header class="docs-gitbook-header">
-              <div class="docs-gitbook-crumbs">Troubleshooting</div>
-              <h1 class="docs-gitbook-title">Khắc phục sự cố</h1>
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố</div>
+              <h1 class="docs-gitbook-title">FIX ERRORS</h1>
             </header>
             <div class="markdown">
-              <p>Bạn có thể tìm thấy một số lỗi thường gặp và cách khắc phục bên dưới.</p>
+              <p>Tổng hợp 10 hướng dẫn sửa lỗi thường gặp nhất khi cài đặt và sử dụng tool.</p>
               <div class="docs-troubleshoot-grid">
-                <a href="#antivirus-detection" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-antivirus">
-                  <div class="docs-troubleshoot-icon">🛡️</div>
-                  <div class="docs-troubleshoot-title">Bị Phần Mềm Diệt Virus Gắn Cờ</div>
-                  <p class="docs-troubleshoot-desc">Giải thích vì sao chương trình bị antivirus gắn cờ và cách loại trừ.</p>
-                </a>
-                <a href="#f2-not-responding" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-menu">
-                  <div class="docs-troubleshoot-icon">⌨️</div>
-                  <div class="docs-troubleshoot-title">Không Hiển Thị Menu Tool (F1/F2)</div>
-                  <p class="docs-troubleshoot-desc">Core Isolation, độ phân giải Borderless, Smooth Motion NVIDIA và Overlay.</p>
-                </a>
-                <a href="#blue-screen-bsod" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-bsod">
+                <a href="#man-xanh-crash" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-bsod">
                   <div class="docs-troubleshoot-icon">💻</div>
-                  <div class="docs-troubleshoot-title">Màn Hình Xanh (BSOD) / Treo Máy</div>
-                  <p class="docs-troubleshoot-desc">Xử lý xung đột driver bảo mật với Vanguard, Armory Crate, Roblox hoặc antivirus.</p>
+                  <div class="docs-troubleshoot-title">Màn xanh / Màn đen / Crash / Lag / Restart</div>
+                  <p class="docs-troubleshoot-desc">Gỡ antivirus, phần mềm xung đột, Clean Services, xóa bản cập nhật Windows 25H2.</p>
                 </a>
-                <a href="#loader-startup-issues" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-driver">
+                <a href="#file-khong-chay" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-driver">
                   <div class="docs-troubleshoot-icon">⚙️</div>
-                  <div class="docs-troubleshoot-title">Loader Không Chạy / Lỗi Driver</div>
-                  <p class="docs-troubleshoot-desc">Quyền Administrator, Visual C++ All-in-One và exploit driver installation.</p>
+                  <div class="docs-troubleshoot-title">File không chạy khi khởi động</div>
+                  <p class="docs-troubleshoot-desc">Cài DX12, .NET Framework, bật 1.1.1.1 và hướng dẫn đổi server bằng video.</p>
                 </a>
-                <a href="#connection-error" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-connection">
-                  <div class="docs-troubleshoot-icon">🌐</div>
-                  <div class="docs-troubleshoot-title">FATAL ERROR! Connection Error</div>
-                  <p class="docs-troubleshoot-desc">Khắc phục sự cố mạng, máy chủ gián đoạn, tắt VPN/Proxy và đổi DNS 1.1.1.1.</p>
+                <a href="#khong-hien-thi-menu" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-menu">
+                  <div class="docs-troubleshoot-icon">⌨️</div>
+                  <div class="docs-troubleshoot-title">Không hiển thị Menu</div>
+                  <p class="docs-troubleshoot-desc">Tắt Memory Integrity, chỉnh Borderless, tắt Smooth Motion NVIDIA và antivirus.</p>
+                </a>
+                <a href="#inpoutx64-driver" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-exploit">
+                  <div class="docs-troubleshoot-icon">🔌</div>
+                  <div class="docs-troubleshoot-title">inpoutx64 / Unable to install exploit driver</div>
+                  <p class="docs-troubleshoot-desc">Vào msconfig tắt Acer Lightning Service và khởi động lại máy.</p>
                 </a>
                 <a href="#hardware-mismatch" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-hwid">
                   <div class="docs-troubleshoot-icon">🔑</div>
-                  <div class="docs-troubleshoot-title">Hardware Mismatch (Lệch HWID)</div>
-                  <p class="docs-troubleshoot-desc">Cách tạo ticket yêu cầu Reset HWID khi đổi linh kiện hoặc chuyển sang máy tính khác.</p>
+                  <div class="docs-troubleshoot-title">Hardware mismatch</div>
+                  <p class="docs-troubleshoot-desc">Xử lý lỗi 1 key dùng 2 máy hoặc liên hệ Discord để reset HWID.</p>
+                </a>
+                <a href="#tat-hyper-v-vbs" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-hyperv">
+                  <div class="docs-troubleshoot-icon">🧩</div>
+                  <div class="docs-troubleshoot-title">Tắt Hyper-V và VBS</div>
+                  <p class="docs-troubleshoot-desc">Chuyển tài khoản Local Account và chạy DisableAll.bat để tắt hoàn toàn Hyper-V/VBS.</p>
+                </a>
+                <a href="#vo-hieu-hoa-window-security" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-defender">
+                  <div class="docs-troubleshoot-icon">🛡️</div>
+                  <div class="docs-troubleshoot-title">Vô hiệu hóa Window Security</div>
+                  <p class="docs-troubleshoot-desc">Hướng dẫn tắt Real-Time Protection và dùng Defender Control (dControl.exe).</p>
+                </a>
+                <a href="#connection-error" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-connection">
+                  <div class="docs-troubleshoot-icon">🌐</div>
+                  <div class="docs-troubleshoot-title">FATAL ERROR! Connection error</div>
+                  <p class="docs-troubleshoot-desc">Đồng bộ lại thời gian chuẩn trên Windows để sửa lỗi kết nối.</p>
+                </a>
+                <a href="#ha-windows-10" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-win10">
+                  <div class="docs-troubleshoot-icon">🪟</div>
+                  <div class="docs-troubleshoot-title">Hạ Windows 10</div>
+                  <p class="docs-troubleshoot-desc">Hướng dẫn hạ từ Windows 11 xuống Windows 10 để chạy tool ổn định và bù key.</p>
+                </a>
+                <a href="#loi-kva-shadow" class="docs-troubleshoot-card js-quick-doc-link" data-target="panel-trouble-kva">
+                  <div class="docs-troubleshoot-icon">⚡</div>
+                  <div class="docs-troubleshoot-title">Lỗi KVA Shadow (KPTI)</div>
+                  <p class="docs-troubleshoot-desc">Disable KVA Shadow bằng 2 lệnh Terminal (Admin) giúp cải thiện hiệu năng.</p>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-antivirus">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Vì sao chương trình bị phần mềm diệt virus gắn cờ?</h1>
-        </header>
-        <div class="markdown">
-<p>Giải thích về việc bị phần mềm diệt virus phát hiện</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FNuBS0wH7cfx0Tw5yp1h2%2Fimage.png?alt=media&amp;token=d377ebb6-9b09-411a-9b5b-f49ec8de7820" alt="Vì sao chương trình bị phần mềm diệt virus gắn cờ?" loading="lazy" class="inline-image"/></p><p>Đây là kết quả dương tính giả. Mọi phần mềm riêng tư chất lượng cao được thiết kế để vượt qua anti-cheat đều sử dụng các kỹ thuật bị phần mềm diệt virus coi là đáng ngờ — đơn giản vì đây cũng là những kỹ thuật mà mã độc thực sự sử dụng. Cảnh báo của phần mềm diệt virus là dấu hiệu cho thấy phần mềm đang hoạt động ở cấp độ hệ thống thấp.</p><p><strong>H: Một cheat không kích hoạt phát hiện của phần mềm diệt virus có tốt hơn không?</strong></p><p>Không. Phần mềm riêng tư không kích hoạt phần mềm diệt virus hoặc là thiếu các thao tác cấp thấp cần thiết (nhiều khả năng sẽ thất bại trước các anti-cheat nghiêm ngặt) hoặc đã nằm trong cơ sở dữ liệu chữ ký của anti-cheat.</p><p><strong>H: 40/72 phát hiện trên VirusTotal có bình thường không?</strong></p><p>Có, hoàn toàn bình thường. Đây không phải là phát hiện một loại virus cụ thể — mà là phát hiện trình bảo vệ Themida dùng để che mã. Themida là phần mềm thương mại hợp pháp dùng để bảo vệ chương trình khỏi bị dịch ngược.</p><div class="code-block"><div class="code-header"><span class="code-title"></span><button type="button" class="copy-button" aria-label="Copy code" title="Copy code"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div><pre class="code-pre"><code><span class="code-line"><span class="code-line-content">W64/Themida.WN<!-- --> </span></span><span class="code-line"><span class="code-line-content">Win64/Packed.Themida.Q<!-- --> </span></span><span class="code-line"><span class="code-line-content">Suspicious App<!-- --> </span></span><span class="code-line"><span class="code-line-content">Generic.Packed<!-- --> </span></span><span class="code-line"><span class="code-line-content">Unsafe</span></span></code></pre></div><p><strong>H: Nhưng 40 phát hiện không phải là quá nhiều sao?</strong></p><p>Nghịch lý là virus thực sự thường có 0–5 phát hiện trên VirusTotal, không phải 40. Nhà phát triển mã độc kiểm tra tệp trên VT trước khi phát tán và dùng cryptor riêng. Chúng tôi dùng Themida — một protector thương mại công khai. Chúng tôi không cần trốn tránh phần mềm diệt virus; chúng tôi cần bảo vệ mã khỏi bị anti-cheat phân tích.</p><p>Số lượng phát hiện cao trên VT với nhãn như &quot;Themida/Packed/Suspicious&quot; là dấu hiệu của phần mềm được bảo vệ hợp pháp, không phải virus. Việc bị phần mềm diệt virus phát hiện là tác dụng phụ của các công nghệ cần thiết để hoạt động ở cấp kernel.</p>
-
-        </div>
-      </div>
-        </section>
-
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-menu">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Không hiển thị menu tool</h1>
-        </header>
-        <div class="markdown">
-<h2 id="1-tắt-core-isolationmemory-integrity" class="heading"><a href="#1-tắt-core-isolationmemory-integrity" class="heading-anchor" aria-label="Link to 1. Tắt Core Isolation/Memory Integrity">#</a>1. Tắt Core Isolation/Memory Integrity</h2><figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2FI8Uu98bkdZJP72UD8tKI%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=f9a7356e655b11db9db0378834a3b347&amp;sv=3" alt="" loading="lazy"/></figure><figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2F76GtdoG9FBjnsTXMm4ll%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=732d3029ff4eeecac8e65a9e6b79106b&amp;sv=3" alt="" loading="lazy"/></figure><h2 id="2-sửa-độ-phân-giải-của-game" class="heading"><a href="#2-sửa-độ-phân-giải-của-game" class="heading-anchor" aria-label="Link to 2. Sửa độ phân giải của game">#</a>2. Sửa độ phân giải của game</h2><ul><li>Chỉnh về Borderless (Không viền) hoặc Cửa sổ (Windowed)</li></ul><figure class="figure"><img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FWdP15jHbTBdjFgLxHed0%2Fimage.png?alt=media&amp;token=e38b08fe-77b4-4fd1-a2ca-2712b48576dc" alt="" loading="lazy"/></figure><h2 id="3-tắt-smooth-motion-card-nvidia-4000-và-5000-series" class="heading"><a href="#3-tắt-smooth-motion-card-nvidia-4000-và-5000-series" class="heading-anchor" aria-label="Link to 3. Tắt Smooth Motion (Card NVIDIA 4000 và 5000 Series)">#</a>3. Tắt Smooth Motion (Card NVIDIA 4000 và 5000 Series)</h2><ul><li><strong>Mở NVIDIA APP -&gt; Graphics -&gt; Game tương ứng / Global Settings</strong></li><li>Tắt Smooth Motion như trong ảnh dưới:</li></ul><figure class="figure"><img src="https://2186736524-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F8kVmtYXcpH6UvBGGvd0F%2Fuploads%2FmByPnt5Pggws6bMMK0ZH%2Fimage.png?alt=media&amp;token=52ad480a-0d19-4d2f-8068-1acbc79c2186" alt="" loading="lazy"/></figure><h2 id="4-tắt-các-app-khác-đang-chiếm-dụng-overlay-nếu-có" class="heading"><a href="#4-tắt-các-app-khác-đang-chiếm-dụng-overlay-nếu-có" class="heading-anchor" aria-label="Link to 4. Tắt các app khác đang chiếm dụng Overlay (nếu có)">#</a>4. Tắt các app khác đang chiếm dụng Overlay (nếu có)</h2><ul><li>MSI Afterburner (Riva Tunner)</li><li>Discord Game Overlay</li></ul>
-
-        </div>
-      </div>
-        </section>
-
+        <!-- 1. Màn xanh / Màn đen / Crash / Lag / Restart -->
         <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-bsod">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Màn hình xanh/đen / BSOD / PC bị treo</h1>
-        </header>
-        <div class="markdown">
-<p>Cách khắc phục sự cố màn hình xanh</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FJd4ZsEgpX1JSUhs54TIX%2Fimage.png?alt=media&amp;token=db91be32-4daa-48a9-9e0b-9f73afdb9674" alt="Màn hình xanh/đen / BSOD / PC bị treo" loading="lazy" class="inline-image"/></p><p>Nguyên nhân chính là lỗi trong quá trình khởi tạo trình điều khiển. Trong hầu hết trường hợp, nguyên nhân là xung đột với phần mềm bảo mật hoặc các tính năng bảo mật đang hoạt động.</p><blockquote><p><strong>Cảnh báo bảo mật:</strong> BSOD có thể cho thấy vấn đề nghiêm trọng về trình điều khiển hoặc phần cứng. Hãy tạo điểm khôi phục và sao lưu dữ liệu quan trọng trước. Việc xóa phần mềm bảo mật hoặc tắt dịch vụ sẽ làm giảm mức bảo vệ hệ thống. Chỉ sử dụng phần mềm đáng tin cậy, chỉ tắt các dịch vụ bên thứ ba không thiết yếu và khôi phục cài đặt sau khi kiểm tra.</p></blockquote><h2 id="1-gỡ-phần-mềm-diệt-virus-gây-xung-đột" class="heading"><a href="#1-gỡ-phần-mềm-diệt-virus-gây-xung-đột" class="heading-anchor" aria-label="Link to 1. Gỡ phần mềm diệt virus gây xung đột">#</a>1. Gỡ phần mềm diệt virus gây xung đột</h2><p>Quét máy tính bằng <a href="https://antivirus-removal-tool.com/" class="link" target="_blank" rel="noopener noreferrer">Antivirus Removal Tool<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và gỡ các phần mềm diệt virus bên thứ ba gây xung đột, chẳng hạn như Kaspersky, Avast, Avira hoặc 360 Total Security.</p><h2 id="2-tắt-phần-mềm-chơi-game-gây-xung-đột" class="heading"><a href="#2-tắt-phần-mềm-chơi-game-gây-xung-đột" class="heading-anchor" aria-label="Link to 2. Tắt phần mềm chơi game gây xung đột">#</a>2. Tắt phần mềm chơi game gây xung đột</h2><p>Tắt hoàn toàn hoặc gỡ cài đặt phần mềm chơi game liên quan đến chuột và bàn phím, chẳng hạn như:</p><ul><li>Armory Crate Service (bắt buộc phải xóa)</li><li>Roblox (bắt buộc phải tắt)</li><li>Vanguard (nếu làm các bước trên vẫn bị BSOD thì gỡ)</li><li>Razer Cortex</li><li>Razer Synapse</li><li>Corsair RGB control</li></ul><h2 id="3-gỡ-các-bản-vá-windows-update-mới-nhất" class="heading"><a href="#3-gỡ-các-bản-vá-windows-update-mới-nhất" class="heading-anchor" aria-label="Link to 3. Gỡ các bản vá Windows Update mới nhất">#</a>3. Gỡ các bản vá Windows Update mới nhất</h2><p><img src="https://wibuz.gitbook.io/docs/~gitbook/image?url=https%3A%2F%2F2186736524-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8kVmtYXcpH6UvBGGvd0F%252Fuploads%252FxO2yNMBJaM2e7fEaRcGX%252Fimage.png%3Falt%3Dmedia%26token%3D23e1b0c4-4e5d-4852-9c48-9f092b2987c4&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=5acc136b33732b871b6eb2068d7f61c0&amp;sv=3" alt="Bước 3" loading="lazy" class="inline-image"/></p><ul><li><p>Một số update win mới có thể chưa được Unicore hỗ trợ, hãy tạm thời downgrade và chặn update windows để trải nghiệm dùng tool được ổn định.</p></li><li><p>Unicore chạy ổn định nhất ở Win 10 và winver build 24H2 trở xuống</p></li><li><p>CPU Intel hỗ trợ kém hơn AMD.</p></li></ul><h2 id="4-mở-system-configuration" class="heading"><a href="#4-mở-system-configuration" class="heading-anchor" aria-label="Link to 4. Mở System Configuration">#</a>4. Mở System Configuration</h2><p>Nhấn <strong>Win + R</strong>, nhập <code class="inline-code">msconfig</code> và nhấn <strong>Enter</strong>.</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FADe0AT21aKPegMAeZ91V%2Fimage.png?alt=media&amp;token=94b34fd6-d75f-471f-bed3-5461e16cb888" alt="Bước 4" loading="lazy" class="inline-image"/></p><h2 id="5-tắt-các-service-bên-thứ-ba-để-kiểm-tra" class="heading"><a href="#5-tắt-các-service-bên-thứ-ba-để-kiểm-tra" class="heading-anchor" aria-label="Link to 5. Tắt các service bên thứ ba để kiểm tra">#</a>5. Tắt các service bên thứ ba để kiểm tra</h2><p>Mở tab <strong>Services</strong>, đánh dấu <strong>Hide all Microsoft services</strong>, sau đó nhấp <strong>Disable all</strong>. Khởi động lại hệ thống sau khi tắt các dịch vụ không phải của Microsoft.</p><ul><li>Lưu ý cách này có thể làm một số app khác trên máy bạn không hoạt động được vì đã tắt service của nó.</li><li>Chỉ làm nếu như bạn thực sự hiểu rõ mình đang làm gì.</li></ul><p><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2F507893989-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FAUqQpgiGDHh8mkxv6WXu%252Fuploads%252F8RYJzayR6Ci0frDDElAS%252Fimage.png%3Falt%3Dmedia%26token%3De2818a59-1168-4523-9468-a011a5f0b955&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=7c21280b0da34617b682f066f82040e4&amp;sv=3" alt="Bước 5" loading="lazy" class="inline-image"/></p><p>Sau khi kiểm tra, quay lại <code class="inline-code">msconfig</code> và bật lại các service cần thiết. Nếu sự cố vẫn tiếp diễn, hãy liên hệ <a href="https://discord.gg/qenmhy3Y3t" class="link" target="_blank" rel="noopener noreferrer">Support<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p><h2 id="6-cài-lại-windows-trong-trường-hợp-hết-cứu" class="heading"><a href="#6-cài-lại-windows-trong-trường-hợp-hết-cứu" class="heading-anchor" aria-label="Link to 6. Cài lại Windows (trong trường hợp hết cứu)">#</a>6. Cài lại Windows (trong trường hợp hết cứu)</h2><ul><li>Nếu cài lại Win -&gt; hãy chọn các phiên bản win 24H2 trở về trước vì ổn định cao.</li></ul>
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Màn xanh / Màn đen / Crash / Lag / Restart&quot;</h1>
+            </header>
+            <div class="markdown">
+              <figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2FEIj67MBI5LdDswqUbY0F%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=e896091c60e371eaf5768b9c442ea666&amp;sv=3" alt="Màn xanh / Màn đen / Crash / Lag / Restart" loading="lazy" class="inline-image"/></figure>
 
-        </div>
-      </div>
+              <h2 id="bsod-step-1" class="heading"><a href="#bsod-step-1" class="heading-anchor" aria-label="Link to Bước 1">#</a>1. Gỡ bỏ phần mềm diệt virus của bên thứ ba</h2>
+              <ul>
+                <li>Kaspersky</li>
+                <li>Avast</li>
+                <li>Avira</li>
+                <li>360 Total Security</li>
+                <li>Dr.Web</li>
+                <li>Norton</li>
+                <li>McAfee</li>
+                <li>Bitdefender</li>
+                <li>ESET NOD32</li>
+              </ul>
+              <p>Cài đặt phần mềm quét để xem còn phần mềm nào chưa xoá: <a href="https://antivirus-removal-tool.com/download/click.php?id=Antivirus_Removal_Tool" class="link" target="_blank" rel="noopener noreferrer">Download<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></p>
+              <div class="hint hint--success" role="note">
+                <span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                <div class="hint-body"><p>Restart máy sau khi đã gỡ xong!</p></div>
+              </div>
+
+              <h2 id="bsod-step-2" class="heading"><a href="#bsod-step-2" class="heading-anchor" aria-label="Link to Bước 2">#</a>2. Gỡ các phần mềm không cần thiết</h2>
+              <ul>
+                <li>Armory Crate Service (bắt buộc phải xóa)</li>
+                <li>Roblox (bắt buộc phải tắt)</li>
+                <li>Vanguard (có thể tắt đi mà không cần xóa)</li>
+                <li>Razer Cortex</li>
+                <li>Razer Synapse</li>
+                <li>Corsair RGB control</li>
+              </ul>
+              <div class="hint hint--success" role="note">
+                <span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                <div class="hint-body"><p>Restart máy sau khi đã gỡ xong!</p></div>
+              </div>
+
+              <h2 id="bsod-step-3" class="heading"><a href="#bsod-step-3" class="heading-anchor" aria-label="Link to Bước 3">#</a>3. Clean Services</h2>
+              <p>Nếu vẫn bị tiếp:</p>
+              <ul>
+                <li><strong>Ấn Win + R</strong> → type <code class="inline-code">msconfig</code></li>
+                <li>Chọn <strong>Services</strong> tab</li>
+                <li>Chọn <strong>Hide all Microsoft services</strong></li>
+                <li>Click <strong>Disable all</strong></li>
+                <li>Apply</li>
+                <li>Restart máy là xong</li>
+              </ul>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2F8RYJzayR6Ci0frDDElAS%2Fimage.png?alt=media&amp;token=e2818a59-1168-4523-9468-a011a5f0b955" alt="Clean Services msconfig" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="xoa-cac-ban-cap-nhat-windows-moi-nhat" class="heading"><a href="#xoa-cac-ban-cap-nhat-windows-moi-nhat" class="heading-anchor" aria-label="Link to Bước 4">#</a>4. Xoá các bản Windows Update mới nhất trong tháng</h2>
+              <ul>
+                <li>Xóa tất cả các bản cập nhật trong phần Windows Update</li>
+                <li>Nếu có bản 25H2 như ảnh thì bắt buộc phải xóa</li>
+                <li>Sau khi xoá xong hãy tải phần mềm chặn update <a href="https://www.sordum.org/files/downloads.php?st-windows-update-blocker" class="link" target="_blank" rel="noopener noreferrer">Download Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và disable</li>
+                <li>Cuối cùng khởi động lại máy!</li>
+              </ul>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FdmW7cj3DfOhsgdtQOBtK%2Fimage.png?alt=media&amp;token=fbfd4681-97eb-40f9-b0b1-cdcddca3d5a2" alt="Windows Update 25H2" loading="lazy" class="inline-image"/></figure>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FgHaeZLVCERuqehzlTZDJ%2Fimage.png?alt=media&amp;token=ae4fbc32-0fc3-46fe-8300-173a519fa2bd" alt="Windows Update Blocker" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="bsod-step-5" class="heading"><a href="#bsod-step-5" class="heading-anchor" aria-label="Link to Bước 5">#</a>5. Cài lại Windows (bất đắc dĩ mới cài)</h2>
+              <ul>
+                <li>Hạ xuống Windows 10 bằng cách số 4 trong đây: <a href="https://www.thegioididong.com/game-app/4-cach-ha-win-11-xuong-win-10-khong-mat-du-lieu-1541787" class="link" target="_blank" rel="noopener noreferrer">Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li>
+                <li>Sau khi cài xong thì xài như bình thường và hãy liên hệ chủ shop để được bù 1 ngày vào key nhá</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
+        <!-- 2. File không chạy khi khởi động -->
         <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-driver">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Loader không chạy khi khởi động</h1>
-        </header>
-        <div class="markdown">
-<p>Cách khắc phục sự cố khởi động loader</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FOkI2G42uzyPYEdAV2iEx%2Fimage.png?alt=media&amp;token=acdd2ee1-bdbf-4148-b8b7-f6900a90a61d" alt="Loader không chạy khi khởi động" loading="lazy" class="inline-image"/></p><p>Không có phản hồi từ loader / Loader biến mất khỏi Task Manager sau 3–4 giây. Trước tiên, hãy xác định vấn đề:</p><ul><li>Tiến trình <code class="inline-code">launcher.exe</code> biến mất khỏi Task Manager sau 3–4 giây.</li><li>Tiến trình <code class="inline-code">launcher.exe</code> bị kẹt trong Task Manager; loader không mở.</li></ul><blockquote><p><strong>Cảnh báo bảo mật:</strong> Việc dùng VPN và thay đổi tường lửa có thể ảnh hưởng đến quyền riêng tư và bảo mật hệ thống. Chỉ sử dụng phần mềm đáng tin cậy. Tránh tắt bảo vệ tường lửa vĩnh viễn; ưu tiên chỉ cho phép các ứng dụng đáng tin cậy đi qua Windows Firewall, sau đó khôi phục bảo vệ khi kiểm tra xong.</p></blockquote><h2 id="tiến-trình-biến-mất-khỏi-task-manager-sau-34-giây" class="heading"><a href="#tiến-trình-biến-mất-khỏi-task-manager-sau-34-giây" class="heading-anchor" aria-label="Link to Tiến trình biến mất khỏi Task Manager sau 3–4 giây">#</a>Tiến trình biến mất khỏi Task Manager sau 3–4 giây</h2><ol><li>Khởi động lại PC và thử lại. Trong một số ít trường hợp, khởi động lại đơn giản sẽ khắc phục sự cố.</li><li>Cài đặt thư viện DirectX mới nhất: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35" class="link" target="_blank" rel="noopener noreferrer">Tải DirectX<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li><li>Dùng VPN đáng tin cậy trước khi khởi chạy loader.</li><li>Nếu nghi ngờ tường lửa đang chặn, hãy làm theo <a href="https://remontka.pro/disable-firewall-windows/" class="link" target="_blank" rel="noopener noreferrer">hướng dẫn khắc phục tường lửa<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và dùng tùy chọn ít ảnh hưởng nhất hiện có.</li></ol><h2 id="tiến-trình-bị-kẹt-trong-task-manager-trong-thời-gian-dài" class="heading"><a href="#tiến-trình-bị-kẹt-trong-task-manager-trong-thời-gian-dài" class="heading-anchor" aria-label="Link to Tiến trình bị kẹt trong Task Manager trong thời gian dài">#</a>Tiến trình bị kẹt trong Task Manager trong thời gian dài</h2><ol><li>Nếu tiến trình có vẻ bị treo trong Task Manager, hãy để yên 5–10 phút. Đây là hiện tượng bình thường và thường do tải tệp từ máy chủ chậm.</li><li>Để tăng tốc quá trình tải xuống, hãy dùng VPN đáng tin cậy hoặc làm theo hướng dẫn bằng video để chuyển máy chủ.</li><li>Nếu nghi ngờ tường lửa đang chặn, hãy làm theo <a href="https://remontka.pro/disable-firewall-windows/" class="link" target="_blank" rel="noopener noreferrer">hướng dẫn khắc phục tường lửa<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và dùng tùy chọn ít ảnh hưởng nhất hiện có.</li></ol><p>Đôi khi việc khởi động chế độ chẩn đoán cũng mất thời gian. Không đóng hoặc khởi động lại loader — mỗi lần khởi động lại sẽ làm gián đoạn quá trình tải và bắt đầu lại từ đầu.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Unable to install exploit driver</h2><p>Cách khắc phục lỗi cài đặt trình điều khiển</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FiipADacnYy8maVM0MKLW%2Fimage.png?alt=media&amp;token=69daf320-7435-4d5d-929e-1e874b05a056" alt="Unable to install exploit driver" loading="lazy" class="inline-image"/></p><p>Lỗi <strong>Unable to install exploit driver</strong> có thể xảy ra khi Exploit Protection của Windows chặn thao tác của trình điều khiển cần thiết.</p><blockquote><p><strong>Cảnh báo bảo mật:</strong> Exploit Protection giúp bảo vệ Windows khỏi mã độc. Không tắt tính năng này trừ khi bạn tin tưởng phần mềm và hiểu rõ rủi ro. Ưu tiên chỉ thay đổi cài đặt của một chương trình cụ thể, nếu được hỗ trợ, và khôi phục bảo vệ sau khi khắc phục sự cố.</p></blockquote><h2 id="1-mở-exploit-protection" class="heading"><a href="#1-mở-exploit-protection" class="heading-anchor" aria-label="Link to 1. Mở Exploit Protection">#</a>1. Mở Exploit Protection</h2><p>Mở <strong>Windows Security</strong> và truy cập <strong>Exploit protection</strong>.</p><h2 id="2-xem-lại-cài-đặt-exploit-protection" class="heading"><a href="#2-xem-lại-cài-đặt-exploit-protection" class="heading-anchor" aria-label="Link to 2. Xem lại cài đặt Exploit Protection">#</a>2. Xem lại cài đặt Exploit Protection</h2><p>Xem lại các cài đặt đang chặn ứng dụng hoặc trình điều khiển đáng tin cậy. Tránh tắt bảo vệ toàn hệ thống khi có thể thêm ngoại lệ cho từng ứng dụng.</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FJ2tH4aj9UiGp7lM2KO9K%2Fimage.png?alt=media&amp;token=76893089-64c9-402a-80a0-b7a1eeb2d893" alt="Bước 2" loading="lazy" class="inline-image"/></p><p>Khởi động lại Windows và thử lại. Bật lại mọi biện pháp bảo vệ đã tạm tắt trong quá trình khắc phục sự cố.</p></div>
-        </div>
-      </div>
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;File không chạy khi khởi động&quot;</h1>
+            </header>
+            <div class="markdown">
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FdLXUPIblVKoWP37ISgZd%2Fimage.png?alt=media&amp;token=7615574b-9d07-4539-aab4-825f31c77b2c" alt="File không chạy khi khởi động" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="huong-dan-nhanh-file-khong-chay" class="heading"><a href="#huong-dan-nhanh-file-khong-chay" class="heading-anchor" aria-label="Link to Hướng dẫn nhanh">#</a>Hướng dẫn nhanh</h2>
+              <ol>
+                <li>Restart PC và thử lại</li>
+                <li>Đảm bảo đã tải:<br>
+                  DX12 (DirectX 12): <a href="https://download.microsoft.com/download/1/7/1/1718ccc4-6315-4d8e-9543-8e28a4e18c4c/dxwebsetup.exe" class="link" target="_blank" rel="noopener noreferrer">Download Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br>
+                  .NET Framework: <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.100-windows-x64-installer" class="link" target="_blank" rel="noopener noreferrer">Download Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>
+                </li>
+                <li>Sử dụng 1.1.1.1</li>
+                <li>Nếu đã làm hết nhưng vẫn không được thì hãy thử đổi server như sau:</li>
+              </ol>
+
+              <figure class="embed embed--video">
+                <div class="embed-frame">
+                  <iframe data-src="https://www.youtube-nocookie.com/embed/fc0EYf6n0WI" title="Hướng dẫn đổi server" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </div>
+              </figure>
+            </div>
+          </div>
         </section>
 
-        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-connection">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">FATAL ERROR! Connection error</h1>
-        </header>
-        <div class="markdown">
-<p>Cách khắc phục lỗi kết nối</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2F1Eg5Fu7GhFbL2qHpKvdP%2Fimage.png?alt=media&amp;token=1803492d-280c-4dde-8ed3-2b036a89abb2" alt="FATAL ERROR! Connection error" loading="lazy" class="inline-image"/></p><p>Sự cố có thể xảy ra nếu cả tám máy chủ đều không xử lý được yêu cầu hoặc nếu thời gian trên Windows không được đồng bộ.</p><h3 id="lỗi-này-do-sai-lệch-thời-gian-của-máy-chỉ-cần-đồng-bộ-lại-thời-gian" class="heading"><a href="#lỗi-này-do-sai-lệch-thời-gian-của-máy-chỉ-cần-đồng-bộ-lại-thời-gian" class="heading-anchor" aria-label="Link to Lỗi này do sai lệch thời gian của máy, chỉ cần đồng bộ lại thời gian:">#</a>Lỗi này do sai lệch thời gian của máy, chỉ cần đồng bộ lại thời gian:</h3><p><img src="https://wibuz.gitbook.io/docs/~gitbook/image?url=https%3A%2F%2F2186736524-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8kVmtYXcpH6UvBGGvd0F%252Fuploads%252FdQgQIaFwlsJCwPjGdrGI%252Fimage.png%3Falt%3Dmedia%26token%3D150ca9c6-3532-4702-82e0-f6cde80f1be5&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=afd30fdc115fd726b826c2d7bba09a6e&amp;sv=3" alt="Sync time" loading="lazy" class="inline-image"/></p><p>Nếu sự cố vẫn tiếp diễn sau khi đồng bộ thời gian, hãy thử kết nối qua một dịch vụ VPN đáng tin cậy. Kết nối internet hoặc nhà mạng của bạn có thể đang chặn truy cập đến máy chủ.</p>
-<div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);"><h2 class="heading" style="font-size:22px;color:#38bdf8;">📋 Internal Server Error</h2><p>Cách khắc phục lỗi máy chủ</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FDqzs656lHryTScKn09Xz%2Fimage.png?alt=media&amp;token=1a4353f4-6058-4923-b172-bacddeceb09c" alt="Internal Server Error" loading="lazy" class="inline-image"/></p><p>Sự cố có thể xảy ra do lỗi tạm thời từ phía máy chủ.</p><blockquote><p><strong>Cảnh báo bảo mật:</strong> Không tắt tường lửa vĩnh viễn. Hãy dùng VPN đáng tin cậy và chỉ cho phép các ứng dụng đáng tin cậy đi qua Windows Firewall khi có thể. Khôi phục bảo vệ sau khi kiểm tra.</p></blockquote><h2 id="1-thử-kết-nối-vpn" class="heading"><a href="#1-thử-kết-nối-vpn" class="heading-anchor" aria-label="Link to 1. Thử kết nối VPN">#</a>1. Thử kết nối VPN</h2><p>Thử dùng kết nối VPN đáng tin cậy để kiểm tra xem sự cố có được giải quyết không.</p><h2 id="2-kiểm-tra-quyền-truy-cập-tường-lửa" class="heading"><a href="#2-kiểm-tra-quyền-truy-cập-tường-lửa" class="heading-anchor" aria-label="Link to 2. Kiểm tra quyền truy cập tường lửa">#</a>2. Kiểm tra quyền truy cập tường lửa</h2><p>Nếu nghi ngờ tường lửa đang chặn, hãy cho phép loader đáng tin cậy đi qua Windows Firewall hoặc tạm tắt bảo vệ tường lửa chỉ để kiểm tra. Bật lại ngay sau đó.</p><h2 id="3-liên-hệ-hỗ-trợ" class="heading"><a href="#3-liên-hệ-hỗ-trợ" class="heading-anchor" aria-label="Link to 3. Liên hệ hỗ trợ">#</a>3. Liên hệ hỗ trợ</h2><p>Nếu sự cố vẫn tiếp diễn, hãy liên hệ <a href="https://discord.gg/qenmhy3Y3t" class="link" target="_blank" rel="noopener noreferrer">Support<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a>.</p></div>
-        </div>
-      </div>
+        <!-- 3. Không hiển thị Menu -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-menu">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Không hiển thị Menu&quot;</h1>
+            </header>
+            <div class="markdown">
+              <h2 id="tat-memory-integrity-va-dismiss" class="heading"><a href="#tat-memory-integrity-va-dismiss" class="heading-anchor" aria-label="Link to Tắt Memory Integrity và Dismiss">#</a>1. Tắt Memory Integrity và Dismiss</h2>
+              <figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2FI8Uu98bkdZJP72UD8tKI%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=f9a7356e655b11db9db0378834a3b347&amp;sv=3" alt="Memory Integrity" loading="lazy" class="inline-image"/></figure>
+              <figure class="figure"><img src="https://gachatool-com.gitbook.io/gachatool/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2FAUqQpgiGDHh8mkxv6WXu%2Fblobs%2F76GtdoG9FBjnsTXMm4ll%2Fimage&amp;width=768&amp;dpr=1&amp;quality=100&amp;sign=732d3029ff4eeecac8e65a9e6b79106b&amp;sv=3" alt="Dismiss Warning" loading="lazy" class="inline-image"/></figure>
+              <div class="hint hint--warning" role="note">
+                <span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+                <div class="hint-body">
+                  <p>Đảm bảo đã tải:<br>
+                  DX12 (DirectX 12): <a href="https://download.microsoft.com/download/1/7/1/1718ccc4-6315-4d8e-9543-8e28a4e18c4c/dxwebsetup.exe" class="link" target="_blank" rel="noopener noreferrer">Download Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a><br>
+                  .NET Framework: <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.100-windows-x64-installer" class="link" target="_blank" rel="noopener noreferrer">Download Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></p>
+                </div>
+              </div>
+
+              <h2 id="chinh-do-phan-giai" class="heading"><a href="#chinh-do-phan-giai" class="heading-anchor" aria-label="Link to Chỉnh độ phân giải">#</a>2. Chỉnh độ phân giải</h2>
+              <ul>
+                <li>Mở <strong>Cài đặt → Hình ảnh</strong></li>
+                <li>Chỉnh độ phân giải thành <strong>Không viền (Borderless)</strong></li>
+                <li>Tắt game và mở lại launcher, vấn đề sẽ được khắc phục</li>
+              </ul>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FHecPAWBfBmOvAxKtY3VW%2Fimage.png?alt=media&amp;token=985eef48-89c4-4b39-b7a6-664c32cecce3" alt="Chỉnh độ phân giải Borderless" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="dam-bao-tat-cac-ung-dung-sau" class="heading"><a href="#dam-bao-tat-cac-ung-dung-sau" class="heading-anchor" aria-label="Link to Tắt ứng dụng xung đột Overlay">#</a>3. Đảm bảo tắt các ứng dụng sau</h2>
+              <ul>
+                <li>Mở NVIDIA APP -&gt; Settings -&gt; NVIDIA overlay</li>
+                <li>Tắt <strong>Smooth Motion</strong> như trong ảnh</li>
+                <li>MSI Afterburner (hãy xóa luôn nếu đã tắt mà vẫn chưa fix được)</li>
+                <li>Vanguard</li>
+              </ul>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2Fm81SGmBZ7w4PLA6v4GZo%2Fimage.png?alt=media&amp;token=f9a61b95-46e9-4723-b076-11d919f9e884" alt="Tắt Smooth Motion NVIDIA" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="menu-go-antivirus" class="heading"><a href="#menu-go-antivirus" class="heading-anchor" aria-label="Link to Gỡ bỏ phần mềm diệt virus">#</a>4. Gỡ bỏ phần mềm diệt virus của bên thứ ba</h2>
+              <ul>
+                <li>Kaspersky</li>
+                <li>Avast</li>
+                <li>Avira</li>
+                <li>360 Total Security</li>
+                <li>Dr.Web</li>
+                <li>Norton</li>
+                <li>McAfee</li>
+                <li>Bitdefender</li>
+                <li>ESET NOD32</li>
+              </ul>
+              <p>Cài đặt phần mềm quét để xem còn phần mềm nào chưa xoá: <a href="https://antivirus-removal-tool.com/download/click.php?id=Antivirus_Removal_Tool" class="link" target="_blank" rel="noopener noreferrer">Download<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></p>
+
+              <h2 id="menu-xoa-windows-update" class="heading"><a href="#menu-xoa-windows-update" class="heading-anchor" aria-label="Link to Xoá Windows Update">#</a>5. Xoá các bản Windows Update mới nhất trong tháng</h2>
+              <ul>
+                <li>Nếu các bước trên không fix được hoặc anh em không cài phần mềm nào ở trên thì hãy xoá các bản mới nhất trong tháng.</li>
+                <li>Nếu có bản 25H2 như ảnh thì bắt buộc phải xóa</li>
+                <li>Sau khi xoá xong hãy tải phần mềm chặn update <a href="https://www.sordum.org/files/downloads.php?st-windows-update-blocker" class="link" target="_blank" rel="noopener noreferrer">Download Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và disable</li>
+                <li>Cuối cùng khởi động lại máy!</li>
+              </ul>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FdmW7cj3DfOhsgdtQOBtK%2Fimage.png?alt=media&amp;token=fbfd4681-97eb-40f9-b0b1-cdcddca3d5a2" alt="Windows Update 25H2" loading="lazy" class="inline-image"/></figure>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FznRcWuYKai5IDNRanIL1%2Fimage.png?alt=media&amp;token=b9560349-9a27-4134-a4df-45bd00fe351c" alt="Windows Update Blocker Disable" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="menu-cai-lai-windows" class="heading"><a href="#menu-cai-lai-windows" class="heading-anchor" aria-label="Link to Cài lại Windows">#</a>6. Cài lại Windows (bất đắc dĩ mới cài)</h2>
+              <ul>
+                <li>Cài Windows 10/11 đều được nhưng 10 sẽ ổn định nhất: <a href="https://www.youtube.com/watch?v=5irprGSxPMA" class="link" target="_blank" rel="noopener noreferrer">Link Youtube<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li>
+                <li>Sau khi cài xong liên hệ chủ shop để được bù 2 ngày vào key nhá</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
+        <!-- 4. inpoutx64 / Unable to install exploit driver -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-exploit">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;inpoutx64 / Unable to install exploit driver&quot;</h1>
+            </header>
+            <div class="markdown">
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FNXQvDPjb6rVCm2gptTne%2Fimage.png?alt=media&amp;token=4d7bdce9-8f7c-464f-8c38-90322bb81828" alt="inpoutx64 / Unable to install exploit driver" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="cac-buoc-sua-loi-inpoutx64" class="heading"><a href="#cac-buoc-sua-loi-inpoutx64" class="heading-anchor" aria-label="Link to CÁC BƯỚC SỬA LỖI">#</a><mark class="tx-mark-green"><strong>CÁC BƯỚC SỬA LỖI</strong></mark></h2>
+              <ol>
+                <li>Nhấn tổ hợp phím <strong>Win + R</strong> rồi nhập <mark class="tx-mark-warning">msconfig</mark>
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FtrGk22TIXv0JNhh8AI1n%2Fimage.png?alt=media&amp;token=4511547d-a6bb-42e8-a7ef-1c9b843add36" alt="Tắt Acer Lightning Service" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Tìm <strong>Acer Lightning Service</strong> và tắt nó đi</li>
+                <li>Cuối cùng <strong>Apply</strong> và khởi động lại máy!</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Hardware mismatch -->
         <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-hwid">
-      <div class="docs-gitbook-page">
-        <header class="docs-gitbook-header">
-          <div class="docs-gitbook-crumbs">Troubleshooting / Unicore Troubleshot</div>
-          <h1 class="docs-gitbook-title">Hardware Mismatch</h1>
-        </header>
-        <div class="markdown">
-<p>Lỗi không khớp Hardware ID</p><p><img src="https://2582495776-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FLdxCokJEnpQ3wG4zbVLX%2Fuploads%2FzChzIiEOlwOJFpOY2Sbx%2Fimage.png?alt=media&amp;token=3475d6d5-f8ed-40e1-bffe-60ce7d70f9e6" alt="Hardware Mismatch" loading="lazy" class="inline-image"/></p><p>Khi khởi chạy loader từ một thiết bị khác, cần đặt lại HWID (Hardware ID).</p><p>Để đặt lại HWID, hãy vào server <a href="https://discord.gg/qenmhy3Y3t" class="link" target="_blank" rel="noopener noreferrer">Discord Unicore<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> và tạo ticket support Reset HWID.</p>
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Hardware mismatch&quot;</h1>
+            </header>
+            <div class="markdown">
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FexK0ibBNCAHIcS3YeQRx%2Fimage.png?alt=media&amp;token=3ec0f3e8-1d55-4d21-b428-90e8cfb0e6e5" alt="Hardware mismatch" width="563" loading="lazy" class="inline-image"/></figure>
 
-        </div>
-      </div>
+              <div class="hint hint--warning" role="note">
+                <span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+                <div class="hint-body">
+                  <p>Lỗi trên chỉ xuất hiện khi sử dụng 1 key 2 máy:<br>
+                  - Về lại máy cũ để xài tiếp<br>
+                  - Nếu bạn chơi ở tiệm net thì liên hệ chủ shop qua <a href="https://discord.gg/xa83TbAw6n" class="link" target="_blank" rel="noopener noreferrer">Discord<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> để được reset HWID</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Tắt Hyper-V và VBS -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-hyperv">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Tắt Hyper-V và VBS&quot;</h1>
+            </header>
+            <div class="markdown">
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FN3CgtmQ3nYkS3QzhiuNa%2Fimage.png?alt=media&amp;token=22cfaea6-755e-40e5-b277-1b02841edb4f" alt="Tắt Hyper-V và VBS" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="cach-khac-phuc-hyperv" class="heading" style="text-align:center;"><a href="#cach-khac-phuc-hyperv" class="heading-anchor" aria-label="Link to Cách khắc phục">#</a><strong>Cách khắc phục</strong></h2>
+              <p>Đây là 1 lỗi khá phổ biến nên anh em hãy làm kỹ các bước sau để tránh những lỗi không đáng.</p>
+              <div class="hint hint--warning" role="note">
+                <span class="hint-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+                <div class="hint-body"><p><strong>Lưu ý: Trước khi vào làm các bước thì máy anh em nào đang đặt mã Pin hoặc mật khẩu thì tắt đi.</strong></p></div>
+              </div>
+
+              <h3 id="phan-1" class="heading"><a href="#phan-1" class="heading-anchor" aria-label="Link to Phần 1">#</a>Phần 1</h3>
+              <ol>
+                <li>Nhấn <strong>Windows + I</strong> mở cài đặt, chọn phần <strong>Accounts</strong>
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FFm99la5M5Y0TzbqJI2WF%2Fimage.png?alt=media&amp;token=311aec20-3fa4-4983-8a12-ce11fcc3d7a0" alt="Windows Settings Accounts" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Vào <strong>Your info</strong>
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FpP2U6UGQP5M6xRNZAmLK%2Fimage.png?alt=media&amp;token=84fe2afe-8614-45a1-8310-a1e6b26806e2" alt="Your info" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Tìm dòng bên dưới, nếu không có thì anh em có thể chuyển sang <a href="#phan-2" class="link js-panel-anchor">phần 2</a>
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2Fx1ASHWf3X6eXHRqoS5OL%2Fimg_7250123b.jpg?alt=media&amp;token=e785cc6e-626d-4a36-9ed2-06f24426087c" alt="Sign in with a local account instead" loading="lazy" class="inline-image"/><figcaption style="font-size:12px;color:#94a3b8;margin-top:6px;text-align:center;">Sign in with a local account instead</figcaption></figure>
+                </li>
+                <li>Một cửa sổ hiện ra nhấn <strong>Next</strong> sau đó nhập mật khẩu Microsoft hiện tại để xác minh.</li>
+                <li>Thiết lập thông tin tài khoản cục bộ gồm <strong>Username</strong>, <strong>New password</strong>, <strong>Confirm password</strong>.</li>
+                <li>Khi nhập thông tin xong thì nhấn <strong>Next</strong> sau đó chọn <strong>Sign out and finish</strong> là hoàn tất quá trình chuyển đổi.</li>
+              </ol>
+
+              <h3 id="phan-2" class="heading"><a href="#phan-2" class="heading-anchor" aria-label="Link to Phần 2">#</a>Phần 2</h3>
+              <ol>
+                <li>Tải file <a href="https://mega.nz/file/TXwChTCR#ECgpZwwFtu0XPivmutpys54cH3QerBhqsXu258ReejU" class="link" target="_blank" rel="noopener noreferrer">Disable Hyper-V và VBS<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a> về và giải nén ra</li>
+                <li>Mở file tìm <mark class="tx-mark-red"><strong>DisableAll.bat</strong></mark>
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FmXf8vGdkAyTcuWJS8OkJ%2F%E1%BA%A3nh%201.png?alt=media&amp;token=50026d09-db5a-4196-9155-12efe0d52b54" alt="DisableAll.bat" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Chuột phải vào <mark class="tx-mark-red"><strong>DisableAll.bat</strong></mark> và chọn <mark class="tx-mark-purple"><strong>Run as administrator</strong></mark></li>
+                <li>Đợi hộp thoại cmd hiện lên sau đó nhấn phím <code class="inline-code">r</code> và đợi chạy xong hiện như ảnh là thành công, cuối cùng là restart máy.
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2Fixz75EEh8c1t8PNRwzy8%2Fimage.png?alt=media&amp;token=cbc4aac0-254c-4e37-b323-5f55e37487fe" alt="Hoàn tất DisableAll.bat" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Khi restart máy lên sẽ xuất hiện hộp thoại như ảnh dưới thì nhấn <strong>F3</strong>
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FMT3BJ09FtuT3SmQSPD4H%2FF3.png?alt=media&amp;token=f1d1e1b8-223a-42a0-9e13-89023ec1fa91" alt="Nhấn F3 khi khởi động lại" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Sau khi làm xong các bước trên thì mở launcher System nó hiện như thế này là dùng được
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FjFIAE3wIqrQb5AYcQ3jQ%2Fimage.png?alt=media&amp;token=5fa95989-0b29-430e-bb75-c187fba9d9c7" alt="Launcher hoạt động bình thường" loading="lazy" class="inline-image"/></figure>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Vô hiệu hóa Window Security -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-defender">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Vô hiệu hóa Window Security&quot;</h1>
+            </header>
+            <div class="markdown">
+              <ol>
+                <li>Anh em tải ứng dụng tại <a href="https://drive.usercontent.google.com/download?id=1jxmKjN820qP_cLZLgbeBi-aP5DUbROle&amp;export=download&amp;authuser=0&amp;confirm=t&amp;uuid=2b8bff7d-757c-46e1-895c-ec9f19144279&amp;at=AAINaIIguwiW1HkU326JPOYahTB4%3A1781082208521" class="link" target="_blank" rel="noopener noreferrer">đây<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li>
+                <li>Tắt <mark class="tx-mark-warning"><strong>Real-Time Protection</strong></mark> trong Window Security</li>
+                <li>Sau khi tắt xong anh em giải nén ra</li>
+                <li>Nhập password: <code class="inline-code">sordum</code></li>
+                <li>Khởi chạy <mark class="tx-mark-red"><strong>dControl.exe</strong></mark> với quyền Admin để ứng dụng hoạt động
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2Fcabd1Au2lVDEcqZYyB2Z%2Ftest.png?alt=media&amp;token=c4607cf3-0051-4490-b15f-e0641b7d38f3" alt="Chạy dControl.exe với quyền Admin" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Vừa vào giao diện ứng dụng sẽ như thế này
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FpN6COawVrYhlptStNaRl%2Fimage.png?alt=media&amp;token=a5aef6b4-8d2a-4e8b-b69b-65a5e7c2ce1d" alt="Giao diện Defender Control" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Nhấn <strong>Disable Window Defender</strong> để vô hiệu hóa Window Security</li>
+                <li>Khi nhấn xong đợi một lúc, nó hiện như thế này là đã thành công
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FbOqPB0om4NShYyPCOCcX%2Fimage.png?alt=media&amp;token=290b368c-45ea-47cd-b8cb-8851ea82db14" alt="Đã tắt Defender" loading="lazy" class="inline-image"/></figure>
+                </li>
+                <li>Sau đó khởi động lại máy là đã thành công tắt Window Security</li>
+                <li>Khi khởi động máy lên anh em vào lại Window Security nó hiện như thế này là đã thành công
+                  <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FTS3veLH7SIiDdgyYgJPT%2Fimage.png?alt=media&amp;token=2ec0fa07-653e-4291-a410-f1aa39525bdf" alt="Kiểm tra Window Security sau khi tắt" loading="lazy" class="inline-image"/></figure>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. FATAL ERROR! Connection error -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-connection">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;FATAL ERROR! Connection error&quot;</h1>
+            </header>
+            <div class="markdown">
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FJOztIoQkMtMR7ZJ01EMv%2Fimage.png?alt=media&amp;token=00cacbc1-e5a0-4e74-9726-f6895ced9a52" alt="FATAL ERROR! Connection error" loading="lazy" class="inline-image"/></figure>
+
+              <h2 id="dong-bo-thoi-gian" class="heading"><a href="#dong-bo-thoi-gian" class="heading-anchor" aria-label="Link to Đồng bộ lại thời gian">#</a>Nếu gặp lỗi trên anh em chỉ cần đồng bộ lại thời gian</h2>
+              <figure class="figure"><img src="https://507893989-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAUqQpgiGDHh8mkxv6WXu%2Fuploads%2FG6vEdsiiJ5hiMP1YSJdp%2FScreenshot_1.png?alt=media&amp;token=1aecba85-8b9b-4da6-adc5-7e8fa5103b2f" alt="Sync time Windows" loading="lazy" class="inline-image"/></figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Hạ Windows 10 -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-win10">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Hạ Windows 10&quot;</h1>
+            </header>
+            <div class="markdown">
+              <h2 id="cach-ha-win10" class="heading"><a href="#cach-ha-win10" class="heading-anchor" aria-label="Link to Cách hạ Windows 10 siêu dễ">#</a>Cách hạ Windows 10 siêu dễ</h2>
+              <ul>
+                <li>Hạ xuống Windows 10 bằng cách số 4 trong đây: <a href="https://www.thegioididong.com/game-app/4-cach-ha-win-11-xuong-win-10-khong-mat-du-lieu-1541787" class="link" target="_blank" rel="noopener noreferrer">Link<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="link-external"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></a></li>
+                <li>Sau khi cài xong thì xài như bình thường và hãy liên hệ chủ shop để được bù 1 ngày vào key nhá</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. Lỗi KVA Shadow (KPTI) -->
+        <section class="video-panel doc-guide-panel docs-article-panel" id="panel-trouble-kva">
+          <div class="docs-gitbook-page">
+            <header class="docs-gitbook-header">
+              <div class="docs-gitbook-crumbs">Khắc phục sự cố / FIX ERRORS</div>
+              <h1 class="docs-gitbook-title">&quot;Lỗi KVA Shadow (KPTI)&quot;</h1>
+            </header>
+            <div class="markdown">
+              <p>Disable for better performance</p>
+              <ol>
+                <li>Nhấn <code class="inline-code">Win + X</code> → chọn <strong>Terminal (Admin)</strong> hoặc <strong>CMD (Admin)</strong></li>
+                <li>Nhập hai lệnh sau:</li>
+              </ol>
+
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-title">Command Prompt / Terminal (Admin) — Lệnh 1</span>
+                  <button type="button" class="copy-button" aria-label="Copy code" title="Copy lệnh 1">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+                <pre class="code-pre"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverride /t REG_DWORD /d 3 /f</code></pre>
+              </div>
+
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-title">Command Prompt / Terminal (Admin) — Lệnh 2</span>
+                  <button type="button" class="copy-button" aria-label="Copy code" title="Copy lệnh 2">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+                <pre class="code-pre"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverrideMask /t REG_DWORD /d 3 /f</code></pre>
+              </div>
+
+              <ol start="3">
+                <li>Sau khi nhập xong 2 lệnh trên thì khởi động lại máy</li>
+              </ol>
+            </div>
+          </div>
         </section>
 
           </div><!-- /.docs-article-view -->
@@ -964,7 +1302,7 @@
           </a>
           <a class="drawer-nav-item" href="tools.html">
             <span class="drawer-item-icon">🛠️</span>
-            <span class="drawer-item-text">Công cụ</span>
+            <span class="drawer-item-text">Máy Ảo</span>
           </a>
           <a class="drawer-nav-item active" href="guide.html">
             <span class="drawer-item-icon">📖</span>
@@ -1000,8 +1338,6 @@
     <b>Tundenxin</b>
     <span>•</span>
     <span>Tài Liệu Hướng Dẫn</span>
-    <span>•</span>
-    <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
   <div class="floating-support-widget" id="floatingSupportWidget">
@@ -1042,8 +1378,7 @@
   </div>
 
   <script src="src/scripts/shared/theme.js?v=2" defer></script>
-  <script src="src/scripts/shared/snow.js" defer></script>
   <script src="src/scripts/shared/nav.js" defer></script>
-  <script src="src/scripts/pages/guide.js?v=9.13" defer></script>
+  <script src="src/scripts/pages/guide.js?v=9.14" defer></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
     (function () { try { if (localStorage.getItem('tundenxin_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {} })();
   </script>
   <link rel="stylesheet" href="src/styles/style.css?v=8.6">
-  <link rel="stylesheet" href="src/styles/theme-light.css?v=2.2">
+  <link rel="stylesheet" href="src/styles/theme-light.css?v=3.1">
   <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
@@ -98,13 +98,12 @@
     <nav class="main-nav">
       <a href="index.html"><span class="nav-emoji" aria-hidden="true">🏠</span> <span>Trang chủ</span></a>
       <a href="store.html"><span class="nav-emoji" aria-hidden="true">🛒</span> <span>Kho Tool Game</span></a>
-      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Công cụ</span></a>
+      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Máy Ảo</span></a>
       <a href="guide.html"><span class="nav-emoji" aria-hidden="true">📖</span> <span>Hướng dẫn</span></a>
       <a class="active" href="docs.html"><span class="nav-emoji" aria-hidden="true">📁</span> <span>File TP</span></a>
     </nav>
 
     <div class="nav-actions">
-      <a href="store.html" class="nav-cta-pill">Xem ngay</a>
       <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Chuyển sang giao diện Sáng" aria-pressed="true" title="Chuyển sang giao diện Sáng (Kiểu 5)">
         <span class="theme-toggle-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -244,7 +243,7 @@
           </a>
           <a class="drawer-nav-item" href="tools.html">
             <span class="drawer-item-icon">🛠️</span>
-            <span class="drawer-item-text">Công cụ</span>
+            <span class="drawer-item-text">Máy Ảo</span>
           </a>
           <a class="drawer-nav-item" href="guide.html">
             <span class="drawer-item-icon">📖</span>
@@ -283,8 +282,6 @@
     <span>Kho File TP Map, Config &amp; Script</span>
     <span>•</span>
     <span>Cùng bạn khám phá thế giới Teyvat</span>
-    <span>•</span>
-    <button type="button" class="footer-snow-btn" id="toggleSnowBtn" title="Bật/Tắt hiệu ứng bông tuyết">❄ Tuyết: Bật</button>
   </footer>
 
   <!-- Floating Support Widget (Nút Hỗ Trợ bấm bung Kênh Telegram & Server Discord) -->
@@ -326,7 +323,6 @@
   </div>
 
   <script src="src/scripts/shared/theme.js?v=2" defer></script>
-  <script src="src/scripts/shared/snow.js" defer></script>
   <script src="src/scripts/shared/nav.js" defer></script>
   <script src="src/scripts/pages/docs.js?v=8.2" defer></script>
 </body>
