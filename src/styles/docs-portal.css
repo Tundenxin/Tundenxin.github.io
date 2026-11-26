@@ -54,6 +54,7 @@
 .docs-toc-nav::-webkit-scrollbar {
   width: 5px;
 }
+
 .docs-sidebar::-webkit-scrollbar-track,
 .docs-main-content::-webkit-scrollbar-track,
 .docs-article-view::-webkit-scrollbar-track,
@@ -61,6 +62,7 @@
   background: rgba(255, 255, 255, 0.02);
   border-radius: 4px;
 }
+
 .docs-sidebar::-webkit-scrollbar-thumb,
 .docs-main-content::-webkit-scrollbar-thumb,
 .docs-article-view::-webkit-scrollbar-thumb,
@@ -68,6 +70,7 @@
   background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
+
 .docs-sidebar::-webkit-scrollbar-thumb:hover,
 .docs-main-content::-webkit-scrollbar-thumb:hover,
 .docs-article-view::-webkit-scrollbar-thumb:hover,
@@ -231,6 +234,7 @@
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -318,21 +322,25 @@
   color: #34d399;
   border: 1px solid rgba(16, 185, 129, 0.35);
 }
+
 .docs-nav-tag.vip {
   background: rgba(234, 179, 8, 0.2);
   color: #fbbf24;
   border: 1px solid rgba(234, 179, 8, 0.35);
 }
+
 .docs-nav-tag.video {
   background: rgba(239, 68, 68, 0.2);
   color: #f87171;
   border: 1px solid rgba(239, 68, 68, 0.35);
 }
+
 .docs-nav-tag.fix {
   background: rgba(168, 85, 247, 0.2);
   color: #c084fc;
   border: 1px solid rgba(168, 85, 247, 0.35);
 }
+
 .docs-nav-tag.perm {
   background: rgba(59, 130, 246, 0.2);
   color: #60a5fa;
@@ -490,6 +498,10 @@
    -------------------------------------------------------------------------- */
 .docs-article-panel {
   display: none !important;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   animation: docsFadeIn 0.25s ease-out;
 }
 
@@ -519,6 +531,7 @@
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -900,8 +913,9 @@
    GITBOOK OFFICIAL MARKDOWN TYPOGRAPHY (MATCHING DOCS.WIBUZSTORE.COM)
    -------------------------------------------------------------------------- */
 .docs-gitbook-page {
-  max-width: 1100px;
-  margin: 0;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
   color: #e2e8f0;
   font-size: 14.5px;
   line-height: 1.7;
@@ -998,7 +1012,8 @@
 
 .docs-gitbook-page .markdown .embed-frame {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
   border-radius: 12px;
   overflow: hidden;
@@ -1245,9 +1260,11 @@
   .docs-toc-container {
     display: none !important;
   }
+
   .docs-content-body-wrap {
     gap: 0;
   }
+
   .docs-article-view {
     padding-right: 0;
   }
@@ -1257,6 +1274,7 @@
    DESKTOP FIXED APP LAYOUT (CỐ ĐỊNH NHƯ ẢNH 1, KHÔNG CUỘN WINDOW, KHÔNG THỪA FOOTER)
    ========================================================================== */
 @media (min-width: 993px) {
+
   html,
   body.guide-page {
     height: 100vh !important;
@@ -1338,7 +1356,7 @@
     display: flex !important;
     flex-direction: column !important;
     overflow: hidden !important;
-    padding: 16px 20px 16px 24px !important;
+    padding: 16px 28px 16px 28px !important;
     box-sizing: border-box !important;
     background: linear-gradient(180deg, rgba(15, 20, 32, 0.96) 0%, rgba(8, 11, 19, 0.98) 100%) !important;
     backdrop-filter: blur(24px) !important;
@@ -1366,7 +1384,7 @@
     overflow: hidden !important;
   }
 
-  /* Vùng cuộn bài viết duy nhất: chỉ bài viết cuộn, không cuộn window */
+  /* Vùng cuộn bài viết duy nhất: chỉ bài viết cuộn, căn giữa cân đối hai bên */
   body.guide-page .docs-article-view {
     flex: 1 1 0% !important;
     min-width: 0 !important;
@@ -1374,8 +1392,7 @@
     max-height: 100% !important;
     overflow-y: auto !important;
     overscroll-behavior: contain !important;
-    padding-right: 16px !important;
-    padding-bottom: 40px !important;
+    padding: 6px clamp(16px, 2.5vw, 36px) 44px !important;
     box-sizing: border-box !important;
   }
 
@@ -1418,4 +1435,3 @@
     display: none !important;
   }
 }
-

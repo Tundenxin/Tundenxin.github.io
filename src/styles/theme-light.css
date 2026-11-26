@@ -664,6 +664,13 @@ body.landing-page .shika-btn-community {
   .featured-tools-grid {
     display: none !important;
   }
+  body.landing-page main {
+    justify-content: flex-end !important;
+  }
+  body.landing-page .hero.shika-hero {
+    justify-content: flex-end !important;
+    padding: 24px 14px clamp(82px, 10.5dvh, 104px) !important;
+  }
   body:not(.guide-page) footer {
     flex-wrap: wrap;
     justify-content: center;
@@ -675,7 +682,8 @@ body.landing-page .shika-btn-community {
 
 @media (max-width: 640px) {
   body.landing-page .hero.shika-hero {
-    padding: 16px 14px 22px !important;
+    justify-content: flex-end !important;
+    padding: 20px 14px clamp(82px, 10.5dvh, 104px) !important;
   }
   .hero-profile-row {
     flex-direction: column;
