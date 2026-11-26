@@ -253,9 +253,21 @@ body.landing-page .shika-hero-inner {
 }
 
 .shika-hero-bg-glow,
-.shika-welcome-heading,
 .shika-avatar-glow {
   display: none !important;
+}
+
+.shika-welcome-heading {
+  display: block !important;
+  font-family: 'Montserrat', 'Space Grotesk', sans-serif !important;
+  font-size: clamp(38px, 4.8vw, 56px) !important;
+  font-weight: 900 !important;
+  letter-spacing: 8px !important;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 auto 14px !important;
+  line-height: 1.05 !important;
+  user-select: none;
 }
 
 .hero-profile-row {
@@ -505,6 +517,11 @@ body.landing-page .shika-btn-community {
     padding: 10px 20px !important;
     margin-bottom: 12px !important;
   }
+  .shika-welcome-heading {
+    font-size: clamp(32px, 3.8vw, 42px) !important;
+    letter-spacing: 7px !important;
+    margin-bottom: 10px !important;
+  }
   .shika-avatar-box {
     width: 84px !important;
     height: 84px !important;
@@ -693,6 +710,11 @@ body.landing-page .shika-btn-community {
     padding: 18px 16px !important;
     gap: 12px;
     margin-bottom: 16px;
+  }
+  .shika-welcome-heading {
+    font-size: clamp(36px, 9.5vw, 48px) !important;
+    letter-spacing: 6px !important;
+    margin: 0 auto 14px !important;
   }
   .hero-profile-copy {
     align-items: center;
@@ -946,6 +968,11 @@ html:not([data-theme="dark"]) .shika-avatar-box {
   border: 4px solid #ffffff;
   background: #eef6ff;
   box-shadow: 0 14px 34px rgba(37, 99, 235, 0.16), 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+html:not([data-theme="dark"]) .shika-welcome-heading {
+  color: #0f172a !important;
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.72) !important;
 }
 
 html:not([data-theme="dark"]) .shika-hero-title .title-white,
@@ -1936,6 +1963,11 @@ html[data-theme="dark"] .shika-avatar-box {
   border: 4px solid rgba(30, 41, 59, 0.95);
   background: #131a29;
   box-shadow: 0 14px 36px rgba(37, 99, 235, 0.22), 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .shika-welcome-heading {
+  color: #f8fafc !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65) !important;
 }
 
 html[data-theme="dark"] .shika-hero-title .title-white,
