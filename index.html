@@ -1,17 +1,21 @@
 <!--  -->
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="theme-color" content="#050713">
+  <meta name="theme-color" content="#0b0f19">
   <title>Tundenxin — Tool Genshin Impact Mobile và PC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Montserrat:wght@800;900&amp;family=Outfit:wght@800;900&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap">
+  <script>
+    (function () { try { if (localStorage.getItem('tundenxin_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {} })();
+  </script>
   <link rel="stylesheet" href="src/styles/style.css?v=8.1">
+  <link rel="stylesheet" href="src/styles/theme-light.css?v=2.2">
   <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
@@ -37,15 +41,31 @@
     <a class="brand" href="index.html" aria-label="Tundenxin Trang chủ">
       <img src="src/assets/images/banners/tundenxin-banner.png" alt="Tundenxin.com" class="brand-logo-img" width="222"
         height="74">
+      <span class="brand-light-pill" aria-hidden="true">
+        <span class="brand-light-emblem">
+          <img src="src/assets/images/icons/hero-avatar.jpg" alt="WaFu" class="brand-wafu-icon" width="34" height="34">
+        </span>
+        <span class="brand-light-name">TUNDENXIN.COM</span>
+      </span>
     </a>
 
     <nav class="main-nav">
-      <a class="active" href="index.html">🏠 <span>Trang chủ</span></a>
-      <a href="store.html">🛒 <span>Kho Tool Game</span></a>
-      <a href="tools.html">🛠️ <span>Công cụ</span></a>
-      <a href="guide.html">📖 <span>Hướng dẫn</span></a>
-      <a href="docs.html">📁 <span>File TP</span></a>
+      <a class="active" href="index.html"><span class="nav-emoji" aria-hidden="true">🏠</span> <span>Trang chủ</span></a>
+      <a href="store.html"><span class="nav-emoji" aria-hidden="true">🛒</span> <span>Kho Tool Game</span></a>
+      <a href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Công cụ</span></a>
+      <a href="guide.html"><span class="nav-emoji" aria-hidden="true">📖</span> <span>Hướng dẫn</span></a>
+      <a href="docs.html"><span class="nav-emoji" aria-hidden="true">📁</span> <span>File TP</span></a>
     </nav>
+
+    <div class="nav-actions">
+      <a href="store.html" class="nav-cta-pill">Xem ngay</a>
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Chuyển sang giao diện Sáng" aria-pressed="true" title="Chuyển sang giao diện Sáng (Kiểu 5)">
+        <span class="theme-toggle-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </span>
+        <span class="theme-toggle-label">Sáng</span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -53,26 +73,97 @@
       <div class="shika-hero-bg-glow" aria-hidden="true"></div>
 
       <div class="shika-hero-inner">
-        <!-- TOP WELCOME TEXT -->
+        <!-- TOP WELCOME TEXT (Dark Mode) -->
         <div class="shika-welcome-heading">WELCOME</div>
 
-        <!-- AVATAR SQUIRCLE -->
-        <div class="shika-avatar-wrapper">
-          <div class="shika-avatar-glow" aria-hidden="true"></div>
-          <div class="shika-avatar-box">
-            <img src="src/assets/images/icons/hero-avatar.jpg" alt="Tundenxin Furina" class="shika-avatar-img">
+        <div class="hero-profile-row">
+          <!-- AVATAR -->
+          <div class="shika-avatar-wrapper">
+            <div class="shika-avatar-glow" aria-hidden="true"></div>
+            <div class="shika-avatar-box">
+              <img src="src/assets/images/icons/hero-avatar.jpg" alt="Tundenxin Furina" class="shika-avatar-img">
+            </div>
+          </div>
+
+          <div class="hero-profile-copy">
+            <!-- HERO TITLE -->
+            <h1 class="shika-hero-title">
+              <span class="title-white">TUNDEN</span><span class="title-accent">XIN</span>
+            </h1>
+
+            <!-- HERO SUBTITLE -->
+            <p class="shika-hero-desc">
+              Nhân viên WaFu sẽ luôn hỗ trợ bạn 24/7
+              <span class="hero-desc-sub-light">Kho tool game uy tín, an toàn và cập nhật liên tục</span>
+            </p>
           </div>
         </div>
 
-        <!-- HERO TITLE -->
-        <h1 class="shika-hero-title">
-          <span class="title-white">TUNDEN</span><span class="title-accent">XIN</span>
-        </h1>
+        <!-- FEATURED 3 TOOL CARDS (STYLE 5 LIGHT MODE SHOWCASE) -->
+        <div class="featured-tools-grid" aria-label="Tool nổi bật">
+          <article class="featured-tool-card">
+            <div class="featured-card-top">
+              <div class="featured-icon-wrap">
+                <img src="src/assets/images/tools/tool-unicore.png" alt="Unicore" onerror="this.src='src/assets/images/icons/genshin-icon.png'">
+              </div>
+              <div class="featured-card-head-text">
+                <h3>Unicore</h3>
+                <span class="featured-status-badge safe">An toàn / Updated</span>
+              </div>
+            </div>
+            <div class="featured-price-row">
+              <span class="featured-price-pill">Từ 120.000đ</span>
+            </div>
+            <ul class="featured-feature-list">
+              <li>Hỗ trợ đa dạng game PC</li>
+              <li>Cài đặt nhanh chóng, ổn định</li>
+              <li>Hỗ trợ kỹ thuật 24/7</li>
+            </ul>
+            <a href="store.html#tools" class="featured-cta-btn">Mua ngay</a>
+          </article>
 
-        <!-- HERO SUBTITLE -->
-        <p class="shika-hero-desc">
-          Nhân viên Waku sẽ luôn hỗ trợ bạn 24/7
-        </p>
+          <article class="featured-tool-card">
+            <div class="featured-card-top">
+              <div class="featured-icon-wrap">
+                <img src="src/assets/images/tools/tool-shika.png" alt="Shika" onerror="this.src='src/assets/images/icons/genshin-icon.png'">
+              </div>
+              <div class="featured-card-head-text">
+                <h3>Shika</h3>
+                <span class="featured-status-badge safe">An toàn / Updated</span>
+              </div>
+            </div>
+            <div class="featured-price-row">
+              <span class="featured-price-pill">Từ 210.000đ</span>
+            </div>
+            <ul class="featured-feature-list">
+              <li>Tối ưu hiệu năng cao</li>
+              <li>Giao diện dễ sử dụng</li>
+              <li>Cập nhật tự động</li>
+            </ul>
+            <a href="store.html#tools" class="featured-cta-btn">Mua ngay</a>
+          </article>
+
+          <article class="featured-tool-card">
+            <div class="featured-card-top">
+              <div class="featured-icon-wrap">
+                <img src="src/assets/images/tools/tool-kuro.png" alt="Kuro" onerror="this.src='src/assets/images/icons/genshin-icon.png'">
+              </div>
+              <div class="featured-card-head-text">
+                <h3>Kuro</h3>
+                <span class="featured-status-badge safe">An toàn / Updated</span>
+              </div>
+            </div>
+            <div class="featured-price-row">
+              <span class="featured-price-pill">Miễn Phí</span>
+            </div>
+            <ul class="featured-feature-list">
+              <li>Tool Genshin Mobile miễn phí</li>
+              <li>Hoạt động ổn định v2.7.1</li>
+              <li>Có sẵn kho File TP hỗ trợ</li>
+            </ul>
+            <a href="store.html#tools" class="featured-cta-btn">Xem ngay</a>
+          </article>
+        </div>
 
         <!-- CTA BUTTONS -->
         <div class="shika-hero-actions">
@@ -232,6 +323,7 @@
     </button>
   </div>
 
+  <script src="src/scripts/shared/theme.js?v=2" defer></script>
   <script src="src/scripts/shared/snow.js" defer></script>
   <script src="src/scripts/shared/nav.js" defer></script>
 </body>

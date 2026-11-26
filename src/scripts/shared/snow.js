@@ -132,11 +132,19 @@
         particles[i] = initParticle(true);
       }
 
-      // Vẽ hạt tuyết tròn với ánh hào quang dịu nhẹ
+      // Vẽ hạt tuyết tròn với ánh hào quang dịu nhẹ (tự thích ứng Sáng / Tối)
+      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+      const particleColor = isDarkTheme
+        ? p.color
+        : (p.color === '#a5f3fc' ? '#38bdf8' : '#60a5fa');
+      const particleShadow = isDarkTheme
+        ? (p.color === '#a5f3fc' ? 'rgba(56, 189, 248, 0.4)' : 'rgba(255, 255, 255, 0.35)')
+        : 'rgba(56, 189, 248, 0.35)';
+
       ctx.save();
-      ctx.globalAlpha = p.opacity;
-      ctx.fillStyle = p.color;
-      ctx.shadowColor = p.color === '#a5f3fc' ? 'rgba(56, 189, 248, 0.4)' : 'rgba(255, 255, 255, 0.35)';
+      ctx.globalAlpha = isDarkTheme ? p.opacity : p.opacity * 0.75;
+      ctx.fillStyle = particleColor;
+      ctx.shadowColor = particleShadow;
       ctx.shadowBlur = p.radius * 1.5;
 
       ctx.beginPath();

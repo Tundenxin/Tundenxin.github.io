@@ -1,15 +1,19 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="theme-color" content="#050713">
+  <meta name="theme-color" content="#0b0f19">
   <title>Công cụ hỗ trợ — Tundenxin (Void Realm)</title>
   <meta name="description" content="Tundenxin — trang tổng hợp Công cụ hỗ trợ Genshin Mobile: Tổng hợp máy ảo VPhoneGaGa VIP, Custom Tiếng Việt, 64-Bit, ColorOS, MT Manager quản lý tệp APK.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@600;700;800&amp;display=swap">
+  <script>
+    (function () { try { if (localStorage.getItem('tundenxin_theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {} })();
+  </script>
   <link rel="stylesheet" href="src/styles/style.css?v=8.6">
+  <link rel="stylesheet" href="src/styles/theme-light.css?v=2.2">
   <link rel="icon" type="image/png" href="src/assets/images/icons/genshin-icon.png">
 
   <!-- Vercel Web Analytics -->
@@ -33,15 +37,31 @@
     </button>
     <a class="brand" href="index.html" aria-label="Tundenxin Trang chủ">
       <img src="src/assets/images/banners/tundenxin-banner.png" alt="Tundenxin.com" class="brand-logo-img" width="222" height="74">
+      <span class="brand-light-pill" aria-hidden="true">
+        <span class="brand-light-emblem">
+          <img src="src/assets/images/icons/hero-avatar.jpg" alt="WaFu" class="brand-wafu-icon" width="34" height="34">
+        </span>
+        <span class="brand-light-name">TUNDENXIN.COM</span>
+      </span>
     </a>
 
     <nav class="main-nav">
-      <a href="index.html">🏠 <span>Trang chủ</span></a>
-      <a href="store.html">🛒 <span>Kho Tool Game</span></a>
-      <a class="active" href="tools.html">🛠️ <span>Công cụ</span></a>
-      <a href="guide.html">📖 <span>Hướng dẫn</span></a>
-      <a href="docs.html">📁 <span>File TP</span></a>
+      <a href="index.html"><span class="nav-emoji" aria-hidden="true">🏠</span> <span>Trang chủ</span></a>
+      <a href="store.html"><span class="nav-emoji" aria-hidden="true">🛒</span> <span>Kho Tool Game</span></a>
+      <a class="active" href="tools.html"><span class="nav-emoji" aria-hidden="true">🛠️</span> <span>Công cụ</span></a>
+      <a href="guide.html"><span class="nav-emoji" aria-hidden="true">📖</span> <span>Hướng dẫn</span></a>
+      <a href="docs.html"><span class="nav-emoji" aria-hidden="true">📁</span> <span>File TP</span></a>
     </nav>
+
+    <div class="nav-actions">
+      <a href="store.html" class="nav-cta-pill">Xem ngay</a>
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Chuyển sang giao diện Sáng" aria-pressed="true" title="Chuyển sang giao diện Sáng (Kiểu 5)">
+        <span class="theme-toggle-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </span>
+        <span class="theme-toggle-label">Sáng</span>
+      </button>
+    </div>
   </header>
 
   <main class="guide-wrap">
@@ -431,6 +451,7 @@
     </button>
   </div>
 
+  <script src="src/scripts/shared/theme.js?v=2" defer></script>
   <script src="src/scripts/shared/snow.js" defer></script>
   <script src="src/scripts/shared/nav.js" defer></script>
   <script src="src/scripts/pages/tools.js" defer></script>
