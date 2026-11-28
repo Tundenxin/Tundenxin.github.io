@@ -25,7 +25,7 @@ function setupCopyBtn(btnId, link, feedbackText = '✓ Đã chép link!') {
 function initDocsCopy() {
   setupCopyBtn('copyShikaBtn', 'https://gofile.io/d/2tPMUx67');
   setupCopyBtn('copyUnicoreBtn', 'https://gofile.io/d/uCpNZVbJ');
-  setupCopyBtn('copyDmshbyBtn', 'https://www.mediafire.com/file/45jkc9yokxtia5f/Dmshby-tundenxin.zip/file');
+  setupCopyBtn('copyDmshbyBtn', 'https://gofile.io/d/LFsW9PZA');
 }
 
 if (document.readyState === 'loading') {
